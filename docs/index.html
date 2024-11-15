@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en" class="font-sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maria Petukhovskaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      /** @type {import('tailwindcss').Config} */
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["DM Sans", "sans-serif"],
+            },
+            colors: {
+              pink: "#ded9ef",
+              peach: "#CBD5D3",
+              green: "#00b187",
+              darkBlue: "#171e25",
+              lightGray: "#B9C3C0",
+              gray: "#CBD5D3",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/tailwindcss">
+      @layer components {
+        .side-menu > * {
+          @apply block w-min cursor-pointer select-none rounded-[10px] border px-4 py-1.5 transition-all duration-150;
+        }
+        .link {
+          @apply hover:text-gray border-transparent hover:rounded-[20px] hover:border-current active:bg-white active:text-black;
+        }
+        .link.active {
+          @apply text-white;
+        }
+        .primary {
+          @apply hover:bg-gray border-transparent bg-white text-black hover:rounded-[20px];
+        }
+        .primary.active {
+          @apply bg-white;
+        }
+        .secondary {
+          @apply hover:text-gray border-current hover:rounded-[20px] active:border-white active:bg-white active:text-black;
+        }
+        .secondary.active {
+          @apply rounded-[20px] bg-white text-black;
+        }
+        .about-card {
+          @apply bg-lightGray relative flex items-center justify-between overflow-hidden rounded-[28px] py-[36.5px] pl-11 pr-10 transition-all duration-300 hover:rounded-[52px] hover:text-white xl:py-[60px];
+        }
+        .about-card__bg {
+          @apply pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+        }
+        .about-card__gradient {
+          @apply pointer-events-none absolute inset-0 h-full w-full -translate-x-full transition-all duration-500 group-hover:translate-x-0;
+        }
+      }
+      .noise {
+        background: transparent
+          url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+        animation: steps(2) bg-animation 5s infinite;
+      }
+
+      @keyframes bg-animation {
+        0% {
+          transform: translate(0, 0);
+        }
+        10% {
+          transform: translate(-5%, -5%);
+        }
+        20% {
+          transform: translate(-10%, 5%);
+        }
+        30% {
+          transform: translate(5%, -10%);
+        }
+        40% {
+          transform: translate(-5%, 15%);
+        }
+        50% {
+          transform: translate(-10%, 5%);
+        }
+        60% {
+          transform: translate(15%, 0);
+        }
+        70% {
+          transform: translate(0, 10%);
+        }
+        80% {
+          transform: translate(-15%, 0);
+        }
+        90% {
+          transform: translate(10%, 5%);
+        }
+        100% {
+          transform: translate(5%, 0);
+        }
+      }
+      .animate-rotate {
+        animation: rotate 50s linear infinite;
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(360deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+      .animate-ticker {
+        animation: ticker 30s linear infinite;
+      }
+      @keyframes ticker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .section-tags li {
+        list-style: "•";
+        padding-left: 18px;
+      }
+      .bg-cabbage {
+        background-image: url("./work.webp");
+      }
+      .bg-cabbage-about {
+        background-image: url("./about_cabbage.webp");
+      }
+      .button-gradient {
+        background: linear-gradient(
+          90deg,
+          rgba(54, 77, 86, 0.7) 0%,
+          rgba(54, 77, 86, 0) 63%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="noise pointer-events-none fixed -bottom-1/2 -left-1/2 -right-1/2 -top-1/2 z-40 h-[200%] w-[200%] opacity-65"
+    ></div>
+    <div
+      class="js-header-bg bg-darkBlue pointer-events-none fixed z-10 h-screen w-full transition-opacity duration-500"
+    ></div>
+    <menu
+      class="js-menu fixed z-20 h-screen text-nowrap pl-3 text-white mix-blend-difference transition-opacity duration-500"
+    >
+      <div class="side-menu absolute top-[46%] -translate-y-1/2 space-y-7">
+        <a class="js-works-button secondary" onclick="handleWorksClick()">
+          works
+        </a>
+        <a class="js-about-button link" onclick="handleAboutClick()">about</a>
+      </div>
+      <div class="side-menu absolute bottom-5 space-y-4">
+        <a class="link">Get CV</a>
+        <a
+          class="link"
+          href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
+          target="_blank"
+          >LinkedIn</a
+        >
+        <a class="js-copy-mail primary group relative">
+          <span class="js-copy-mail-text">Copy mail</span>
+          <span class="js-copy-mail-confirm hidden"
+            >Copied mail
+            <svg
+              class="relative bottom-[1.5px] inline-block"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.99967 1.33325C4.31967 1.33325 1.33301 4.31992 1.33301 7.99992C1.33301 11.6799 4.31967 14.6666 7.99967 14.6666C11.6797 14.6666 14.6663 11.6799 14.6663 7.99992C14.6663 4.31992 11.6797 1.33325 7.99967 1.33325ZM6.19301 10.8599L3.79967 8.46659C3.53967 8.20659 3.53967 7.78659 3.79967 7.52659C4.05967 7.26659 4.47967 7.26659 4.73967 7.52659L6.66634 9.44659L11.253 4.85992C11.513 4.59992 11.933 4.59992 12.193 4.85992C12.453 5.11992 12.453 5.53992 12.193 5.79992L7.13301 10.8599C6.87967 11.1199 6.45301 11.1199 6.19301 10.8599Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </menu>
+    <div class="pointer-events-none relative z-30 h-screen">
+      <header
+        class="js-header fixed z-10 h-screen w-full overflow-hidden pl-14 pt-[15vh] text-center transition-opacity duration-500 xl:pt-[18vh]"
+      >
+        <h1
+          class="js-title relative z-40 mx-auto max-w-[807px] origin-[50.89%_83%] text-[44px] font-semibold leading-[57px] tracking-wider text-white"
+        >
+          I’m Maria.<br />
+          I create UI and UX design for
+          <span class="text-green">people's needs and business success.</span>
+        </h1>
+        <div class="relative mt-[133px]">
+          <svg
+            class="animate-rotate w-full text-[10.3px]"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            width="213"
+            height="213"
+          >
+            <path
+              id="circlePath"
+              d="M 10, 50 a 40,40 0 1,1 80,0 40,40 0 1,1 -80,0"
+              fill="none"
+            />
+            <text class="fill-white">
+              <textPath href="#circlePath">
+                doing design for 4 years • doing design for 4 years •
+              </textPath>
+            </text>
+          </svg>
+          <img
+            class="absolute left-1/2 top-1/2 h-[142px] w-[142px] -translate-x-1/2 translate-y-[-51%] rounded-full"
+            src="./portrait.webp"
+          />
+        </div>
+      </header>
+    </div>
+    <section
+      class="js-skills bg-green text-darkBlue relative h-[180vh] overflow-hidden text-[26px] font-semibold"
+    >
+      <ul
+        class="section-tags animate-ticker absolute left-0 right-0 top-2/3 flex w-max -translate-y-1/2 gap-5 space-x-2"
+      >
+        <li>UX/UI Design</li>
+        <li>Product Design</li>
+        <li>Accessible Design</li>
+        <li>Design Thinking</li>
+        <li>Wireframing</li>
+        <li>Prototyping</li>
+        <li>User Research</li>
+        <li>User-Centered Design</li>
+        <li>Design Systems</li>
+        <li>App Design</li>
+        <li>UX/UI Design</li>
+        <li>Product Design</li>
+        <li>Accessible Design</li>
+        <li>Design Thinking</li>
+        <li>Wireframing</li>
+        <li>Prototyping</li>
+        <li>User Research</li>
+        <li>User-Centered Design</li>
+        <li>Design Systems</li>
+        <li>App Design</li>
+      </ul>
+    </section>
+    <main class="bg-green text-white">
+      <div
+        class="js-work-card bg-darkBlue mx-10 rounded-3xl pb-[200px] pl-[168px] pr-8 pt-[30vh] xl:pl-[232px] xl:pr-[25px]"
+      >
+        <h2
+          class="bg-cabbage sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text pr-8 text-[280px] font-extrabold leading-relaxed tracking-wide text-transparent xl:text-[340px]"
+        >
+          work
+        </h2>
+        <div
+          class="from-darkBlue via-darkBlue relative mx-auto -mt-[10vh] max-w-[1184px] bg-gradient-to-t via-60% to-transparent pt-[50vh]"
+        >
+          <article class="-mt-[20px] grid grid-cols-8 gap-8">
+            <div
+              class="col-span-3 row-span-2 self-center font-medium xl:order-last xl:row-span-1 xl:self-start"
+            >
+              <time datetime="2021" class="text-xl">2021</time>
+              <h3 class="mt-[21px] text-[32px] font-semibold tracking-wide">
+                Fugo
+              </h3>
+              <p class="mt-1 leading-5">
+                CMS for screen management and graphic design tool
+              </p>
+              <p class="mt-5">Role: Product designer</p>
+            </div>
+            <img
+              src="./img/fugo-logo2x.webp"
+              class="z-50 order-last col-span-3 hidden self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
+            />
+            <img
+              src="./img/fugo2x.webp"
+              class="z-50 col-span-5 row-span-2 h-auto w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] xl:order-first xl:rounded-[36px]"
+            />
+          </article>
+          <article class="mt-[120px] grid grid-cols-8 gap-8 xl:mt-[288px]">
+            <img
+              src="./img/sofia2x.webp"
+              class="z-50 col-span-5 h-[291px] w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] xl:order-2 xl:col-span-4 xl:h-full"
+            />
+            <div
+              class="col-span-3 self-center font-medium xl:col-span-2 xl:self-start"
+            >
+              <time datetime="2022" class="text-xl">2022</time>
+              <h3 class="mt-[23px] text-[32px] font-semibold tracking-wide">
+                Sofia
+              </h3>
+              <p class="mt-1 leading-5">
+                CRM, a specialized data management platform.
+              </p>
+              <p class="mt-5">Role: UI/UX designer</p>
+              <img
+                src="./img/sofia-mobile2x.webp"
+                class="relative z-50 mt-10 hidden w-full self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
+              />
+            </div>
+            <img
+              src="./img/sofia-logo2x.webp"
+              class="z-50 order-last hidden rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:col-span-2 xl:block"
+            />
+          </article>
+          <article class="mt-[120px] grid grid-cols-8 gap-8 xl:mt-[288px]">
+            <div
+              class="col-span-3 row-span-2 self-center font-medium xl:col-span-4 xl:row-span-1 xl:self-start"
+            >
+              <time datetime="2024" class="text-xl">2024</time>
+              <h3 class="mt-[23px] text-[32px] font-semibold tracking-wide">
+                Paperspell
+              </h3>
+              <p class="mt-1 leading-5">Document management aplication.</p>
+              <p class="mt-5">Role: UX designer</p>
+            </div>
+            <img
+              src="./img/paperspell2x.webp"
+              class="z-50 col-span-5 row-span-2 rounded-[28px] transition-all duration-200 hover:rounded-[80px] xl:order-first xl:col-span-4"
+            />
+            <img
+              src="./img/paperspell-mobile2x.webp"
+              class="col-span-4 hidden self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
+            />
+          </article>
+        </div>
+      </div>
+    </main>
+    <section
+      class="js-about bg-peach pb-24 pl-[168px] pr-8 pt-[30vh] xl:pl-[230px] xl:pr-6"
+    >
+      <div class="mx-auto max-w-[1184px]">
+        <h2
+          class="bg-cabbage-about sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[280px] font-extrabold leading-snug tracking-wide text-transparent xl:text-[340px]"
+        >
+          about
+        </h2>
+        <div
+          class="from-peach via-peach relative grid grid-cols-8 gap-8 bg-gradient-to-t via-40% to-transparent pt-[35vh]"
+        >
+          <div class="col-span-4">
+            <img
+              src="./maria.webp"
+              class="relative z-50 w-full rounded-[24px] object-cover xl:h-[370px]"
+            />
+            <div class="mt-7 space-y-[17px] text-sm">
+              <p>
+                In my design practice, I focus on deep research, communication
+                with users, exploring their motivations and expectations,
+                addressing business goals, solution testing, and creating design
+                systems and libraries.
+              </p>
+              <p>
+                I am keen on community-building processes related to the things
+                I'm in.
+              </p>
+              <p>
+                I explore art practice and processes around creation, so I build
+                communities around different aspects of creation.
+              </p>
+              <p>
+                I also believe in solidarity; therefore, &nbsp;I took leadership
+                in a few solidarity-focused initiatives and facilitated them
+                from both the design and community sides for years.
+              </p>
+              <p>
+                Experience in science and statistics helps me work with data and
+                conduct and interpret design research.
+              </p>
+              <p>
+                My strengths are strong communication skills that make me able
+                to explain my vision through the process, detail orientation,
+                empathy, and cooperation.
+              </p>
+            </div>
+          </div>
+          <div class="text-darkBlue z-50 col-span-4 space-y-7">
+            <a
+              href="https://www.instagram.com/petuhovskaya.m/"
+              target="_blank"
+              class="about-card group"
+            >
+              <img src="./art.webp" class="about-card__bg" />
+              <div class="about-card__gradient button-gradient"></div>
+              <div class="z-10">
+                <h4 class="font-semibold xl:text-xl">Art</h4>
+                <p class="mt-1.5 text-sm xl:font-semibold">
+                  Exploring creating practice
+                </p>
+              </div>
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="z-10 w-[43px] xl:w-[50px]"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="23"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+                <path
+                  d="M24.0509 14H36M36 14V25.9491M36 14L12 38"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/body_sketches_warsaw/"
+              target="_blank"
+              class="about-card group"
+            >
+              <img src="./big-community.webp" class="about-card__bg" />
+              <div class="about-card__gradient button-gradient"></div>
+              <div class="z-10">
+                <h4 class="font-semibold xl:text-xl">Big community bulding</h4>
+                <p class="mt-1.5 text-sm xl:font-semibold">
+                  City scale artist sketching meeting
+                </p>
+              </div>
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="z-10 w-[43px] xl:w-[50px]"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="23"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+                <path
+                  d="M24.0509 14H36M36 14V25.9491M36 14L12 38"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/375_collective/"
+              target="_blank"
+              class="about-card group"
+            >
+              <img
+                src="./small-community.webp"
+                class="about-card__bg -top-[110px] h-max xl:-top-[133px] 2xl:-top-[156px]"
+              />
+              <div class="about-card__gradient button-gradient"></div>
+              <div class="z-10">
+                <h4 class="font-semibold xl:text-xl">
+                  Small community bulding
+                </h4>
+                <p class="mt-1.5 text-sm xl:font-semibold">
+                  Multi-discipline art collective
+                </p>
+              </div>
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="z-10 w-[43px] xl:w-[50px]"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="23"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+                <path
+                  d="M24.0509 14H36M36 14V25.9491M36 14L12 38"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/majsternia_ps/"
+              target="_blank"
+              class="about-card group"
+            >
+              <img src="./solidarity.webp" class="about-card__bg" />
+              <div class="about-card__gradient button-gradient"></div>
+              <div class="z-10">
+                <h4 class="font-semibold xl:text-xl">Solidarity</h4>
+                <p class="mt-1.5 text-sm xl:font-semibold">
+                  Writing to political prisoners
+                </p>
+              </div>
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="z-10 w-[43px] xl:w-[50px]"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="23"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+                <path
+                  d="M24.0509 14H36M36 14V25.9491M36 14L12 38"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="sm:hidden">
+      <button
+        type="button"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      >
+        up
+      </button>
+    </footer>
+    <div
+      class="js-copy-mail-tooltip-portal pointer-events-none fixed z-50 opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="js-copy-mail-tooltip text-darkBlue absolute bottom-full left-2/3 mb-1 rounded-lg px-2 py-1 text-sm"
+      >
+        petukhouskaya.design@gmail.com
+      </div>
+    </div>
+    <script>
+      const menuElem = document.querySelector(".js-menu");
+      const headerBgElem = document.querySelector(".js-header-bg");
+      const headerElem = document.querySelector(".js-header");
+      const titleElem = document.querySelector(".js-title");
+      const skillsElem = document.querySelector(".js-skills");
+      const workElem = document.querySelector(".js-work-card");
+      const worksButton = document.querySelector(".js-works-button");
+      const aboutElem = document.querySelector(".js-about");
+      const aboutButton = document.querySelector(".js-about-button");
+      const copyMail = document.querySelector(".js-copy-mail");
+      const copyMailText = document.querySelector(".js-copy-mail-text");
+      const copyMailConfirm = document.querySelector(".js-copy-mail-confirm");
+      const copyMailTooltipPortal = document.querySelector(
+        ".js-copy-mail-tooltip-portal",
+      );
+      const copyMailTooltip = document.querySelector(".js-copy-mail-tooltip");
+
+      const handleHeaderScroll = (e) => {
+        const container = headerElem.parentElement;
+        const headerRect = container.getBoundingClientRect();
+        const isOnScreen =
+          headerRect.top < window.innerHeight && headerRect.bottom >= 0;
+        if (!isOnScreen) {
+          headerBgElem.classList.add("opacity-0");
+          headerElem.classList.add("opacity-0");
+        } else {
+          headerBgElem.classList.remove("opacity-0");
+          headerElem.classList.remove("opacity-0");
+        }
+        const topPercent = (-headerRect.top / window.innerHeight) ** 2;
+        titleElem.style.transform = `scale(${1 + 250 * topPercent})`;
+      };
+      const handleSkillsScroll = (e) => {
+        const rect = skillsElem.getBoundingClientRect();
+        const isMenuVisible = rect.top >= 200 || rect.bottom < 200;
+        if (isMenuVisible) {
+          menuElem.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          menuElem.classList.add("opacity-0", "pointer-events-none");
+        }
+      };
+      const handleWorkScroll = (e) => {
+        const container = workElem.parentElement;
+        const mainRect = workElem.getBoundingClientRect();
+        const isOnScreen =
+          mainRect.top < window.innerHeight && mainRect.bottom >= 0;
+        const isHalfOnScreen =
+          mainRect.top < window.innerHeight / 2 &&
+          mainRect.bottom >= window.innerHeight / 2;
+        // if (isHalfOnScreen) {
+        //   worksButton.classList.add("active");
+        // } else {
+        //   worksButton.classList.remove("active");
+        // }
+        if (!isOnScreen) {
+          return;
+        }
+        if (mainRect.bottom < window.innerHeight + 100) {
+          container.classList.remove("bg-green");
+          container.classList.add("bg-peach");
+        } else {
+          container.classList.remove("bg-peach");
+          container.classList.add("bg-green");
+        }
+        const bottom = Math.min(mainRect.bottom, window.innerHeight);
+        const visibleHeight = Math.max(0, bottom - Math.max(mainRect.top, 0));
+        workElem.style.borderRadius =
+          Math.min(64, -visibleHeight / 10 + 64) + "px";
+        const margin = Math.max(0, 40 - visibleHeight / 10);
+        workElem.style.marginRight = margin + "px";
+        workElem.style.marginLeft = margin + "px";
+      };
+      const handleAboutScrool = (e) => {
+        const aboutRect = aboutElem.getBoundingClientRect();
+        const isOnScreen =
+          aboutRect.top < window.innerHeight && aboutRect.bottom >= 0;
+        const isHalfOnScreen =
+          aboutRect.top < window.innerHeight / 2 &&
+          aboutRect.bottom >= window.innerHeight / 2;
+        // if (isHalfOnScreen) {
+        //   aboutButton.classList.add("active");
+        // } else {
+        //   aboutButton.classList.remove("active");
+        // }
+      };
+      const handleTooltipScroll = (e) => {
+        const tooltipTop = copyMailTooltip.getBoundingClientRect().top;
+        const aboutTop = aboutElem.getBoundingClientRect().top;
+        if (tooltipTop < aboutTop) {
+          copyMailTooltip.style.backgroundColor = "#B5B7AE";
+          copyMailTooltip.style.color = "#000000";
+        } else {
+          copyMailTooltip.style.backgroundColor = "#000000";
+          copyMailTooltip.style.color = "#FFFFFF";
+        }
+      };
+      const handleScroll = (e) => {
+        handleHeaderScroll(e);
+        handleSkillsScroll(e);
+        handleWorkScroll(e);
+        handleAboutScrool(e);
+        handleTooltipScroll(e);
+      };
+
+      document.addEventListener("scroll", handleScroll);
+
+      function handleWorksClick() {
+        workElem.scrollIntoView({ behavior: "smooth" });
+      }
+      function handleAboutClick() {
+        aboutElem.scrollIntoView({ behavior: "smooth" });
+      }
+
+      copyMail.addEventListener("mouseenter", () => {
+        Object.assign(copyMailTooltipPortal.style, {
+          top: `${copyMail.getBoundingClientRect().top}px`,
+          left: `${copyMail.getBoundingClientRect().left}px`,
+          width: `${copyMail.getBoundingClientRect().width}px`,
+          height: `${copyMail.getBoundingClientRect().height}px`,
+        });
+        copyMailTooltipPortal.classList.add("opacity-100");
+      });
+      copyMail.addEventListener("mouseleave", () => {
+        copyMailTooltipPortal.classList.remove("opacity-100");
+      });
+      copyMail.addEventListener("click", () => {
+        const mail = "petukhouskaya.design@gmail.com";
+        navigator.clipboard.writeText(mail);
+        copyMailText.classList.add("hidden");
+        copyMailConfirm.classList.remove("hidden");
+        copyMailTooltip.classList.add("opacity-100");
+        setTimeout(() => {
+          copyMailTooltip.classList.remove("opacity-100");
+          copyMailText.classList.remove("hidden");
+          copyMailConfirm.classList.add("hidden");
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
