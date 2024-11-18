@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Maria Petukhovskaya - UI/UX designer specializing in creating user-centered designs for business success. Explore my portfolio to see my work and skills."
+    />
     <title>Maria Petukhovskaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -28,10 +32,62 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <style>
+      /* latin-ext */
+      @font-face {
+        font-family: "DM Sans";
+        font-style: italic;
+        font-weight: 100 1000;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4ET-DJF4e8BH9.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "DM Sans";
+        font-style: italic;
+        font-weight: 100 1000;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4Hz-DJF4e8A.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 100 1000;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 100 1000;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
-    />
+    /> -->
     <style type="text/tailwindcss">
       @layer components {
         .side-menu > * {
@@ -56,13 +112,13 @@
           @apply rounded-[20px] bg-white text-black;
         }
         .about-card {
-          @apply bg-lightGray relative flex items-center justify-between overflow-hidden rounded-[28px] py-[36.5px] pl-11 pr-10 transition-all duration-300 hover:rounded-[52px] hover:text-white xl:py-[60px];
+          @apply bg-lightGray lg:text-darkBlue relative flex items-center justify-between overflow-hidden rounded-[28px] py-12 pl-11 pr-4 text-white transition-all duration-300 hover:rounded-[52px] lg:py-[36.5px] lg:pr-10 hover:lg:text-white xl:py-[60px];
         }
         .about-card__bg {
-          @apply pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+          @apply pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-300 lg:opacity-0 group-hover:lg:opacity-100;
         }
         .about-card__gradient {
-          @apply pointer-events-none absolute inset-0 h-full w-full -translate-x-full transition-all duration-500 group-hover:translate-x-0;
+          @apply pointer-events-none absolute inset-0 h-full w-full translate-x-0 transition-all duration-500 lg:-translate-x-full group-hover:lg:translate-x-0;
         }
         .cross.cross--active .cross__top {
           @apply -translate-y-1 rotate-45;
@@ -139,17 +195,33 @@
         padding-left: 18px;
       }
       .bg-cabbage {
-        background-image: url("./work.webp");
+        background-image: image-set(
+          url("./work.webp") 1x,
+          url("./work2x.webp") 2x
+        );
       }
       .bg-cabbage-about {
-        background-image: url("./about_cabbage.webp");
+        background-image: image-set(
+          url("./about_cabbage.webp") 1x,
+          url("./about_cabbage2x.webp") 2x
+        );
       }
       .button-gradient {
         background: linear-gradient(
-          90deg,
-          rgba(54, 77, 86, 0.7) 0%,
-          rgba(54, 77, 86, 0) 63%
+          81.61deg,
+          rgba(54, 77, 86, 0.9) 10.43%,
+          rgba(54, 77, 86, 0.63) 62.74%,
+          rgba(54, 77, 86, 0) 99.84%
         );
+      }
+      @media (min-width: 1024px) {
+        .button-gradient {
+          background: linear-gradient(
+            90deg,
+            rgba(54, 77, 86, 0.7) 0%,
+            rgba(54, 77, 86, 0) 63%
+          );
+        }
       }
     </style>
   </head>
@@ -160,40 +232,62 @@
     <div
       class="js-header-bg bg-darkBlue pointer-events-none fixed z-10 h-screen w-full transition-opacity duration-500"
     ></div>
-    <menu class="js-mobile-menu fixed z-40 h-20 w-full text-white lg:hidden">
+    <menu
+      class="js-mobile-menu fixed z-[60] h-20 w-full text-white transition-transform duration-500 lg:hidden"
+    >
       <div class="absolute top-0 flex w-full justify-center">
         <div class="side-menu flex space-x-10 pt-5">
-          <a class="js-works-button secondary" onclick="handleWorksClick()">
+          <a
+            class="js-works-button secondary"
+            href="#work"
+            onclick="handleWorksClick()"
+          >
             works
           </a>
-          <a class="js-about-button link" onclick="handleAboutClick()">about</a>
+          <a
+            class="js-about-button link"
+            href="#about"
+            onclick="handleAboutClick()"
+            >about</a
+          >
         </div>
       </div>
     </menu>
     <menu
-      class="js-menu -translate-y-full lg:translate-y-0 bg-darkBlue fixed z-[60] flex h-screen w-full flex-col items-center justify-evenly text-nowrap pl-3 text-white transition-all duration-500 lg:z-20 lg:block lg:w-auto lg:bg-transparent lg:mix-blend-difference"
+      class="js-menu bg-darkBlue fixed z-[60] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly text-nowrap pl-3 text-white transition-all duration-500 lg:z-20 lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
     >
-      <div class="flex lg:block flex-col justify-evenly items-center h-full max-h-[640px] py-8">
+      <div
+        class="flex h-full max-h-[640px] flex-col items-center justify-evenly py-8 lg:block"
+      >
         <div
           class="side-menu top-[46%] flex w-[200px] flex-auto flex-col justify-evenly lg:absolute lg:w-auto lg:-translate-y-1/2 lg:space-y-7"
         >
-          <a class="js-works-button secondary" onclick="handleWorksClick()">
+          <a
+            href="#work"
+            class="js-works-button secondary"
+            onclick="handleWorksClick()"
+          >
             works
           </a>
-          <a class="js-about-button link" onclick="handleAboutClick()">about</a>
+          <a
+            href="#about"
+            class="js-about-button link"
+            onclick="handleAboutClick()"
+            >about</a
+          >
         </div>
-        <div class="lg:hidden h-px w-[202px] bg-current"></div>
+        <div class="h-px w-[202px] bg-current lg:hidden"></div>
         <div
           class="side-menu bottom-5 flex w-[200px] flex-auto flex-col justify-evenly space-y-4 lg:absolute lg:w-auto"
         >
-          <a class="link">Get CV</a>
+          <a href="./cv_maria_petukhovskaya.pdf" class="link">Get CV</a>
           <a
             class="link"
             href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
             target="_blank"
             >LinkedIn</a
           >
-          <a class="js-copy-mail primary group relative">
+          <button class="js-copy-mail primary group relative">
             <span class="js-copy-mail-text">Copy mail</span>
             <span class="js-copy-mail-confirm hidden"
               >Copied mail
@@ -211,12 +305,12 @@
                 />
               </svg>
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </menu>
     <div
-      class="js-mobile-menu js-cross cross fixed right-0 top-0 z-[60] flex h-[62px] w-[62px] items-center justify-center text-white lg:hidden"
+      class="js-mobile-menu js-cross cross fixed right-0 top-0 z-[60] flex h-[62px] w-[62px] items-center justify-center text-white transition-transform duration-500 lg:hidden"
       onclick="handleMobileMenuClick()"
     >
       <div>
@@ -230,16 +324,16 @@
     </div>
     <div class="pointer-events-none relative z-30 h-screen">
       <header
-        class="js-header fixed z-10 h-screen w-full overflow-hidden pl-14 pt-[15vh] text-center transition-opacity duration-500 xl:pt-[18vh]"
+        class="js-header fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pl-14 lg:pt-[15vh] xl:pt-[18vh]"
       >
         <h1
-          class="js-title relative z-40 mx-auto max-w-[807px] origin-[50.89%_83%] text-[44px] font-semibold leading-[57px] tracking-wider text-white"
+          class="js-title relative z-40 mx-auto max-w-[360px] origin-[70.3%_65.1%] px-[26px] text-[30px] font-semibold leading-[39px] tracking-wide text-white sm:max-w-[640px] sm:origin-[50.8%_74.9%] lg:max-w-[807px] lg:origin-[50.89%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
         >
           I’m Maria.<br />
           I create UI and UX design for
           <span class="text-green">people's needs and business success.</span>
         </h1>
-        <div class="relative mt-[133px]">
+        <div class="relative mt-[11vh]">
           <svg
             class="animate-rotate w-full text-[10.3px]"
             viewBox="0 0 100 100"
@@ -259,8 +353,10 @@
             </text>
           </svg>
           <img
+            alt="Maria Petukhovskaya - UX/UI designer"
             class="absolute left-1/2 top-1/2 h-[142px] w-[142px] -translate-x-1/2 translate-y-[-51%] rounded-full"
-            src="./portrait.webp"
+            src="./portrait2x.webp"
+            srcset="./portrait.webp 1x, ./portrait2x.webp 2x"
           />
         </div>
       </header>
@@ -295,17 +391,17 @@
     </section>
     <main class="bg-green text-white">
       <div
-        class="js-work-card bg-darkBlue mx-10 rounded-3xl pb-[200px] pl-[168px] pr-8 pt-[30vh] xl:pl-[232px] xl:pr-[25px]"
+        class="js-work-card bg-darkBlue mx-10 rounded-3xl px-[21px] pb-[200px] pt-[30vh] sm:px-8 lg:pl-[168px] lg:pr-8 xl:pl-[232px] xl:pr-[25px]"
       >
         <h2
-          class="bg-cabbage sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text pr-8 text-[280px] font-extrabold leading-relaxed tracking-wide text-transparent xl:text-[340px]"
+          class="bg-cabbage sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] font-extrabold leading-relaxed tracking-wide text-transparent sm:text-[140px] lg:pr-8 lg:text-[280px] xl:text-[340px]"
         >
           work
         </h2>
         <div
           class="from-darkBlue via-darkBlue relative mx-auto -mt-[10vh] max-w-[1184px] bg-gradient-to-t via-60% to-transparent pt-[50vh]"
         >
-          <article class="-mt-[20px] grid grid-cols-8 gap-8">
+          <article class="-mt-[20px] grid-cols-8 gap-8 lg:grid">
             <div
               class="col-span-3 row-span-2 self-center font-medium xl:order-last xl:row-span-1 xl:self-start"
             >
@@ -319,19 +415,21 @@
               <p class="mt-5">Role: Product designer</p>
             </div>
             <img
+              loading="lazy"
               src="./img/fugo-logo2x.webp"
+              srcset="./img/fugo-logo.webp 1x, ./img/fugo-logo2x.webp 2x"
               class="z-50 order-last col-span-3 hidden self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
+              alt="Fugo company logo"
             />
             <img
+              loading="lazy"
               src="./img/fugo2x.webp"
-              class="z-50 col-span-5 row-span-2 h-auto w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] xl:order-first xl:rounded-[36px]"
+              srcset="./img/fugo.webp 1x, ./img/fugo2x.webp 2x"
+              class="z-50 col-span-5 row-span-2 mt-5 h-auto w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] lg:mt-0 xl:order-first xl:rounded-[36px]"
+              alt="Fugo app interface"
             />
           </article>
-          <article class="mt-[120px] grid grid-cols-8 gap-8 xl:mt-[288px]">
-            <img
-              src="./img/sofia2x.webp"
-              class="z-50 col-span-5 h-[291px] w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] xl:order-2 xl:col-span-4 xl:h-full"
-            />
+          <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px]">
             <div
               class="col-span-3 self-center font-medium xl:col-span-2 xl:self-start"
             >
@@ -344,16 +442,32 @@
               </p>
               <p class="mt-5">Role: UI/UX designer</p>
               <img
+                loading="lazy"
                 src="./img/sofia-mobile2x.webp"
+                srcset="
+                  ./img/sofia-mobile.webp   1x,
+                  ./img/sofia-mobile2x.webp 2x
+                "
                 class="relative z-50 mt-10 hidden w-full self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
+                alt="Sofia mobile app interface"
               />
             </div>
             <img
+              loading="lazy"
+              src="./img/sofia2x.webp"
+              srcset="./img/sofia.webp 1x, ./img/sofia2x.webp 2x"
+              class="z-50 col-span-5 mt-5 h-[291px] w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] lg:order-first lg:mt-0 xl:order-2 xl:col-span-4 xl:h-full"
+              alt="Sofia app interface"
+            />
+            <img
+              loading="lazy"
               src="./img/sofia-logo2x.webp"
+              srcset="./img/sofia-logo.webp 1x, ./img/sofia-logo2x.webp 2x"
               class="z-50 order-last hidden rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:col-span-2 xl:block"
+              alt="Sofia company logo"
             />
           </article>
-          <article class="mt-[120px] grid grid-cols-8 gap-8 xl:mt-[288px]">
+          <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px]">
             <div
               class="col-span-3 row-span-2 self-center font-medium xl:col-span-4 xl:row-span-1 xl:self-start"
             >
@@ -365,33 +479,45 @@
               <p class="mt-5">Role: UX designer</p>
             </div>
             <img
+              loading="lazy"
               src="./img/paperspell2x.webp"
-              class="z-50 col-span-5 row-span-2 rounded-[28px] transition-all duration-200 hover:rounded-[80px] xl:order-first xl:col-span-4"
+              srcset="./img/paperspell.webp 1x, ./img/paperspell2x.webp 2x"
+              class="z-50 col-span-5 row-span-2 mt-5 w-full rounded-[28px] transition-all duration-200 hover:rounded-[80px] lg:mt-0 xl:order-first xl:col-span-4"
+              alt="Paperspell app interface"
             />
             <img
+              loading="lazy"
               src="./img/paperspell-mobile2x.webp"
+              srcset="
+                ./img/paperspell-mobile.webp   1x,
+                ./img/paperspell-mobile2x.webp 2x
+              "
               class="col-span-4 hidden self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
+              alt="Paperspell mobile app interface"
             />
           </article>
         </div>
       </div>
     </main>
     <section
-      class="js-about bg-peach pb-24 pl-[168px] pr-8 pt-[30vh] xl:pl-[230px] xl:pr-6"
+      class="js-about bg-peach px-5 pb-24 pt-[30vh] sm:px-8 lg:pl-[168px] lg:pr-8 xl:pl-[230px] xl:pr-6"
     >
-      <div class="mx-auto max-w-[1184px]">
+      <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
-          class="bg-cabbage-about sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[280px] font-extrabold leading-snug tracking-wide text-transparent xl:text-[340px]"
+          class="bg-cabbage-about sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] font-extrabold leading-snug tracking-wide text-transparent sm:text-[140px] lg:text-[280px] xl:text-[340px]"
         >
           about
         </h2>
         <div
-          class="from-peach via-peach relative grid grid-cols-8 gap-8 bg-gradient-to-t via-40% to-transparent pt-[35vh]"
+          class="from-peach via-peach relative grid-cols-8 gap-8 bg-gradient-to-t via-80% to-transparent pt-[35vh] lg:grid lg:via-40%"
         >
           <div class="col-span-4">
             <img
-              src="./maria.webp"
-              class="relative z-50 w-full rounded-[24px] object-cover xl:h-[370px]"
+              loading="lazy"
+              src="./maria2x.webp"
+              srcset="./maria.webp 1x, ./maria2x.webp 2x"
+              class="relative z-50 aspect-square w-full rounded-[24px] object-cover lg:aspect-auto xl:h-[370px]"
+              alt="Maria Petukhovskaya"
             />
             <div class="mt-7 space-y-[17px] text-sm">
               <p>
@@ -424,16 +550,24 @@
               </p>
             </div>
           </div>
-          <div class="text-darkBlue z-50 col-span-4 space-y-7">
+          <div class="text-darkBlue z-50 col-span-4 mt-8 space-y-7 lg:mt-0">
             <a
               href="https://www.instagram.com/petuhovskaya.m/"
               target="_blank"
               class="about-card group"
             >
-              <img src="./art.webp" class="about-card__bg" />
+              <img
+                loading="lazy"
+                src="./art2x.webp"
+                srcset="./art.webp 1x, ./art2x.webp 2x"
+                class="about-card__bg"
+                alt="Maria Petukhovskaya's art"
+              />
               <div class="about-card__gradient button-gradient"></div>
               <div class="z-10">
-                <h4 class="font-semibold xl:text-xl">Art</h4>
+                <h3 class="text-xl font-semibold lg:text-base xl:text-xl">
+                  Art
+                </h3>
                 <p class="mt-1.5 text-sm xl:font-semibold">
                   Exploring creating practice
                 </p>
@@ -444,7 +578,7 @@
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="z-10 w-[43px] xl:w-[50px]"
+                class="z-10 hidden w-[43px] lg:block xl:w-[50px]"
               >
                 <circle
                   cx="25"
@@ -465,10 +599,18 @@
               target="_blank"
               class="about-card group"
             >
-              <img src="./big-community.webp" class="about-card__bg" />
+              <img
+                loading="lazy"
+                src="./big-community2x.webp"
+                srcset="./big-community.webp 1x, ./big-community2x.webp 2x"
+                class="about-card__bg"
+                alt="Organizing artist sketching meeting"
+              />
               <div class="about-card__gradient button-gradient"></div>
               <div class="z-10">
-                <h4 class="font-semibold xl:text-xl">Big community bulding</h4>
+                <h3 class="text-xl font-semibold lg:text-base xl:text-xl">
+                  Big community bulding
+                </h3>
                 <p class="mt-1.5 text-sm xl:font-semibold">
                   City scale artist sketching meeting
                 </p>
@@ -479,7 +621,7 @@
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="z-10 w-[43px] xl:w-[50px]"
+                class="z-10 hidden w-[43px] lg:block xl:w-[50px]"
               >
                 <circle
                   cx="25"
@@ -501,14 +643,17 @@
               class="about-card group"
             >
               <img
-                src="./small-community.webp"
-                class="about-card__bg -top-[110px] h-max xl:-top-[133px] 2xl:-top-[156px]"
+                loading="lazy"
+                src="./small-community2x.webp"
+                srcset="./small-community.webp 1x, ./small-community2x.webp 2x"
+                class="about-card__bg h-max sm:-top-[50px] lg:-top-[110px] xl:-top-[133px] 2xl:-top-[156px]"
+                alt="Multi-discipline art collective"
               />
               <div class="about-card__gradient button-gradient"></div>
               <div class="z-10">
-                <h4 class="font-semibold xl:text-xl">
+                <h3 class="text-xl font-semibold lg:text-base xl:text-xl">
                   Small community bulding
-                </h4>
+                </h3>
                 <p class="mt-1.5 text-sm xl:font-semibold">
                   Multi-discipline art collective
                 </p>
@@ -519,7 +664,7 @@
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="z-10 w-[43px] xl:w-[50px]"
+                class="z-10 hidden w-[43px] lg:block xl:w-[50px]"
               >
                 <circle
                   cx="25"
@@ -540,10 +685,18 @@
               target="_blank"
               class="about-card group"
             >
-              <img src="./solidarity.webp" class="about-card__bg" />
+              <img
+                loading="lazy"
+                src="./solidarity2x.webp"
+                srcset="./solidarity.webp 1x, ./solidarity2x.webp 2x"
+                class="about-card__bg"
+                alt="Organizing a meeting for writing to political prisoners"
+              />
               <div class="about-card__gradient button-gradient"></div>
               <div class="z-10">
-                <h4 class="font-semibold xl:text-xl">Solidarity</h4>
+                <h3 class="text-xl font-semibold lg:text-base xl:text-xl">
+                  Solidarity
+                </h3>
                 <p class="mt-1.5 text-sm xl:font-semibold">
                   Writing to political prisoners
                 </p>
@@ -554,7 +707,7 @@
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="z-10 w-[43px] xl:w-[50px]"
+                class="z-10 hidden w-[43px] lg:block xl:w-[50px]"
               >
                 <circle
                   cx="25"
@@ -574,10 +727,11 @@
         </div>
       </div>
     </section>
-    <footer class="sm:hidden">
+    <footer class="bg-peach px-5 pb-10 lg:hidden">
       <button
         type="button"
         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="active:bg-darkBlue border-darkBlue text-darkBlue mx-auto block w-full max-w-[400px] rounded-full border px-4 py-1.5 transition-colors duration-100 active:text-white"
       >
         up
       </button>
@@ -592,6 +746,7 @@
       </div>
     </div>
     <script>
+      let isMobileMenuOpen = false;
       const menuElem = document.querySelector(".js-menu");
       const menuMobileElems = document.querySelectorAll(".js-mobile-menu");
       const cross = document.querySelector(".js-cross");
@@ -630,9 +785,9 @@
         const rect = skillsElem.getBoundingClientRect();
         const isMenuVisible = rect.top >= 200 || rect.bottom < 200;
         if (isMenuVisible) {
-          menuElem.classList.remove("opacity-0", "pointer-events-none");
+          menuElem.classList.remove("lg:opacity-0", "lg:pointer-events-none");
         } else {
-          menuElem.classList.add("opacity-0", "pointer-events-none");
+          menuElem.classList.add("lg:opacity-0", "lg:pointer-events-none");
         }
       };
       const handleWorkScroll = (e) => {
@@ -690,18 +845,26 @@
           copyMailTooltip.style.color = "#FFFFFF";
         }
       };
-      const handleMobileMenuScroll = (e) => {
-        menuMobileElems.forEach((menuMobileElem) => {
-          const mobileMenuTop = menuMobileElem.getBoundingClientRect().top + 20;
-          const aboutTop = aboutElem.getBoundingClientRect().top;
-          if (mobileMenuTop < aboutTop) {
-            menuMobileElem.classList.remove("text-darkBlue");
-            menuMobileElem.classList.add("text-white");
-          } else {
-            menuMobileElem.classList.remove("text-white");
-            menuMobileElem.classList.add("text-darkBlue");
-          }
-        });
+      let lastScrollTop = 0;
+      let lastSwitch = 0;
+      const handleMobileMenuHideScroll = (e) => {
+        if (isMobileMenuOpen) {
+          return;
+        }
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop && st > 50 && st > lastSwitch + 50) {
+          menuMobileElems.forEach((menuMobileElem) => {
+            menuMobileElem.classList.add("-translate-y-full");
+          });
+          lastSwitch = st;
+        } else if (st < lastScrollTop && st < lastSwitch - 50) {
+          menuMobileElems.forEach((menuMobileElem) => {
+            menuMobileElem.classList.add("bg-darkBlue");
+            menuMobileElem.classList.remove("-translate-y-full");
+          });
+          lastSwitch = st;
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
       };
       const handleScroll = (e) => {
         handleHeaderScroll(e);
@@ -709,17 +872,10 @@
         handleWorkScroll(e);
         handleAboutScrool(e);
         handleTooltipScroll(e);
-        handleMobileMenuScroll(e);
+        handleMobileMenuHideScroll(e);
       };
 
       document.addEventListener("scroll", handleScroll);
-
-      function handleWorksClick() {
-        workElem.scrollIntoView({ behavior: "smooth" });
-      }
-      function handleAboutClick() {
-        aboutElem.scrollIntoView({ behavior: "smooth" });
-      }
 
       copyMail.addEventListener("mouseenter", () => {
         Object.assign(copyMailTooltipPortal.style, {
@@ -745,24 +901,31 @@
           copyMailConfirm.classList.add("hidden");
         }, 2000);
       });
-      let isMobileMenuOpen = false;
       const openMobileMenu = () => {
         cross.classList.add("cross--active");
         menuElem.classList.remove("-translate-y-full");
-      }
+        isMobileMenuOpen = true;
+      };
       const closeMobileMenu = () => {
         cross.classList.remove("cross--active");
         menuElem.classList.add("-translate-y-full");
-      }
+        isMobileMenuOpen = false;
+      };
       const handleMobileMenuClick = () => {
         if (isMobileMenuOpen) {
           closeMobileMenu();
-          isMobileMenuOpen = false;
         } else {
           openMobileMenu();
-          isMobileMenuOpen = true;
         }
       };
+      function handleWorksClick() {
+        workElem.scrollIntoView({ behavior: "smooth" });
+        closeMobileMenu();
+      }
+      function handleAboutClick() {
+        aboutElem.scrollIntoView({ behavior: "smooth" });
+        closeMobileMenu();
+      }
     </script>
   </body>
 </html>

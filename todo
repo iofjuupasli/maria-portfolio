@@ -6,12 +6,14 @@ v check 1024px
 v fix 1024px about section
 v mobile menu
 v mobile menu dropdown
-o mobile header section
-o mobile green section
-o mobile work section
-o mobile about section
-o mobile "up" button
-o 2x images optimization
+v mobile header section
+v mobile green section
+v mobile work section
+v mobile about section
+v mobile "up" button
+v fix 640px
+v hide menu when scrolling and add background
+v 2x images optimization
 
 Design request:
 v mobile menu background
