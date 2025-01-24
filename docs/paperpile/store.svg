@@ -1,0 +1,31 @@
+<svg width="492" height="401" viewBox="0 0 492 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="19" font-style="italic" font-weight="bold" letter-spacing="0em"><tspan x="374" y="73.479">25%</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="18" letter-spacing="0em"><tspan x="374" y="98.138">GoogleDrive</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="19" font-style="italic" font-weight="bold" letter-spacing="0em"><tspan x="374" y="361.479">23%</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="18" letter-spacing="0em"><tspan x="374" y="386.138">LocalStorage</tspan></text>
+<line x1="307" y1="69.5" x2="361" y2="69.5" stroke="white"/>
+<line x1="307" y1="352.5" x2="361" y2="352.5" stroke="white"/>
+<line x1="76" y1="352.5" x2="280" y2="352.5" stroke="white"/>
+<line x1="62" y1="247.5" x2="193" y2="247.5" stroke="white"/>
+<path d="M67 177V151H194" stroke="white"/>
+<path d="M56 99V73H270" stroke="white"/>
+<path d="M264 64.5V5.5H159.5H55" stroke="#2DD9AE"/>
+<path d="M422 214C422 290.096 365.711 353.045 292.5 363.481C285.477 364.482 278.299 365 271 365C214.492 365 165.233 333.96 139.345 288C127.027 266.132 120 240.887 120 214C120 197.775 122.559 182.148 127.295 167.5C139.411 130.029 165.775 98.9669 200 80.6996C214.141 73.1516 229.625 67.7882 246 65.0599C248.644 64.6194 251.311 64.2475 254 63.9463C259.58 63.3211 265.253 63 271 63C352.386 63 418.733 127.386 421.883 208C421.961 209.99 422 211.991 422 214Z" fill="#23C8FF" fill-opacity="0.4"/>
+<path d="M200 80.6992L271 214L139.345 288C127.027 266.132 120 240.886 120 214C120 197.775 122.559 182.148 127.295 167.5C139.411 130.029 165.775 98.9665 200 80.6992Z" fill="#82A1C0"/>
+<path d="M127.295 167.5C122.559 182.148 120 197.775 120 214C120 240.887 127.027 266.132 139.345 288L271 214L127.295 167.5Z" fill="#63809D"/>
+<path d="M139.344 288C165.232 333.96 214.491 365 270.999 365C278.298 365 285.476 364.482 292.499 363.481L270.999 214L139.344 288Z" fill="#46617A"/>
+<path d="M271 214V63C352.386 63 418.733 127.386 421.883 208C421.961 209.99 422 211.991 422 214C422 290.096 365.711 353.045 292.5 363.481L271 214Z" fill="#33485C"/>
+<path d="M271 63V214L421.883 208C418.733 127.386 352.386 63 271 63Z" fill="#293643"/>
+<path d="M271 63V214L200 80.6996C214.141 73.1516 229.625 67.7882 246 65.0599C248.644 64.6194 251.311 64.2475 254 63.9463C259.58 63.3211 265.253 63 271 63Z" fill="#A0B9D2"/>
+<path d="M271 63V214L254 63.9463C259.58 63.3211 265.253 63 271 63Z" fill="#2DD9AE"/>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="19" font-style="italic" font-weight="bold" letter-spacing="0em"><tspan x="11" y="361.479">10.5%</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="18" letter-spacing="0em"><tspan x="11" y="386.138">Photo Gallery</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="19" font-style="italic" font-weight="bold" letter-spacing="0em"><tspan x="11" y="252.479">15%</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="18" letter-spacing="0em"><tspan x="11" y="277.138">Messaging &#10;</tspan><tspan x="11" y="303.138">apps</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="19" font-style="italic" font-weight="bold" letter-spacing="0em"><tspan x="13" y="176.479">11%</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="18" letter-spacing="0em"><tspan x="13" y="201.138">Email</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="19" font-style="italic" font-weight="bold" letter-spacing="0em"><tspan x="13" y="101.479">7%</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="18" letter-spacing="0em"><tspan x="13" y="126.138">Notes</tspan></text>
+<text fill="#2DD9AE" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="19" font-style="italic" font-weight="bold" letter-spacing="0em"><tspan x="13" y="18.479">2%</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="DM Sans" font-size="18" letter-spacing="0em"><tspan x="13" y="43.138">Specialized apps</tspan></text>
+</svg>

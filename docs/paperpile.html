@@ -1,0 +1,2612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Management Intro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      /** @type {import('tailwindcss').Config} */
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["DM Sans", "sans-serif"],
+              serif: ["Inter", "serif"],
+              slackside: ["Slackside One", "cursive"],
+            },
+            colors: {
+              white: {
+                primary: "#FFFFFF",
+              },
+              green: {
+                primary: "#2DD9AE",
+              },
+              gray: {
+                primary: "#CBD5D3",
+              },
+              dark: {
+                primary: "#171E25",
+              },
+              black: {
+                primary: "#171E25",
+                secondary: "#222F3C",
+                thirdly: "#2A3547",
+              },
+            },
+            listStyleType: {
+              dash: "'- '",
+              plus: "'+  '",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* latin-ext */
+      @font-face {
+        font-family: "DM Sans";
+        font-style: italic;
+        font-weight: 100 1000;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4ET-DJF4e8BH9.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "DM Sans";
+        font-style: italic;
+        font-weight: 100 1000;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4Hz-DJF4e8A.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 100 1000;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 100 1000;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    /> -->
+    <style type="text/tailwindcss">
+      @layer base {
+        h1,
+        .h1 {
+          @apply text-[72px] font-light leading-normal;
+        }
+        h2,
+        .h2 {
+          @apply text-[44px] font-semibold leading-normal tracking-wider;
+        }
+        h3,
+        .h3 {
+          @apply text-[36px] font-medium leading-snug;
+        }
+        h4,
+        .h4 {
+          @apply text-2xl font-extrabold leading-normal;
+        }
+        h5,
+        .h5 {
+          @apply text-xl font-semibold leading-normal;
+        }
+        h6,
+        .h6 {
+          @apply text-lg font-bold leading-normal;
+        }
+        section {
+          @apply relative;
+        }
+        i {
+          @apply text-green-primary;
+        }
+      }
+      @layer components {
+        .section-content {
+          @apply mx-32 max-w-[1024px] py-[200px] xl:mx-auto;
+        }
+        .t1 {
+          @apply text-2xl font-normal leading-normal;
+        }
+        .t2 {
+          @apply text-lg font-normal leading-normal;
+        }
+        .t3 {
+          @apply text-sm font-normal leading-normal;
+        }
+        .t4 {
+          @apply text-xs font-normal leading-normal;
+        }
+        .at {
+          @apply font-slackside text-xl font-normal leading-normal;
+        }
+        .italic-bold b {
+          @apply italic;
+        }
+      }
+      .noise {
+        background: transparent
+          url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+        animation: steps(2) bg-animation 5s infinite;
+      }
+
+      @keyframes bg-animation {
+        0% {
+          transform: translate(0, 0);
+        }
+        10% {
+          transform: translate(-5%, -5%);
+        }
+        20% {
+          transform: translate(-10%, 5%);
+        }
+        30% {
+          transform: translate(5%, -10%);
+        }
+        40% {
+          transform: translate(-5%, 15%);
+        }
+        50% {
+          transform: translate(-10%, 5%);
+        }
+        60% {
+          transform: translate(15%, 0);
+        }
+        70% {
+          transform: translate(0, 10%);
+        }
+        80% {
+          transform: translate(-15%, 0);
+        }
+        90% {
+          transform: translate(10%, 5%);
+        }
+        100% {
+          transform: translate(5%, 0);
+        }
+      }
+
+      .animate-fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out 0s normal forwards;
+        animation-delay: 0.8s;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .animate-fade-out {
+        opacity: 1;
+        animation: fadeOut 0.3s ease-in-out 0s normal forwards;
+        animation-delay: 1.3s;
+      }
+
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black-primary text-white-primary font-sans">
+    <header class="flex h-screen items-center justify-center">
+      <video
+        src="./paperpile/intro.mp4"
+        autoplay
+        muted
+        playsinline
+        class="absolute inset-0 h-full w-full object-cover mix-blend-lighten animate-fade-out"
+      ></video>
+      <div class="flex items-center justify-center animate-fade-in">
+        <svg
+          width="79"
+          height="57"
+          viewBox="0 0 79 57"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.8135 44.6745L64.362 44.6745C64.362 44.6745 74.0775 43.8866 74.3574 56.0275"
+            stroke="white"
+            stroke-width="5.40626"
+          />
+          <path
+            d="M64.0938 34.4127L13.0046 34.4127C13.0046 34.4127 3.00299 33.6017 3.00299 46.3065"
+            stroke="white"
+            stroke-width="5.40626"
+          />
+          <path
+            d="M63.8223 3.59731H13.0034C13.0034 3.59731 3.00181 2.78627 3.00181 15.4911V19.8057"
+            stroke="white"
+            stroke-width="5.40626"
+          />
+          <path
+            d="M64.0938 13.8589H13.8155"
+            stroke="white"
+            stroke-width="5.40626"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M66.3609 26.8444L66.45 26.8372L66.4531 26.837C66.4695 26.8362 66.5069 26.8348 66.5627 26.8342C66.6749 26.8331 66.8581 26.8358 67.0938 26.8545C67.5713 26.8924 68.2273 26.9932 68.931 27.2382C70.2682 27.7039 71.8165 28.6875 72.7365 31.0064L73.2781 32.6039H78.2546L78.9112 32.3813L77.8359 29.2098L77.8166 29.153L77.7949 29.0971C76.1955 24.9891 73.2448 23.0157 70.7089 22.1326C69.4711 21.7016 68.3428 21.5303 67.5215 21.4651C67.1077 21.4323 66.7629 21.4257 66.5093 21.4282C66.3823 21.4295 66.2774 21.433 66.1973 21.4368L66.1705 21.4381L20.8389 21.4381V26.8444H66.2515H66.3609Z"
+            fill="#2DD9AE"
+          />
+        </svg>
+        <div class="pl-2 font-serif text-[55px] font-[545] tracking-[-4%]">
+          Paper<i class="text-white">pile</i>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="section-content pr-[347px]">
+        <h2 class="mb-9">Introduction</h2>
+        <p class="mb-6 text-lg leading-normal">
+          Managing an overwhelming variety of documents has become a persistent
+          challenge. Documents are often dispersed across emails, cloud drives,
+          messaging apps, and personal notes, taking up valuable phone storage
+          and making organization difficult. This disarray leads to frustration
+          and inefficiency, as
+          <i class="text-green-primary">
+            people spend excessive time searching for specific documents, worry
+            about losing important files, or risk missing critical deadlines
+            like expiration dates.</i
+          >
+          The lack of a streamlined system leaves many
+          <i class="text-green-primary">feeling disorganized and anxious.</i>
+        </p>
+        <p class="text-lg leading-relaxed">
+          Facing this issue being immigrants, the team started to explore the
+          problem more globally when I joined them.
+        </p>
+      </div>
+      <div class="absolute right-0 top-32">
+        <img
+          src="./paperpile/paper-pile2x.webp"
+          srcset="./paperpile/paper-pile.webp 1x, ./paperpile/paper-pile2x.webp 2x"
+          alt="Stack of Documents"
+          loading="lazy"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content space-y-[92px]">
+        <h2>How it started</h2>
+        <div class="flex gap-4">
+          <div class="flex-1">
+            <h6><i>Immigration</i> and Documentation Challenges</h6>
+            <p class="t4 mt-6 pr-4">
+              Political changes in Western Europe have triggered waves of
+              immigration, bringing new challenges for many.<br />Among the most
+              pressing is <i>managing documentation</i> for tasks like
+              legalizing status, renting property, or finding work. These
+              processes are often hindered by language barriers and differing
+              administrative systems.
+            </p>
+          </div>
+          <div class="flex-1">
+            <img
+              class="mb-[25px] ml-[-6px] mt-[116px]"
+              src="./paperpile/arrow-down-right2x.webp"
+              srcset="
+                ./paperpile/arrow-down-right.webp   1x,
+                ./paperpile/arrow-down-right2x.webp 2x
+              "
+              alt="Arrow Down Right"
+              loading="lazy"
+            />
+            <h6><i>Complex</i> Document Handling</h6>
+            <p class="t4 mt-6 pr-4">
+              Immigrants must often handle not only
+              <i
+                >original documents but also translated and legalized
+                versions,</i
+              >
+              adding complexity to an already difficult process. This can create
+              significant stress, especially for those unfamiliar with the host
+              country’s <i>bureaucracy.</i>
+            </p>
+          </div>
+          <div class="flex-1">
+            <h6 class="mt-[26px]">
+              Shared <i>Responsibilities</i> Increase the Strain
+            </h6>
+            <p class="t4 mt-6 pr-4">
+              Families, business owners, and groups face even greater challenges
+              when managing <i>shared documents.</i> Efficient organization and
+              accessibility become critical to avoid confusion and delays.
+            </p>
+            <img
+              class="ml-[-44px] mt-[15px]"
+              src="./paperpile/arrow-up-right-curl2x.webp"
+              srcset="
+                ./paperpile/arrow-up-right-curl.webp   1x,
+                ./paperpile/arrow-up-right-curl2x.webp 2x
+              "
+              alt="Arrow Up Right"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex-1">
+            <img
+              class="mb-[13px] ml-[-15px] mt-8"
+              src="./paperpile/arrow-down-right-curl2x.webp"
+              srcset="
+                ./paperpile/arrow-down-right-curl.webp   1x,
+                ./paperpile/arrow-down-right-curl2x.webp 2x
+              "
+              alt="Arrow Down Right"
+              loading="lazy"
+            />
+            <h6>Need for Streamlined <i>Solutions</i></h6>
+            <p class="t4 mt-6 pr-4">
+              These growing challenges highlight the urgent need for a
+              streamlined system to simplify documentation processes and improve
+              accessibility <i>at least for immigrants</i> and their families.
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-black-secondary relative rounded-xl px-[28px] pb-10 pt-8"
+        >
+          <div
+            class="pointer-events-none absolute inset-0 overflow-hidden rounded-xl"
+          >
+            <div
+              class="noise absolute -bottom-1/2 -left-1/2 -right-1/2 -top-1/2 z-40 h-[200%] w-[200%] opacity-65"
+            ></div>
+          </div>
+          <h3 class="text-[15px] font-bold italic">Personal note:</h3>
+          <p class="mt-4 text-sm italic leading-normal">
+            My teammates who had children faced challenges with managing their
+            children's documents, a context that wasn’t immediately obvious to
+            me.<br />I first became aware of this issue through my designer
+            colleague Dina, who shared her struggles during our brainstorming
+            sessions.<br />
+            This led us to prioritize this perspective and explore it further
+            through in-depth interviews with respondents who also had
+            children.<br />
+            We discovered that managing the sheer volume of children's documents
+            was a common pain point for most of them, so we made it a key
+            focus&nbsp;in&nbsp;our design process as well.
+          </p>
+          <div
+            class="font-slackside text-green-primary absolute right-[-50px] top-7 rotate-3"
+          >
+            challenge your subjective design view as fast as it appears
+          </div>
+          <div
+            class="font-slackside text-green-primary absolute bottom-2 right-[-50px] -rotate-6"
+          >
+            collaboration with the team broadening problem understanding, free
+            and fast
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h2>Designer (me) + the team</h2>
+        <p class="mt-9">
+          I joined the team at the moment when my designer mate Dina had already
+          started working on a few wireframes and a visual mood board for the
+          interface concept. I was first of all to provide my
+          <i>product, UX, and UI expertise.</i>
+        </p>
+        <p class="mt-6">
+          Here I summarise a few crucial insights I gained during design work
+          from deep interviews and discussions that impacted major product
+          development twists.
+        </p>
+        <div class="relative mt-12">
+          <img
+            src="./paperpile/team2x.webp"
+            srcset="./paperpile/team.webp 1x, ./paperpile/team2x.webp 2x"
+            loading="lazy"
+          />
+          <img
+            class="absolute left-[31%] top-[3%] w-[15%] opacity-100 hover:opacity-0"
+            src="./paperpile/aha2x.webp"
+            srcset="./paperpile/aha.webp 1x, ./paperpile/aha2x.webp 2x"
+            loading="lazy"
+          />
+          <a href="#children" class="">
+            <img
+              class="absolute left-[31%] top-[3%] w-[15%] opacity-0 hover:opacity-100"
+              src="./paperpile/aha-hover2x.webp"
+              srcset="
+                ./paperpile/aha-hover.webp   1x,
+                ./paperpile/aha-hover2x.webp 2x
+              "
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content space-y-[92px]">
+        <h2>Market forecast</h2>
+        <div class="flex gap-10">
+          <div class="flex-1 space-y-9">
+            <h5>
+              Pandemia boosted the
+              <span class="text-green-primary">remote</span> work.
+            </h5>
+            <h5>
+              The war and recent political events have<br />caused of a
+              <span class="text-green-primary"
+                >global displacement of people.</span
+              >
+            </h5>
+            <h5>
+              <span class="text-green-primary">AI development</span> is
+              transforming<br />the mobile apps market (and the world).
+            </h5>
+          </div>
+          <div class="flex-1">
+            <h4>Trends</h4>
+            <ul class="list-dash mt-9">
+              <li>
+                Interactions evolve into true Assistants through customization,
+                proactivity, an appropriate tone of voice, and a predictive,
+                behavior-driven approach.
+              </li>
+              <li>Increasing cloud storage usage;</li>
+              <li>Prioritizing data protection and privacy.;</li>
+              <li>Integration with communication tools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content space-y-[92px]">
+        <h2>CustDev <i>People & Papers</i></h2>
+        <div class="flex gap-32">
+          <div class="flex flex-1 flex-col items-center justify-between">
+            <img
+              src="./paperpile/people2x.webp"
+              srcset="./paperpile/people.webp 1x, ./paperpile/people2x.webp 2x"
+              loading="lazy"
+            />
+            <div class="mt-12 w-[145px] space-y-3">
+              <h2>124</h2>
+              <div class="t1">people</div>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col items-center justify-between">
+            <img
+              src="./paperpile/income2x.webp"
+              srcset="./paperpile/income.webp 1x, ./paperpile/income2x.webp 2x"
+              loading="lazy"
+            />
+            <div class="space-y-3">
+              <h2>1000€</h2>
+              <div class="t1">income</div>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col items-center justify-between">
+            <img
+              src="./paperpile/country2x.webp"
+              srcset="./paperpile/country.webp 1x, ./paperpile/country2x.webp 2x"
+              loading="lazy"
+            />
+            <div>
+              <h4>from Poland, Lithuania, other EU countries</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h4>How people <i>find</i>, store and feel</h4>
+        <div
+          class="bg-black-secondary text-gray-primary mt-12 px-[83px] py-[77px]"
+        >
+          <div class="grid grid-cols-[5fr,3fr]">
+            <div class="border-white-primary border-b border-r pb-9 pr-6">
+              <h6>How many</h6>
+              <div class="mt-12 flex gap-6">
+                <div class="flex-1">
+                  <h3>76%</h3>
+                  <div class="t4">of respondents store family documents</div>
+                </div>
+                <div class="flex-1">
+                  <h3>231</h3>
+                  <div class="t4">
+                    documents per year per family,<br />62 of them are constant
+                    (EU)
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-white-primary border-b pl-[54px]">
+              <h6>How often</h6>
+              <div class="mt-1 text-sm">people need to find a document</div>
+              <h3 class="mt-6">71%</h3>
+              <div class="t4">
+                refer to documents at least<br /><b>once a week</b>
+              </div>
+            </div>
+            <div class="border-white-primary border-r pr-6 pt-9">
+              <h6>How much</h6>
+              <div class="mt-1 text-sm">
+                time respondents need to find a document
+              </div>
+              <div class="mt-6 flex gap-6">
+                <div class="flex-1">
+                  <h3>27%</h3>
+                  <div class="t4">up to 10 minutes<br />per document</div>
+                </div>
+                <div class="flex-1">
+                  <h3>52%</h3>
+                  <div class="t4">
+                    up to 5 minutes<br />
+                    per document
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pl-[54px] pt-9">
+              <h6>How bad</h6>
+              <div class="mt-1 text-sm">
+                time respondents need to find a document
+              </div>
+              <h3 class="mt-2">40%</h3>
+              <div class="t4 mt-2 pr-2">
+                respondents couldn't find important documents within the
+                <b>first hour</b> of&nbsp;searching 2 and more times
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h4>How people find, <i>store</i> and feel</h4>
+        <div class="mt-12 flex gap-10">
+          <div class="flex-1">
+            <h5 class="text-center">Store</h5>
+            <svg
+              class="mt-8 w-full"
+              width="492"
+              height="401"
+              viewBox="0 0 492 401"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="374" y="73.479">25%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="374" y="98.138">GoogleDrive</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="374" y="361.479">23%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="374" y="386.138">LocalStorage</tspan>
+              </text>
+              <line x1="307" y1="69.5" x2="361" y2="69.5" stroke="white" />
+              <line x1="307" y1="352.5" x2="361" y2="352.5" stroke="white" />
+              <line x1="76" y1="352.5" x2="280" y2="352.5" stroke="white" />
+              <line x1="62" y1="247.5" x2="193" y2="247.5" stroke="white" />
+              <path d="M67 177V151H194" stroke="white" />
+              <path d="M56 99V73H270" stroke="white" />
+              <path d="M264 64.5V5.5H159.5H55" stroke="#2DD9AE" />
+              <path
+                d="M422 214C422 290.096 365.711 353.045 292.5 363.481C285.477 364.482 278.299 365 271 365C214.492 365 165.233 333.96 139.345 288C127.027 266.132 120 240.887 120 214C120 197.775 122.559 182.148 127.295 167.5C139.411 130.029 165.775 98.9669 200 80.6996C214.141 73.1516 229.625 67.7882 246 65.0599C248.644 64.6194 251.311 64.2475 254 63.9463C259.58 63.3211 265.253 63 271 63C352.386 63 418.733 127.386 421.883 208C421.961 209.99 422 211.991 422 214Z"
+                fill="#23C8FF"
+                fill-opacity="0.4"
+              />
+              <path
+                d="M200 80.6992L271 214L139.345 288C127.027 266.132 120 240.886 120 214C120 197.775 122.559 182.148 127.295 167.5C139.411 130.029 165.775 98.9665 200 80.6992Z"
+                fill="#82A1C0"
+              />
+              <path
+                d="M127.295 167.5C122.559 182.148 120 197.775 120 214C120 240.887 127.027 266.132 139.345 288L271 214L127.295 167.5Z"
+                fill="#63809D"
+              />
+              <path
+                d="M139.344 288C165.232 333.96 214.491 365 270.999 365C278.298 365 285.476 364.482 292.499 363.481L270.999 214L139.344 288Z"
+                fill="#46617A"
+              />
+              <path
+                d="M271 214V63C352.386 63 418.733 127.386 421.883 208C421.961 209.99 422 211.991 422 214C422 290.096 365.711 353.045 292.5 363.481L271 214Z"
+                fill="#33485C"
+              />
+              <path
+                d="M271 63V214L421.883 208C418.733 127.386 352.386 63 271 63Z"
+                fill="#293643"
+              />
+              <path
+                d="M271 63V214L200 80.6996C214.141 73.1516 229.625 67.7882 246 65.0599C248.644 64.6194 251.311 64.2475 254 63.9463C259.58 63.3211 265.253 63 271 63Z"
+                fill="#A0B9D2"
+              />
+              <path
+                d="M271 63V214L254 63.9463C259.58 63.3211 265.253 63 271 63Z"
+                fill="#2DD9AE"
+              />
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="11" y="361.479">10.5%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="11" y="386.138">Photo Gallery</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="11" y="252.479">15%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="11" y="277.138">Messaging &#10;</tspan>
+                <tspan x="11" y="303.138">apps</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="13" y="176.479">11%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="13" y="201.138">Email</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="13" y="101.479">7%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="13" y="126.138">Notes</tspan>
+              </text>
+              <text
+                fill="#2DD9AE"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="13" y="18.479">2%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="13" y="43.138">Specialized apps</tspan>
+              </text>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h5 class="text-center">Synchronize</h5>
+            <svg
+              class="mt-8 w-full"
+              width="492"
+              height="401"
+              viewBox="0 0 492 401"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="308" y1="104.5" x2="362" y2="104.5" stroke="white" />
+              <path d="M216 70V34L306.506 34L363 34" stroke="white" />
+              <line x1="309" y1="315.5" x2="363" y2="315.5" stroke="white" />
+              <path d="M51 327.5L194 327.5" stroke="white" />
+              <path d="M51 230H106" stroke="white" />
+              <path d="M50 129H156" stroke="white" />
+              <path d="M51 30.625H173V83.625" stroke="white" />
+              <path
+                d="M232.999 63V214L87.4922 173.5C95.5275 144.569 111.96 119.132 133.999 99.9794C152.946 83.5144 176.037 71.6938 201.499 66.2904C211.659 64.1343 222.197 63 232.999 63Z"
+                fill="#9AB8D5"
+              />
+              <path
+                d="M233 63V214L201.5 66.2904C211.66 64.1343 222.198 63 233 63Z"
+                fill="#BBCFE4"
+              />
+              <path
+                d="M133.999 99.9795C111.96 119.132 95.5275 144.569 87.4922 173.5L232.999 214L133.999 99.9795Z"
+                fill="#82A1C0"
+              />
+              <path
+                d="M87.4929 173.5C83.9132 186.389 82 199.971 82 214C82 233.027 85.5192 251.232 91.9422 268L233 214L87.4929 173.5Z"
+                fill="#63809D"
+              />
+              <path
+                d="M232.999 63C316.394 63 383.999 130.605 383.999 214C383.999 241.917 376.423 268.065 363.215 290.5C336.967 335.082 288.477 365 232.999 365C226.046 365 219.203 364.53 212.499 363.62C157.145 356.107 111.323 318.597 91.9414 268L232.999 214V63Z"
+                fill="#2DD9AE"
+              />
+              <path
+                d="M384 214C384 130.605 316.395 63 233 63V214L363.215 290.5C376.424 268.065 384 241.917 384 214Z"
+                fill="#46617A"
+              />
+              <path
+                d="M212.5 363.62C219.204 364.53 226.047 365 233 365C288.478 365 336.967 335.082 363.215 290.5L233 214L212.5 363.62Z"
+                fill="#33485C"
+              />
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="378" y="109.354">34%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="378" y="134.013">GoogleDrive</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="378" y="39.354">4%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="378" y="64.013">iCloud</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="378" y="325.354">23%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="378" y="350.013">Telegram</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="6" y="335.354">20%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="6" y="360.013">No sync</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="6" y="235.354">9%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="6" y="260.013">Email</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="5" y="134.354">11%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="5" y="159.013">Others</tspan>
+              </text>
+              <text
+                fill="white"
+                font-size="19"
+                font-style="italic"
+                font-weight="bold"
+              >
+                <tspan x="6" y="36.354">6%</tspan>
+              </text>
+              <text fill="white" font-size="18">
+                <tspan x="6" y="61.013">USB Drive</tspan>
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h4>How people find, store and <i>feel</i></h4>
+        <div class="mt-[55px] flex">
+          <div class="border-white-primary flex-1 border-r pr-[56px]">
+            <h6>Big paperwork ahead</h6>
+            <div class="mt-[92px] space-y-[44px]">
+              <div class="flex items-center gap-5">
+                <h2>32%</h2>
+                <div class="t3">experience sadness and anxiety</div>
+              </div>
+              <div class="flex items-center gap-5">
+                <h2>26%</h2>
+                <div class="t3">are concerned about time waste</div>
+              </div>
+              <div class="flex items-center gap-5">
+                <h2>22%</h2>
+                <div class="t3">wish to delegate</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-white-primary flex-1 border-r px-[56px]">
+            <h6>Satisfaction</h6>
+            <div class="mt-[92px] space-y-[52px]">
+              <div>
+                <h2>only 2%</h2>
+                <div class="t3">are completely satisfied</div>
+              </div>
+              <div>
+                <h2>over 70%</h2>
+                <div class="t3">are dissatisfied and wish to improve it</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1 pl-[56px]">
+            <h6>Satisfaction<br />with the mobile applications</h6>
+            <div class="mt-[55px] space-y-[52px]">
+              <div>
+                <h2>only 40%</h2>
+                <div class="t3">
+                  are willing to pay for an app that saves time and reduces
+                  stress
+                </div>
+              </div>
+              <div>
+                <h2>over 45%</h2>
+                <div class="t3">if the app is free</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content pr-[460px]">
+        <div>
+          <h2>MVP <i>features</i></h2>
+          <h6 class="mt-9">Jobs to be done:</h6>
+          <h6 class="text-green-primary mt-3">
+            Documents: Create, Search, Organize, Share, Manage, Edit,
+            Keep&nbsp;track, Be&nbsp;informed, Be&nbsp;secured.
+          </h6>
+          <div class="t2 mt-9">
+            Versatile application, designed for document fast search, secure
+            storage and effortless operating.
+          </div>
+          <ul class="list-plus t2 mt-6">
+            <li>fast access & AI categorization*;</li>
+            <li>family sharing;</li>
+            <li>checklists & expirations;</li>
+            <li>maintaining versions;</li>
+            <li>secure storage;</li>
+            <li>work offline / sync online.</li>
+          </ul>
+        </div>
+      </div>
+      <img
+        class="absolute right-0 top-[230px]"
+        src="./paperpile/hand2x.webp"
+        srcset="./paperpile/hand.webp 1x, ./paperpile/hand2x.webp 2x"
+        loading="lazy"
+      />
+    </section>
+    <section>
+      <div class="section-content">
+        <h2>What <i>assistant</i> do</h2>
+        <div class="mt-[92px] flex gap-20">
+          <img
+            class="h-auto w-0 flex-1"
+            src="./paperpile/assistant-a2x.webp"
+            srcset="
+              ./paperpile/assistant-a.webp   1x,
+              ./paperpile/assistant-a2x.webp 2x
+            "
+            alt="Demonstration of the assistant giving the requested document"
+            loading="lazy"
+          />
+          <img
+            class="h-auto w-0 flex-1"
+            src="./paperpile/assistant-b2x.webp"
+            srcset="
+              ./paperpile/assistant-b.webp   1x,
+              ./paperpile/assistant-b2x.webp 2x
+            "
+            alt="Demonstration of the assistant giving the requested document"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h2>Problems to <i>solve</i>, with less frictions</h2>
+        <table class="mt-[92px]">
+          <tr class="t3">
+            <td class="pb-4 pr-[72px] align-top">User:</td>
+            <td class="pb-4 pr-[52px] align-top">
+              Apply for visa, studying...
+            </td>
+            <td class="pb-4 pr-[52px] align-top">
+              Keep in mind the important dates
+            </td>
+            <td class="pb-4 align-top">Takes care about family</td>
+          </tr>
+          <tr class="h5">
+            <td class="t3 pb-12 pr-[52px] align-top">Paperpile:</td>
+            <td class="pb-12 pr-[52px] align-top">
+              Orders the process (check lists), finds the document
+            </td>
+            <td class="pb-12 pr-[52px] align-top">
+              Monitors and reminds about expiration
+            </td>
+            <td class="pb-12 align-top">Provides family document sharing</td>
+          </tr>
+          <tr class="t3">
+            <td class="pb-4 pr-[72px] align-top">User:</td>
+            <td class="pb-4 pr-[52px] align-top">
+              Tracks important health indicators
+            </td>
+            <td class="pb-4 pr-[52px] align-top">Compiles the endless forms</td>
+            <td class="pb-4 align-top">Needs to choose right document</td>
+          </tr>
+          <tr class="h5">
+            <td class="t3 pr-[52px] align-top">Paperpile:</td>
+            <td class="pr-[52px] align-top">
+              Provides lifetime documents tracking and search
+            </td>
+            <td class="pr-[52px] align-top">
+              Recognizes the text and&nbsp;fill it for you
+            </td>
+            <td class="align-top">
+              Works with versions, highlights changed spots
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h2>Impact</h2>
+        <div class="mt-[92px] flex gap-8">
+          <div class="flex-1">
+            <img
+              src="./paperpile/cases2x.webp"
+              srcset="./paperpile/cases.webp 1x, ./paperpile/cases2x.webp 2x"
+              loading="lazy"
+            />
+            <h3 class="mt-9 min-h-[100px]">Immigrants assistance.</h3>
+            <div class="t3 mt-8">
+              Life documentation continuity and integrity.
+            </div>
+          </div>
+          <div class="flex-1">
+            <img
+              src="./paperpile/hands2x.webp"
+              srcset="./paperpile/hands.webp 1x, ./paperpile/hands2x.webp 2x"
+              loading="lazy"
+            />
+            <h3 class="mt-9 min-h-[100px]">Family care.</h3>
+            <div class="t3 mt-8">
+              Support parents with increased bureaucracy.
+            </div>
+          </div>
+          <div class="flex-1">
+            <img
+              src="./paperpile/flower2x.webp"
+              srcset="./paperpile/flower.webp 1x, ./paperpile/flower2x.webp 2x"
+              loading="lazy"
+            />
+            <h3 class="mt-9 min-h-[100px]">Support paperless.</h3>
+            <div class="t3 mt-8">
+              document management to benefit the environment and individuals.
+            </div>
+          </div>
+          <div class="flex-1">
+            <img
+              src="./paperpile/smilingface2x.webp"
+              srcset="
+                ./paperpile/smilingface.webp   1x,
+                ./paperpile/smilingface2x.webp 2x
+              "
+              loading="lazy"
+            />
+            <h3 class="mt-9 min-h-[100px]">Emotional well-being.</h3>
+            <div class="t3 mt-8">Less stress, greater stability.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h2>Users <i>get</i></h2>
+        <div class="t2 mt-9">
+          As a next step, we summarized data from respondents and users' jobs to
+          be done;<br />we finally articulated the goals users are to reach with
+          the app.
+        </div>
+        <div class="mt-[120px] space-y-12 pr-[280px]">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3>Reduce searching time</h3>
+              <div class="t3 mt-4">
+                for documents (in emails, messengers, notes) on
+              </div>
+            </div>
+            <div class="h1">69%</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div>
+              <h3>Reduce operating time</h3>
+              <div class="t3 mt-4">
+                Scanning, extracting, translating, making changes and so on
+              </div>
+            </div>
+            <div class="h1">52%</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div>
+              <h3>Optimize storage</h3>
+              <div class="t3 mt-4">
+                by removing duplicates, squashing versions
+              </div>
+            </div>
+            <div class="h1">18%</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div>
+              <h3>Save mental health</h3>
+              <div class="t3 mt-4">
+                by monitoring expirations etc, reducing anxiety by
+              </div>
+            </div>
+            <div class="h1">42%</div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./paperpile/newspaper-pile2x.webp"
+        srcset="
+          ./paperpile/newspaper-pile.webp   1x,
+          ./paperpile/newspaper-pile2x.webp 2x
+        "
+        class="absolute right-0 top-[400px] max-w-[30vw]"
+        loading="lazy"
+      />
+    </section>
+    <section>
+      <div class="section-content">
+        <h2><i>Competitors</i> analysis resume</h2>
+        <div class="t2 mt-9">
+          The final competitors analysis consists of more than 15 competitors
+          and is being constantly updated. Here I show a few of them mentioning
+          not all comparison categories, as an example.
+        </div>
+        <img
+          src="./paperpile/competitors2x.webp"
+          srcset="
+            ./paperpile/competitors.webp   1x,
+            ./paperpile/competitors2x.webp 2x
+          "
+          class="mt-9 w-full"
+          loading="lazy"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h2>Business model</h2>
+        <div class="t2 mt-9">
+          We prioritized features based on respondents' needs and market
+          analysis to come up with a start-up business model.
+        </div>
+        <img
+          src="./paperpile/business-model2x.webp"
+          srcset="
+            ./paperpile/business-model.webp   1x,
+            ./paperpile/business-model2x.webp 2x
+          "
+          class="mt-9 w-full"
+          loading="lazy"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h2><i>User</i>flows</h2>
+        <div class="t2 mt-9">
+          Based on JTBDs I created and prioritized main user flows such as:
+        </div>
+        <div class="mt-[92px] space-y-[60px]">
+          <div class="flex gap-8">
+            <img
+              src="./paperpile/search2x.webp"
+              srcset="./paperpile/search.webp 1x, ./paperpile/search2x.webp 2x"
+              class="flex-0 self-start"
+              loading="lazy"
+            />
+            <div>
+              <h3>Document search flows</h3>
+              <div
+                class="text-gray-primary t3 mt-5 flex max-w-[550px] flex-wrap gap-x-1 gap-y-2"
+              >
+                <div
+                  class="bg-black-thirdly text-white-primary rounded-md px-2 py-1.5"
+                >
+                  Text search
+                </div>
+                <div class="px-1 py-1.5">By person</div>
+                <div class="px-1 py-1.5">By period</div>
+                <div class="px-1 py-1.5">By category</div>
+                <div class="px-1 py-1.5">By tag</div>
+                <div class="px-1 py-1.5">View as list</div>
+                <div
+                  class="bg-black-thirdly text-white-primary rounded-md px-2 py-1.5"
+                >
+                  Voice search
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-8">
+            <img
+              src="./paperpile/plus2x.webp"
+              srcset="./paperpile/plus.webp 1x, ./paperpile/plus2x.webp 2x"
+              class="flex-0 self-start"
+              loading="lazy"
+            />
+            <div>
+              <h3>Scan/adding a document flow</h3>
+              <div
+                class="text-gray-primary t3 mt-5 flex max-w-[600px] flex-wrap gap-x-1 gap-y-2"
+              >
+                <div
+                  class="bg-black-thirdly text-white-primary rounded-md px-2 py-1.5"
+                >
+                  Scan the dock flow
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-8">
+            <img
+              src="./paperpile/share2x.webp"
+              srcset="./paperpile/share.webp 1x, ./paperpile/share2x.webp 2x"
+              class="flex-0 self-start"
+              loading="lazy"
+            />
+            <div>
+              <h3>Document action flow</h3>
+              <div
+                class="text-gray-primary t3 mt-5 flex max-w-[600px] flex-wrap gap-x-1 gap-y-2"
+              >
+                <div
+                  class="bg-black-thirdly text-white-primary rounded-md px-2 py-1.5"
+                >
+                  Share document
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-8">
+            <img
+              src="./paperpile/babyface2x.webp"
+              srcset="./paperpile/babyface.webp 1x, ./paperpile/babyface2x.webp 2x"
+              class="flex-0 self-start"
+              loading="lazy"
+            />
+            <div>
+              <h3 class="relative">
+                Account and Family flows
+                <div
+                  class="text-green-primary at absolute right-8 top-8 rotate-[-8deg]"
+                >
+                  Was added later on
+                </div>
+              </h3>
+              <div
+                class="text-gray-primary t3 mt-5 flex max-w-[600px] flex-wrap gap-x-1 gap-y-2"
+              >
+                <div
+                  class="bg-black-thirdly text-white-primary rounded-md px-2 py-1.5"
+                >
+                  Add family member above 18
+                </div>
+              </div>
+              <div
+                class="text-gray-primary t3 mt-2 flex max-w-[600px] flex-wrap gap-x-1 gap-y-2"
+              >
+                <div
+                  class="bg-black-thirdly text-white-primary rounded-md px-2 py-1.5"
+                >
+                  Add family member under 18
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h2 class="text-center">The main user-flow is Add Document</h2>
+        <svg
+          class="mt-10 h-auto w-full"
+          width="1036"
+          height="1781"
+          viewBox="0 0 1036 1781"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <g clip-path="url(#clip0_5_4611)">
+            <path
+              d="M689.996 106C689.996 103.239 692.235 101 694.996 101H973.996C976.758 101 978.996 103.239 978.996 106V153H689.996V106Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="775.488" y="131.774">First page preview</tspan>
+            </text>
+            <mask id="path-3-inside-1_5_4611" fill="white">
+              <path d="M689.996 153H978.996V224H689.996V153Z" />
+            </mask>
+            <path d="M689.996 153H978.996V224H689.996V153Z" fill="#222F3C" />
+            <path
+              d="M978.996 223H689.996V225H978.996V223Z"
+              fill="#3A4A5B"
+              mask="url(#path-3-inside-1_5_4611)"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="708.996" y="176.592">To see:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="708.996" y="207.774">Page photo preview</tspan>
+            </text>
+            <path
+              d="M689.996 224H978.996V430C978.996 432.761 976.758 435 973.996 435H694.996C692.235 435 689.996 432.761 689.996 430V224Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="708.996" y="247.592">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="708.996" y="280.774">Keep &#38; scan next</tspan>
+            </text>
+            <rect
+              x="829.996"
+              y="264"
+              width="58"
+              height="24"
+              rx="2"
+              fill="#2DD9AE"
+            />
+            <text fill="#222F3C" font-size="14">
+              <tspan x="833.996" y="280.774">Primary</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="708.996" y="316.774">Keep and save document</tspan>
+            </text>
+            <rect
+              x="881.996"
+              y="300"
+              width="78"
+              height="24"
+              rx="2"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="885.996" y="316.774">Secondary</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="708.996" y="352.774">Retake photo</tspan>
+            </text>
+            <rect
+              x="806.996"
+              y="336"
+              width="52"
+              height="24"
+              rx="2"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="810.996" y="352.774">Thirdly</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="708.996" y="386.774">Crop photo</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="708.996" y="418.774">Go back</tspan>
+            </text>
+            <path
+              d="M55.9961 106C55.9961 103.239 58.2347 101 60.9961 101H319.996C322.758 101 324.996 103.239 324.996 106V153H55.9961V106Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="133.963" y="131.774">First screen:</tspan>
+            </text>
+            <text fill="white" font-size="14" font-style="italic">
+              <tspan x="216.377" y="131.774">hello</tspan>
+            </text>
+            <path
+              d="M55.9961 153H324.996V355C324.996 357.761 322.758 360 319.996 360H60.9961C58.2347 360 55.9961 357.761 55.9961 355V153Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="74.9961" y="176.592">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="74.9961" y="209.774">Scan document</tspan>
+            </text>
+            <rect
+              x="185.996"
+              y="193"
+              width="58"
+              height="24"
+              rx="2"
+              fill="#2DD9AE"
+            />
+            <text fill="#222F3C" font-size="14">
+              <tspan x="189.996" y="209.774">Primary</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="74.9961" y="243.774">Add family member</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="74.9961" y="275.774">Fill up profile</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="74.9961" y="309.774">How to: onboarding</tspan>
+            </text>
+            <rect
+              x="209.996"
+              y="293"
+              width="82"
+              height="24"
+              rx="2"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="213.996" y="309.774">Link button</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="74.9961" y="343.774">Fill up profile</tspan>
+            </text>
+            <path
+              d="M372.996 106C372.996 103.239 375.235 101 377.996 101H636.996C639.758 101 641.996 103.239 641.996 106V173H372.996V106Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="398.251" y="131.774">
+                Scan first document page screen &#x2028;
+              </tspan>
+              <tspan x="478.136" y="151.774">(camera)</tspan>
+            </text>
+            <path
+              d="M372.996 173H641.996V275C641.996 277.761 639.758 280 636.996 280H377.996C375.235 280 372.996 277.761 372.996 275V173Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="391.996" y="196.592">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="391.996" y="229.774">Make a photo</tspan>
+            </text>
+            <rect
+              x="487.996"
+              y="213"
+              width="58"
+              height="24"
+              rx="2"
+              fill="#2DD9AE"
+            />
+            <text fill="#222F3C" font-size="14">
+              <tspan x="491.996" y="229.774">Primary</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="391.996" y="263.774">Go back</tspan>
+            </text>
+            <path
+              d="M664.41 225V226.5H665.91V225H664.41ZM664.41 124V122.5H662.91V124H664.41ZM691.057 125.061C691.643 124.475 691.643 123.525 691.057 122.939L681.511 113.393C680.925 112.808 679.975 112.808 679.389 113.393C678.804 113.979 678.804 114.929 679.389 115.515L687.875 124L679.389 132.485C678.804 133.071 678.804 134.021 679.389 134.607C679.975 135.192 680.925 135.192 681.511 134.607L691.057 125.061ZM541.996 226.5H664.41V223.5H541.996V226.5ZM665.91 225V124H662.91V225H665.91ZM664.41 125.5H689.996V122.5H664.41V125.5Z"
+              fill="#2DD9AE"
+            />
+            <path
+              d="M1010 276H1011.5V274.5H1010V276ZM1010 481V482.5H1011.5V481H1010ZM79.9961 481V479.5H78.4961V481H79.9961ZM79.9961 575.5H78.4961V577H79.9961V575.5ZM118.557 576.561C119.143 575.975 119.143 575.025 118.557 574.439L109.011 564.893C108.425 564.308 107.475 564.308 106.889 564.893C106.304 565.479 106.304 566.429 106.889 567.015L115.375 575.5L106.889 583.985C106.304 584.571 106.304 585.521 106.889 586.107C107.475 586.692 108.425 586.692 109.011 586.107L118.557 576.561ZM887.496 277.5H1010V274.5H887.496V277.5ZM1008.5 276V481H1011.5V276H1008.5ZM1010 479.5H79.9961V482.5H1010V479.5ZM78.4961 481V575.5H81.4961V481H78.4961ZM79.9961 577H117.496V574H79.9961V577Z"
+              fill="#2DD9AE"
+            />
+            <path
+              d="M346.482 205V206.5H347.982V205H346.482ZM346.482 125V123.5H344.982V125H346.482ZM374.057 126.061C374.643 125.475 374.643 124.525 374.057 123.939L364.511 114.393C363.925 113.808 362.975 113.808 362.389 114.393C361.804 114.979 361.804 115.929 362.389 116.515L370.875 125L362.389 133.485C361.804 134.071 361.804 135.021 362.389 135.607C362.975 136.192 363.925 136.192 364.511 135.607L374.057 126.061ZM243.996 206.5H346.482V203.5H243.996V206.5ZM347.982 205V125H344.982V205H347.982ZM346.482 126.5H372.996V123.5H346.482V126.5Z"
+              fill="#2DD9AE"
+            />
+            <path
+              d="M435.996 544C435.996 541.239 438.235 539 440.996 539H742.996C745.758 539 747.996 541.239 747.996 544V591H435.996V544Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="528.374" y="569.774">Page photo preview</tspan>
+            </text>
+            <mask id="path-46-inside-2_5_4611" fill="white">
+              <path d="M435.996 591H747.996V662H435.996V591Z" />
+            </mask>
+            <path d="M435.996 591H747.996V662H435.996V591Z" fill="#222F3C" />
+            <path
+              d="M747.996 661H435.996V663H747.996V661Z"
+              fill="#3A4A5B"
+              mask="url(#path-46-inside-2_5_4611)"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="454.996" y="614.592">To see:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="454.996" y="645.774">Page photo preview</tspan>
+            </text>
+            <path
+              d="M435.996 662H747.996V868C747.996 870.761 745.758 873 742.996 873H440.996C438.235 873 435.996 870.761 435.996 868V662Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="454.996" y="685.592">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="454.996" y="718.774">
+                Finish: keep and save document
+              </tspan>
+            </text>
+            <rect
+              x="670.996"
+              y="702"
+              width="58"
+              height="24"
+              rx="2"
+              fill="#2DD9AE"
+            />
+            <text fill="#222F3C" font-size="14">
+              <tspan x="674.996" y="718.774">Primary</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="454.996" y="754.774">Keep &#38; scan next</tspan>
+            </text>
+            <rect
+              x="579.996"
+              y="738"
+              width="78"
+              height="24"
+              rx="2"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="583.996" y="754.774">Secondary</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="454.996" y="790.774">Retake photo</tspan>
+            </text>
+            <rect
+              x="552.996"
+              y="774"
+              width="52"
+              height="24"
+              rx="2"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="556.996" y="790.774">Thirdly</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="454.996" y="824.774">Crop photo</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="454.996" y="856.774">Go back</tspan>
+            </text>
+            <path
+              d="M118.996 545C118.996 542.239 121.235 540 123.996 540H382.996C385.758 540 387.996 542.239 387.996 545V612H118.996V545Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="166.652" y="570.774">
+                Scan next document page &#x2028;
+              </tspan>
+              <tspan x="200.319" y="590.774">screen (camera)</tspan>
+            </text>
+            <path
+              d="M118.996 612H387.996V714C387.996 716.761 385.758 719 382.996 719H123.996C121.235 719 118.996 716.761 118.996 714V612Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="137.996" y="635.592">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="137.996" y="668.774">Make a photo</tspan>
+            </text>
+            <rect
+              x="233.996"
+              y="652"
+              width="58"
+              height="24"
+              rx="2"
+              fill="#2DD9AE"
+            />
+            <text fill="#222F3C" font-size="14">
+              <tspan x="237.996" y="668.774">Primary</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="137.996" y="702.774">Go back</tspan>
+            </text>
+            <path
+              opacity="0.5"
+              d="M861.996 750.973H862.496V750.473H861.996V750.973ZM861.996 895V895.5H862.496V895H861.996ZM325.996 895H325.496V895.5H325.996V895ZM326.35 719.646C326.154 719.451 325.838 719.451 325.643 719.646L322.461 722.828C322.265 723.024 322.265 723.34 322.461 723.536C322.656 723.731 322.972 723.731 323.168 723.536L325.996 720.707L328.825 723.536C329.02 723.731 329.336 723.731 329.532 723.536C329.727 723.34 329.727 723.024 329.532 722.828L326.35 719.646ZM657.385 751.473H861.996V750.473H657.385V751.473ZM861.496 750.973V895H862.496V750.973H861.496ZM861.996 894.5H325.996V895.5H861.996V894.5ZM326.496 895V720H325.496V895H326.496Z"
+              fill="white"
+            />
+            <path opacity="0.5" d="M604.996 787H851.996V895" stroke="white" />
+            <path
+              d="M408.147 663V664.5H409.647V663H408.147ZM408.147 571V569.5H406.647V571H408.147ZM436.057 572.061C436.643 571.475 436.643 570.525 436.057 569.939L426.511 560.393C425.925 559.808 424.975 559.808 424.389 560.393C423.804 560.979 423.804 561.929 424.389 562.515L432.875 571L424.389 579.485C423.804 580.071 423.804 581.021 424.389 581.607C424.975 582.192 425.925 582.192 426.511 581.607L436.057 572.061ZM291.996 664.5H408.147V661.5H291.996V664.5ZM409.647 663V571H406.647V663H409.647ZM408.147 572.5H434.996V569.5H408.147V572.5Z"
+              fill="#2DD9AE"
+            />
+            <path
+              d="M878.746 714L879.746 714L879.746 713L878.746 713L878.746 714ZM878.746 915L878.746 916L879.746 916L879.746 915L878.746 915ZM33.9961 915L33.9961 914L32.9961 914L32.9961 915L33.9961 915ZM33.9961 1005L32.9961 1005L32.9961 1006L33.9961 1006L33.9961 1005ZM59.7032 1005.71C60.0937 1005.32 60.0937 1004.68 59.7032 1004.29L53.3392 997.929C52.9487 997.538 52.3156 997.538 51.925 997.929C51.5345 998.319 51.5345 998.953 51.925 999.343L57.5819 1005L51.925 1010.66C51.5345 1011.05 51.5345 1011.68 51.925 1012.07C52.3156 1012.46 52.9487 1012.46 53.3392 1012.07L59.7032 1005.71ZM729.496 715L878.746 715L878.746 713L729.496 713L729.496 715ZM877.746 714L877.746 915L879.746 915L879.746 714L877.746 714ZM878.746 914L33.9961 914L33.9961 916L878.746 916L878.746 914ZM32.9961 915L32.9961 1005L34.9961 1005L34.9961 915L32.9961 915ZM33.9961 1006L58.9961 1006L58.9961 1004L33.9961 1004L33.9961 1006Z"
+              fill="#2DD9AE"
+            />
+            <path
+              d="M59.9961 982C59.9961 979.239 62.2347 977 64.9961 977H340.996C343.758 977 345.996 979.239 345.996 982V1029H59.9961V982Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="116.604" y="1007.77">Add document info screen</tspan>
+            </text>
+            <mask id="path-77-inside-3_5_4611" fill="white">
+              <path d="M59.9961 1029H345.996V1100H59.9961V1029Z" />
+            </mask>
+            <path d="M59.9961 1029H345.996V1100H59.9961V1029Z" fill="#222F3C" />
+            <path
+              d="M345.996 1099H59.9961V1101H345.996V1099Z"
+              fill="#3A4A5B"
+              mask="url(#path-77-inside-3_5_4611)"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="78.9961" y="1052.59">To see:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="78.9961" y="1083.77">Document pages preview</tspan>
+            </text>
+            <path
+              d="M59.9961 1100H345.996V1302C345.996 1304.76 343.758 1307 340.996 1307H64.9961C62.2347 1307 59.9961 1304.76 59.9961 1302V1100Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="78.9961" y="1123.59">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="78.9961" y="1154.77">Add document name</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="78.9961" y="1186.77">
+                Add document category (MVP: select)
+              </tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="78.9961" y="1218.77">Add tag</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="78.9961" y="1252.77">Share with family</tspan>
+            </text>
+            <rect
+              x="197.996"
+              y="1236"
+              width="58"
+              height="24"
+              rx="2"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="201.996" y="1252.77">Primary</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="78.9961" y="1288.77">Save</tspan>
+            </text>
+            <rect
+              x="117.996"
+              y="1272"
+              width="58"
+              height="24"
+              rx="2"
+              fill="#2DD9AE"
+            />
+            <text fill="#222F3C" font-size="14">
+              <tspan x="121.996" y="1288.77">Primary</tspan>
+            </text>
+            <path
+              d="M377.996 982C377.996 979.239 380.235 977 382.996 977H574.996C577.758 977 579.996 979.239 579.996 982V1029H377.996V982Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="399.925" y="1007.77">Share with family screen</tspan>
+            </text>
+            <mask id="path-94-inside-4_5_4611" fill="white">
+              <path d="M377.996 1029H579.996V1100H377.996V1029Z" />
+            </mask>
+            <path d="M377.996 1029H579.996V1100H377.996V1029Z" fill="#222F3C" />
+            <path
+              d="M579.996 1099H377.996V1101H579.996V1099Z"
+              fill="#3A4A5B"
+              mask="url(#path-94-inside-4_5_4611)"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="396.996" y="1052.59">To see:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="396.996" y="1083.77">List of family members</tspan>
+            </text>
+            <path
+              d="M377.996 1100H579.996V1198C579.996 1200.76 577.758 1203 574.996 1203H382.996C380.235 1203 377.996 1200.76 377.996 1198V1100Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="396.996" y="1123.59">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="396.996" y="1154.77">Select member</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="396.996" y="1186.77">Add member</tspan>
+            </text>
+            <path
+              d="M609.996 982C609.996 979.239 612.235 977 614.996 977H788.996C791.758 977 793.996 979.239 793.996 982V1029H609.996V982Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="628.694" y="1007.77">Select member screen</tspan>
+            </text>
+            <path
+              d="M609.996 1029H793.996V1127C793.996 1129.76 791.758 1132 788.996 1132H614.996C612.235 1132 609.996 1129.76 609.996 1127V1029Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="628.996" y="1052.59">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="628.996" y="1083.77">Select: Forever</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="628.996" y="1115.77">Select:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="676" y="1115.77">Add expiration</tspan>
+            </text>
+            <path
+              d="M823.996 982C823.996 979.239 826.235 977 828.996 977H988.996C991.758 977 993.996 979.239 993.996 982V1029H823.996V982Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="845.073" y="1007.77">Add expiration date</tspan>
+            </text>
+            <path
+              d="M823.996 1029H993.996V1095C993.996 1097.76 991.758 1100 988.996 1100H828.996C826.235 1100 823.996 1097.76 823.996 1095V1029Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="842.996" y="1052.59">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="842.996" y="1083.77">Add expiration date</tspan>
+            </text>
+            <path
+              d="M283.996 1413C283.996 1410.24 286.235 1408 288.996 1408H547.996C550.758 1408 552.996 1410.24 552.996 1413V1460H283.996V1413Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="362.188" y="1438.77">Success moment</tspan>
+            </text>
+            <path
+              d="M283.996 1460H552.996V1546C552.996 1548.76 550.758 1551 547.996 1551H288.996C286.235 1551 283.996 1548.76 283.996 1546V1460Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="302.996" y="1483.59">To see:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="302.996" y="1514.77">&#x2018;</tspan>
+              <tspan x="503.275" y="1514.77">&#x2028;</tspan>
+              <tspan x="302.996" y="1534.77">message</tspan>
+            </text>
+            <text fill="white" font-size="14" font-style="italic">
+              <tspan x="305.936" y="1514.77">
+                Document successfully saved&#x2019;
+              </tspan>
+            </text>
+            <path
+              d="M603.996 1413C603.996 1410.24 606.235 1408 608.996 1408H867.996C870.758 1408 872.996 1410.24 872.996 1413V1460H603.996V1413Z"
+              fill="#3A4A5B"
+            />
+            <text fill="white" font-size="14">
+              <tspan x="639.382" y="1438.77">
+                Main screen: list of documents
+              </tspan>
+            </text>
+            <mask id="path-120-inside-5_5_4611" fill="white">
+              <path
+                d="M603.996 1460H872.996V1526C872.996 1528.76 870.758 1531 867.996 1531H608.996C606.235 1531 603.996 1528.76 603.996 1526V1460Z"
+              />
+            </mask>
+            <path
+              d="M603.996 1460H872.996V1526C872.996 1528.76 870.758 1531 867.996 1531H608.996C606.235 1531 603.996 1528.76 603.996 1526V1460Z"
+              fill="#222F3C"
+            />
+            <path
+              d="M603.996 1460H872.996H603.996ZM872.996 1526C872.996 1529.31 870.31 1532 866.996 1532H609.996C606.682 1532 603.996 1529.31 603.996 1526C603.996 1528.21 606.235 1530 608.996 1530H867.996C870.758 1530 872.996 1528.21 872.996 1526ZM603.996 1531V1460V1531ZM872.996 1460V1531V1460Z"
+              fill="#3A4A5B"
+              mask="url(#path-120-inside-5_5_4611)"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="622.996" y="1483.59">To see:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="622.996" y="1514.77">List of documents</tspan>
+            </text>
+            <path
+              d="M603.996 1531H872.996V1757C872.996 1759.76 870.758 1762 867.996 1762H608.996C606.235 1762 603.996 1759.76 603.996 1757V1531Z"
+              fill="#222F3C"
+            />
+            <text opacity="0.5" fill="white" font-size="12">
+              <tspan x="622.996" y="1554.59">To do:</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="622.996" y="1585.77">Seacrh for a document</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="622.996" y="1617.77">Add new document</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="622.996" y="1649.77">Open document</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="622.996" y="1681.77">Add document filter</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="622.996" y="1713.77">Go to account menu</tspan>
+            </text>
+            <text fill="white" font-size="14">
+              <tspan x="622.996" y="1745.77">Go to settings</tspan>
+            </text>
+            <path
+              d="M222.984 1434L221.484 1434L221.484 1435.5L222.984 1435.5L222.984 1434ZM283.057 1435.06C283.643 1434.47 283.643 1433.53 283.057 1432.94L273.511 1423.39C272.925 1422.81 271.975 1422.81 271.389 1423.39C270.804 1423.98 270.804 1424.93 271.389 1425.51L279.875 1434L271.389 1442.49C270.804 1443.07 270.804 1444.02 271.389 1444.61C271.975 1445.19 272.925 1445.19 273.511 1444.61L283.057 1435.06ZM222.984 1283L224.484 1283L224.484 1281.5L222.984 1281.5L222.984 1283ZM222.984 1435.5L281.996 1435.5L281.996 1432.5L222.984 1432.5L222.984 1435.5ZM174.496 1284.5L222.984 1284.5L222.984 1281.5L174.496 1281.5L174.496 1284.5ZM221.484 1283L221.484 1434L224.484 1434L224.484 1283L221.484 1283Z"
+              fill="#2DD9AE"
+            />
+            <path
+              d="M604.057 1435.06C604.643 1434.47 604.643 1433.53 604.057 1432.94L594.511 1423.39C593.925 1422.81 592.975 1422.81 592.389 1423.39C591.804 1423.98 591.804 1424.93 592.389 1425.51L600.875 1434L592.389 1442.49C591.804 1443.07 591.804 1444.02 592.389 1444.61C592.975 1445.19 593.925 1445.19 594.511 1444.61L604.057 1435.06ZM552.996 1435.5L602.996 1435.5V1432.5L552.996 1432.5L552.996 1435.5Z"
+              fill="#2DD9AE"
+            />
+            <path
+              opacity="0.5"
+              d="M363.005 1248V1248.5H363.505V1248H363.005ZM363.005 1006V1005.5H362.505V1006H363.005ZM378.35 1006.35C378.545 1006.16 378.545 1005.84 378.35 1005.65L375.168 1002.46C374.972 1002.27 374.656 1002.27 374.461 1002.46C374.265 1002.66 374.265 1002.98 374.461 1003.17L377.289 1006L374.461 1008.83C374.265 1009.02 374.265 1009.34 374.461 1009.54C374.656 1009.73 374.972 1009.73 375.168 1009.54L378.35 1006.35ZM256.496 1248.5H363.005V1247.5H256.496V1248.5ZM363.505 1248V1006H362.505V1248H363.505ZM363.005 1006.5H377.996V1005.5H363.005V1006.5Z"
+              fill="white"
+            />
+            <path
+              opacity="0.5"
+              d="M808.336 1112V1112.5H808.836V1112H808.336ZM808.336 1006V1005.5H807.836V1006H808.336ZM825.35 1006.35C825.545 1006.16 825.545 1005.84 825.35 1005.65L822.168 1002.46C821.972 1002.27 821.656 1002.27 821.461 1002.46C821.265 1002.66 821.265 1002.98 821.461 1003.17L824.289 1006L821.461 1008.83C821.265 1009.02 821.265 1009.34 821.461 1009.54C821.656 1009.73 821.972 1009.73 822.168 1009.54L825.35 1006.35ZM808.836 1112V1006H807.836V1112H808.836ZM808.336 1006.5H824.996V1005.5H808.336V1006.5ZM772.996 1112.5H789.656V1111.5H772.996V1112.5ZM789.656 1112.5H808.336V1111.5H789.656V1112.5Z"
+              fill="white"
+            />
+            <path
+              opacity="0.5"
+              d="M1009 1006H1009.5V1005.5H1009V1006ZM1009 1348V1348.5H1009.5V1348H1009ZM32.9961 1348H32.4961V1348.5H32.9961V1348ZM32.9961 1018.5V1018H32.4961V1018.5H32.9961ZM59.8497 1018.85C60.0449 1018.66 60.0449 1018.34 59.8497 1018.15L56.6677 1014.96C56.4724 1014.77 56.1558 1014.77 55.9606 1014.96C55.7653 1015.16 55.7653 1015.48 55.9606 1015.67L58.789 1018.5L55.9606 1021.33C55.7653 1021.52 55.7653 1021.84 55.9606 1022.04C56.1558 1022.23 56.4724 1022.23 56.6677 1022.04L59.8497 1018.85ZM994.053 1006.5H1009V1005.5H994.053V1006.5ZM1008.5 1006V1348H1009.5V1006H1008.5ZM1009 1347.5H32.9961V1348.5H1009V1347.5ZM33.4961 1348V1018.5H32.4961V1348H33.4961ZM32.9961 1019H59.4961V1018H32.9961V1019Z"
+              fill="white"
+            />
+            <path
+              opacity="0.5"
+              d="M594.496 1151V1151.5H594.996V1151H594.496ZM594.496 1006V1005.5H593.996V1006H594.496ZM610.35 1006.35C610.545 1006.16 610.545 1005.84 610.35 1005.65L607.168 1002.46C606.972 1002.27 606.656 1002.27 606.461 1002.46C606.265 1002.66 606.265 1002.98 606.461 1003.17L609.289 1006L606.461 1008.83C606.265 1009.02 606.265 1009.34 606.461 1009.54C606.656 1009.73 606.972 1009.73 607.168 1009.54L610.35 1006.35ZM497.996 1151.5H594.496V1150.5H497.996V1151.5ZM594.996 1151V1006H593.996V1151H594.996ZM594.496 1006.5H609.996V1005.5H594.496V1006.5Z"
+              fill="white"
+            />
+            <rect
+              x="629.105"
+              y="1202.87"
+              width="23.9509"
+              height="64.2586"
+              transform="rotate(140.905 629.105 1202.87)"
+              fill="url(#pattern0_5_4611)"
+            />
+            <rect
+              x="629.105"
+              y="1202.87"
+              width="23.9509"
+              height="64.2586"
+              transform="rotate(140.905 629.105 1202.87)"
+              fill="url(#pattern1_5_4611)"
+            />
+            <text
+              transform="translate(577.996 1200.32) rotate(-9.95112)"
+              fill="#2DD9AE"
+              font-family="Slackside One"
+              font-size="20"
+            >
+              <tspan x="0" y="20.72">Aha! moment</tspan>
+            </text>
+            <rect
+              width="47.0961"
+              height="85.3617"
+              transform="matrix(0.992176 0.124846 0.124846 -0.992176 740.996 120.693)"
+              fill="url(#pattern2_5_4611)"
+            />
+            <rect
+              width="66.2509"
+              height="128.605"
+              transform="matrix(-0.5 -0.866025 -0.866025 0.5 853.496 609.375)"
+              fill="url(#pattern3_5_4611)"
+            />
+            <rect
+              width="53.5744"
+              height="143.029"
+              transform="matrix(-0.961142 0.276054 0.276054 0.961142 168.676 832.342)"
+              fill="url(#pattern4_5_4611)"
+            />
+            <rect
+              width="55.9931"
+              height="108.692"
+              transform="matrix(-0.983446 0.181204 0.181204 0.983446 873.062 396)"
+              fill="url(#pattern5_5_4611)"
+            />
+            <text
+              transform="translate(6.99609 829.508) rotate(-16.0348)"
+              fill="white"
+              font-family="Slackside One"
+              font-size="20"
+            >
+              <tspan x="0" y="20.72">All document pages preview</tspan>
+              <tspan x="0" y="44.72">step will be added here later</tspan>
+            </text>
+            <text
+              transform="translate(781.073 -0.462891) rotate(7.82945)"
+              fill="white"
+              font-family="Slackside One"
+              font-size="20"
+            >
+              <tspan x="0.0530014" y="20.72">
+                We played a lot around button
+              </tspan>
+              <tspan x="32.9339" y="44.72">size and screen naming</tspan>
+            </text>
+            <text
+              transform="translate(807.699 499.291) rotate(10.4316)"
+              fill="white"
+              font-family="Slackside One"
+              font-size="20"
+            >
+              <tspan x="3.52539" y="20.72">
+                We added filter options at&#10;
+              </tspan>
+              <tspan x="0.371094" y="44.72">
+                this step later (after tests)
+              </tspan>
+            </text>
+            <rect
+              x="827.752"
+              y="564.39"
+              width="50.0457"
+              height="24.3381"
+              rx="12.169"
+              transform="rotate(10.4316 827.752 564.39)"
+              stroke="white"
+              stroke-width="0.784594"
+            />
+            <text
+              transform="translate(835.419 572.582) rotate(10.4316)"
+              fill="white"
+              font-family="Inter"
+              font-size="10"
+              letter-spacing="-0.21303px"
+            >
+              <tspan x="0.337569" y="8.92368">Natural</tspan>
+            </text>
+            <rect
+              x="880.828"
+              y="574.162"
+              width="61.0457"
+              height="24.3381"
+              rx="12.169"
+              transform="rotate(10.4316 880.828 574.162)"
+              fill="#2DD9AE"
+            />
+            <rect
+              x="880.828"
+              y="574.162"
+              width="61.0457"
+              height="24.3381"
+              rx="12.169"
+              transform="rotate(10.4316 880.828 574.162)"
+              stroke="#2DD9AE"
+              stroke-width="0.784594"
+            />
+            <text
+              transform="translate(888.495 582.354) rotate(10.4316)"
+              fill="#222F3C"
+              font-family="Inter"
+              font-size="10"
+              letter-spacing="-0.21303px"
+            >
+              <tspan x="0.138647" y="8.92368">Grayscale</tspan>
+            </text>
+            <rect
+              x="944.724"
+              y="585.926"
+              width="38.0457"
+              height="24.3381"
+              rx="12.169"
+              transform="rotate(10.4316 944.724 585.926)"
+              stroke="white"
+              stroke-width="0.784594"
+            />
+            <text
+              transform="translate(952.391 594.117) rotate(10.4316)"
+              fill="white"
+              font-family="Inter"
+              font-size="10"
+              letter-spacing="-0.21303px"
+            >
+              <tspan x="0.342864" y="8.92368">ECO</tspan>
+            </text>
+          </g>
+          <defs>
+            <pattern
+              id="pattern0_5_4611"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                xlink:href="#image0_5_4611"
+                transform="matrix(0.00526316 0 0 0.00195313 -2.04596 -1.56628)"
+              />
+            </pattern>
+            <pattern
+              id="pattern1_5_4611"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                xlink:href="#image0_5_4611"
+                transform="matrix(0.00526316 0 0 0.00195313 -2.04596 -1.56628)"
+              />
+            </pattern>
+            <pattern
+              id="pattern2_5_4611"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                xlink:href="#image0_5_4611"
+                transform="matrix(0.00526316 0 0 0.00290698 -0.557565 -3.44299)"
+              />
+            </pattern>
+            <pattern
+              id="pattern3_5_4611"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                xlink:href="#image0_5_4611"
+                transform="matrix(0.00344828 0 0 0.00178571 -1.87214 -0.468331)"
+              />
+            </pattern>
+            <pattern
+              id="pattern4_5_4611"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                xlink:href="#image0_5_4611"
+                transform="matrix(0.00458716 0 0 0.00171821 -3.23175 -1.29286)"
+              />
+            </pattern>
+            <pattern
+              id="pattern5_5_4611"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                xlink:href="#image0_5_4611"
+                transform="matrix(0.00344828 0 0 0.00178571 -0.62069 -0.3)"
+              />
+            </pattern>
+            <clipPath id="clip0_5_4611">
+              <rect
+                width="1036"
+                height="1781"
+                fill="white"
+                transform="translate(-0.00390625)"
+              />
+            </clipPath>
+            <image
+              id="image0_5_4611"
+              width="1126"
+              height="1608"
+              xlink:href="./paperpile/arrows.webp"
+            />
+          </defs>
+        </svg>
+      </div>
+    </section>
+    <img
+      class="h-auto w-full"
+      src="./paperpile/wireframes2x.webp"
+      srcset="./paperpile/wireframes2x.webp 2x, ./paperpile/wireframes.webp 1x"
+      loading="lazy"
+    />
+    <section>
+      <div class="section-content flex items-center gap-24">
+        <div class="">
+          <h2>Wireframes</h2>
+          <div class="t2 mt-9">
+            Initially, my teammate Dina created low-fidelity wireframes for main
+            flows. I contributed my expertise and made some fixes based on UX
+            best practices. I tested wireframes, made a few interviews, and
+            iterated with a design. As a result,
+            <i
+              >we changed button placement and hierarchy; adjust icons design;
+              adjusted UX of tags adding and search result preview.</i
+            >
+          </div>
+        </div>
+        <video
+          src="./paperpile/prototype.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          class="w-[343px]"
+          loading="lazy"
+        ></video>
+      </div>
+    </section>
+    <img
+      class="h-auto w-full"
+      src="./paperpile/prototype2x.webp"
+      srcset="./paperpile/prototype2x.webp 2x, ./paperpile/prototype.webp 1x"
+      loading="lazy"
+    />
+    <section class="bg-green-primary text-black-primary">
+      <div class="section-content flex gap-[60px]">
+        <video
+          src="./paperpile/high-prototype.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          class="h-auto w-[343px]"
+          loading="lazy"
+        ></video>
+        <div>
+          <h2>Hight-fidelity prototype</h2>
+          <div class="t2 italic-bold mt-9">
+            During the creation high-fidelity prototypes, we iterated a lot with
+            the team and respondents and changed design solutions. There are a
+            few crucial things that were rethought based on test and interviews:
+            <br /><b>the first screen hierarchy,</b><br /><b
+              >the screen naming logic</b
+            >
+            (made them answer questions: what to do; steps naming became more
+            precise and descriptive; and complemented and provided more context
+            for icon button flows),<br /><b>document expiration period logic,</b
+            ><br /><b>adding members flow,</b><br /><b
+              >sharing document flow,</b
+            >
+            and so on.<br />
+            <br />Based on pre-design stage findings, product value, and vision,
+            one of the main app features had to be quick,
+            <b>personalized access to documents.</b> So I considered every
+            interaction during the document searching flow as the crucial one.
+            Based on insight gained from tests, I
+            <b
+              >came up with hypotheses about the improvement of the main flows
+              and tested them.</b
+            ><br /><br />I assumed that changing the layout by
+            <b
+              >putting the search feature from the top of the screen to the
+              bottom and hiding it into a floating button would be a more
+              user-friendly solution.</b
+            >
+            The bottom right corner is the most reachable spot on the screen
+            (considering right-handed users as first for the first iteration).
+            Getting rid of the top search bar provided more vertical space for
+            scrolling behaviour and result observation, which is crucial for the
+            mobile user experience. Also, a floating button colour-coded as a
+            primary action will provide the user with a prominent entry point
+            into the main flow. Testing both design solutions shows that the new
+            option was more friendly and created less friction for users.<br /><br />
+
+            Here you can see how Document Search flow and Add Document flow
+            screens were redesigned.
+          </div>
+        </div>
+      </div>
+    </section>
+    <img
+      src="./paperpile/block-arrow2x.webp"
+      srcset="./paperpile/block-arrow2x.webp 2x, ./paperpile/block-arrow.webp 1x"
+      class="h-auto w-full"
+      loading="lazy"
+    />
+    <section>
+      <div class="section-content">
+        <h2 class="text-center">
+          Main Flow <i>Document Search</i> layout redesign
+        </h2>
+        <div class="mt-[92px] space-y-3">
+          <img
+            src="./paperpile/search-top2x.webp"
+            srcset="
+              ./paperpile/search-top2x.webp 2x,
+              ./paperpile/search-top.webp   1x
+            "
+            class="h-auto w-full"
+            loading="lazy"
+          />
+          <img
+            src="./paperpile/woman-thinking2x.webp"
+            srcset="
+              ./paperpile/woman-thinking2x.webp 2x,
+              ./paperpile/woman-thinking.webp   1x
+            "
+            class="relative left-[15%] m-auto"
+            loading="lazy"
+          />
+          <img
+            src="./paperpile/search-bottom2x.webp"
+            srcset="
+              ./paperpile/search-bottom2x.webp 2x,
+              ./paperpile/search-bottom.webp   1x
+            "
+            class="h-auto w-full"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h2 class="text-center">
+          Main Flow <i>Add Document</i> layout redesign
+        </h2>
+        <img
+          src="./paperpile/add-doc-redesign2x.webp"
+          srcset="
+            ./paperpile/add-doc-redesign2x.webp 2x,
+            ./paperpile/add-doc-redesign.webp   1x
+          "
+          class="mt-[92px] h-auto w-full"
+          loading="lazy"
+        />
+      </div>
+    </section>
+    <img
+      src="./paperpile/components2x.webp"
+      srcset="./paperpile/components2x.webp 2x, ./paperpile/components.webp 1x"
+      class="h-auto w-full"
+      loading="lazy"
+    />
+    <section>
+      <div class="section-content">
+        <img
+          src="./paperpile/aha-bubble2x.webp"
+          srcset="./paperpile/aha-bubble2x.webp 2x, ./paperpile/aha-bubble.webp 1x"
+          class=""
+          loading="lazy"
+        />
+        <div class="flex items-center gap-[54px]">
+          <div>
+            <h2>What about children?</h2>
+            <div class="t2">
+              During discussions with the team and user interviews, I identified
+              a significant need among some users for managing family documents.
+              <br /><br />
+              <i
+                >Interviews I conducted with 7 respondents showed that users
+                need fast access to family member info.</i
+              >
+              The user might act as a "manager" for another user with limited
+              access to their documents—such as a child or senior family member.
+              For example, a parent may need quick access to important data
+              related to their child for tasks like filling out forms or
+              managing legal matters. Additionally, we discovered that none of
+              our competitors offered family access or features specifically
+              designed for managing documents related to children. <br /><br />
+              To address research insights,
+              <i
+                >I conducted a series of workshops with relevant
+                stakeholders.</i
+              >
+              I assisted in organizing workshop sessions and
+              <i
+                >translated the outcomes into user journeys and key use
+                cases.</i
+              >
+            </div>
+            <div class="t1 mt-9">Stakeholder workshops' results</div>
+            <ul class="t2 mt-3 list-disc space-y-3">
+              <li>For the pilot family members could be under and above 18.</li>
+              <li>
+                2 types of family members: a list of a person's information
+                (easily accessed and copied) and an invited user who can share
+                documents.
+              </li>
+              <li>
+                Member info to add: user relationship to them, name, photo,
+                enable sharing (optional) needs invitation.
+              </li>
+              <li>Members info: fast access cards, shared documents.</li>
+            </ul>
+            <div class="mt-9 flex flex-wrap gap-x-3 gap-y-[14px]">
+              <div
+                class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
+              >
+                <img
+                  src="./paperpile/function2x.webp"
+                  srcset="
+                    ./paperpile/function2x.webp 2x,
+                    ./paperpile/function.webp   1x
+                  "
+                  class="mr-[3px]"
+                  loading="lazy"
+                />
+                Adding a family member
+              </div>
+              <div
+                class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
+              >
+                <img
+                  src="./paperpile/function2x.webp"
+                  srcset="
+                    ./paperpile/function2x.webp 2x,
+                    ./paperpile/function.webp   1x
+                  "
+                  class="mr-[3px]"
+                  loading="lazy"
+                />
+                Family member under and above 18
+              </div>
+              <div
+                class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
+              >
+                <img
+                  src="./paperpile/function2x.webp"
+                  srcset="
+                    ./paperpile/function2x.webp 2x,
+                    ./paperpile/function.webp   1x
+                  "
+                  class="mr-[3px]"
+                  loading="lazy"
+                />
+                They statuses: an invited user or a set of data.
+              </div>
+              <div
+                class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
+              >
+                <img
+                  src="./paperpile/function2x.webp"
+                  srcset="
+                    ./paperpile/function2x.webp 2x,
+                    ./paperpile/function.webp   1x
+                  "
+                  class="mr-[3px]"
+                  loading="lazy"
+                />
+                Fast access information member cards
+              </div>
+              <div
+                class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
+              >
+                <img
+                  src="./paperpile/function2x.webp"
+                  srcset="
+                    ./paperpile/function2x.webp 2x,
+                    ./paperpile/function.webp   1x
+                  "
+                  class="mr-[3px]"
+                  loading="lazy"
+                />
+                User invitation as a family member
+              </div>
+            </div>
+          </div>
+          <img
+            src="./paperpile/children2x.webp"
+            srcset="./paperpile/children2x.webp 2x, ./paperpile/children.webp 1x"
+            class="h-auto w-[390px]"
+            loading="lazy"
+          />
+        </div>
+        <img
+          src="./paperpile/arrow-down2x.webp"
+          srcset="./paperpile/arrow-down2x.webp 2x, ./paperpile/arrow-down.webp 1x"
+          class="relative right-[15%] mx-auto mt-2"
+          loading="lazy"
+        />
+        <div class="flex items-start">
+          <div class="h1 leading-none">80%</div>
+          <div class="t2 ml-6">
+            12 of 15 respondents with children whom were shown prototype users
+            during moderated usability tests reported the feature met their
+            needs.
+            <br /><br />
+            Users reported that the fonts on the Fast Access Information Cards
+            were too small. They considered using them not only for copy-pasting
+            online but also for filling in information offline.
+            <i>Based on this request, we adjusted the card and font sizes.</i>
+          </div>
+          <img
+            src="./paperpile/faces-old-young2x.webp"
+            srcset="
+              ./paperpile/faces-old-young2x.webp 2x,
+              ./paperpile/faces-old-young.webp   1x
+            "
+            class="ml-10 h-auto w-[250px]"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-12">
+        <div>
+          <h2>Key Contributions</h2>
+          <h5 class="mt-9">Improving and testing key user flows</h5>
+          <div class="t2 mt-2">
+            I prioritized main and secondary user flows. I revamped the layout
+            and design of the main flows, including document searching, adding,
+            and sharing. By leveraging user interviews, feedback, and usability
+            tests, I iteratively refined the flows to reduce friction and
+            improve intuitiveness,
+            <i>resulting in higher task completion rates among tested users.</i>
+          </div>
+          <h5 class="mt-9">Explore, design ans test new feature</h5>
+          <div class="t2 mt-2">
+            I conducted interviews and
+            <i
+              >workshops to formulate hypotheses, designed and tested
+              prototypes, and conducted surveys.</i
+            >
+            Thus, we developed a few features, such as family members, photo
+            filters, and AI categorization.
+          </div>
+          <h5 class="mt-9">Built a UI Library</h5>
+          <div class="t2 mt-2">
+            Developed a scalable and consistent
+            <i>UI library with tokens system,</i> ensuring cohesive design
+            across all screens and streamlining future iterations.
+          </div>
+          <h5 class="mt-9">Facilitated Usability Testing</h5>
+          <div class="t2 mt-2">
+            Conducted <i>tests and surveys to gather user feedback</i>,
+            iterating on designs to address issues early on.
+          </div>
+        </div>
+        <img
+          src="./paperpile/woman-smiling2x.webp"
+          srcset="
+            ./paperpile/woman-smiling2x.webp 2x,
+            ./paperpile/woman-smiling.webp   1x
+          "
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content pr-48">
+        <h2>Outcomes</h2>
+        <div class="t2 mt-9 space-y-9">
+          <p>
+            Improved user engagement with redesigned core flows, increasing task
+            completion rates by 14% based on early testing.
+          </p>
+          <p>
+            Simplified family sharing and AI categorization received positive
+            feedback, as users can now do multiple jobs with a single solution
+            and reduce JTBDs' time.
+          </p>
+          <p>
+            Enhanced user satisfaction contributed to securing $1.5M in seed
+            funding, enabling further growth and development.
+          </p>
+          <p>
+            The team stayed alive and collaborated in the startup mess. That
+            allowed for rapid iteration, aligning the design with user needs and
+            business goals.
+          </p>
+        </div>
+      </div>
+      <img
+        src="./paperpile/paper-pile2x.webp"
+        srcset="./paperpile/paper-pile2x.webp 2x, ./paperpile/paper-pile.webp 1x"
+        class="absolute right-0 top-[200px]"
+        loading="lazy"
+      />
+    </section>
+    <section>
+      <div class="section-content">
+        <h5>See more my projects</h5>
+        <div class="mt-9 grid grid-cols-[227fr,229fr,495fr] gap-9">
+          <div class="">
+            <img
+              src="./paperpile/next-sofia2x.webp"
+              srcset="
+                ./paperpile/next-sofia2x.webp 2x,
+                ./paperpile/next-sofia.webp   1x
+              "
+              class="rounded-[20px]"
+            />
+            <div class="t3 text-gray-primary mt-3">2022</div>
+            <div class="t1 mt-3">Sofia</div>
+            <div class="t3 mt-2">
+              Template and library for CRM, a specialized data management
+              platform
+            </div>
+          </div>
+          <div class="">
+            <img
+              src="./paperpile/next-fugo2x.webp"
+              srcset="
+                ./paperpile/next-fugo2x.webp 2x,
+                ./paperpile/next-fugo.webp   1x
+              "
+              class="rounded-[20px]"
+            />
+            <div class="t3 text-gray-primary mt-3">2023</div>
+            <div class="t1 mt-3">Fugo</div>
+            <div class="t3 mt-2">
+              Fugo Studio UX: Increasing features discoverability
+            </div>
+          </div>
+          <div class="">
+            <img
+              src="./paperpile/next-fugo-redesign-big2x.webp"
+              srcset="
+                ./paperpile/next-fugo-redesign-big2x.webp 2x,
+                ./paperpile/next-fugo-redesign-big.webp   1x
+              "
+              class="rounded-[20px]"
+            />
+            <div class="t3 text-gray-primary mt-3">2021-2022</div>
+            <div class="t1 mt-3">Fugo: app redesign</div>
+            <div class="t3 mt-2">
+              Digital signage and screens management system<br />with design
+              tool
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex flex-col items-center">
+        <img
+          src="./paperpile/avatar2x.webp"
+          srcset="./paperpile/avatar2x.webp 2x, ./paperpile/avatar.webp 1x"
+          class="rounded-full"
+        />
+        <h3 class="mt-9">Want to hire me?</h3>
+        <div class="t2 mt-9">Send me a job inquiry</div>
+        <a
+          href="mailto:petukhouskaya.design@gmail.com"
+          class="t2 text-green-primary mt-10"
+        >
+          petukhouskaya.design@gmail.com
+        </a>
+        <button
+          class="bg-white-primary text-dark-primary mt-6 rounded-full px-4 py-1.5"
+          onclick="copyMail()"
+        >
+          Copy mail
+        </button>
+      </div>
+    </section>
+    <hr />
+    <footer class="">
+      <div class="section-content flex justify-between pt-16">
+        <svg
+          width="44"
+          height="45"
+          viewBox="0 0 44 45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          onclick="window.scroll({ top: 0, behavior: 'smooth' })"
+        >
+          <circle
+            cx="22"
+            cy="22.0859"
+            r="20"
+            stroke="white"
+            stroke-width="2.17391"
+          />
+          <path
+            d="M29.3472 14.5441L22 7.19691M22 7.19691L14.6528 14.5441M22 7.19691V36.7109"
+            stroke="white"
+            stroke-width="2.17391"
+          />
+        </svg>
+        <div class="flex items-center gap-20">
+          <a href="/">Get CV</a>
+          <a
+            href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <button
+            class="bg-white-primary text-dark-primary rounded-full px-4 py-1.5"
+            onclick="copyMail()"
+          >
+            Copy mail
+          </button>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function copyMail() {
+        const mail = "petukhouskaya.design@gmail.com";
+        navigator.clipboard.writeText(mail);
+      }
+    </script>
+  </body>
+</html>
