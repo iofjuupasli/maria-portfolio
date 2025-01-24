@@ -238,15 +238,69 @@
     </style>
   </head>
   <body class="bg-black-primary text-white-primary font-sans">
+    <menu
+      class="fixed bottom-0 left-0 top-0 z-50 flex w-[72px] flex-col items-center justify-between py-7 pl-5"
+    >
+      <a href="./">
+        <svg
+          width="44"
+          height="44"
+          viewBox="0 0 44 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="22"
+            cy="22"
+            r="20"
+            stroke="white"
+            stroke-width="2.17391"
+          />
+          <path
+            d="M21.0864 12.4346H10.6959M10.6959 12.4346V22.8251M10.6959 12.4346L31.5654 33.3042"
+            stroke="white"
+            stroke-width="2.17391"
+          />
+        </svg>
+      </a>
+      <div class="flex flex-col items-center gap-5 text-[15px] font-medium">
+        <a
+          href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
+          class=""
+          >in</a
+        >
+        <a href="">CV</a>
+        <button
+          onclick="copyMail()"
+          class="bg-white-primary flex h-7 w-7 items-center justify-center rounded-full"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.42871 1.42871V14.5716H8.28585H15.143V1.42871M1.42871 1.42871H8.28585H15.143M1.42871 1.42871L8.28585 8.00014L15.143 1.42871"
+              stroke="#171E25"
+              stroke-width="1.42857"
+            />
+          </svg>
+        </button>
+      </div>
+    </menu>
     <header class="flex h-screen items-center justify-center">
       <video
+        width="2880"
+        height="1440"
         src="./paperpile/intro.mp4"
         autoplay
         muted
         playsinline
-        class="absolute inset-0 h-full w-full object-cover mix-blend-lighten animate-fade-out"
+        class="animate-fade-out absolute inset-0 h-full w-full object-cover mix-blend-lighten"
       ></video>
-      <div class="flex items-center justify-center animate-fade-in">
+      <div class="animate-fade-in flex items-center justify-center">
         <svg
           width="79"
           height="57"
@@ -310,8 +364,13 @@
       </div>
       <div class="absolute right-0 top-32">
         <img
+          width="316"
+          height="474"
           src="./paperpile/paper-pile2x.webp"
-          srcset="./paperpile/paper-pile.webp 1x, ./paperpile/paper-pile2x.webp 2x"
+          srcset="
+            ./paperpile/paper-pile.webp   1x,
+            ./paperpile/paper-pile2x.webp 2x
+          "
           alt="Stack of Documents"
           loading="lazy"
         />
@@ -334,6 +393,8 @@
           </div>
           <div class="flex-1">
             <img
+              width="91"
+              height="71"
               class="mb-[25px] ml-[-6px] mt-[116px]"
               src="./paperpile/arrow-down-right2x.webp"
               srcset="
@@ -365,6 +426,8 @@
               accessibility become critical to avoid confusion and delays.
             </p>
             <img
+              width="104"
+              height="66"
               class="ml-[-44px] mt-[15px]"
               src="./paperpile/arrow-up-right-curl2x.webp"
               srcset="
@@ -377,6 +440,8 @@
           </div>
           <div class="flex-1">
             <img
+              width="81"
+              height="93"
               class="mb-[13px] ml-[-15px] mt-8"
               src="./paperpile/arrow-down-right-curl2x.webp"
               srcset="
@@ -448,11 +513,15 @@
         </p>
         <div class="relative mt-12">
           <img
+            width="1010"
+            height="616"
             src="./paperpile/team2x.webp"
             srcset="./paperpile/team.webp 1x, ./paperpile/team2x.webp 2x"
             loading="lazy"
           />
           <img
+            width="133"
+            height="162"
             class="absolute left-[31%] top-[3%] w-[15%] opacity-100 hover:opacity-0"
             src="./paperpile/aha2x.webp"
             srcset="./paperpile/aha.webp 1x, ./paperpile/aha2x.webp 2x"
@@ -460,6 +529,8 @@
           />
           <a href="#children" class="">
             <img
+              width="133"
+              height="162"
               class="absolute left-[31%] top-[3%] w-[15%] opacity-0 hover:opacity-100"
               src="./paperpile/aha-hover2x.webp"
               srcset="
@@ -514,6 +585,8 @@
         <div class="flex gap-32">
           <div class="flex flex-1 flex-col items-center justify-between">
             <img
+              width="162"
+              height="164"
               src="./paperpile/people2x.webp"
               srcset="./paperpile/people.webp 1x, ./paperpile/people2x.webp 2x"
               loading="lazy"
@@ -525,6 +598,8 @@
           </div>
           <div class="flex flex-1 flex-col items-center justify-between">
             <img
+              width="162"
+              height="164"
               src="./paperpile/income2x.webp"
               srcset="./paperpile/income.webp 1x, ./paperpile/income2x.webp 2x"
               loading="lazy"
@@ -536,8 +611,13 @@
           </div>
           <div class="flex flex-1 flex-col items-center justify-between">
             <img
+              width="162"
+              height="164"
               src="./paperpile/country2x.webp"
-              srcset="./paperpile/country.webp 1x, ./paperpile/country2x.webp 2x"
+              srcset="
+                ./paperpile/country.webp   1x,
+                ./paperpile/country2x.webp 2x
+              "
               loading="lazy"
             />
             <div>
@@ -950,6 +1030,8 @@
         </div>
       </div>
       <img
+        width="579"
+        height="391"
         class="absolute right-0 top-[230px]"
         src="./paperpile/hand2x.webp"
         srcset="./paperpile/hand.webp 1x, ./paperpile/hand2x.webp 2x"
@@ -961,6 +1043,8 @@
         <h2>What <i>assistant</i> do</h2>
         <div class="mt-[92px] flex gap-20">
           <img
+            width="466"
+            height="505"
             class="h-auto w-0 flex-1"
             src="./paperpile/assistant-a2x.webp"
             srcset="
@@ -971,6 +1055,8 @@
             loading="lazy"
           />
           <img
+            width="490"
+            height="505"
             class="h-auto w-0 flex-1"
             src="./paperpile/assistant-b2x.webp"
             srcset="
@@ -1036,6 +1122,8 @@
         <div class="mt-[92px] flex gap-8">
           <div class="flex-1">
             <img
+              width="235"
+              height="242"
               src="./paperpile/cases2x.webp"
               srcset="./paperpile/cases.webp 1x, ./paperpile/cases2x.webp 2x"
               loading="lazy"
@@ -1047,6 +1135,8 @@
           </div>
           <div class="flex-1">
             <img
+              width="235"
+              height="242"
               src="./paperpile/hands2x.webp"
               srcset="./paperpile/hands.webp 1x, ./paperpile/hands2x.webp 2x"
               loading="lazy"
@@ -1058,6 +1148,8 @@
           </div>
           <div class="flex-1">
             <img
+              width="235"
+              height="242"
               src="./paperpile/flower2x.webp"
               srcset="./paperpile/flower.webp 1x, ./paperpile/flower2x.webp 2x"
               loading="lazy"
@@ -1069,6 +1161,8 @@
           </div>
           <div class="flex-1">
             <img
+              width="235"
+              height="242"
               src="./paperpile/smilingface2x.webp"
               srcset="
                 ./paperpile/smilingface.webp   1x,
@@ -1130,6 +1224,8 @@
         </div>
       </div>
       <img
+        width="457"
+        height="689"
         src="./paperpile/newspaper-pile2x.webp"
         srcset="
           ./paperpile/newspaper-pile.webp   1x,
@@ -1148,6 +1244,8 @@
           not all comparison categories, as an example.
         </div>
         <img
+          width="1036"
+          height="665"
           src="./paperpile/competitors2x.webp"
           srcset="
             ./paperpile/competitors.webp   1x,
@@ -1166,6 +1264,8 @@
           analysis to come up with a start-up business model.
         </div>
         <img
+          width="1036"
+          height="429"
           src="./paperpile/business-model2x.webp"
           srcset="
             ./paperpile/business-model.webp   1x,
@@ -1185,6 +1285,8 @@
         <div class="mt-[92px] space-y-[60px]">
           <div class="flex gap-8">
             <img
+              width="70"
+              height="70"
               src="./paperpile/search2x.webp"
               srcset="./paperpile/search.webp 1x, ./paperpile/search2x.webp 2x"
               class="flex-0 self-start"
@@ -1215,6 +1317,8 @@
           </div>
           <div class="flex gap-8">
             <img
+              width="70"
+              height="70"
               src="./paperpile/plus2x.webp"
               srcset="./paperpile/plus.webp 1x, ./paperpile/plus2x.webp 2x"
               class="flex-0 self-start"
@@ -1235,6 +1339,8 @@
           </div>
           <div class="flex gap-8">
             <img
+              width="70"
+              height="70"
               src="./paperpile/share2x.webp"
               srcset="./paperpile/share.webp 1x, ./paperpile/share2x.webp 2x"
               class="flex-0 self-start"
@@ -1255,8 +1361,13 @@
           </div>
           <div class="flex gap-8">
             <img
+              width="70"
+              height="70"
               src="./paperpile/babyface2x.webp"
-              srcset="./paperpile/babyface.webp 1x, ./paperpile/babyface2x.webp 2x"
+              srcset="
+                ./paperpile/babyface.webp   1x,
+                ./paperpile/babyface2x.webp 2x
+              "
               class="flex-0 self-start"
               loading="lazy"
             />
@@ -2092,6 +2203,8 @@
       </div>
     </section>
     <img
+      width="1280"
+      height="461"
       class="h-auto w-full"
       src="./paperpile/wireframes2x.webp"
       srcset="./paperpile/wireframes2x.webp 2x, ./paperpile/wireframes.webp 1x"
@@ -2113,6 +2226,8 @@
           </div>
         </div>
         <video
+          width="1080"
+          height="2400"
           src="./paperpile/prototype.mp4"
           autoplay
           loop
@@ -2124,6 +2239,8 @@
       </div>
     </section>
     <img
+      width="1280"
+      height="601"
       class="h-auto w-full"
       src="./paperpile/prototype2x.webp"
       srcset="./paperpile/prototype2x.webp 2x, ./paperpile/prototype.webp 1x"
@@ -2132,6 +2249,8 @@
     <section class="bg-green-primary text-black-primary">
       <div class="section-content flex gap-[60px]">
         <video
+          width="720"
+          height="1558"
           src="./paperpile/high-prototype.mp4"
           autoplay
           loop
@@ -2186,8 +2305,13 @@
       </div>
     </section>
     <img
+      width="1280"
+      height="229"
       src="./paperpile/block-arrow2x.webp"
-      srcset="./paperpile/block-arrow2x.webp 2x, ./paperpile/block-arrow.webp 1x"
+      srcset="
+        ./paperpile/block-arrow2x.webp 2x,
+        ./paperpile/block-arrow.webp   1x
+      "
       class="h-auto w-full"
       loading="lazy"
     />
@@ -2198,6 +2322,8 @@
         </h2>
         <div class="mt-[92px] space-y-3">
           <img
+            width="1023"
+            height="504"
             src="./paperpile/search-top2x.webp"
             srcset="
               ./paperpile/search-top2x.webp 2x,
@@ -2207,6 +2333,8 @@
             loading="lazy"
           />
           <img
+            width="166"
+            height="226"
             src="./paperpile/woman-thinking2x.webp"
             srcset="
               ./paperpile/woman-thinking2x.webp 2x,
@@ -2216,6 +2344,8 @@
             loading="lazy"
           />
           <img
+            width="1027"
+            height="521"
             src="./paperpile/search-bottom2x.webp"
             srcset="
               ./paperpile/search-bottom2x.webp 2x,
@@ -2233,6 +2363,8 @@
           Main Flow <i>Add Document</i> layout redesign
         </h2>
         <img
+          width="1056"
+          height="1369"
           src="./paperpile/add-doc-redesign2x.webp"
           srcset="
             ./paperpile/add-doc-redesign2x.webp 2x,
@@ -2244,6 +2376,8 @@
       </div>
     </section>
     <img
+      width="1280"
+      height="326"
       src="./paperpile/components2x.webp"
       srcset="./paperpile/components2x.webp 2x, ./paperpile/components.webp 1x"
       class="h-auto w-full"
@@ -2252,8 +2386,14 @@
     <section>
       <div class="section-content">
         <img
+          id="children"
+          width="202"
+          height="177"
           src="./paperpile/aha-bubble2x.webp"
-          srcset="./paperpile/aha-bubble2x.webp 2x, ./paperpile/aha-bubble.webp 1x"
+          srcset="
+            ./paperpile/aha-bubble2x.webp 2x,
+            ./paperpile/aha-bubble.webp   1x
+          "
           class=""
           loading="lazy"
         />
@@ -2305,6 +2445,8 @@
                 class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
               >
                 <img
+                  width="28"
+                  height="40"
                   src="./paperpile/function2x.webp"
                   srcset="
                     ./paperpile/function2x.webp 2x,
@@ -2319,6 +2461,8 @@
                 class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
               >
                 <img
+                  width="28"
+                  height="40"
                   src="./paperpile/function2x.webp"
                   srcset="
                     ./paperpile/function2x.webp 2x,
@@ -2333,6 +2477,8 @@
                 class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
               >
                 <img
+                  width="28"
+                  height="40"
                   src="./paperpile/function2x.webp"
                   srcset="
                     ./paperpile/function2x.webp 2x,
@@ -2347,6 +2493,8 @@
                 class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
               >
                 <img
+                  width="28"
+                  height="40"
                   src="./paperpile/function2x.webp"
                   srcset="
                     ./paperpile/function2x.webp 2x,
@@ -2361,6 +2509,8 @@
                 class="bg-black-thirdly flex items-center rounded-md px-3 py-1.5"
               >
                 <img
+                  width="28"
+                  height="40"
                   src="./paperpile/function2x.webp"
                   srcset="
                     ./paperpile/function2x.webp 2x,
@@ -2374,15 +2524,25 @@
             </div>
           </div>
           <img
+            width="390"
+            height="844"
             src="./paperpile/children2x.webp"
-            srcset="./paperpile/children2x.webp 2x, ./paperpile/children.webp 1x"
+            srcset="
+              ./paperpile/children2x.webp 2x,
+              ./paperpile/children.webp   1x
+            "
             class="h-auto w-[390px]"
             loading="lazy"
           />
         </div>
         <img
+          width="85"
+          height="214"
           src="./paperpile/arrow-down2x.webp"
-          srcset="./paperpile/arrow-down2x.webp 2x, ./paperpile/arrow-down.webp 1x"
+          srcset="
+            ./paperpile/arrow-down2x.webp 2x,
+            ./paperpile/arrow-down.webp   1x
+          "
           class="relative right-[15%] mx-auto mt-2"
           loading="lazy"
         />
@@ -2399,6 +2559,8 @@
             <i>Based on this request, we adjusted the card and font sizes.</i>
           </div>
           <img
+            width="250"
+            height="228"
             src="./paperpile/faces-old-young2x.webp"
             srcset="
               ./paperpile/faces-old-young2x.webp 2x,
@@ -2446,6 +2608,8 @@
           </div>
         </div>
         <img
+          width="228"
+          height="284"
           src="./paperpile/woman-smiling2x.webp"
           srcset="
             ./paperpile/woman-smiling2x.webp 2x,
@@ -2480,7 +2644,10 @@
       </div>
       <img
         src="./paperpile/paper-pile2x.webp"
-        srcset="./paperpile/paper-pile2x.webp 2x, ./paperpile/paper-pile.webp 1x"
+        srcset="
+          ./paperpile/paper-pile2x.webp 2x,
+          ./paperpile/paper-pile.webp   1x
+        "
         class="absolute right-0 top-[200px]"
         loading="lazy"
       />
@@ -2491,6 +2658,8 @@
         <div class="mt-9 grid grid-cols-[227fr,229fr,495fr] gap-9">
           <div class="">
             <img
+              width="227"
+              height="232"
               src="./paperpile/next-sofia2x.webp"
               srcset="
                 ./paperpile/next-sofia2x.webp 2x,
@@ -2507,6 +2676,8 @@
           </div>
           <div class="">
             <img
+              width="229"
+              height="232"
               src="./paperpile/next-fugo2x.webp"
               srcset="
                 ./paperpile/next-fugo2x.webp 2x,
@@ -2522,6 +2693,8 @@
           </div>
           <div class="">
             <img
+              width="495"
+              height="232"
               src="./paperpile/next-fugo-redesign-big2x.webp"
               srcset="
                 ./paperpile/next-fugo-redesign-big2x.webp 2x,
@@ -2542,6 +2715,8 @@
     <section>
       <div class="section-content flex flex-col items-center">
         <img
+          width="96"
+          height="96"
           src="./paperpile/avatar2x.webp"
           srcset="./paperpile/avatar2x.webp 2x, ./paperpile/avatar.webp 1x"
           class="rounded-full"
