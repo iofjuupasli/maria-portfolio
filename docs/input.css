@@ -1,3 +1,206 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  h1,
+  .h1 {
+    @apply text-[72px] leading-normal font-light;
+  }
+  h2,
+  .h2 {
+    @apply text-[44px] leading-normal font-semibold tracking-wider;
+  }
+  h3,
+  .h3 {
+    @apply text-[36px] leading-snug font-medium;
+  }
+  h4,
+  .h4 {
+    @apply text-2xl leading-normal font-extrabold;
+  }
+  h5,
+  .h5 {
+    @apply text-xl leading-normal font-semibold;
+  }
+  h6,
+  .h6 {
+    @apply text-lg leading-normal font-bold;
+  }
+  section {
+    @apply relative;
+  }
+  i {
+    @apply text-green-primary;
+  }
+  a:hover {
+    @apply text-green-primary;
+  }
+  button:hover {
+    @apply bg-green-primary text-dark-primary;
+  }
+}
+@layer components {
+  .section-content {
+    @apply mx-32 max-w-[1024px] py-[200px] xl:mx-auto;
+  }
+  .t1 {
+    @apply text-2xl leading-normal font-normal;
+  }
+  .t2 {
+    @apply text-lg leading-normal font-normal;
+  }
+  .t3 {
+    @apply text-sm leading-normal font-normal;
+  }
+  .t4 {
+    @apply text-xs leading-normal font-normal;
+  }
+  .at {
+    @apply font-slackside text-xl leading-normal font-normal;
+  }
+  .italic-bold b {
+    @apply italic;
+  }
+  .side-menu > * {
+    @apply block w-full cursor-pointer rounded-[10px] border px-4 py-1.5 text-center transition-all duration-150 select-none lg:w-min lg:text-left;
+  }
+  .link {
+    @apply hover:text-gray-primary border-transparent hover:rounded-[20px] hover:border-current active:bg-white active:text-black;
+  }
+  .link.active {
+    @apply text-white;
+  }
+  .primary {
+    @apply hover:bg-gray-primary border-transparent bg-white text-black hover:rounded-[20px];
+  }
+  .primary.active {
+    @apply bg-white;
+  }
+  .secondary {
+    @apply hover:text-gray-primary border-current hover:rounded-[20px] active:border-white active:bg-white active:text-black;
+  }
+  .secondary.active {
+    @apply rounded-[20px] bg-white text-black;
+  }
+  .about-card {
+    @apply bg-gray-thirdly lg:text-black-primary relative flex items-center justify-between overflow-hidden rounded-[28px] py-12 pr-4 pl-11 text-white transition-all duration-300 hover:rounded-[52px] lg:py-[36.5px] lg:pr-10 hover:lg:text-white xl:py-[60px];
+  }
+  .about-card__bg {
+    @apply pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-300 lg:opacity-0 group-hover:lg:opacity-100;
+  }
+  .about-card__gradient {
+    @apply pointer-events-none absolute inset-0 h-full w-full translate-x-0 transition-all duration-500 lg:-translate-x-full group-hover:lg:translate-x-0;
+  }
+  .cross.cross--active .cross__top {
+    @apply -translate-y-1 rotate-45;
+  }
+  .cross.cross--active .cross__bottom {
+    @apply translate-y-1 -rotate-45;
+  }
+  .section-tags li {
+    list-style: "•";
+    padding-left: 18px;
+  }
+  .bg-cabbage {
+    background-image: image-set(url("./work.webp") 1x, url("./work2x.webp") 2x);
+  }
+  .bg-cabbage-about {
+    background-image: image-set(
+      url("./about_cabbage.webp") 1x,
+      url("./about_cabbage2x.webp") 2x
+    );
+  }
+  .noise {
+    background: transparent
+      url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+    animation: steps(2) bg-animation 5s infinite;
+  }
+  .animate-rotate {
+    animation: rotate 50s linear infinite;
+  }
+  .animate-ticker {
+    animation: ticker 30s linear infinite;
+  }
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 0s normal forwards;
+    animation-delay: 0.8s;
+  }
+  .animate-fade-out {
+    opacity: 1;
+    animation: fadeOut 0.3s ease-in-out 0s normal forwards;
+    animation-delay: 1.3s;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

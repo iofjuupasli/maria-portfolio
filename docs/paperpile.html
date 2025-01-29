@@ -4,44 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document Management Intro</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      /** @type {import('tailwindcss').Config} */
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["DM Sans", "sans-serif"],
-              serif: ["Inter", "serif"],
-              slackside: ["Slackside One", "cursive"],
-            },
-            colors: {
-              white: {
-                primary: "#FFFFFF",
-              },
-              green: {
-                primary: "#2DD9AE",
-              },
-              gray: {
-                primary: "#CBD5D3",
-              },
-              dark: {
-                primary: "#171E25",
-              },
-              black: {
-                primary: "#171E25",
-                secondary: "#222F3C",
-                thirdly: "#2A3547",
-              },
-            },
-            listStyleType: {
-              dash: "'- '",
-              plus: "'+  '",
-            },
-          },
-        },
-      };
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,196 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* latin-ext */
-      @font-face {
-        font-family: "DM Sans";
-        font-style: italic;
-        font-weight: 100 1000;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4ET-DJF4e8BH9.woff2)
-          format("woff2");
-        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
-          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
-          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
-          U+A720-A7FF;
-      }
-      /* latin */
-      @font-face {
-        font-family: "DM Sans";
-        font-style: italic;
-        font-weight: 100 1000;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4Hz-DJF4e8A.woff2)
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      /* latin-ext */
-      @font-face {
-        font-family: "DM Sans";
-        font-style: normal;
-        font-weight: 100 1000;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2)
-          format("woff2");
-        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
-          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
-          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
-          U+A720-A7FF;
-      }
-      /* latin */
-      @font-face {
-        font-family: "DM Sans";
-        font-style: normal;
-        font-weight: 100 1000;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2)
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-    </style>
-    <!-- <link
+    <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
-    /> -->
-    <style type="text/tailwindcss">
-      @layer base {
-        h1,
-        .h1 {
-          @apply text-[72px] font-light leading-normal;
-        }
-        h2,
-        .h2 {
-          @apply text-[44px] font-semibold leading-normal tracking-wider;
-        }
-        h3,
-        .h3 {
-          @apply text-[36px] font-medium leading-snug;
-        }
-        h4,
-        .h4 {
-          @apply text-2xl font-extrabold leading-normal;
-        }
-        h5,
-        .h5 {
-          @apply text-xl font-semibold leading-normal;
-        }
-        h6,
-        .h6 {
-          @apply text-lg font-bold leading-normal;
-        }
-        section {
-          @apply relative;
-        }
-        i {
-          @apply text-green-primary;
-        }
-        a:hover {
-          @apply text-green-primary;
-        }
-        button:hover {
-          @apply bg-green-primary text-dark-primary;
-        }
-      }
-      @layer components {
-        .section-content {
-          @apply mx-32 max-w-[1024px] py-[200px] xl:mx-auto;
-        }
-        .t1 {
-          @apply text-2xl font-normal leading-normal;
-        }
-        .t2 {
-          @apply text-lg font-normal leading-normal;
-        }
-        .t3 {
-          @apply text-sm font-normal leading-normal;
-        }
-        .t4 {
-          @apply text-xs font-normal leading-normal;
-        }
-        .at {
-          @apply font-slackside text-xl font-normal leading-normal;
-        }
-        .italic-bold b {
-          @apply italic;
-        }
-      }
-      .noise {
-        background: transparent
-          url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
-        animation: steps(2) bg-animation 5s infinite;
-      }
-
-      @keyframes bg-animation {
-        0% {
-          transform: translate(0, 0);
-        }
-        10% {
-          transform: translate(-5%, -5%);
-        }
-        20% {
-          transform: translate(-10%, 5%);
-        }
-        30% {
-          transform: translate(5%, -10%);
-        }
-        40% {
-          transform: translate(-5%, 15%);
-        }
-        50% {
-          transform: translate(-10%, 5%);
-        }
-        60% {
-          transform: translate(15%, 0);
-        }
-        70% {
-          transform: translate(0, 10%);
-        }
-        80% {
-          transform: translate(-15%, 0);
-        }
-        90% {
-          transform: translate(10%, 5%);
-        }
-        100% {
-          transform: translate(5%, 0);
-        }
-      }
-
-      .animate-fade-in {
-        opacity: 0;
-        animation: fadeIn 1s ease-in-out 0s normal forwards;
-        animation-delay: 0.8s;
-      }
-
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-
-      .animate-fade-out {
-        opacity: 1;
-        animation: fadeOut 0.3s ease-in-out 0s normal forwards;
-        animation-delay: 1.3s;
-      }
-
-      @keyframes fadeOut {
-        0% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-    </style>
+    />
+    <link rel="stylesheet" href="./output.css" />
   </head>
   <body class="bg-black-primary text-white-primary font-sans">
     <menu
@@ -639,7 +416,7 @@
         <div
           class="bg-black-secondary text-gray-primary mt-12 px-[83px] py-[77px]"
         >
-          <div class="grid grid-cols-[5fr,3fr]">
+          <div class="grid grid-cols-[5fr_3fr]">
             <div class="border-white-primary border-b border-r pb-9 pr-6">
               <h6>How many</h6>
               <div class="mt-12 flex gap-6">
@@ -2661,7 +2438,7 @@
     <section>
       <div class="section-content">
         <h5>See more of my projects</h5>
-        <div class="mt-9 grid grid-cols-[227fr,229fr,495fr] gap-9">
+        <div class="mt-9 grid grid-cols-[227fr_229fr_495fr] gap-9">
           <div class="">
             <img
               width="227"

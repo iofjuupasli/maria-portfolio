@@ -8,28 +8,6 @@
       content="Maria Petukhovskaya - UI/UX designer specializing in creating user-centered designs for business success. Explore my portfolio to see my work and skills."
     />
     <title>Maria Petukhovskaya</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      /** @type {import('tailwindcss').Config} */
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["DM Sans", "sans-serif"],
-            },
-            colors: {
-              pink: "#ded9ef",
-              peach: "#CBD5D3",
-              green: "#00b187",
-              darkBlue: "#171e25",
-              lightGray: "#B9C3C0",
-              gray: "#CBD5D3",
-            },
-          },
-        },
-      };
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style>
@@ -88,124 +66,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     /> -->
-    <style type="text/tailwindcss">
-      @layer components {
-        .side-menu > * {
-          @apply block w-full cursor-pointer select-none rounded-[10px] border px-4 py-1.5 text-center transition-all duration-150 lg:w-min lg:text-left;
-        }
-        .link {
-          @apply hover:text-gray border-transparent hover:rounded-[20px] hover:border-current active:bg-white active:text-black;
-        }
-        .link.active {
-          @apply text-white;
-        }
-        .primary {
-          @apply hover:bg-gray border-transparent bg-white text-black hover:rounded-[20px];
-        }
-        .primary.active {
-          @apply bg-white;
-        }
-        .secondary {
-          @apply hover:text-gray border-current hover:rounded-[20px] active:border-white active:bg-white active:text-black;
-        }
-        .secondary.active {
-          @apply rounded-[20px] bg-white text-black;
-        }
-        .about-card {
-          @apply bg-lightGray lg:text-darkBlue relative flex items-center justify-between overflow-hidden rounded-[28px] py-12 pl-11 pr-4 text-white transition-all duration-300 hover:rounded-[52px] lg:py-[36.5px] lg:pr-10 hover:lg:text-white xl:py-[60px];
-        }
-        .about-card__bg {
-          @apply pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-300 lg:opacity-0 group-hover:lg:opacity-100;
-        }
-        .about-card__gradient {
-          @apply pointer-events-none absolute inset-0 h-full w-full translate-x-0 transition-all duration-500 lg:-translate-x-full group-hover:lg:translate-x-0;
-        }
-        .cross.cross--active .cross__top {
-          @apply -translate-y-1 rotate-45;
-        }
-        .cross.cross--active .cross__bottom {
-          @apply translate-y-1 -rotate-45;
-        }
-      }
-      .noise {
-        background: transparent
-          url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
-        animation: steps(2) bg-animation 5s infinite;
-      }
-
-      @keyframes bg-animation {
-        0% {
-          transform: translate(0, 0);
-        }
-        10% {
-          transform: translate(-5%, -5%);
-        }
-        20% {
-          transform: translate(-10%, 5%);
-        }
-        30% {
-          transform: translate(5%, -10%);
-        }
-        40% {
-          transform: translate(-5%, 15%);
-        }
-        50% {
-          transform: translate(-10%, 5%);
-        }
-        60% {
-          transform: translate(15%, 0);
-        }
-        70% {
-          transform: translate(0, 10%);
-        }
-        80% {
-          transform: translate(-15%, 0);
-        }
-        90% {
-          transform: translate(10%, 5%);
-        }
-        100% {
-          transform: translate(5%, 0);
-        }
-      }
-      .animate-rotate {
-        animation: rotate 50s linear infinite;
-      }
-      @keyframes rotate {
-        from {
-          transform: rotate(360deg);
-        }
-        to {
-          transform: rotate(0deg);
-        }
-      }
-      .animate-ticker {
-        animation: ticker 30s linear infinite;
-      }
-      @keyframes ticker {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
-      }
-      .section-tags li {
-        list-style: "•";
-        padding-left: 18px;
-      }
-      .bg-cabbage {
-        background-image: image-set(
-          url("./work.webp") 1x,
-          url("./work2x.webp") 2x
-        );
-      }
-      .bg-cabbage-about {
-        background-image: image-set(
-          url("./about_cabbage.webp") 1x,
-          url("./about_cabbage2x.webp") 2x
-        );
-      }
+    <style>
       .button-gradient {
         background: linear-gradient(
           81.61deg,
@@ -224,13 +85,14 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="./output.css" />
   </head>
   <body>
     <div
-      class="noise pointer-events-none fixed -bottom-1/2 -left-1/2 -right-1/2 -top-1/2 z-40 h-[200%] w-[200%] opacity-65"
+      class="noise pointer-events-none fixed -top-1/2 -right-1/2 -bottom-1/2 -left-1/2 z-40 h-[200%] w-[200%] opacity-65"
     ></div>
     <div
-      class="js-header-bg bg-darkBlue pointer-events-none fixed z-10 h-screen w-full transition-opacity duration-500"
+      class="js-header-bg bg-black-primary pointer-events-none fixed z-10 h-screen w-full transition-opacity duration-500"
     ></div>
     <menu
       class="js-mobile-menu fixed z-[60] h-20 w-full text-white transition-transform duration-500 lg:hidden"
@@ -254,7 +116,7 @@
       </div>
     </menu>
     <menu
-      class="js-menu bg-darkBlue fixed z-[60] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly text-nowrap pl-3 text-white transition-all duration-500 lg:z-20 lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
+      class="js-menu bg-black-primary fixed z-[60] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-3 text-nowrap text-white transition-all duration-500 lg:z-20 lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
     >
       <div
         class="flex h-full max-h-[640px] flex-col items-center justify-evenly py-8 lg:block"
@@ -310,7 +172,7 @@
       </div>
     </menu>
     <div
-      class="js-mobile-menu js-cross cross fixed right-0 top-0 z-[60] flex h-[62px] w-[62px] items-center justify-center text-white transition-transform duration-500 lg:hidden"
+      class="js-mobile-menu js-cross cross fixed top-0 right-0 z-[60] flex h-[62px] w-[62px] items-center justify-center text-white transition-transform duration-500 lg:hidden"
       onclick="handleMobileMenuClick()"
     >
       <div>
@@ -324,14 +186,16 @@
     </div>
     <div class="pointer-events-none relative z-30 h-screen">
       <header
-        class="js-header fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pl-14 lg:pt-[15vh] xl:pt-[18vh]"
+        class="js-header fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
       >
         <h1
-          class="js-title relative z-40 mx-auto max-w-[360px] origin-[70.3%_65.1%] px-[26px] text-[30px] font-semibold leading-[39px] tracking-wide text-white sm:max-w-[640px] sm:origin-[50.8%_74.9%] lg:max-w-[807px] lg:origin-[50.89%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
+          class="js-title relative z-40 mx-auto max-w-[360px] origin-[70.3%_65.1%] px-[26px] text-[30px] leading-[39px] font-semibold tracking-wide text-white sm:max-w-[640px] sm:origin-[50.8%_74.9%] lg:max-w-[807px] lg:origin-[50.89%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
         >
           I’m Maria.<br />
           I create UI and UX design for
-          <span class="text-green">people's needs and business success.</span>
+          <span class="text-green-secondary"
+            >people's needs and business success.</span
+          >
         </h1>
         <div class="relative mt-[11vh]">
           <svg
@@ -354,7 +218,7 @@
           </svg>
           <img
             alt="Maria Petukhovskaya - UX/UI designer"
-            class="absolute left-1/2 top-1/2 h-[142px] w-[142px] -translate-x-1/2 translate-y-[-51%] rounded-full"
+            class="absolute top-1/2 left-1/2 h-[142px] w-[142px] -translate-x-1/2 translate-y-[-51%] rounded-full"
             src="./portrait2x.webp"
             srcset="./portrait.webp 1x, ./portrait2x.webp 2x"
           />
@@ -362,10 +226,10 @@
       </header>
     </div>
     <section
-      class="js-skills bg-green text-darkBlue relative h-[180vh] overflow-hidden text-[26px] font-semibold"
+      class="js-skills bg-green-secondary text-black-primary relative h-[180vh] overflow-hidden text-[26px] font-semibold"
     >
       <ul
-        class="section-tags animate-ticker absolute left-0 right-0 top-2/3 flex w-max -translate-y-1/2 gap-5 space-x-2"
+        class="section-tags animate-ticker absolute top-2/3 right-0 left-0 flex w-max -translate-y-1/2 gap-5 space-x-2"
       >
         <li>UX/UI Design</li>
         <li>Product Design</li>
@@ -389,17 +253,17 @@
         <li>App Design</li>
       </ul>
     </section>
-    <main class="bg-green text-white">
+    <main class="bg-green-secondary text-white">
       <div
-        class="js-work-card bg-darkBlue mx-10 rounded-3xl px-[21px] pb-[200px] pt-[30vh] sm:px-8 lg:pl-[168px] lg:pr-8 xl:pl-[232px] xl:pr-[25px]"
+        class="js-work-card bg-black-primary mx-10 rounded-3xl px-[21px] pt-[30vh] pb-[200px] sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-[25px] xl:pl-[232px]"
       >
         <h2
-          class="bg-cabbage sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] font-extrabold leading-relaxed tracking-wide text-transparent sm:text-[140px] lg:pr-8 lg:text-[280px] xl:text-[340px]"
+          class="bg-cabbage sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] leading-relaxed font-extrabold tracking-wide text-transparent sm:text-[140px] lg:pr-8 lg:text-[280px] xl:text-[340px]"
         >
           work
         </h2>
         <div
-          class="from-darkBlue via-darkBlue relative mx-auto -mt-[10vh] max-w-[1184px] bg-gradient-to-t via-60% to-transparent pt-[50vh]"
+          class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] max-w-[1184px] bg-gradient-to-t via-60% to-transparent pt-[50vh]"
         >
           <article class="-mt-[20px] grid-cols-8 gap-8 lg:grid">
             <div
@@ -429,44 +293,46 @@
               alt="Fugo app interface"
             />
           </article>
-          <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px]">
-            <div
-              class="col-span-3 self-center font-medium xl:col-span-2 xl:self-start"
-            >
-              <time datetime="2022" class="text-xl">2022</time>
-              <h3 class="mt-[23px] text-[32px] font-semibold tracking-wide">
-                Sofia
-              </h3>
-              <p class="mt-1 leading-5">
-                CRM, a specialized data management platform.
-              </p>
-              <p class="mt-5">Role: UI/UX designer</p>
+          <a href="./sofia.html">
+            <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px]">
+              <div
+                class="col-span-3 self-center font-medium xl:col-span-2 xl:self-start"
+              >
+                <time datetime="2022" class="text-xl">2022</time>
+                <h3 class="mt-[23px] text-[32px] font-semibold tracking-wide">
+                  Sofia
+                </h3>
+                <p class="mt-1 leading-5">
+                  CRM, a specialized data management platform.
+                </p>
+                <p class="mt-5">Role: UI/UX designer</p>
+                <img
+                  loading="lazy"
+                  src="./img/sofia-mobile2x.webp"
+                  srcset="
+                    ./img/sofia-mobile.webp   1x,
+                    ./img/sofia-mobile2x.webp 2x
+                  "
+                  class="relative z-50 mt-10 hidden w-full self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
+                  alt="Sofia mobile app interface"
+                />
+              </div>
               <img
                 loading="lazy"
-                src="./img/sofia-mobile2x.webp"
-                srcset="
-                  ./img/sofia-mobile.webp   1x,
-                  ./img/sofia-mobile2x.webp 2x
-                "
-                class="relative z-50 mt-10 hidden w-full self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
-                alt="Sofia mobile app interface"
+                src="./img/sofia2x.webp"
+                srcset="./img/sofia.webp 1x, ./img/sofia2x.webp 2x"
+                class="z-50 col-span-5 mt-5 h-[291px] w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] lg:order-first lg:mt-0 xl:order-2 xl:col-span-4 xl:h-full"
+                alt="Sofia app interface"
               />
-            </div>
-            <img
-              loading="lazy"
-              src="./img/sofia2x.webp"
-              srcset="./img/sofia.webp 1x, ./img/sofia2x.webp 2x"
-              class="z-50 col-span-5 mt-5 h-[291px] w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] lg:order-first lg:mt-0 xl:order-2 xl:col-span-4 xl:h-full"
-              alt="Sofia app interface"
-            />
-            <img
-              loading="lazy"
-              src="./img/sofia-logo2x.webp"
-              srcset="./img/sofia-logo.webp 1x, ./img/sofia-logo2x.webp 2x"
-              class="z-50 order-last hidden rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:col-span-2 xl:block"
-              alt="Sofia company logo"
-            />
-          </article>
+              <img
+                loading="lazy"
+                src="./img/sofia-logo2x.webp"
+                srcset="./img/sofia-logo.webp 1x, ./img/sofia-logo2x.webp 2x"
+                class="z-50 order-last hidden rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:col-span-2 xl:block"
+                alt="Sofia company logo"
+              />
+            </article>
+          </a>
           <a href="./paperpile.html">
             <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px]">
               <div
@@ -501,16 +367,16 @@
       </div>
     </main>
     <section
-      class="js-about bg-peach px-5 pb-24 pt-[30vh] sm:px-8 lg:pl-[168px] lg:pr-8 xl:pl-[230px] xl:pr-6"
+      class="js-about bg-gray-primary px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
     >
       <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
-          class="bg-cabbage-about sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] font-extrabold leading-snug tracking-wide text-transparent sm:text-[140px] lg:text-[280px] xl:text-[340px]"
+          class="bg-cabbage-about sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] leading-snug font-extrabold tracking-wide text-transparent sm:text-[140px] lg:text-[280px] xl:text-[340px]"
         >
           about
         </h2>
         <div
-          class="from-peach via-peach relative grid-cols-8 gap-8 bg-gradient-to-t via-80% to-transparent pt-[35vh] lg:grid lg:via-40%"
+          class="from-gray-primary via-gray-primary relative grid-cols-8 gap-8 bg-gradient-to-t via-80% to-transparent pt-[35vh] lg:grid lg:via-40%"
         >
           <div class="col-span-4">
             <img
@@ -551,7 +417,9 @@
               </p>
             </div>
           </div>
-          <div class="text-darkBlue z-50 col-span-4 mt-8 space-y-7 lg:mt-0">
+          <div
+            class="text-black-primary z-50 col-span-4 mt-8 space-y-7 lg:mt-0"
+          >
             <a
               href="https://www.instagram.com/petuhovskaya.m/"
               target="_blank"
@@ -728,11 +596,11 @@
         </div>
       </div>
     </section>
-    <footer class="bg-peach px-5 pb-10 lg:hidden">
+    <footer class="bg-gray-primary px-5 pb-10 lg:hidden">
       <button
         type="button"
         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-        class="active:bg-darkBlue border-darkBlue text-darkBlue mx-auto block w-full max-w-[400px] rounded-full border px-4 py-1.5 transition-colors duration-100 active:text-white"
+        class="active:bg-black-primary border-black-primary text-black-primary mx-auto block w-full max-w-[400px] rounded-full border px-4 py-1.5 transition-colors duration-100 active:text-white"
       >
         up
       </button>
@@ -741,7 +609,7 @@
       class="js-copy-mail-tooltip-portal pointer-events-none fixed z-50 opacity-0 transition-opacity duration-300"
     >
       <div
-        class="js-copy-mail-tooltip text-darkBlue absolute bottom-full left-2/3 mb-1 rounded-lg px-2 py-1 text-sm"
+        class="js-copy-mail-tooltip text-black-primary absolute bottom-full left-2/3 mb-1 rounded-lg px-2 py-1 text-sm"
       >
         petukhouskaya.design@gmail.com
       </div>
@@ -808,11 +676,11 @@
           return;
         }
         if (mainRect.bottom < window.innerHeight + 100) {
-          container.classList.remove("bg-green");
-          container.classList.add("bg-peach");
+          container.classList.remove("bg-green-secondary");
+          container.classList.add("bg-gray-primary");
         } else {
-          container.classList.remove("bg-peach");
-          container.classList.add("bg-green");
+          container.classList.remove("bg-gray-primary");
+          container.classList.add("bg-green-secondary");
         }
         const bottom = Math.min(mainRect.bottom, window.innerHeight);
         const visibleHeight = Math.max(0, bottom - Math.max(mainRect.top, 0));
@@ -860,7 +728,7 @@
           lastSwitch = st;
         } else if (st < lastScrollTop && st < lastSwitch - 50) {
           menuMobileElems.forEach((menuMobileElem) => {
-            menuMobileElem.classList.add("bg-darkBlue");
+            menuMobileElem.classList.add("bg-black-primary");
             menuMobileElem.classList.remove("-translate-y-full");
           });
           lastSwitch = st;

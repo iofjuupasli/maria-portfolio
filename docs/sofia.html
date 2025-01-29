@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sofia CRM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body class="bg-black-primary text-white-primary">
+    <header>
+      <div class="section-content">
+        <div class="flex justify-between">
+          <div>
+            <div class="t2 text-gray-primary">2021-2022</div>
+            <h1 class="mt-18">Sofia CRM</h1>
+            <h3 class="mt-6">The way for building application</h3>
+          </div>
+          <img src="./sofia/logo.svg" alt="Logo" />
+        </div>
+        <video
+          width="1920"
+          height="1404"
+          src="./sofia/sofia.mp4"
+          autoplay
+          loop
+          muted
+          class="mt-30 h-auto w-full overflow-clip rounded-4xl"
+        ></video>
+        <div class="t2 mt-30 flex gap-8">
+          <div class="flex-1 space-y-3">
+            <div class="text-gray-primary">About the project</div>
+            <div>
+              Sofia CRM is a dedicated platform designed to simplify customer
+              data management.
+            </div>
+          </div>
+          <div class="flex-1 space-y-3">
+            <div class="text-gray-primary">My role</div>
+            <div>UI/UX designer, illustator</div>
+          </div>
+          <div class="flex-1 space-y-3">
+            <div class="text-gray-primary">Project goal</div>
+            <div>
+              Develop a flexible app template and a comprehensive library.
+            </div>
+          </div>
+          <div class="flex-1 space-y-3">
+            <div class="text-gray-primary">Result</div>
+            <div>
+              The theme includes 45 pages and has<br /><b
+                class="text-sofia-primary"
+                >been downloaded over 227 times.</b
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="section-content flex justify-between gap-24">
+        <h2 class="flex-1">Challenge</h2>
+        <div class="t2 flex-2">
+          Our designers team delved into understanding our clients' needs and
+          made an intriguing observation: each client had unique preferences for
+          managing their data. However, amidst this diversity, a common thread
+          ran through their dashboard ideas. Recognizing this pattern, we
+          decided to create a universal template that could seamlessly
+          accommodate the individual needs of each client. This initiative not
+          only streamlined our company's processes but also ensured efficiency
+          across all projects.
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex justify-between gap-24">
+        <h2 class="flex-1">Exploring the Problem</h2>
+        <div class="t2 flex-2">
+          As we started our research, our team identified two primary challenges
+          that required resolution:
+          <br /><br />
+          <b>Making the template suitable for different clients:</b><br />
+          We needed to create a structure that could work well for a variety of
+          businesses.
+          <br /><br />
+          <b>Keeping it customizable:</b><br />
+          At the same time, we had to ensure that clients could tweak the
+          template to suit their individual needs.
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <div class="flex justify-between gap-24">
+          <h2 class="flex-1">Interview</h2>
+          <div class="t2 flex-2">
+            In our quest to refine our data management solution, we reviewed the
+            input from our loyal customers. Using their feedback as a guide, we
+            conducted interviews with new clients, keen to grasp their specific
+            requirements.
+            <br /><br />Here are the key statements we noticed:
+          </div>
+        </div>
+        <div
+          class="bg-black-secondary mt-18 flex gap-13 rounded-4xl px-13 py-12"
+        >
+          <div class="flex-1 space-y-5">
+            <h6>Accessible Information:</h6>
+            <div class="t2">
+              Customers prioritize a dashboard that's easy to navigate and
+              visually appealing, catering to users of all levels while
+              reflecting their brand identity.
+            </div>
+          </div>
+          <div class="flex-1 space-y-5">
+            <h6>Customizable Features:</h6>
+            <div class="t2">
+              They seek a template with customizable fields and automated
+              workflows to streamline data management tasks, adapting to their
+              evolving business needs.
+            </div>
+          </div>
+          <div class="flex-1 space-y-5">
+            <h6>Compliance and Security:</h6>
+            <div class="t2">
+              Dashboards must adhere to GDPR and HIPAA regulations, ensuring
+              stringent data security while embodying a modern, user-friendly
+              design.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <div class="flex justify-between gap-24">
+          <h2 class="flex-1">Information Architecture</h2>
+          <div class="t2 flex-2">
+            In preparation for our design endeavor, we embarked on a thorough
+            analysis of our past projects and engaged in insightful interviews
+            with clients. Having meticulously crafted a variant of the
+            information architecture, we had obtained invaluable insights
+            essential for initiating the design process effectively.
+          </div>
+        </div>
+        <img
+          width="1024"
+          height="748"
+          src="./sofia/architecture2x.webp"
+          alt="Information Architecture"
+          srcset="./sofia/architecture2x.webp 2x, ./sofia/architecture.webp 1x"
+          class="mt-12 h-auto w-full rounded-4xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <div class="flex justify-between gap-24">
+          <h2 class="flex-1">Foundations: system and&nbsp;tokens</h2>
+          <div class="t2 flex-2">
+            As we laid the foundations for our project, our first step was to
+            create a comprehensive design system with a token-based approach to
+            ensure consistency and scalability. It featured responsive grids, a
+            curated color palette with primary, secondary, and semantic colors,
+            and reusable UI components and modular elements. Design tokens
+            managed colors, typography, spacing, and border radii, providing a
+            single source of truth for styling. This streamlined development,
+            ensured visual consistency, and enabled quick customization for
+            various user needs.
+          </div>
+        </div>
+        <img
+          width="1024"
+          height="748"
+          src="./sofia/system-typography2x.webp"
+          alt="Information Architecture"
+          srcset="
+            ./sofia/system-typography2x.webp 2x,
+            ./sofia/system-typography.webp   1x
+          "
+          class="mt-12 h-auto w-full rounded-4xl"
+        />
+        <img
+          width="1024"
+          height="747"
+          src="./sofia/system-tokens2x.webp"
+          alt="Information Architecture"
+          srcset="
+            ./sofia/system-tokens2x.webp 2x,
+            ./sofia/system-tokens.webp   1x
+          "
+          class="mt-12 h-auto w-full rounded-4xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <div class="flex justify-between gap-24">
+          <h2 class="flex-1">Widgets</h2>
+          <div class="t2 flex-2">
+            With our design system established, we began compiling a list of
+            essential widgets. We carefully considered user needs and industry
+            standards to ensure that each widget would enhance functionality and
+            user experience. Our goal was to create a straightforward yet
+            versatile collection that would streamline data management tasks and
+            provide valuable insights for users across different business
+            scenarios.
+          </div>
+        </div>
+        <img
+          width="1024"
+          height="783"
+          src="./sofia/widgets-12x.webp"
+          alt="Information Architecture"
+          srcset="./sofia/widgets-12x.webp 2x, ./sofia/widgets-1.webp 1x"
+          class="mt-12 h-auto w-full rounded-t-4xl"
+        />
+        <img
+          width="1024"
+          height="921"
+          src="./sofia/widgets-22x.webp"
+          alt="Information Architecture"
+          srcset="./sofia/widgets-22x.webp 2x, ./sofia/widgets-2.webp 1x"
+          class="h-auto w-full rounded-b-4xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content pb-10">
+        <div class="flex justify-between gap-24">
+          <h2 class="flex-1">Dashboard</h2>
+          <div class="t2 flex-2">
+            By putting the system design and widgets together, we came up with
+            several main variations of the page, but during the review process
+            we focused on this:
+          </div>
+        </div>
+        <img
+          width="1024"
+          height="748"
+          src="./sofia/dashboard2x.webp"
+          alt="Information Architecture"
+          srcset="./sofia/dashboard2x.webp 2x, ./sofia/dashboard.webp 1x"
+          class="mt-12 h-auto w-full rounded-4xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content text-gray-primary py-15">
+        <h3 class="text-center">
+          Then, relying on the user flow, we started to collect the
+          remaining&nbsp;pages of the theme.
+        </h3>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <div>
+          <h3>Customizable Profile View</h3>
+          <div class="t2 mt-10">
+            We created a flexible template tailored to most clients, speeding up
+            dashboard creation while ensuring consistency. Our theme includes 45
+            pages and has been downloaded over 227 times, proving its popularity
+            and reliability.
+          </div>
+          <div class="t2 text-gray-primary mt-6">/profile</div>
+        </div>
+        <img
+          width="548"
+          height="447"
+          src="./sofia/profile2x.webp"
+          alt="Profile"
+          srcset="./sofia/profile2x.webp 2x, ./sofia/profile.webp 1x"
+          class="h-auto w-full rounded-xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <img
+          width="548"
+          height="608"
+          src="./sofia/typography2x.webp"
+          alt="Profile"
+          srcset="./sofia/typography2x.webp 2x, ./sofia/typography.webp 1x"
+          class="h-auto w-full rounded-xl"
+        />
+        <div>
+          <h3>Typography Showcase</h3>
+          <div class="t2 mt-10">
+            The Typography page showcases a variety of type styles available for
+            the theme, offering users a comprehensive overview of text options
+            for their CRM interface.
+          </div>
+          <div class="t2 text-gray-primary mt-6">/core</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <div>
+          <h3>Layout Control</h3>
+          <div class="t2 mt-10">
+            The Grid page provides users with insight into the grid system,
+            including grid options and sample code snippets, enabling seamless
+            customization and layout control for their CRM interface.
+          </div>
+          <div class="t2 text-gray-primary mt-6">/core</div>
+        </div>
+        <img
+          width="548"
+          height="443"
+          src="./sofia/layout2x.webp"
+          alt="Profile"
+          srcset="./sofia/layout2x.webp 2x, ./sofia/layout.webp 1x"
+          class="h-auto w-full rounded-xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <img
+          width="548"
+          height="349"
+          src="./sofia/notifications2x.webp"
+          alt="Profile"
+          srcset="
+            ./sofia/notifications2x.webp 2x,
+            ./sofia/notifications.webp   1x
+          "
+          class="h-auto w-full rounded-xl"
+        />
+        <div>
+          <h3>Streamlined Notifications</h3>
+          <div class="t2 mt-10">
+            The Notifications page presents layout options, notification types,
+            and examples for streamlined notification management
+          </div>
+          <div class="t2 text-gray-primary mt-6">/ui elements</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <div>
+          <h3>Card Gallery</h3>
+          <div class="t2 mt-10">
+            The Cards page in Sofia CRM features a variety of card designs,
+            providing users with diverse options for displaying information
+            effectively and aesthetically.
+          </div>
+          <div class="t2 text-gray-primary mt-6">/ui elements</div>
+        </div>
+        <img
+          width="548"
+          height="426"
+          src="./sofia/gallery2x.webp"
+          alt="Profile"
+          srcset="./sofia/gallery2x.webp 2x, ./sofia/gallery.webp 1x"
+          class="h-auto w-full rounded-xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <img
+          width="548"
+          height="415"
+          src="./sofia/table2x.webp"
+          alt="Profile"
+          srcset="./sofia/table2x.webp 2x, ./sofia/table.webp 1x"
+          class="h-auto w-full rounded-xl"
+        />
+        <div>
+          <h3>Table Style Showcase</h3>
+          <div class="t2 mt-10">
+            The Tables page features a range of table variations, empowering
+            users to select the most suitable format for presenting data
+            efficiently and comprehensively
+          </div>
+          <div class="t2 text-gray-primary mt-6">/ui elements</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <div>
+          <h3>Visual Data Insights</h3>
+          <div class="t2 mt-10">
+            The Charts page highlights a variety of chart types, giving users
+            powerful visualization tools to analyze and interpret data
+            effectively
+          </div>
+          <div class="t2 text-gray-primary mt-6">/ui elements</div>
+        </div>
+        <img
+          width="548"
+          height="391"
+          src="./sofia/data2x.webp"
+          alt="Profile"
+          srcset="./sofia/data2x.webp 2x, ./sofia/data.webp 1x"
+          class="h-auto w-full rounded-xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <img
+          width="548"
+          height="391"
+          src="./sofia/scheduler2x.webp"
+          alt="Profile"
+          srcset="./sofia/scheduler2x.webp 2x, ./sofia/scheduler.webp 1x"
+          class="h-auto w-full rounded-xl"
+        />
+        <div>
+          <h3>Event Scheduler</h3>
+          <div class="t2 mt-10">
+            The Calendar page delivers an intuitive interface for efficient
+            event scheduling and management
+          </div>
+          <div class="t2 text-gray-primary mt-6">/calendar</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <div>
+          <h3>Invoice Layout</h3>
+          <div class="t2 mt-10">
+            The Invoice page displays a professional and customizable invoice
+            layout, offering users a clear example of how invoices can be
+            presented for their business needs.
+          </div>
+          <div class="t2 text-gray-primary mt-6">/ui elements</div>
+        </div>
+        <img
+          width="548"
+          height="405"
+          src="./sofia/invoice2x.webp"
+          alt="Profile"
+          srcset="./sofia/invoice2x.webp 2x, ./sofia/invoice.webp 1x"
+          class="h-auto w-full rounded-xl"
+        />
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex items-center gap-11">
+        <img
+          width="548"
+          height="405"
+          src="./sofia/image-gallery2x.webp"
+          alt="Profile"
+          srcset="
+            ./sofia/image-gallery2x.webp 2x,
+            ./sofia/image-gallery.webp   1x
+          "
+          class="h-auto w-full rounded-xl"
+        />
+        <div>
+          <h3>Image Gallery</h3>
+          <div class="t2 mt-10">
+            The Gallery page offers users a visually appealing showcase of
+            images, providing an organized and immersive experience for browsing
+            and viewing multimedia content.
+          </div>
+          <div class="t2 text-gray-primary mt-6">/ui elements</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex gap-6">
+        <div class="flex-1 space-y-6">
+          <div class="pt-30 pb-40">
+            <h4>and more</h4>
+            <div class="t2 mt-6 max-w-108">
+              We also created template designs tailored to various pages,
+              accommodating different use cases and app architectures.
+            </div>
+          </div>
+          <img
+            width="500"
+            height="371"
+            src="./sofia/more-12x.webp"
+            srcset="./sofia/more-12x.webp 2x, ./sofia/more-1.webp 1x"
+            class="h-auto w-full rounded-xl"
+          />
+          <img
+            width="500"
+            height="313"
+            src="./sofia/more-22x.webp"
+            srcset="./sofia/more-22x.webp 2x, ./sofia/more-2.webp 1x"
+            class="h-auto w-full rounded-xl"
+          />
+          <img
+            width="500"
+            height="313"
+            src="./sofia/more-32x.webp"
+            srcset="./sofia/more-32x.webp 2x, ./sofia/more-3.webp 1x"
+            class="h-auto w-full rounded-xl"
+          />
+        </div>
+        <div class="flex-1 space-y-6">
+          <img
+            width="500"
+            height="679"
+            src="./sofia/more-42x.webp"
+            srcset="./sofia/more-42x.webp 2x, ./sofia/more-4.webp 1x"
+            class="h-auto w-full rounded-xl"
+          />
+          <img
+            width="500"
+            height="407"
+            src="./sofia/more-52x.webp"
+            srcset="./sofia/more-52x.webp 2x, ./sofia/more-5.webp 1x"
+            class="h-auto w-full rounded-xl"
+          />
+          <img
+            width="500"
+            height="313"
+            src="./sofia/more-62x.webp"
+            srcset="./sofia/more-62x.webp 2x, ./sofia/more-6.webp 1x"
+            class="h-auto w-full rounded-xl"
+          />
+          <img
+            width="500"
+            height="369"
+            src="./sofia/more-72x.webp"
+            srcset="./sofia/more-72x.webp 2x, ./sofia/more-7.webp 1x"
+            class="h-auto w-full rounded-xl"
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content pb-120">
+        <div class="pr-10 pl-140">
+          <h3>Mobile</h3>
+          <div class="t2 mt-10">
+            We ensured design adaptability and created mobile-friendly versions
+            for all layouts.
+          </div>
+        </div>
+      </div>
+      <img
+        width="651"
+        height="1024"
+        src="./sofia/mobile2x.webp"
+        srcset="./sofia/mobile2x.webp 2x, ./sofia/mobile.webp 1x"
+        class="absolute -top-40 left-0"
+      />
+    </section>
+    <section>
+      <div class="section-content flex justify-between gap-24">
+        <h2 class="flex-1">Results</h2>
+        <div class="t2 flex-2">
+          We created a flexible template tailored to most clients, speeding up
+          dashboard creation while ensuring consistency. Our theme includes 45
+          pages and has been downloaded over
+          <span class="text-sofia-primary">227 times</span>, becoming one of the
+          bestseller at the Flatlogic appstore.
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <div
+          class="bg-black-secondary relative overflow-clip rounded-[20px] px-50 pt-21 pb-11"
+        >
+          <img
+            width="217"
+            height="174"
+            src="./sofia/flatlogic-blue2x.webp"
+            srcset="
+              ./sofia/flatlogic-blue2x.webp 2x,
+              ./sofia/flatlogic-blue.webp   1x
+            "
+            class="absolute top-0 left-6"
+          />
+          <img
+            width="84"
+            height="75"
+            src="./sofia/flatlogic-hand2x.webp"
+            srcset="
+              ./sofia/flatlogic-hand2x.webp 2x,
+              ./sofia/flatlogic-hand.webp   1x
+            "
+            class="absolute bottom-0 left-48"
+          />
+          <img
+            width="100"
+            height="75"
+            src="./sofia/flatlogic-blue-hand2x.webp"
+            srcset="
+              ./sofia/flatlogic-blue-hand2x.webp 2x,
+              ./sofia/flatlogic-blue-hand.webp   1x
+            "
+            class="absolute top-0 right-62"
+          />
+          <img
+            width="181"
+            height="247"
+            src="./sofia/flatlogic-yellow2x.webp"
+            srcset="
+              ./sofia/flatlogic-yellow2x.webp 2x,
+              ./sofia/flatlogic-yellow.webp   1x
+            "
+            class="absolute right-0 bottom-0"
+          />
+          <div class="t1 text-center">
+            While working at Flatlogic, I began revamping its core product and
+            designed mascots for the team.
+          </div>
+          <div class="mt-8 flex items-center justify-center gap-4">
+            <a
+              href="https://www.behance.net/gallery/145301171/Company-sticker-pack"
+            >
+              <svg
+                width="33"
+                height="34"
+                viewBox="0 0 33 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24.75 16.4142C25.0038 16.795 25.2577 17.1758 25.3846 17.8104H21.3231C21.3231 17.6835 21.3231 17.4296 21.45 17.1758C21.5769 16.9219 21.5769 16.795 21.8308 16.5412C21.9577 16.2873 22.2115 16.1604 22.4654 16.0335C22.7192 15.9065 23.1 15.7796 23.4808 15.7796C23.9885 15.9065 24.4962 16.0335 24.75 16.4142ZM13.0731 15.5258C13.3269 15.2719 13.5808 14.8912 13.5808 14.3835C13.5808 14.1296 13.5808 13.8758 13.4538 13.6219C13.3269 13.495 13.2 13.2412 13.0731 13.2412C12.9462 13.1142 12.6923 13.1142 12.4385 12.9873H9.13846V15.9065H11.9308C12.3115 15.9065 12.6923 15.7796 13.0731 15.5258ZM12.0577 17.6835H9.13846V21.1104H12.0577C12.3115 21.1104 12.5654 21.1104 12.8192 20.9835C13.0731 20.9835 13.3269 20.8566 13.4538 20.7296C13.5808 20.6027 13.8346 20.4758 13.9615 20.2219C14.0885 19.9681 14.0885 19.7142 14.0885 19.4604C14.0885 18.8258 13.9615 18.3181 13.5808 18.0642C13.2 17.8104 12.6923 17.6835 12.0577 17.6835ZM33 6.89501V27.4566C33 30.8835 30.2077 33.6758 26.7808 33.6758H6.21923C2.79231 33.6758 0 30.8835 0 27.4566V6.89501C0 3.46809 2.79231 0.675781 6.21923 0.675781H26.7808C30.2077 0.675781 33 3.46809 33 6.89501ZM20.8154 12.8604H25.8923V11.5912H20.8154V12.8604ZM16.7538 19.7142C16.7538 18.9527 16.6269 18.3181 16.2462 17.6835C15.8654 17.1758 15.3577 16.795 14.5962 16.5412C15.1038 16.2873 15.6115 15.9065 15.8654 15.5258C16.1192 15.145 16.2462 14.6373 16.2462 14.0027C16.2462 13.0508 16.1192 12.9873 15.9923 12.4796C15.7385 12.0989 15.4846 11.7181 15.2308 11.5912C14.85 11.3373 14.4692 11.2104 13.9615 11.0835C13.3269 10.8296 12.8192 10.8296 12.1846 10.8296H6.34615V23.2681H12.4385C12.9462 23.2681 13.5808 23.1412 14.0885 23.0142C14.5962 22.8873 15.1038 22.6335 15.4846 22.3796C15.8654 22.1258 16.2462 21.745 16.5 21.2373C16.6269 20.8566 16.7538 20.3489 16.7538 19.7142ZM21.3231 19.3335H27.7962C27.7962 18.5719 27.7962 17.9373 27.6692 17.3027C27.5423 16.6681 27.2885 16.0335 26.9077 15.6527C26.5269 15.145 26.0192 14.7642 25.5115 14.5104C24.8769 14.2565 24.2423 14.0027 23.4808 14.0027C22.8462 14.0027 22.2115 14.1296 21.5769 14.3835C21.0692 14.6373 20.5615 15.0181 20.0538 15.3989C19.6731 15.7796 19.2923 16.2873 19.1654 16.9219C18.9115 17.5565 18.7846 18.1912 18.7846 18.8258C18.7846 19.7777 18.9115 20.2219 19.1654 20.7296C19.4192 21.3642 19.6731 21.8719 20.0538 22.2527C20.4346 22.6335 20.9423 23.0142 21.45 23.2681C22.0846 23.5219 22.7192 23.6489 23.3538 23.6489C24.3692 23.6489 25.2577 23.395 26.0192 22.8873C26.7808 22.3796 27.2885 21.6181 27.6692 20.6027H25.5115C25.3846 20.8565 25.2577 21.1104 24.8769 21.3642C24.4962 21.6181 24.1154 21.745 23.6077 21.745C22.9731 21.745 22.3385 21.6181 21.9577 21.2373C21.5769 20.7296 21.3231 20.095 21.3231 19.3335Z"
+                  fill="#0055FF"
+                />
+              </svg>
+            </a>
+            <a
+              class="text-dark-primary bg-white-primary block rounded-full px-4 py-1.5 underline"
+              href="https://www.behance.net/gallery/145301171/Company-sticker-pack"
+              target="_blank"
+            >
+              See case
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content">
+        <h5>See more of my projects</h5>
+        <div class="mt-9 grid grid-cols-[229fr_229fr_495fr] gap-9">
+          <div class="">
+            <img
+              width="229"
+              height="232"
+              src="./sofia/next-fugo-redesign2x.webp"
+              srcset="
+                ./sofia/next-fugo-redesign2x.webp 2x,
+                ./sofia/next-fugo-redesign.webp   1x
+              "
+              class="rounded-[20px]"
+            />
+            <div class="t3 text-gray-primary mt-3">2021-2022</div>
+            <div class="t1 mt-3">Fugo: app redesign</div>
+            <div class="t3 mt-2">
+              Screens management system with design tool
+            </div>
+          </div>
+          <div class="">
+            <img
+              width="229"
+              height="232"
+              src="./sofia/next-fugo-studio2x.webp"
+              srcset="
+                ./sofia/next-fugo-studio2x.webp 2x,
+                ./sofia/next-fugo-studio.webp   1x
+              "
+              class="rounded-[20px]"
+            />
+            <div class="t3 text-gray-primary mt-3">2023</div>
+            <div class="t1 mt-3">Fugo Studio</div>
+            <div class="t3 mt-2">
+              Fugo Studio UX: Increasing features discoverability
+            </div>
+          </div>
+          <div class="">
+            <img
+              width="495"
+              height="232"
+              src="./sofia/next-paperpile2x.webp"
+              srcset="
+                ./sofia/next-paperpile2x.webp 2x,
+                ./sofia/next-paperpile.webp   1x
+              "
+              class="rounded-[20px]"
+            />
+            <div class="t3 text-gray-primary mt-3">2024</div>
+            <div class="t1 mt-3">Paperpile</div>
+            <div class="t3 mt-2 w-1/2">
+              AI-based documents management mobile app
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-content flex flex-col items-center">
+        <img
+          width="96"
+          height="96"
+          src="./paperpile/avatar2x.webp"
+          srcset="./paperpile/avatar2x.webp 2x, ./paperpile/avatar.webp 1x"
+          class="rounded-full"
+        />
+        <h3 class="mt-9">Want to hire me?</h3>
+        <div class="t2 mt-9">Send me a job inquiry</div>
+        <a
+          href="mailto:petukhouskaya.design@gmail.com"
+          class="t2 text-green-primary mt-10"
+        >
+          petukhouskaya.design@gmail.com
+        </a>
+        <button
+          class="bg-white-primary text-dark-primary mt-6 rounded-full px-4 py-1.5"
+          onclick="copyMail()"
+        >
+          Copy mail
+        </button>
+      </div>
+    </section>
+    <hr />
+    <footer class="">
+      <div class="section-content flex justify-between pt-16">
+        <svg
+          width="44"
+          height="45"
+          viewBox="0 0 44 45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          onclick="window.scroll({ top: 0, behavior: 'smooth' })"
+        >
+          <circle
+            cx="22"
+            cy="22.0859"
+            r="20"
+            stroke="white"
+            stroke-width="2.17391"
+          />
+          <path
+            d="M29.3472 14.5441L22 7.19691M22 7.19691L14.6528 14.5441M22 7.19691V36.7109"
+            stroke="white"
+            stroke-width="2.17391"
+          />
+        </svg>
+        <div class="flex items-center gap-20">
+          <a href="/">Get CV</a>
+          <a
+            href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <button
+            class="bg-white-primary text-dark-primary rounded-full px-4 py-1.5"
+            onclick="copyMail()"
+          >
+            Copy mail
+          </button>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function copyMail() {
+        const mail = "petukhouskaya.design@gmail.com";
+        navigator.clipboard.writeText(mail);
+      }
+    </script>
+  </body>
+</html>
