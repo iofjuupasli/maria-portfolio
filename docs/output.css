@@ -564,9 +564,6 @@
   .top-\[15vh\] {
     top: 15vh;
   }
-  .top-\[46\%\] {
-    top: 46%;
-  }
   .top-\[200px\] {
     top: 200px;
   }
@@ -575,6 +572,9 @@
   }
   .top-\[400px\] {
     top: 400px;
+  }
+  .top-\[46\%\] {
+    top: 46%;
   }
   .-right-1\/2 {
     right: calc(calc(1/2 * 100%) * -1);
@@ -699,6 +699,9 @@
   .mx-10 {
     margin-inline: calc(var(--spacing) * 10);
   }
+  .mx-32 {
+    margin-inline: calc(var(--spacing) * 32);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -753,14 +756,8 @@
   .mt-\[9px\] {
     margin-top: 9px;
   }
-  .mt-\[15px\] {
-    margin-top: 15px;
-  }
   .mt-\[23px\] {
     margin-top: 23px;
-  }
-  .mt-\[55px\] {
-    margin-top: 55px;
   }
   .mt-\[116px\] {
     margin-top: 116px;
@@ -768,11 +765,17 @@
   .mt-\[11vh\] {
     margin-top: 11vh;
   }
+  .mt-\[15px\] {
+    margin-top: 15px;
+  }
   .mt-\[21px\] {
     margin-top: 21px;
   }
   .mt-\[26px\] {
     margin-top: 26px;
+  }
+  .mt-\[55px\] {
+    margin-top: 55px;
   }
   .mt-\[92px\] {
     margin-top: 92px;
@@ -951,6 +954,9 @@
   .max-w-\[600px\] {
     max-width: 600px;
   }
+  .max-w-\[1024px\] {
+    max-width: 1024px;
+  }
   .max-w-\[1184px\] {
     max-width: 1184px;
   }
@@ -1012,8 +1018,14 @@
   .grid-cols-8 {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
+  .grid-cols-\[5fr\,3fr\] {
+    grid-template-columns: 5fr,3fr;
+  }
   .grid-cols-\[5fr_3fr\] {
     grid-template-columns: 5fr 3fr;
+  }
+  .grid-cols-\[227fr\,229fr\,495fr\] {
+    grid-template-columns: 227fr,229fr,495fr;
   }
   .grid-cols-\[227fr_229fr_495fr\] {
     grid-template-columns: 227fr 229fr 495fr;
@@ -1396,6 +1408,9 @@
   .py-\[77px\] {
     padding-block: 77px;
   }
+  .py-\[200px\] {
+    padding-block: 200px;
+  }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
@@ -1519,6 +1534,10 @@
   .font-slackside {
     font-family: Slackside One, cursive;
   }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -1530,6 +1549,10 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
   }
   .text-\[10\.3px\] {
     font-size: 10.3px;
@@ -1546,8 +1569,17 @@
   .text-\[32px\] {
     font-size: 32px;
   }
+  .text-\[36px\] {
+    font-size: 36px;
+  }
+  .text-\[44px\] {
+    font-size: 44px;
+  }
   .text-\[55px\] {
     font-size: 55px;
+  }
+  .text-\[72px\] {
+    font-size: 72px;
   }
   .text-\[114px\] {
     font-size: 114px;
@@ -1588,9 +1620,17 @@
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
   }
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
+  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -1603,6 +1643,10 @@
   .tracking-wide {
     --tw-tracking: var(--tracking-wide);
     letter-spacing: var(--tracking-wide);
+  }
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
   }
   .text-nowrap {
     text-wrap: nowrap;
@@ -1690,6 +1734,10 @@
   .duration-500 {
     --tw-duration: 500ms;
     transition-duration: 500ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
   .hover\:rounded-\[52px\] {
     &:hover {
@@ -1951,6 +1999,11 @@
   .xl\:row-span-1 {
     @media (width >= 80rem) {
       grid-row: span 1 / span 1;
+    }
+  }
+  .xl\:mx-auto {
+    @media (width >= 80rem) {
+      margin-inline: auto;
     }
   }
   .xl\:mt-\[288px\] {
@@ -2619,6 +2672,10 @@
   inherits: false;
 }
 @property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
   syntax: "*";
   inherits: false;
 }
