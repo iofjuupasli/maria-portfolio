@@ -759,20 +759,14 @@
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
   }
+  .mt-\[9px\] {
+    margin-top: 9px;
+  }
   .mt-\[15px\] {
     margin-top: 15px;
   }
-  .mt-\[21px\] {
-    margin-top: 21px;
-  }
-  .mt-\[26px\] {
-    margin-top: 26px;
-  }
-  .mt-\[92px\] {
-    margin-top: 92px;
-  }
-  .mt-\[9px\] {
-    margin-top: 9px;
+  .mt-\[55px\] {
+    margin-top: 55px;
   }
   .mt-\[116px\] {
     margin-top: 116px;
@@ -780,11 +774,17 @@
   .mt-\[11vh\] {
     margin-top: 11vh;
   }
+  .mt-\[21px\] {
+    margin-top: 21px;
+  }
   .mt-\[23px\] {
     margin-top: 23px;
   }
-  .mt-\[55px\] {
-    margin-top: 55px;
+  .mt-\[26px\] {
+    margin-top: 26px;
+  }
+  .mt-\[92px\] {
+    margin-top: 92px;
   }
   .mt-\[120px\] {
     margin-top: 120px;
@@ -963,6 +963,9 @@
   .max-w-\[600px\] {
     max-width: 600px;
   }
+  .max-w-\[794px\] {
+    max-width: 794px;
+  }
   .max-w-\[1184px\] {
     max-width: 1184px;
   }
@@ -1078,6 +1081,9 @@
   .justify-evenly {
     justify-content: space-evenly;
   }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
@@ -1107,6 +1113,9 @@
   }
   .gap-13 {
     gap: calc(var(--spacing) * 13);
+  }
+  .gap-16 {
+    gap: calc(var(--spacing) * 16);
   }
   .gap-19 {
     gap: calc(var(--spacing) * 19);
@@ -1179,6 +1188,13 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-16 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 16) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 16) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-18 {
@@ -1552,6 +1568,9 @@
   }
   .pl-13 {
     padding-left: calc(var(--spacing) * 13);
+  }
+  .pl-42 {
+    padding-left: calc(var(--spacing) * 42);
   }
   .pl-140 {
     padding-left: calc(var(--spacing) * 140);
