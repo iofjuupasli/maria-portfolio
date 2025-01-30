@@ -32,12 +32,6 @@
   i {
     @apply text-green-primary;
   }
-  a:hover {
-    @apply text-green-primary;
-  }
-  button:hover {
-    @apply bg-green-primary text-dark-primary;
-  }
 }
 @layer components {
   .section-content {
@@ -62,10 +56,10 @@
     @apply italic;
   }
   .side-menu > * {
-    @apply block w-full cursor-pointer rounded-[10px] border px-4 py-1.5 text-center transition-all duration-150 select-none lg:w-min lg:text-left;
+    @apply block w-full cursor-pointer py-1.5 text-center transition-all duration-150 select-none lg:w-min lg:text-left;
   }
   .link {
-    @apply hover:text-gray-primary border-transparent hover:rounded-[20px] hover:border-current active:bg-white active:text-black;
+    @apply hover:text-green-primary;
   }
   .link.active {
     @apply text-white;

@@ -10,62 +10,10 @@
     <title>Maria Petukhovskaya</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <style>
-      /* latin-ext */
-      @font-face {
-        font-family: "DM Sans";
-        font-style: italic;
-        font-weight: 100 1000;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4ET-DJF4e8BH9.woff2)
-          format("woff2");
-        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
-          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
-          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
-          U+A720-A7FF;
-      }
-      /* latin */
-      @font-face {
-        font-family: "DM Sans";
-        font-style: italic;
-        font-weight: 100 1000;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4Hz-DJF4e8A.woff2)
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      /* latin-ext */
-      @font-face {
-        font-family: "DM Sans";
-        font-style: normal;
-        font-weight: 100 1000;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2)
-          format("woff2");
-        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
-          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
-          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
-          U+A720-A7FF;
-      }
-      /* latin */
-      @font-face {
-        font-family: "DM Sans";
-        font-style: normal;
-        font-weight: 100 1000;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2)
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-    </style>
-    <!-- <link
+    <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
-    /> -->
+    />
     <style>
       .button-gradient {
         background: linear-gradient(
@@ -100,7 +48,7 @@
       <div class="absolute top-0 flex w-full justify-center">
         <div class="side-menu flex space-x-10 pt-5">
           <a
-            class="js-works-button secondary"
+            class="js-works-button link"
             href="#work"
             onclick="handleWorksClick()"
           >
@@ -116,8 +64,16 @@
       </div>
     </menu>
     <menu
-      class="js-menu bg-black-primary fixed z-[60] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-3 text-nowrap text-white transition-all duration-500 lg:z-20 lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
+      class="js-menu bg-black-primary fixed z-[80] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-2 text-nowrap text-white transition-all duration-500 lg:z-[60] lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
     >
+      <div class="side-menu mt-8 ml-1">
+        <div class="group link hover:text-white-primary text-[28px]">
+          M<span
+            class="inline-block w-0 overflow-clip transition-all duration-150 group-hover:w-72"
+            >aria Petukhovskaya</span
+          >
+        </div>
+      </div>
       <div
         class="flex h-full max-h-[640px] flex-col items-center justify-evenly py-8 lg:block"
       >
@@ -126,7 +82,7 @@
         >
           <a
             href="#work"
-            class="js-works-button secondary"
+            class="js-works-button link"
             onclick="handleWorksClick()"
           >
             works
@@ -135,12 +91,12 @@
             href="#about"
             class="js-about-button link"
             onclick="handleAboutClick()"
-            >about</a
+            >about me</a
           >
         </div>
         <div class="h-px w-[202px] bg-current lg:hidden"></div>
         <div
-          class="side-menu bottom-5 flex w-[200px] flex-auto flex-col justify-evenly space-y-4 lg:absolute lg:w-auto"
+          class="side-menu bottom-7 flex w-[200px] flex-auto flex-col justify-evenly space-y-4 lg:absolute lg:w-auto"
         >
           <a href="./cv_maria_petukhovskaya.pdf" class="link">Get CV</a>
           <a
@@ -149,25 +105,7 @@
             target="_blank"
             >LinkedIn</a
           >
-          <button class="js-copy-mail primary group relative">
-            <span class="js-copy-mail-text">Copy mail</span>
-            <span class="js-copy-mail-confirm hidden"
-              >Copied mail
-              <svg
-                class="relative bottom-[1.5px] inline-block"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7.99967 1.33325C4.31967 1.33325 1.33301 4.31992 1.33301 7.99992C1.33301 11.6799 4.31967 14.6666 7.99967 14.6666C11.6797 14.6666 14.6663 11.6799 14.6663 7.99992C14.6663 4.31992 11.6797 1.33325 7.99967 1.33325ZM6.19301 10.8599L3.79967 8.46659C3.53967 8.20659 3.53967 7.78659 3.79967 7.52659C4.05967 7.26659 4.47967 7.26659 4.73967 7.52659L6.66634 9.44659L11.253 4.85992C11.513 4.59992 11.933 4.59992 12.193 4.85992C12.453 5.11992 12.453 5.53992 12.193 5.79992L7.13301 10.8599C6.87967 11.1199 6.45301 11.1199 6.19301 10.8599Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-          </button>
+          <button class="js-copy-mail link group relative">Copy mail</button>
         </div>
       </div>
     </menu>
@@ -184,12 +122,12 @@
         ></div>
       </div>
     </div>
-    <div class="pointer-events-none relative z-30 h-screen">
+    <div class="pointer-events-none relative z-[70] h-screen">
       <header
         class="js-header fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
       >
         <h1
-          class="js-title relative z-40 mx-auto max-w-[360px] origin-[70.3%_65.1%] px-[26px] text-[30px] leading-[39px] font-semibold tracking-wide text-white sm:max-w-[640px] sm:origin-[50.8%_74.9%] lg:max-w-[807px] lg:origin-[50.89%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
+          class="js-title relative z-[70] mx-auto max-w-[360px] origin-[70.3%_65.1%] px-[26px] text-[30px] leading-[39px] font-semibold tracking-wide text-white sm:max-w-[640px] sm:origin-[50.8%_74.9%] lg:max-w-[807px] lg:origin-[50.89%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
         >
           I’m Maria.<br />
           I create UI and UX design for
@@ -226,9 +164,11 @@
       </header>
     </div>
     <section
-      class="js-skills bg-green-secondary text-black-primary relative flex h-[180vh] flex-col items-center justify-center space-y-16 overflow-hidden pr-16 pl-42"
+      class="js-skills bg-green-secondary text-black-primary relative flex h-[180vh] flex-col items-center justify-center space-y-20 overflow-hidden px-5 md:space-y-16 md:pr-16 md:pl-42"
     >
-      <div class="mx-auto flex max-w-[794px] gap-16">
+      <div
+        class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16"
+      >
         <div class="flex-1">
           <h5>
             “Maria proved herself as an excellent designer with strong UX
@@ -250,7 +190,9 @@
           </div>
         </div>
       </div>
-      <div class="mx-auto flex max-w-[794px] gap-16">
+      <div
+        class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16"
+      >
         <div class="flex-1">
           <h5>
             “On a personal note, I admire how she communicated with empathy,
@@ -276,7 +218,7 @@
         </div>
       </div>
     </section>
-    <main class="bg-green-secondary text-white">
+    <main class="bg-green-secondary z-0 text-white">
       <div
         class="js-work-card bg-black-primary mx-10 rounded-3xl px-[21px] pt-[30vh] pb-[200px] sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-[25px] xl:pl-[232px]"
       >
@@ -392,7 +334,7 @@
       </div>
     </main>
     <section
-      class="js-about bg-gray-primary px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+      class="js-about bg-gray-primary z-0 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
     >
       <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
@@ -634,9 +576,24 @@
       class="js-copy-mail-tooltip-portal pointer-events-none fixed z-50 opacity-0 transition-opacity duration-300"
     >
       <div
-        class="js-copy-mail-tooltip text-black-primary absolute bottom-full left-2/3 mb-1 rounded-lg px-2 py-1 text-sm"
+        class="js-copy-mail-tooltip text-black-primary absolute bottom-0 left-full mb-1 ml-1 flex gap-2 rounded-lg px-2 py-1 text-sm"
       >
         petukhouskaya.design@gmail.com
+        <span class="js-copy-mail-confirm hidden">
+          <svg
+            class="relative bottom-[1.5px] inline-block"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.99967 1.33325C4.31967 1.33325 1.33301 4.31992 1.33301 7.99992C1.33301 11.6799 4.31967 14.6666 7.99967 14.6666C11.6797 14.6666 14.6663 11.6799 14.6663 7.99992C14.6663 4.31992 11.6797 1.33325 7.99967 1.33325ZM6.19301 10.8599L3.79967 8.46659C3.53967 8.20659 3.53967 7.78659 3.79967 7.52659C4.05967 7.26659 4.47967 7.26659 4.73967 7.52659L6.66634 9.44659L11.253 4.85992C11.513 4.59992 11.933 4.59992 12.193 4.85992C12.453 5.11992 12.453 5.53992 12.193 5.79992L7.13301 10.8599C6.87967 11.1199 6.45301 11.1199 6.19301 10.8599Z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
       </div>
     </div>
     <script>
@@ -732,13 +689,14 @@
         const tooltipTop = copyMailTooltip.getBoundingClientRect().top;
         const aboutTop = aboutElem.getBoundingClientRect().top;
         if (tooltipTop < aboutTop) {
-          copyMailTooltip.style.backgroundColor = "#B5B7AE";
-          copyMailTooltip.style.color = "#000000";
+          copyMailTooltip.style.backgroundColor = "#222F3C";
+          copyMailTooltip.style.color = "#CBD5D3";
         } else {
-          copyMailTooltip.style.backgroundColor = "#000000";
-          copyMailTooltip.style.color = "#FFFFFF";
+          copyMailTooltip.style.backgroundColor = "#222F3C";
+          copyMailTooltip.style.color = "#CBD5D3";
         }
       };
+      handleTooltipScroll();
       let lastScrollTop = 0;
       let lastSwitch = 0;
       const handleMobileMenuHideScroll = (e) => {
@@ -786,12 +744,10 @@
       copyMail.addEventListener("click", () => {
         const mail = "petukhouskaya.design@gmail.com";
         navigator.clipboard.writeText(mail);
-        copyMailText.classList.add("hidden");
         copyMailConfirm.classList.remove("hidden");
         copyMailTooltip.classList.add("opacity-100");
         setTimeout(() => {
           copyMailTooltip.classList.remove("opacity-100");
-          copyMailText.classList.remove("hidden");
           copyMailConfirm.classList.add("hidden");
         }, 2000);
       });
