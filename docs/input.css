@@ -59,7 +59,7 @@
     @apply block w-full cursor-pointer py-1.5 text-center transition-all duration-150 select-none lg:w-min lg:text-left;
   }
   .link {
-    @apply hover:text-green-primary;
+    @apply hover:text-green-primary cursor-pointer transition-colors duration-150;
   }
   .link.active {
     @apply text-white;
@@ -124,6 +124,12 @@
     opacity: 1;
     animation: fadeOut 0.3s ease-in-out 0s normal forwards;
     animation-delay: 1.3s;
+  }
+  .image-hover-container {
+    @apply overflow-clip rounded-[20px] transition-all duration-200 hover:rounded-[120px];
+  }
+  .image-hover {
+    @apply transition-transform duration-200 hover:scale-105 w-full h-full object-cover;
   }
 }
 

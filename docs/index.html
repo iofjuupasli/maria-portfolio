@@ -1,5 +1,6 @@
 ---
 ---
+
 <!doctype html>
 <html lang="en" class="snap-y snap-proximity font-sans">
   <head>
@@ -220,7 +221,7 @@
         </div>
       </div>
     </section>
-    <main class="bg-green-secondary z-0 snap-start text-white">
+    <main class="bg-green-secondary z-0 text-white">
       <div
         class="js-work-card bg-black-primary mx-10 rounded-3xl px-[21px] pt-[30vh] pb-[200px] sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-[25px] xl:pl-[232px]"
       >
@@ -230,117 +231,257 @@
           work
         </h2>
         <div
-          class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] max-w-[1184px] bg-gradient-to-t via-60% to-transparent pt-[50vh]"
+          class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] flex max-w-[1184px] flex-col gap-66 bg-gradient-to-t via-86% to-transparent pt-[50vh] xl:gap-122"
         >
-          <a href="./fugo.html">
-            <article class="-mt-[20px] snap-center grid-cols-8 gap-8 lg:grid">
-              <div
-                class="col-span-3 row-span-2 self-center font-medium xl:order-last xl:row-span-1 xl:self-start"
-              >
-                <time datetime="2021" class="text-xl">2021</time>
-                <h3 class="mt-[21px] text-[32px] font-semibold tracking-wide">
-                  Fugo
+          <a href="./paperpile.html">
+            <article class="snap-center grid-cols-8 gap-8 lg:grid">
+              <div class="col-span-4 row-span-1 self-start">
+                <time datetime="2024" class="text-xl">2024</time>
+                <h3
+                  class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
+                >
+                  Paperpile
                 </h3>
-                <p class="mt-1 leading-5">
-                  CMS for screen management and graphic design tool
+                <p class="mt-2 leading-5">Document management assitant</p>
+                <p class="text-gray-primary mt-5">
+                  Role: Product designer, individual contributor
                 </p>
-                <p class="mt-5">Role: Product designer</p>
               </div>
-              <img
-                loading="lazy"
-                src="./img/fugo-logo2x.webp"
-                srcset="./img/fugo-logo.webp 1x, ./img/fugo-logo2x.webp 2x"
-                class="z-50 order-last col-span-3 hidden self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
-                alt="Fugo company logo"
-              />
-              <img
-                loading="lazy"
-                src="./img/fugo2x.webp"
-                srcset="./img/fugo.webp 1x, ./img/fugo2x.webp 2x"
-                class="z-50 col-span-5 row-span-2 mt-5 h-auto w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] lg:mt-0 xl:order-first xl:rounded-[36px]"
-                alt="Fugo app interface"
-              />
+              <div
+                class="image-hover-container z-50 order-first col-span-4 row-span-2 mt-5 w-full max-w-[600px] lg:mt-0"
+              >
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Paperpile_phones_1440.webp   1x,
+                      ./main/Paperpile_phones_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Paperpile_phones_1024.webp   1x,
+                      ./main/Paperpile_phones_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Paperpile_mobile.webp   1x,
+                      ./main/Paperpile_mobile2x.webp 2x
+                    "
+                  />
+                  <img
+                    loading="lazy"
+                    src="./main/Paperpile_phones_14402x.webp"
+                    srcset="
+                      ./main/Paperpile_phones_14402x.webp 1x,
+                      ./main/Paperpile_phones_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Paperpile app interface"
+                  />
+                </picture>
+              </div>
+              <div
+                class="image-hover-container z-50 col-span-4 hidden self-end lg:block"
+              >
+                <img
+                  loading="lazy"
+                  src="./main/Paperpile_green_14402x.webp"
+                  srcset="
+                    ./main/Paperpile_green_1440.webp   1x,
+                    ./main/Paperpile_green_14402x.webp 2x
+                  "
+                  class="image-hover"
+                  alt="Paperpile mobile app interface"
+                />
+              </div></article
+          ></a>
+          <a href="./fugo-redesign.html">
+            <article class="snap-center grid-cols-8 gap-8 lg:grid">
+              <div class="col-span-2 lg:order-2">
+                <time datetime="2021" class="text-xl">2021</time>
+                <h3
+                  class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
+                >
+                  Fugo Redesign
+                </h3>
+                <p class="mt-2 leading-5">
+                  Screens management & content creation web app
+                </p>
+                <p class="text-gray-primary mt-5">Role: Product designer</p>
+              </div>
+              <div
+                class="image-hover-container z-50 col-span-4 row-span-2 mt-5 max-w-[600px] lg:order-1 lg:mt-0"
+              >
+                <picture alt="Fugo laptop interface">
+                  <source
+                    srcset="
+                      ./main/Fugo_laptop_1440.webp   1x,
+                      ./main/Fugo_laptop_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Fugo_laptop_1024.webp   1x,
+                      ./main/Fugo_laptop_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Fugo_laptop_mobile.webp   1x,
+                      ./main/Fugo_laptop_mobile2x.webp 2x
+                    "
+                  />
+                  <img
+                    class="image-hover"
+                    loading="lazy"
+                    src="./main/Fugo_laptop_14402x.webp"
+                    srcset="
+                      ./main/Fugo_laptop_1440.webp   1x,
+                      ./main/Fugo_laptop_14402x.webp 2x
+                    "
+                  />
+                </picture>
+              </div>
+              <div
+                class="image-hover-container z-50 col-span-2 row-span-2 hidden lg:order-3 lg:block"
+              >
+                <img
+                  loading="lazy"
+                  src="./main/Fugo_tablet_14402x.webp"
+                  srcset="
+                    ./main/Fugo_tablet_1440.webp   1x,
+                    ./main/Fugo_tablet_14402x.webp 2x
+                  "
+                  class="image-hover"
+                  alt="Fugo tablet interface"
+                />
+              </div>
+              <div
+                class="image-hover-container z-50 col-span-2 hidden lg:order-4 lg:block"
+              >
+                <img
+                  loading="lazy"
+                  src="./main/Fugo_logo_14402x.webp"
+                  srcset="
+                    ./main/Fugo_logo_1440.webp   1x,
+                    ./main/Fugo_logo_14402x.webp 2x
+                  "
+                  class="image-hover"
+                  alt="Fugo redesign interface"
+                />
+              </div>
+            </article>
+          </a>
+          <a href="./fugo.html">
+            <article class="snap-center grid-cols-8 gap-8 lg:grid">
+              <div class="col-span-3">
+                <time datetime="2023" class="text-xl">2023</time>
+                <h3
+                  class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
+                >
+                  Fugo: Studio UX
+                </h3>
+                <p class="mt-2 leading-5">
+                  Fugo Studio UX: Increasing features discoverability
+                </p>
+                <p class="text-gray-primary mt-5">Role: UX designer</p>
+              </div>
+              <div class="image-hover-container z-50 col-span-5 row-span-2">
+                <img
+                  loading="lazy"
+                  src="./main/Studio_Laptop_14402x.webp"
+                  srcset="
+                    ./main/Studio_Laptop_1440.webp   1x,
+                    ./main/Studio_Laptop_14402x.webp 2x
+                  "
+                  class="image-hover"
+                  alt="Fugo Studio laptop interface"
+                />
+              </div>
+              <div class="image-hover-container z-50 col-span-3">
+                <img
+                  loading="lazy"
+                  src="./main/Studio_Poster_14402x.webp"
+                  srcset="
+                    ./main/Studio_Poster_1440.webp   1x,
+                    ./main/Studio_Poster_14402x.webp 2x
+                  "
+                  class="image-hover"
+                  alt="Fugo Studio poster interface"
+                />
+              </div>
             </article>
           </a>
           <a href="./sofia.html">
-            <article
-              class="mt-[120px] snap-center grid-cols-8 gap-8 lg:grid xl:mt-[288px]"
-            >
+            <article class="snap-center grid-cols-8 gap-8 lg:grid">
               <div
                 class="col-span-3 self-center font-medium xl:col-span-2 xl:self-start"
               >
                 <time datetime="2022" class="text-xl">2022</time>
-                <h3 class="mt-[23px] text-[32px] font-semibold tracking-wide">
+                <h3
+                  class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
+                >
                   Sofia
                 </h3>
-                <p class="mt-1 leading-5">
+                <p class="mt-2 leading-5">
                   CRM, a specialized data management platform.
                 </p>
-                <p class="mt-5">Role: UI/UX designer</p>
+                <p class="text-gray-primary mt-5">Role: UI/UX designer</p>
+                <div
+                  class="image-hover-container z-50 col-span-5 row-span-2 mt-10 hidden w-full self-end xl:block"
+                >
+                  <img
+                    loading="lazy"
+                    src="./main/Sofia_Phones_14402x.webp"
+                    srcset="
+                      ./main/Sofia_Phones_1440.webp   1x,
+                      ./main/Sofia_Phones_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Sofia mobile app interface"
+                  />
+                </div>
+              </div>
+              <div
+                class="image-hover-container z-50 col-span-5 mt-5 h-[291px] w-full lg:order-first lg:mt-0 xl:order-2 xl:col-span-4 xl:h-full"
+              >
                 <img
                   loading="lazy"
-                  src="./img/sofia-mobile2x.webp"
+                  src="./main/Sofia_Laptop_14402x.webp"
                   srcset="
-                    ./img/sofia-mobile.webp   1x,
-                    ./img/sofia-mobile2x.webp 2x
+                    ./main/Sofia_Laptop_1440.webp   1x,
+                    ./main/Sofia_Laptop_14402x.webp 2x
                   "
-                  class="relative z-50 mt-10 hidden w-full self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
-                  alt="Sofia mobile app interface"
+                  class="image-hover object-cover"
+                  alt="Sofia app interface"
                 />
               </div>
-              <img
-                loading="lazy"
-                src="./img/sofia2x.webp"
-                srcset="./img/sofia.webp 1x, ./img/sofia2x.webp 2x"
-                class="z-50 col-span-5 mt-5 h-[291px] w-full rounded-[36px] object-cover transition-all duration-200 hover:rounded-[80px] lg:order-first lg:mt-0 xl:order-2 xl:col-span-4 xl:h-full"
-                alt="Sofia app interface"
-              />
-              <img
-                loading="lazy"
-                src="./img/sofia-logo2x.webp"
-                srcset="./img/sofia-logo.webp 1x, ./img/sofia-logo2x.webp 2x"
-                class="z-50 order-last hidden rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:col-span-2 xl:block"
-                alt="Sofia company logo"
-              />
+              <div
+                class="image-hover-container z-50 order-last hidden h-fit xl:col-span-2 xl:block"
+              >
+                <img
+                  loading="lazy"
+                  src="./main/Sofia_Logo_14402x.webp"
+                  srcset="
+                    ./main/Sofia_Logo_1440.webp   1x,
+                    ./main/Sofia_Logo_14402x.webp 2x
+                  "
+                  class="image-hover"
+                  alt="Sofia company logo"
+                />
+              </div>
             </article>
           </a>
-          <a href="./paperpile.html">
-            <article
-              class="mt-[120px] snap-center grid-cols-8 gap-8 lg:grid xl:mt-[288px]"
-            >
-              <div
-                class="col-span-3 row-span-2 self-center font-medium xl:col-span-4 xl:row-span-1 xl:self-start"
-              >
-                <time datetime="2024" class="text-xl">2024</time>
-                <h3 class="mt-[23px] text-[32px] font-semibold tracking-wide">
-                  Paperpile
-                </h3>
-                <p class="mt-1 leading-5">Document management application.</p>
-                <p class="mt-5">Role: UX designer</p>
-              </div>
-              <img
-                loading="lazy"
-                src="./img/paperpile2x.webp"
-                srcset="./img/paperpile.webp 1x, ./img/paperpile2x.webp 2x"
-                class="z-50 col-span-5 row-span-2 mt-5 w-full rounded-[28px] transition-all duration-200 hover:rounded-[80px] lg:mt-0 xl:order-first xl:col-span-4"
-                alt="Paperpile app interface"
-              />
-              <img
-                loading="lazy"
-                src="./img/paperpile-mobile2x.webp"
-                srcset="
-                  ./img/paperpile-mobile.webp   1x,
-                  ./img/paperpile-mobile2x.webp 2x
-                "
-                class="col-span-4 hidden self-end rounded-[24px] transition-all duration-200 hover:rounded-[52px] xl:block"
-                alt="Paperpile mobile app interface"
-              /></article
-          ></a>
         </div>
       </div>
     </main>
     <section
-      class="js-about bg-gray-primary z-0 snap-start px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+      class="js-about bg-gray-primary z-0 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
     >
       <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
@@ -569,15 +710,6 @@
         </div>
       </div>
     </section>
-    <footer class="bg-gray-primary px-5 pb-10 lg:hidden">
-      <button
-        type="button"
-        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-        class="active:bg-black-primary border-black-primary text-black-primary mx-auto block w-full max-w-[400px] rounded-full border px-4 py-1.5 transition-colors duration-100 active:text-white"
-      >
-        up
-      </button>
-    </footer>
     {% include footer.html %}
     <div
       class="js-copy-mail-tooltip-portal pointer-events-none fixed z-50 opacity-0 transition-opacity duration-300"
