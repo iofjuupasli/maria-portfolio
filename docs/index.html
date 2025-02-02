@@ -1,5 +1,7 @@
+---
+---
 <!doctype html>
-<html lang="en" class="font-sans snap-y snap-proximity">
+<html lang="en" class="snap-y snap-proximity font-sans">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -164,7 +166,7 @@
       </header>
     </div>
     <section
-      class="js-skills snap-center snap-always bg-green-secondary text-black-primary relative flex flex-col items-center justify-center space-y-20 overflow-hidden px-5 py-60 md:h-[120vh] md:space-y-16 md:pr-16 md:pl-42 lg:pt-80"
+      class="js-skills bg-green-secondary text-black-primary relative flex snap-center snap-always flex-col items-center justify-center space-y-20 overflow-hidden px-5 py-60 md:h-[120vh] md:space-y-16 md:pr-16 md:pl-42 lg:pt-80"
     >
       <div
         class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16"
@@ -218,7 +220,7 @@
         </div>
       </div>
     </section>
-    <main class="bg-green-secondary z-0 text-white snap-start">
+    <main class="bg-green-secondary z-0 snap-start text-white">
       <div
         class="js-work-card bg-black-primary mx-10 rounded-3xl px-[21px] pt-[30vh] pb-[200px] sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-[25px] xl:pl-[232px]"
       >
@@ -231,7 +233,7 @@
           class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] max-w-[1184px] bg-gradient-to-t via-60% to-transparent pt-[50vh]"
         >
           <a href="./fugo.html">
-            <article class="-mt-[20px] grid-cols-8 gap-8 lg:grid snap-center">
+            <article class="-mt-[20px] snap-center grid-cols-8 gap-8 lg:grid">
               <div
                 class="col-span-3 row-span-2 self-center font-medium xl:order-last xl:row-span-1 xl:self-start"
               >
@@ -261,7 +263,9 @@
             </article>
           </a>
           <a href="./sofia.html">
-            <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px] snap-center">
+            <article
+              class="mt-[120px] snap-center grid-cols-8 gap-8 lg:grid xl:mt-[288px]"
+            >
               <div
                 class="col-span-3 self-center font-medium xl:col-span-2 xl:self-start"
               >
@@ -301,7 +305,9 @@
             </article>
           </a>
           <a href="./paperpile.html">
-            <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px] snap-center">
+            <article
+              class="mt-[120px] snap-center grid-cols-8 gap-8 lg:grid xl:mt-[288px]"
+            >
               <div
                 class="col-span-3 row-span-2 self-center font-medium xl:col-span-4 xl:row-span-1 xl:self-start"
               >
@@ -334,7 +340,7 @@
       </div>
     </main>
     <section
-      class="js-about bg-gray-primary z-0 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px] snap-start"
+      class="js-about bg-gray-primary z-0 snap-start px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
     >
       <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
@@ -572,6 +578,7 @@
         up
       </button>
     </footer>
+    {% include footer.html %}
     <div
       class="js-copy-mail-tooltip-portal pointer-events-none fixed z-50 opacity-0 transition-opacity duration-300"
     >
