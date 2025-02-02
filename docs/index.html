@@ -231,7 +231,7 @@
           work
         </h2>
         <div
-          class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] flex max-w-[1184px] flex-col gap-66 bg-gradient-to-t via-86% to-transparent pt-[50vh] xl:gap-122"
+          class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] flex max-w-[1184px] flex-col gap-30 lg:gap-66 bg-gradient-to-t via-86% to-transparent pt-[50vh] xl:gap-122"
         >
           <a href="./paperpile.html">
             <article class="snap-center grid-cols-8 gap-8 lg:grid">
@@ -286,16 +286,32 @@
               <div
                 class="image-hover-container z-50 col-span-4 hidden self-end lg:block"
               >
-                <img
-                  loading="lazy"
-                  src="./main/Paperpile_green_14402x.webp"
-                  srcset="
-                    ./main/Paperpile_green_1440.webp   1x,
-                    ./main/Paperpile_green_14402x.webp 2x
-                  "
-                  class="image-hover"
-                  alt="Paperpile mobile app interface"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Paperpile_green_1440.webp   1x,
+                      ./main/Paperpile_green_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Paperpile_green_1024.webp   1x,
+                      ./main/Paperpile_green_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./main/Paperpile_green_14402x.webp"
+                    srcset="
+                      ./main/Paperpile_green_1440.webp   1x,
+                      ./main/Paperpile_green_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Paperpile mobile app interface"
+                  />
+                </picture>
               </div></article
           ></a>
           <a href="./fugo-redesign.html">
@@ -350,30 +366,62 @@
               <div
                 class="image-hover-container z-50 col-span-2 row-span-2 hidden lg:order-3 lg:block"
               >
-                <img
-                  loading="lazy"
-                  src="./main/Fugo_tablet_14402x.webp"
-                  srcset="
-                    ./main/Fugo_tablet_1440.webp   1x,
-                    ./main/Fugo_tablet_14402x.webp 2x
-                  "
-                  class="image-hover"
-                  alt="Fugo tablet interface"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Fugo_tablet_1440.webp   1x,
+                      ./main/Fugo_tablet_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Fugo_tablet_1024.webp   1x,
+                      ./main/Fugo_tablet_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./main/Fugo_tablet_14402x.webp"
+                    srcset="
+                      ./main/Fugo_tablet_1440.webp   1x,
+                      ./main/Fugo_tablet_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Fugo tablet interface"
+                  />
+                </picture>
               </div>
               <div
                 class="image-hover-container z-50 col-span-2 hidden lg:order-4 lg:block"
               >
-                <img
-                  loading="lazy"
-                  src="./main/Fugo_logo_14402x.webp"
-                  srcset="
-                    ./main/Fugo_logo_1440.webp   1x,
-                    ./main/Fugo_logo_14402x.webp 2x
-                  "
-                  class="image-hover"
-                  alt="Fugo redesign interface"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Fugo_logo_1440.webp   1x,
+                      ./main/Fugo_logo_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Fugo_logo_1024.webp   1x,
+                      ./main/Fugo_logo_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./main/Fugo_logo_14402x.webp"
+                    srcset="
+                      ./main/Fugo_logo_1440.webp   1x,
+                      ./main/Fugo_logo_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Fugo redesign interface"
+                  />
+                </picture>
               </div>
             </article>
           </a>
@@ -391,37 +439,77 @@
                 </p>
                 <p class="text-gray-primary mt-5">Role: UX designer</p>
               </div>
-              <div class="image-hover-container z-50 col-span-5 row-span-2">
-                <img
-                  loading="lazy"
-                  src="./main/Studio_Laptop_14402x.webp"
-                  srcset="
-                    ./main/Studio_Laptop_1440.webp   1x,
-                    ./main/Studio_Laptop_14402x.webp 2x
-                  "
-                  class="image-hover"
-                  alt="Fugo Studio laptop interface"
-                />
+              <div
+                class="image-hover-container z-50 col-span-5 row-span-2 mt-5 max-w-[600px] lg:mt-0"
+              >
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Studio_Laptop_1440.webp   1x,
+                      ./main/Studio_Laptop_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Studio_Laptop_1024.webp   1x,
+                      ./main/Studio_Laptop_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Studio_Laptop_mobile.webp   1x,
+                      ./main/Studio_Laptop_mobile2x.webp 2x
+                    "
+                  />
+                  <img
+                    loading="lazy"
+                    src="./main/Studio_Laptop_14402x.webp"
+                    srcset="
+                      ./main/Studio_Laptop_1440.webp   1x,
+                      ./main/Studio_Laptop_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Fugo Studio laptop interface"
+                  />
+                </picture>
               </div>
-              <div class="image-hover-container z-50 col-span-3">
-                <img
-                  loading="lazy"
-                  src="./main/Studio_Poster_14402x.webp"
-                  srcset="
-                    ./main/Studio_Poster_1440.webp   1x,
-                    ./main/Studio_Poster_14402x.webp 2x
-                  "
-                  class="image-hover"
-                  alt="Fugo Studio poster interface"
-                />
+              <div
+                class="image-hover-container z-50 col-span-3 hidden lg:block"
+              >
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Studio_Poster_1440.webp   1x,
+                      ./main/Studio_Poster_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Studio_Poster_1024.webp   1x,
+                      ./main/Studio_Poster_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./main/Studio_Poster_14402x.webp"
+                    srcset="
+                      ./main/Studio_Poster_1440.webp   1x,
+                      ./main/Studio_Poster_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Fugo Studio poster interface"
+                  />
+                </picture>
               </div>
             </article>
           </a>
           <a href="./sofia.html">
             <article class="snap-center grid-cols-8 gap-8 lg:grid">
-              <div
-                class="col-span-3 self-center font-medium xl:col-span-2 xl:self-start"
-              >
+              <div class="col-span-2">
                 <time datetime="2022" class="text-xl">2022</time>
                 <h3
                   class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
@@ -432,9 +520,91 @@
                   CRM, a specialized data management platform.
                 </p>
                 <p class="text-gray-primary mt-5">Role: UI/UX designer</p>
-                <div
-                  class="image-hover-container z-50 col-span-5 row-span-2 mt-10 hidden w-full self-end xl:block"
-                >
+              </div>
+              <div
+                class="image-hover-container z-50 col-span-4 row-span-2 mt-5 max-w-[600px] lg:mt-0"
+              >
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Sofia_Laptop_1440.webp   1x,
+                      ./main/Sofia_Laptop_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Sofia_Laptop_1024.webp   1x,
+                      ./main/Sofia_Laptop_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Sofia_Laptop_mobile.webp   1x,
+                      ./main/Sofia_Laptop_mobile2x.webp 2x
+                    "
+                  />
+                  <img
+                    loading="lazy"
+                    src="./main/Sofia_Laptop_14402x.webp"
+                    srcset="
+                      ./main/Sofia_Laptop_1440.webp   1x,
+                      ./main/Sofia_Laptop_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Sofia laptop interface"
+                  />
+                </picture>
+              </div>
+              <div
+                class="image-hover-container z-50 col-span-2 row-span-2 hidden self-center lg:block xl:self-start"
+              >
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Sofia_Logo_1440.webp   1x,
+                      ./main/Sofia_Logo_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Sofia_Logo_1024.webp   1x,
+                      ./main/Sofia_Logo_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./main/Sofia_Logo_14402x.webp"
+                    srcset="
+                      ./main/Sofia_Logo_1440.webp   1x,
+                      ./main/Sofia_Logo_14402x.webp 2x
+                    "
+                    class="image-hover"
+                    alt="Sofia logo"
+                  />
+                </picture>
+              </div>
+              <div
+                class="image-hover-container z-50 col-span-2 hidden self-end lg:block"
+              >
+                <picture>
+                  <source
+                    srcset="
+                      ./main/Sofia_Phones_1440.webp   1x,
+                      ./main/Sofia_Phones_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./main/Sofia_Phones_1024.webp   1x,
+                      ./main/Sofia_Phones_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
                   <img
                     loading="lazy"
                     src="./main/Sofia_Phones_14402x.webp"
@@ -443,37 +613,9 @@
                       ./main/Sofia_Phones_14402x.webp 2x
                     "
                     class="image-hover"
-                    alt="Sofia mobile app interface"
+                    alt="Sofia phones interface"
                   />
-                </div>
-              </div>
-              <div
-                class="image-hover-container z-50 col-span-5 mt-5 h-[291px] w-full lg:order-first lg:mt-0 xl:order-2 xl:col-span-4 xl:h-full"
-              >
-                <img
-                  loading="lazy"
-                  src="./main/Sofia_Laptop_14402x.webp"
-                  srcset="
-                    ./main/Sofia_Laptop_1440.webp   1x,
-                    ./main/Sofia_Laptop_14402x.webp 2x
-                  "
-                  class="image-hover object-cover"
-                  alt="Sofia app interface"
-                />
-              </div>
-              <div
-                class="image-hover-container z-50 order-last hidden h-fit xl:col-span-2 xl:block"
-              >
-                <img
-                  loading="lazy"
-                  src="./main/Sofia_Logo_14402x.webp"
-                  srcset="
-                    ./main/Sofia_Logo_1440.webp   1x,
-                    ./main/Sofia_Logo_14402x.webp 2x
-                  "
-                  class="image-hover"
-                  alt="Sofia company logo"
-                />
+                </picture>
               </div>
             </article>
           </a>

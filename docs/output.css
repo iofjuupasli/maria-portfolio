@@ -675,9 +675,6 @@
   .order-first {
     order: calc(-infinity);
   }
-  .order-last {
-    order: calc(infinity);
-  }
   .col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -894,14 +891,8 @@
   .h-\[200\%\] {
     height: 200%;
   }
-  .h-\[291px\] {
-    height: 291px;
-  }
   .h-auto {
     height: auto;
-  }
-  .h-fit {
-    height: fit-content;
   }
   .h-full {
     height: 100%;
@@ -1168,11 +1159,11 @@
   .gap-24 {
     gap: calc(var(--spacing) * 24);
   }
+  .gap-30 {
+    gap: calc(var(--spacing) * 30);
+  }
   .gap-32 {
     gap: calc(var(--spacing) * 32);
-  }
-  .gap-66 {
-    gap: calc(var(--spacing) * 66);
   }
   .gap-\[54px\] {
     gap: 54px;
@@ -1984,11 +1975,6 @@
       order: 4;
     }
   }
-  .lg\:order-first {
-    @media (width >= 64rem) {
-      order: calc(-infinity);
-    }
-  }
   .lg\:mt-0 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 0);
@@ -2044,6 +2030,11 @@
     @media (width >= 64rem) {
       --tw-translate-y: calc(var(--spacing) * 0);
       translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .lg\:gap-66 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 66);
     }
   }
   .lg\:space-y-1 {
@@ -2138,34 +2129,9 @@
       top: calc(133px * -1);
     }
   }
-  .xl\:order-2 {
-    @media (width >= 80rem) {
-      order: 2;
-    }
-  }
-  .xl\:col-span-2 {
-    @media (width >= 80rem) {
-      grid-column: span 2 / span 2;
-    }
-  }
-  .xl\:col-span-4 {
-    @media (width >= 80rem) {
-      grid-column: span 4 / span 4;
-    }
-  }
-  .xl\:block {
-    @media (width >= 80rem) {
-      display: block;
-    }
-  }
   .xl\:h-\[370px\] {
     @media (width >= 80rem) {
       height: 370px;
-    }
-  }
-  .xl\:h-full {
-    @media (width >= 80rem) {
-      height: 100%;
     }
   }
   .xl\:w-\[50px\] {
