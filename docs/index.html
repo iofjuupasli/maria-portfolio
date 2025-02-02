@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="font-sans">
+<html lang="en" class="font-sans snap-y snap-proximity">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,7 +40,7 @@
       class="noise pointer-events-none fixed -top-1/2 -right-1/2 -bottom-1/2 -left-1/2 z-40 h-[200%] w-[200%] opacity-65"
     ></div>
     <div
-      class="js-header-bg bg-black-primary pointer-events-none fixed z-10 h-screen w-full transition-opacity duration-500"
+      class="js-header-bg bg-black-primary pointer-events-none fixed z-10 h-screen w-full"
     ></div>
     <menu
       class="js-mobile-menu fixed z-[60] h-20 w-full text-white transition-transform duration-500 lg:hidden"
@@ -64,21 +64,21 @@
       </div>
     </menu>
     <menu
-      class="js-menu bg-black-primary fixed z-[80] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-2 text-nowrap text-white transition-all duration-500 lg:z-[60] lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
+      class="js-menu bg-black-primary fixed z-[80] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-6 text-nowrap text-white transition-all duration-500 lg:z-[60] lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
     >
-      <div class="side-menu mt-8 ml-1">
-        <div class="group link hover:text-white-primary text-[28px]">
+      <div class="side-menu mt-8 ml-1.5">
+        <div class="group link hover:text-white-primary text-[36px]">
           M<span
-            class="inline-block w-0 overflow-clip transition-all duration-150 group-hover:w-72"
+            class="inline-block w-0 overflow-clip transition-all duration-150 group-hover:w-80"
             >aria Petukhovskaya</span
           >
         </div>
       </div>
       <div
-        class="flex h-full max-h-[640px] flex-col items-center justify-evenly py-8 lg:block"
+        class="flex h-full max-h-[640px] flex-col items-center justify-evenly py-10 lg:block"
       >
         <div
-          class="side-menu top-[46%] flex w-[200px] flex-auto flex-col justify-evenly lg:absolute lg:w-auto lg:-translate-y-1/2 lg:space-y-7"
+          class="side-menu top-[46%] flex w-[200px] flex-auto flex-col justify-evenly lg:absolute lg:w-auto lg:-translate-y-1/2 lg:space-y-1"
         >
           <a
             href="#work"
@@ -96,7 +96,7 @@
         </div>
         <div class="h-px w-[202px] bg-current lg:hidden"></div>
         <div
-          class="side-menu bottom-7 flex w-[200px] flex-auto flex-col justify-evenly space-y-4 lg:absolute lg:w-auto"
+          class="side-menu bottom-7 flex w-[200px] flex-auto flex-col justify-evenly space-y-1 lg:absolute lg:w-auto"
         >
           <a href="./cv_maria_petukhovskaya.pdf" class="link">Get CV</a>
           <a
@@ -122,7 +122,7 @@
         ></div>
       </div>
     </div>
-    <div class="pointer-events-none relative z-[70] h-screen">
+    <div class="pointer-events-none relative z-[70] h-screen snap-start">
       <header
         class="js-header fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
       >
@@ -164,7 +164,7 @@
       </header>
     </div>
     <section
-      class="js-skills bg-green-secondary text-black-primary relative flex h-[180vh] flex-col items-center justify-center space-y-20 overflow-hidden px-5 md:space-y-16 md:pr-16 md:pl-42"
+      class="js-skills snap-center snap-always bg-green-secondary text-black-primary relative flex flex-col items-center justify-center space-y-20 overflow-hidden px-5 py-60 md:h-[120vh] md:space-y-16 md:pr-16 md:pl-42 lg:pt-80"
     >
       <div
         class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16"
@@ -218,7 +218,7 @@
         </div>
       </div>
     </section>
-    <main class="bg-green-secondary z-0 text-white">
+    <main class="bg-green-secondary z-0 text-white snap-start">
       <div
         class="js-work-card bg-black-primary mx-10 rounded-3xl px-[21px] pt-[30vh] pb-[200px] sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-[25px] xl:pl-[232px]"
       >
@@ -231,7 +231,7 @@
           class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] max-w-[1184px] bg-gradient-to-t via-60% to-transparent pt-[50vh]"
         >
           <a href="./fugo.html">
-            <article class="-mt-[20px] grid-cols-8 gap-8 lg:grid">
+            <article class="-mt-[20px] grid-cols-8 gap-8 lg:grid snap-center">
               <div
                 class="col-span-3 row-span-2 self-center font-medium xl:order-last xl:row-span-1 xl:self-start"
               >
@@ -261,7 +261,7 @@
             </article>
           </a>
           <a href="./sofia.html">
-            <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px]">
+            <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px] snap-center">
               <div
                 class="col-span-3 self-center font-medium xl:col-span-2 xl:self-start"
               >
@@ -301,7 +301,7 @@
             </article>
           </a>
           <a href="./paperpile.html">
-            <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px]">
+            <article class="mt-[120px] grid-cols-8 gap-8 lg:grid xl:mt-[288px] snap-center">
               <div
                 class="col-span-3 row-span-2 self-center font-medium xl:col-span-4 xl:row-span-1 xl:self-start"
               >
@@ -334,7 +334,7 @@
       </div>
     </main>
     <section
-      class="js-about bg-gray-primary z-0 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+      class="js-about bg-gray-primary z-0 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px] snap-start"
     >
       <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
@@ -610,7 +610,6 @@
       const aboutElem = document.querySelector(".js-about");
       const aboutButton = document.querySelector(".js-about-button");
       const copyMail = document.querySelector(".js-copy-mail");
-      const copyMailText = document.querySelector(".js-copy-mail-text");
       const copyMailConfirm = document.querySelector(".js-copy-mail-confirm");
       const copyMailTooltipPortal = document.querySelector(
         ".js-copy-mail-tooltip-portal",
@@ -621,7 +620,7 @@
         const container = headerElem.parentElement;
         const headerRect = container.getBoundingClientRect();
         const isOnScreen =
-          headerRect.top < window.innerHeight && headerRect.bottom >= 0;
+          headerRect.top <= window.innerHeight && headerRect.bottom > 0;
         if (!isOnScreen) {
           headerBgElem.classList.add("opacity-0");
           headerElem.classList.add("opacity-0");
@@ -629,8 +628,8 @@
           headerBgElem.classList.remove("opacity-0");
           headerElem.classList.remove("opacity-0");
         }
-        const topPercent = (-headerRect.top / window.innerHeight) ** 2;
-        titleElem.style.transform = `scale(${1 + 250 * topPercent})`;
+        const topPercent = (-headerRect.top / window.innerHeight) ** 2.5;
+        titleElem.style.transform = `scale(${1 + 320 * topPercent})`;
       };
       const handleSkillsScroll = (e) => {
         const rect = skillsElem.getBoundingClientRect();
