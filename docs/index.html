@@ -37,6 +37,7 @@
       }
     </style>
     <link rel="stylesheet" href="./output.css" />
+    <script src="./components/arrow-icon.js" type="module"></script>
   </head>
   <body>
     <div
@@ -231,7 +232,7 @@
           work
         </h2>
         <div
-          class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] flex max-w-[1184px] flex-col gap-30 lg:gap-66 bg-gradient-to-t via-86% to-transparent pt-[50vh] xl:gap-122"
+          class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] flex max-w-[1184px] flex-col gap-30 bg-gradient-to-t via-86% to-transparent pt-[50vh] lg:gap-66 xl:gap-122"
         >
           <a href="./paperpile.html">
             <article class="snap-center grid-cols-8 gap-8 lg:grid">
@@ -623,7 +624,7 @@
       </div>
     </main>
     <section
-      class="js-about bg-gray-primary z-0 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+      class="js-about bg-gray-primary text-dark-primary z-0 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
     >
       <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
@@ -632,222 +633,216 @@
           about
         </h2>
         <div
-          class="from-gray-primary via-gray-primary relative grid-cols-8 gap-8 bg-gradient-to-t via-80% to-transparent pt-[35vh] lg:grid lg:via-40%"
+          class="from-gray-primary via-gray-primary relative flex flex-col gap-12 bg-gradient-to-t via-80% to-transparent pt-[35vh] lg:flex-row lg:gap-8 lg:via-60%"
         >
-          <div class="col-span-4">
-            <img
-              loading="lazy"
-              src="./maria2x.webp"
-              srcset="./maria.webp 1x, ./maria2x.webp 2x"
-              class="relative z-50 aspect-square w-full rounded-[24px] object-cover lg:aspect-auto xl:h-[370px]"
-              alt="Maria Petukhovskaya"
-            />
-            <div class="mt-7 space-y-[17px] text-sm">
-              <p>
-                In my design practice, I focus on deep research, communication
-                with users, exploring their motivations and expectations,
-                addressing business goals, solution testing, and creating design
-                systems and libraries.
-              </p>
-              <p>
-                I am keen on community-building processes related to the things
-                I'm in.
-              </p>
-              <p>
-                I explore art practice and processes around creation, so I build
-                communities around different aspects of creation.
-              </p>
-              <p>
-                I also believe in solidarity; therefore, &nbsp;I took leadership
-                in a few solidarity-focused initiatives and facilitated them
-                from both the design and community sides for years.
-              </p>
-              <p>
-                Experience in science and statistics helps me work with data and
-                conduct and interpret design research.
-              </p>
-              <p>
-                My strengths are strong communication skills that make me able
-                to explain my vision through the process, detail orientation,
-                empathy, and cooperation.
-              </p>
-            </div>
+          <div class="flex flex-3 flex-col justify-between gap-8 xl:gap-12">
+            <p>
+              In design I like research, communication with users, exploring
+              their motivations and expectations. I care about addressing
+              business goals, solution testing, and creating design systems and
+              libraries.
+            </p>
+            <p>
+              I believe my strengths are strong communication skills that make
+              me able to explain my vision through the process, detail
+              orientation, empathy, and cooperation.
+            </p>
+            <p>
+              I am passionate about community-building processes within the
+              fields I engage in. I explore artistic practices and the creative
+              process, fostering communities around different aspects of
+              creation. Believing deeply in solidarity, I have taken leadership
+              in several solidarity-focused initiatives, facilitating them from
+              both a design and community perspective for years. My experience
+              in science and statistics enables me to think with a data-driven
+              approach, conduct thorough research, and effectively interpret
+              design studies.
+            </p>
           </div>
-          <div
-            class="text-black-primary z-50 col-span-4 mt-8 space-y-7 lg:mt-0"
-          >
-            <a
-              href="https://www.instagram.com/petuhovskaya.m/"
-              target="_blank"
-              class="about-card group"
-            >
-              <img
-                loading="lazy"
-                src="./art2x.webp"
-                srcset="./art.webp 1x, ./art2x.webp 2x"
-                class="about-card__bg"
-                alt="Maria Petukhovskaya's art"
-              />
-              <div class="about-card__gradient button-gradient"></div>
-              <div class="z-10">
-                <h3 class="text-xl font-semibold lg:text-base xl:text-xl">
-                  Art
-                </h3>
-                <p class="mt-1.5 text-sm xl:font-semibold">
-                  Exploring creative practice
-                </p>
+          <div class="flex flex-5 flex-col gap-4 2xl:gap-8">
+            <div class="flex flex-col gap-4 lg:flex-row 2xl:gap-8">
+              <div class="about-card group lg:w-7/12 xl:w-8/17">
+                <picture>
+                  <source
+                    srcset="
+                      ./about/Art_1440.webp   1x,
+                      ./about/Art_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./about/Art_1024.webp   1x,
+                      ./about/Art_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <img
+                    class="about-card__bg"
+                    src="./about/Art_14402x.webp"
+                    srcset="
+                      ./about/Art_1440.webp   1x,
+                      ./about/Art_14402x.webp 2x
+                    "
+                    alt="Art"
+                  />
+                </picture>
+                <div class="relative z-10 flex h-full flex-col justify-between">
+                  <div>
+                    <div class="font-semibold">Art</div>
+                    <div class="t3 mt-2">Exploring creating practice</div>
+                  </div>
+                  <arrow-icon class="mt-5" />
+                </div>
               </div>
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="z-10 hidden w-[43px] lg:block xl:w-[50px]"
+              <div
+                class="flex flex-row gap-4 lg:w-5/12 lg:!flex-col xl:w-9/17 2xl:gap-8"
               >
-                <circle
-                  cx="25"
-                  cy="25"
-                  r="23"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-                <path
-                  d="M24.0509 14H36M36 14V25.9491M36 14L12 38"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://www.instagram.com/body_sketches_warsaw/"
-              target="_blank"
-              class="about-card group"
-            >
-              <img
-                loading="lazy"
-                src="./big-community2x.webp"
-                srcset="./big-community.webp 1x, ./big-community2x.webp 2x"
-                class="about-card__bg"
-                alt="Organizing artist sketching meeting"
-              />
-              <div class="about-card__gradient button-gradient"></div>
-              <div class="z-10">
-                <h3 class="text-xl font-semibold lg:text-base xl:text-xl">
-                  Big community building
-                </h3>
-                <p class="mt-1.5 text-sm xl:font-semibold">
-                  City scale artist sketching meeting
-                </p>
+                <div class="about-card group w-1/2 lg:w-full">
+                  <picture>
+                    <source
+                      srcset="
+                        ./about/Sketches_1440.webp   1x,
+                        ./about/Sketches_14402x.webp 2x
+                      "
+                      media="(min-width: 1280px)"
+                    />
+                    <source
+                      srcset="
+                        ./about/Sketches_1024.webp   1x,
+                        ./about/Sketches_10242x.webp 2x
+                      "
+                      media="(min-width: 1024px)"
+                    />
+                    <img
+                      class="about-card__bg"
+                      src="./about/Sketches_14402x.webp"
+                      srcset="
+                        ./about/Sketches_1440.webp   1x,
+                        ./about/Sketches_14402x.webp 2x
+                      "
+                      alt="Big community bulding"
+                    />
+                  </picture>
+                  <div
+                    class="relative z-10 flex h-full flex-col justify-between"
+                  >
+                    <div>
+                      <div class="font-semibold">Big community bulding</div>
+                      <div class="t3 mt-2">
+                        City scale artist sketching meeting
+                      </div>
+                    </div>
+                    <arrow-icon class="mt-5 xl:mt-22" />
+                  </div>
+                </div>
+                <div class="about-card group w-1/2 lg:w-full">
+                  <picture>
+                    <source
+                      srcset="
+                        ./about/Postcards_1440.webp   1x,
+                        ./about/Postcards_14402x.webp 2x
+                      "
+                      media="(min-width: 1280px)"
+                    />
+                    <source
+                      srcset="
+                        ./about/Postcards_1024.webp   1x,
+                        ./about/Postcards_10242x.webp 2x
+                      "
+                      media="(min-width: 1024px)"
+                    />
+                    <img
+                      class="about-card__bg"
+                      src="./about/Postcards_14402x.webp"
+                      srcset="
+                        ./about/Postcards_1440.webp   1x,
+                        ./about/Postcards_14402x.webp 2x
+                      "
+                      alt="Solidarity"
+                    />
+                  </picture>
+                  <div
+                    class="relative z-10 flex h-full flex-col justify-between lg:flex-row xl:flex-col"
+                  >
+                    <div>
+                      <div class="font-semibold">Solidarity</div>
+                      <div class="t3 mt-2">
+                        Writing to&nbsp;political prisoners
+                      </div>
+                    </div>
+                    <arrow-icon
+                      class="flex-shrink-0 lg:self-end xl:mt-3 xl:self-start"
+                    />
+                  </div>
+                </div>
               </div>
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="z-10 hidden w-[43px] lg:block xl:w-[50px]"
-              >
-                <circle
-                  cx="25"
-                  cy="25"
-                  r="23"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-                <path
-                  d="M24.0509 14H36M36 14V25.9491M36 14L12 38"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://www.instagram.com/375_collective/"
-              target="_blank"
-              class="about-card group"
-            >
-              <img
-                loading="lazy"
-                src="./small-community2x.webp"
-                srcset="./small-community.webp 1x, ./small-community2x.webp 2x"
-                class="about-card__bg h-max sm:-top-[50px] lg:-top-[110px] xl:-top-[133px] 2xl:-top-[156px]"
-                alt="Multi-discipline art collective"
-              />
-              <div class="about-card__gradient button-gradient"></div>
-              <div class="z-10">
-                <h3 class="text-xl font-semibold lg:text-base xl:text-xl">
-                  Small community building
-                </h3>
-                <p class="mt-1.5 text-sm xl:font-semibold">
-                  Multi-discipline art collective
-                </p>
+            </div>
+            <div class="flex flex-col gap-4 lg:flex-row 2xl:gap-8">
+              <div class="about-card group lg:w-7/12 xl:w-7/10">
+                <picture>
+                  <source
+                    srcset="
+                      ./about/375_1440.webp   1x,
+                      ./about/375_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./about/375_1024.webp   1x,
+                      ./about/375_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <img
+                    class="about-card__bg"
+                    src="./about/375_14402x.webp"
+                    srcset="
+                      ./about/375_1440.webp   1x,
+                      ./about/375_14402x.webp 2x
+                    "
+                    alt="Small community bulding"
+                  />
+                </picture>
+                <div class="relative z-10 flex h-full flex-col justify-between">
+                  <div>
+                    <div class="font-semibold">Small community bulding</div>
+                    <div class="t3 mt-2">Multi-discipline art collective</div>
+                  </div>
+                  <arrow-icon class="mt-3" />
+                </div>
               </div>
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="z-10 hidden w-[43px] lg:block xl:w-[50px]"
+              <div
+                class="relative aspect-[320/229] h-auto overflow-clip rounded-[20px] lg:aspect-[204/250] lg:w-5/12 xl:aspect-[214/248] xl:w-3/10"
               >
-                <circle
-                  cx="25"
-                  cy="25"
-                  r="23"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-                <path
-                  d="M24.0509 14H36M36 14V25.9491M36 14L12 38"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://www.instagram.com/majsternia_ps/"
-              target="_blank"
-              class="about-card group"
-            >
-              <img
-                loading="lazy"
-                src="./solidarity2x.webp"
-                srcset="./solidarity.webp 1x, ./solidarity2x.webp 2x"
-                class="about-card__bg"
-                alt="Organizing a meeting for writing to political prisoners"
-              />
-              <div class="about-card__gradient button-gradient"></div>
-              <div class="z-10">
-                <h3 class="text-xl font-semibold lg:text-base xl:text-xl">
-                  Solidarity
-                </h3>
-                <p class="mt-1.5 text-sm xl:font-semibold">
-                  Writing to political prisoners
-                </p>
+                <picture>
+                  <source
+                    srcset="
+                      ./about/Portrait_1440.webp   1x,
+                      ./about/Portrait_14402x.webp 2x
+                    "
+                    media="(min-width: 1280px)"
+                  />
+                  <source
+                    srcset="
+                      ./about/Portrait_1024.webp   1x,
+                      ./about/Portrait_10242x.webp 2x
+                    "
+                    media="(min-width: 1024px)"
+                  />
+                  <img
+                    class="about-card__bg !opacity-100"
+                    src="./about/Portrait_mobile2x.webp"
+                    srcset="
+                      ./about/Portrait_mobile.webp   1x,
+                      ./about/Portrait_mobile2x.webp 2x
+                    "
+                    alt="Portrait photo"
+                  />
+                </picture>
               </div>
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="z-10 hidden w-[43px] lg:block xl:w-[50px]"
-              >
-                <circle
-                  cx="25"
-                  cy="25"
-                  r="23"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-                <path
-                  d="M24.0509 14H36M36 14V25.9491M36 14L12 38"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-              </svg>
-            </a>
+            </div>
           </div>
         </div>
       </div>

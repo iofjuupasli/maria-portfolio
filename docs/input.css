@@ -77,13 +77,10 @@
     @apply rounded-[20px] bg-white text-black;
   }
   .about-card {
-    @apply bg-gray-thirdly lg:text-black-primary relative flex items-center justify-between overflow-hidden rounded-[28px] py-12 pr-4 pl-11 text-white transition-all duration-300 hover:rounded-[52px] lg:py-[36.5px] lg:pr-10 hover:lg:text-white xl:py-[60px];
+    @apply bg-gray-thirdly relative cursor-pointer overflow-clip rounded-[20px] pt-9 pr-6 pb-9 pl-6 transition-all duration-300 hover:rounded-[100px] lg:pl-8 xl:pt-10;
   }
   .about-card__bg {
-    @apply pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-300 lg:opacity-0 group-hover:lg:opacity-100;
-  }
-  .about-card__gradient {
-    @apply pointer-events-none absolute inset-0 h-full w-full translate-x-0 transition-all duration-500 lg:-translate-x-full group-hover:lg:translate-x-0;
+    @apply absolute inset-0 z-0 h-full w-full object-cover opacity-0 transition-all duration-300 group-hover:scale-105 group-hover:opacity-100;
   }
   .cross.cross--active .cross__top {
     @apply -translate-y-1 rotate-45;
@@ -129,7 +126,7 @@
     @apply overflow-clip rounded-[20px] transition-all duration-200 hover:rounded-[120px];
   }
   .image-hover {
-    @apply transition-transform duration-200 hover:scale-105 w-full h-full object-cover;
+    @apply h-full w-full object-cover transition-transform duration-200 hover:scale-105;
   }
 }
 

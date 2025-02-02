@@ -1,7 +1,7 @@
 <footer style="height: 100vh" class="js-footer">
   <div
     style="z-index: -1"
-    class="js-footer-content bg-dark-primary fixed right-0 bottom-0 left-0 px-5 pt-30 pb-40 text-white sm:px-8 md:pt-40 md:pb-60 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+    class="js-footer-content bg-dark-primary fixed right-0 bottom-0 left-0 flex h-[100vh] flex-col justify-center px-5 text-white sm:px-8 md:h-auto md:pt-40 md:pb-60 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
   >
     <div
       class="mx-auto flex max-w-[400px] flex-col md:max-w-[1184px] md:flex-row md:justify-between md:gap-8"
@@ -85,6 +85,10 @@
       footerContent.style.zIndex = -1;
     }
 
+    const isMobile = window.innerWidth < 1024;
+    if (isMobile) {
+      return;
+    }
     const mainRect = previousSibling.getBoundingClientRect();
     const isOnScreen =
       mainRect.top < window.innerHeight && mainRect.bottom >= 0;
