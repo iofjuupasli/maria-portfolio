@@ -1,7 +1,11 @@
 class ArrowIcon extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    if (window.ShadowRoot) {
+      this.attachShadow({ mode: "open" });
+    } else {
+      this.innerHTML = '<div class="arrow-icon-root"></div>';
+    }
   }
 
   connectedCallback() {
@@ -11,7 +15,7 @@ class ArrowIcon extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
       <style>
-        :host {
+        :host, .arrow-icon-root {
           display: inline-block;
           width: ${size}px;
           height: ${size}px;

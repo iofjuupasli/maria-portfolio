@@ -224,7 +224,7 @@
     </section>
     <main class="bg-green-secondary z-0 text-white">
       <div
-        class="js-work-card bg-black-primary mx-10 rounded-3xl px-[21px] pt-[30vh] pb-[200px] sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-[25px] xl:pl-[232px]"
+        class="js-work-card bg-black-primary rounded-3xl px-[21px] pt-[30vh] pb-[200px] sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-[25px] xl:pl-[232px]"
       >
         <h2
           class="bg-cabbage sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] leading-relaxed font-extrabold tracking-wide text-transparent sm:text-[140px] lg:pr-8 lg:text-[280px] xl:text-[340px]"
@@ -873,184 +873,195 @@
       </div>
     </div>
     <script>
-      let isMobileMenuOpen = false;
-      const menuElem = document.querySelector(".js-menu");
-      const menuMobileElems = document.querySelectorAll(".js-mobile-menu");
-      const cross = document.querySelector(".js-cross");
-      const headerBgElem = document.querySelector(".js-header-bg");
-      const headerElem = document.querySelector(".js-header");
-      const titleElem = document.querySelector(".js-title");
-      const skillsElem = document.querySelector(".js-skills");
-      const workElem = document.querySelector(".js-work-card");
-      const worksButton = document.querySelector(".js-works-button");
-      const aboutElem = document.querySelector(".js-about");
-      const aboutButton = document.querySelector(".js-about-button");
-      const copyMail = document.querySelector(".js-copy-mail");
-      const copyMailConfirm = document.querySelector(".js-copy-mail-confirm");
-      const copyMailTooltipPortal = document.querySelector(
-        ".js-copy-mail-tooltip-portal",
-      );
-      const copyMailTooltip = document.querySelector(".js-copy-mail-tooltip");
+      (() => {
+        let isMobileMenuOpen = false;
+        const menuElem = document.querySelector(".js-menu");
+        const menuMobileElems = document.querySelectorAll(".js-mobile-menu");
+        const cross = document.querySelector(".js-cross");
+        const headerBgElem = document.querySelector(".js-header-bg");
+        const headerElem = document.querySelector(".js-header");
+        const titleElem = document.querySelector(".js-title");
+        const skillsElem = document.querySelector(".js-skills");
+        const workElem = document.querySelector(".js-work-card");
+        const worksButton = document.querySelector(".js-works-button");
+        const aboutElem = document.querySelector(".js-about");
+        const aboutButton = document.querySelector(".js-about-button");
+        const copyMail = document.querySelector(".js-copy-mail");
+        const copyMailConfirm = document.querySelector(".js-copy-mail-confirm");
+        const copyMailTooltipPortal = document.querySelector(
+          ".js-copy-mail-tooltip-portal",
+        );
+        const copyMailTooltip = document.querySelector(".js-copy-mail-tooltip");
 
-      const handleHeaderScroll = (e) => {
-        const container = headerElem.parentElement;
-        const headerRect = container.getBoundingClientRect();
-        const isOnScreen =
-          headerRect.top <= window.innerHeight && headerRect.bottom > 0;
-        if (!isOnScreen) {
-          headerBgElem.classList.add("opacity-0");
-          headerElem.classList.add("opacity-0");
-        } else {
-          headerBgElem.classList.remove("opacity-0");
-          headerElem.classList.remove("opacity-0");
-        }
-        const topPercent = (-headerRect.top / window.innerHeight) ** 2.5;
-        titleElem.style.transform = `scale(${1 + 320 * topPercent})`;
-      };
-      const handleSkillsScroll = (e) => {
-        const rect = skillsElem.getBoundingClientRect();
-        const isMenuVisible = rect.top >= 200 || rect.bottom < 200;
-        if (isMenuVisible) {
-          menuElem.classList.remove("lg:opacity-0", "lg:pointer-events-none");
-        } else {
-          menuElem.classList.add("lg:opacity-0", "lg:pointer-events-none");
-        }
-      };
-      const handleWorkScroll = (e) => {
-        const container = workElem.parentElement;
-        const mainRect = workElem.getBoundingClientRect();
-        const isOnScreen =
-          mainRect.top < window.innerHeight && mainRect.bottom >= 0;
-        const isHalfOnScreen =
-          mainRect.top < window.innerHeight / 2 &&
-          mainRect.bottom >= window.innerHeight / 2;
-        // if (isHalfOnScreen) {
-        //   worksButton.classList.add("active");
-        // } else {
-        //   worksButton.classList.remove("active");
-        // }
-        if (!isOnScreen) {
-          return;
-        }
-        if (mainRect.bottom < window.innerHeight + 100) {
-          container.classList.remove("bg-green-secondary");
-          container.classList.add("bg-gray-primary");
-        } else {
-          container.classList.remove("bg-gray-primary");
-          container.classList.add("bg-green-secondary");
-        }
-        const bottom = Math.min(mainRect.bottom, window.innerHeight);
-        const visibleHeight = Math.max(0, bottom - Math.max(mainRect.top, 0));
-        workElem.style.borderRadius =
-          Math.min(64, -visibleHeight / 10 + 64) + "px";
-        const margin = Math.max(0, 40 - visibleHeight / 10);
-        workElem.style.marginRight = margin + "px";
-        workElem.style.marginLeft = margin + "px";
-      };
-      const handleAboutScrool = (e) => {
-        const aboutRect = aboutElem.getBoundingClientRect();
-        const isOnScreen =
-          aboutRect.top < window.innerHeight && aboutRect.bottom >= 0;
-        const isHalfOnScreen =
-          aboutRect.top < window.innerHeight / 2 &&
-          aboutRect.bottom >= window.innerHeight / 2;
-        // if (isHalfOnScreen) {
-        //   aboutButton.classList.add("active");
-        // } else {
-        //   aboutButton.classList.remove("active");
-        // }
-      };
-      const handleTooltipScroll = (e) => {
-        const tooltipTop = copyMailTooltip.getBoundingClientRect().top;
-        const aboutTop = aboutElem.getBoundingClientRect().top;
-        if (tooltipTop < aboutTop) {
-          copyMailTooltip.style.backgroundColor = "#222F3C";
-          copyMailTooltip.style.color = "#CBD5D3";
-        } else {
-          copyMailTooltip.style.backgroundColor = "#222F3C";
-          copyMailTooltip.style.color = "#CBD5D3";
-        }
-      };
-      handleTooltipScroll();
-      let lastScrollTop = 0;
-      let lastSwitch = 0;
-      const handleMobileMenuHideScroll = (e) => {
-        if (isMobileMenuOpen) {
-          return;
-        }
-        const st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop && st > 50 && st > lastSwitch + 50) {
-          menuMobileElems.forEach((menuMobileElem) => {
-            menuMobileElem.classList.add("-translate-y-full");
+        const handleHeaderScroll = (e) => {
+          const container = headerElem.parentElement;
+          const headerRect = container.getBoundingClientRect();
+          const isOnScreen =
+            headerRect.top <= window.innerHeight && headerRect.bottom > 0;
+          if (!isOnScreen) {
+            headerBgElem.classList.add("opacity-0");
+            headerElem.classList.add("opacity-0");
+          } else {
+            headerBgElem.classList.remove("opacity-0");
+            headerElem.classList.remove("opacity-0");
+          }
+          const topPercent = (-headerRect.top / window.innerHeight) ** 2.5;
+          titleElem.style.transform = `scale(${1 + 320 * topPercent})`;
+        };
+        const handleSkillsScroll = (e) => {
+          const rect = skillsElem.getBoundingClientRect();
+          const isMenuVisible = rect.top >= 200 || rect.bottom < 200;
+          if (isMenuVisible) {
+            menuElem.classList.remove("lg:opacity-0", "lg:pointer-events-none");
+          } else {
+            menuElem.classList.add("lg:opacity-0", "lg:pointer-events-none");
+          }
+        };
+        const handleWorkScroll = (e) => {
+          const container = workElem.parentElement;
+          const mainRect = workElem.getBoundingClientRect();
+          const isOnScreen =
+            mainRect.top < window.innerHeight && mainRect.bottom >= 0;
+          const isHalfOnScreen =
+            mainRect.top < window.innerHeight / 2 &&
+            mainRect.bottom >= window.innerHeight / 2;
+          // if (isHalfOnScreen) {
+          //   worksButton.classList.add("active");
+          // } else {
+          //   worksButton.classList.remove("active");
+          // }
+          if (!isOnScreen) {
+            return;
+          }
+          if (mainRect.bottom < window.innerHeight + 100) {
+            container.classList.remove("bg-green-secondary");
+            container.classList.add("bg-gray-primary");
+          } else {
+            container.classList.remove("bg-gray-primary");
+            container.classList.add("bg-green-secondary");
+          }
+          const bottom = Math.min(mainRect.bottom, window.innerHeight);
+          const visibleHeight = Math.max(0, bottom - Math.max(mainRect.top, 0));
+          const visiblePercentage = 1 - visibleHeight / window.innerHeight;
+          workElem.style.borderRadius = visiblePercentage * 64 + "px";
+          const scale = 1 - visiblePercentage * 0.1;
+          workElem.style.transform = `scale(${scale})`;
+        };
+        const handleAboutScrool = (e) => {
+          const aboutRect = aboutElem.getBoundingClientRect();
+          const isOnScreen =
+            aboutRect.top < window.innerHeight && aboutRect.bottom >= 0;
+          const isHalfOnScreen =
+            aboutRect.top < window.innerHeight / 2 &&
+            aboutRect.bottom >= window.innerHeight / 2;
+          // if (isHalfOnScreen) {
+          //   aboutButton.classList.add("active");
+          // } else {
+          //   aboutButton.classList.remove("active");
+          // }
+        };
+        const handleTooltipScroll = (e) => {
+          const tooltipTop = copyMailTooltip.getBoundingClientRect().top;
+          const aboutTop = aboutElem.getBoundingClientRect().top;
+          if (tooltipTop < aboutTop) {
+            copyMailTooltip.style.backgroundColor = "#222F3C";
+            copyMailTooltip.style.color = "#CBD5D3";
+          } else {
+            copyMailTooltip.style.backgroundColor = "#222F3C";
+            copyMailTooltip.style.color = "#CBD5D3";
+          }
+        };
+        handleTooltipScroll();
+        let lastScrollTop = 0;
+        let lastSwitch = 0;
+        const handleMobileMenuHideScroll = (e) => {
+          if (isMobileMenuOpen) {
+            return;
+          }
+          const st = window.pageYOffset || document.documentElement.scrollTop;
+          if (st > lastScrollTop && st > 50 && st > lastSwitch + 50) {
+            menuMobileElems.forEach((menuMobileElem) => {
+              menuMobileElem.classList.add("-translate-y-full");
+            });
+            lastSwitch = st;
+          } else if (st < lastScrollTop && st < lastSwitch - 50) {
+            menuMobileElems.forEach((menuMobileElem) => {
+              menuMobileElem.classList.add("bg-black-primary");
+              menuMobileElem.classList.remove("-translate-y-full");
+            });
+            lastSwitch = st;
+          }
+          lastScrollTop = st <= 0 ? 0 : st;
+        };
+        const handleScroll = (() => {
+          let ticking = false;
+
+          return (e) => {
+            if (!ticking) {
+              window.requestAnimationFrame(() => {
+                handleHeaderScroll(e);
+                handleSkillsScroll(e);
+                handleWorkScroll(e);
+                handleAboutScrool(e);
+                handleTooltipScroll(e);
+                handleMobileMenuHideScroll(e);
+                ticking = false;
+              });
+              ticking = true;
+            }
+          };
+        })();
+
+        document.addEventListener("scroll", handleScroll, { passive: true });
+
+        copyMail.addEventListener("mouseenter", () => {
+          Object.assign(copyMailTooltipPortal.style, {
+            top: `${copyMail.getBoundingClientRect().top}px`,
+            left: `${copyMail.getBoundingClientRect().left}px`,
+            width: `${copyMail.getBoundingClientRect().width}px`,
+            height: `${copyMail.getBoundingClientRect().height}px`,
           });
-          lastSwitch = st;
-        } else if (st < lastScrollTop && st < lastSwitch - 50) {
-          menuMobileElems.forEach((menuMobileElem) => {
-            menuMobileElem.classList.add("bg-black-primary");
-            menuMobileElem.classList.remove("-translate-y-full");
-          });
-          lastSwitch = st;
-        }
-        lastScrollTop = st <= 0 ? 0 : st;
-      };
-      const handleScroll = (e) => {
-        handleHeaderScroll(e);
-        handleSkillsScroll(e);
-        handleWorkScroll(e);
-        handleAboutScrool(e);
-        handleTooltipScroll(e);
-        handleMobileMenuHideScroll(e);
-      };
-
-      document.addEventListener("scroll", handleScroll);
-
-      copyMail.addEventListener("mouseenter", () => {
-        Object.assign(copyMailTooltipPortal.style, {
-          top: `${copyMail.getBoundingClientRect().top}px`,
-          left: `${copyMail.getBoundingClientRect().left}px`,
-          width: `${copyMail.getBoundingClientRect().width}px`,
-          height: `${copyMail.getBoundingClientRect().height}px`,
+          copyMailTooltipPortal.classList.add("opacity-100");
         });
-        copyMailTooltipPortal.classList.add("opacity-100");
-      });
-      copyMail.addEventListener("mouseleave", () => {
-        copyMailTooltipPortal.classList.remove("opacity-100");
-      });
-      copyMail.addEventListener("click", () => {
-        const mail = "petukhouskaya.design@gmail.com";
-        navigator.clipboard.writeText(mail);
-        copyMailConfirm.classList.remove("hidden");
-        copyMailTooltip.classList.add("opacity-100");
-        setTimeout(() => {
-          copyMailTooltip.classList.remove("opacity-100");
-          copyMailConfirm.classList.add("hidden");
-        }, 2000);
-      });
-      const openMobileMenu = () => {
-        cross.classList.add("cross--active");
-        menuElem.classList.remove("-translate-y-full");
-        isMobileMenuOpen = true;
-      };
-      const closeMobileMenu = () => {
-        cross.classList.remove("cross--active");
-        menuElem.classList.add("-translate-y-full");
-        isMobileMenuOpen = false;
-      };
-      const handleMobileMenuClick = () => {
-        if (isMobileMenuOpen) {
+        copyMail.addEventListener("mouseleave", () => {
+          copyMailTooltipPortal.classList.remove("opacity-100");
+        });
+        copyMail.addEventListener("click", () => {
+          const mail = "petukhouskaya.design@gmail.com";
+          navigator.clipboard.writeText(mail);
+          copyMailConfirm.classList.remove("hidden");
+          copyMailTooltip.classList.add("opacity-100");
+          setTimeout(() => {
+            copyMailTooltip.classList.remove("opacity-100");
+            copyMailConfirm.classList.add("hidden");
+          }, 2000);
+        });
+        const openMobileMenu = () => {
+          cross.classList.add("cross--active");
+          menuElem.classList.remove("-translate-y-full");
+          isMobileMenuOpen = true;
+        };
+        const closeMobileMenu = () => {
+          cross.classList.remove("cross--active");
+          menuElem.classList.add("-translate-y-full");
+          isMobileMenuOpen = false;
+        };
+        window.handleMobileMenuClick = () => {
+          if (isMobileMenuOpen) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        };
+        window.handleWorksClick = () => {
+          workElem.scrollIntoView({ behavior: "smooth" });
           closeMobileMenu();
-        } else {
-          openMobileMenu();
-        }
-      };
-      function handleWorksClick() {
-        workElem.scrollIntoView({ behavior: "smooth" });
-        closeMobileMenu();
-      }
-      function handleAboutClick() {
-        aboutElem.scrollIntoView({ behavior: "smooth" });
-        closeMobileMenu();
-      }
+        };
+        window.handleAboutClick = () => {
+          aboutElem.scrollIntoView({ behavior: "smooth" });
+          closeMobileMenu();
+        };
+      })();
     </script>
   </body>
 </html>
