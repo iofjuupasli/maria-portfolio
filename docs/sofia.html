@@ -17,8 +17,8 @@
   </head>
   <body class="bg-black-primary text-white-primary">
     {% include menu.html %}
-    <header>
-      <div class="section-content">
+    <header class="js-layer bg-black-secondary">
+      <div class="section-content !pt-40">
         <div class="flex justify-between">
           <div>
             <div class="t2 text-gray-primary">2021-2022</div>
@@ -36,7 +36,7 @@
           muted
           class="mt-30 h-auto w-full overflow-clip rounded-4xl"
         ></video>
-        <div class="t2 mt-30 flex gap-8">
+        <div class="t2 mt-25 flex gap-8">
           <div class="flex-1 space-y-3">
             <div class="text-gray-primary">About the project</div>
             <div>
@@ -110,10 +110,8 @@
             <br /><br />Here are the key statements we noticed:
           </div>
         </div>
-        <div
-          class="bg-black-secondary mt-18 flex gap-13 rounded-4xl px-13 py-12"
-        >
-          <div class="flex-1 space-y-5">
+        <div class="mt-18 flex gap-16 lg:-mr-10">
+          <div class="flex-[1.1] space-y-5">
             <h6>Accessible Information:</h6>
             <div class="t2">
               Customers prioritize a dashboard that's easy to navigate and
@@ -158,7 +156,7 @@
           src="./sofia/architecture2x.webp"
           alt="Information Architecture"
           srcset="./sofia/architecture2x.webp 2x, ./sofia/architecture.webp 1x"
-          class="mt-12 h-auto w-full rounded-4xl"
+          class="mt-17 h-auto w-full rounded-4xl"
         />
       </div>
     </section>
@@ -222,7 +220,7 @@
           src="./sofia/widgets-12x.webp"
           alt="Information Architecture"
           srcset="./sofia/widgets-12x.webp 2x, ./sofia/widgets-1.webp 1x"
-          class="mt-12 h-auto w-full rounded-t-4xl"
+          class="mt-17 h-auto w-full rounded-t-4xl"
         />
         <img
           width="1024"
@@ -235,7 +233,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content pb-10">
+      <div class="section-content !pb-20">
         <div class="flex justify-between gap-24">
           <h2 class="flex-1">Dashboard</h2>
           <div class="t2 flex-2">
@@ -250,12 +248,12 @@
           src="./sofia/dashboard2x.webp"
           alt="Information Architecture"
           srcset="./sofia/dashboard2x.webp 2x, ./sofia/dashboard.webp 1x"
-          class="mt-12 h-auto w-full rounded-4xl"
+          class="mt-17 h-auto w-full rounded-4xl"
         />
       </div>
     </section>
     <section>
-      <div class="section-content text-gray-primary py-15">
+      <div class="section-content text-gray-primary !py-20">
         <h3 class="text-center">
           Then, relying on the user flow, we started to collect the
           remaining&nbsp;pages of the theme.
@@ -263,7 +261,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 !pt-20 xl:gap-20">
         <div>
           <h3>Customizable Profile View</h3>
           <div class="t2 mt-10">
@@ -285,7 +283,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <img
           width="548"
           height="608"
@@ -306,7 +304,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <div>
           <h3>Layout Control</h3>
           <div class="t2 mt-10">
@@ -327,7 +325,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <img
           width="548"
           height="349"
@@ -350,7 +348,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <div>
           <h3>Card Gallery</h3>
           <div class="t2 mt-10">
@@ -371,7 +369,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <img
           width="548"
           height="415"
@@ -392,7 +390,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <div>
           <h3>Visual Data Insights</h3>
           <div class="t2 mt-10">
@@ -413,7 +411,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <img
           width="548"
           height="391"
@@ -433,7 +431,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <div>
           <h3>Invoice Layout</h3>
           <div class="t2 mt-10">
@@ -454,7 +452,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-11">
+      <div class="section-content flex items-center gap-11 xl:gap-20">
         <img
           width="548"
           height="405"
@@ -648,64 +646,72 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="section-content">
-        <h5>See more of my projects</h5>
-        <div class="mt-9 grid grid-cols-[229fr_229fr_495fr] gap-9">
-          <div class="">
-            <img
-              width="229"
-              height="232"
-              src="./sofia/next-fugo-redesign2x.webp"
-              srcset="
-                ./sofia/next-fugo-redesign2x.webp 2x,
-                ./sofia/next-fugo-redesign.webp   1x
-              "
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2021-2022</div>
-            <div class="t1 mt-3">Fugo: app redesign</div>
-            <div class="t3 mt-2">
-              Screens management system with design tool
-            </div>
-          </div>
-          <div class="">
-            <img
-              width="229"
-              height="232"
-              src="./sofia/next-fugo-studio2x.webp"
-              srcset="
-                ./sofia/next-fugo-studio2x.webp 2x,
-                ./sofia/next-fugo-studio.webp   1x
-              "
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2023</div>
-            <div class="t1 mt-3">Fugo Studio</div>
-            <div class="t3 mt-2">
-              Fugo Studio UX: Increasing features discoverability
-            </div>
-          </div>
-          <div class="">
-            <img
-              width="495"
-              height="232"
-              src="./sofia/next-paperpile2x.webp"
-              srcset="
-                ./sofia/next-paperpile2x.webp 2x,
-                ./sofia/next-paperpile.webp   1x
-              "
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2024</div>
-            <div class="t1 mt-3">Paperpile</div>
-            <div class="t3 mt-2 w-1/2">
-              AI-based documents management mobile app
-            </div>
+    <div class="bg-gray-thirdly">
+      <section class="js-layer bg-dark-primary">
+        <div class="section-content">
+          <h5>See more of my projects</h5>
+          <div class="mt-9 grid grid-cols-[229fr_229fr_495fr] gap-9">
+            <a href="./fugo-redesign.html" class="block">
+              <div class="image-hover-container">
+                <img
+                  width="229"
+                  height="232"
+                  src="./sofia/next-fugo-redesign2x.webp"
+                  srcset="
+                    ./sofia/next-fugo-redesign2x.webp 2x,
+                    ./sofia/next-fugo-redesign.webp   1x
+                  "
+                  class="image-hover"
+                />
+              </div>
+              <div class="t3 text-gray-primary mt-3">2021-2022</div>
+              <div class="t1 mt-3">Fugo: app redesign</div>
+              <div class="t3 mt-2">
+                Screens management system with design tool
+              </div>
+            </a>
+            <a href="./fugo.html" class="block">
+              <div class="image-hover-container">
+                <img
+                  width="229"
+                  height="232"
+                  src="./sofia/next-fugo-studio2x.webp"
+                  srcset="
+                    ./sofia/next-fugo-studio2x.webp 2x,
+                    ./sofia/next-fugo-studio.webp   1x
+                  "
+                  class="image-hover"
+                />
+              </div>
+              <div class="t3 text-gray-primary mt-3">2023</div>
+              <div class="t1 mt-3">Fugo Studio</div>
+              <div class="t3 mt-2">
+                Fugo Studio UX: Increasing features discoverability
+              </div>
+            </a>
+            <a href="./paperpile.html" class="block">
+              <div class="image-hover-container">
+                <img
+                  width="495"
+                  height="232"
+                  src="./sofia/next-paperpile2x.webp"
+                  srcset="
+                    ./sofia/next-paperpile2x.webp 2x,
+                    ./sofia/next-paperpile.webp   1x
+                  "
+                  class="image-hover"
+                />
+              </div>
+              <div class="t3 text-gray-primary mt-3">2024</div>
+              <div class="t1 mt-3">Paperpile</div>
+              <div class="t3 mt-2 w-1/2">
+                AI-based documents management mobile app
+              </div>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
     {% include hire.html %} {% include footer.html %}
   </body>
 </html>
