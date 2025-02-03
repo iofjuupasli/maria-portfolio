@@ -167,3 +167,33 @@
     window.addEventListener("scroll", handleScroll, { passive: true });
   });
 </script>
+<script>
+  window.addEventListener("load", () => {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute("data-aos-delay");
+            if (delay) {
+              setTimeout(() => {
+                entry.target.classList.add("animate");
+              }, delay);
+            } else {
+              entry.target.classList.add("animate");
+            }
+            observer.unobserve(entry.target);
+            entry.target.addEventListener("transitionend", () => {
+              entry.target.removeAttribute("data-aos");
+            });
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    const elements = document.querySelectorAll("[data-aos]");
+    elements.forEach((el) => {
+      observer.observe(el);
+    });
+  });
+</script>

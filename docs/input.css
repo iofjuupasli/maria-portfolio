@@ -35,7 +35,7 @@
 }
 @layer components {
   .section-content {
-    @apply mx-5 lg:mx-32 max-w-[1080px] py-[200px] pl-0 lg:pl-14 xl:mx-auto;
+    @apply mx-5 max-w-[1080px] py-[200px] pl-0 lg:mx-32 lg:pl-14 xl:mx-auto;
   }
   .t1 {
     @apply text-2xl leading-normal font-normal;
@@ -133,6 +133,12 @@
   }
   .js-layer {
     @apply min-h-[50vh] origin-top overflow-clip will-change-transform;
+  }
+  [data-aos="fade-up"] {
+    @apply translate-y-10 opacity-0 transition-all duration-1000;
+  }
+  [data-aos="fade-up"].animate {
+    @apply translate-y-0 opacity-100;
   }
 }
 
