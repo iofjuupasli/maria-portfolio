@@ -1,0 +1,226 @@
+<menu
+  class="js-mobile-menu fixed z-[60] h-20 w-full text-white transition-transform duration-500 lg:hidden"
+>
+  <div class="absolute top-0 flex w-full justify-center">
+    <div class="side-menu flex space-x-10 pt-5">
+      <a
+        class="js-works-button link"
+        href="#work"
+        onclick="window.handleWorksClick(event)"
+      >
+        works
+      </a>
+      <a
+        class="js-about-button link"
+        href="#about"
+        onclick="window.handleAboutClick(event)"
+        >about</a
+      >
+    </div>
+  </div>
+</menu>
+<menu
+  class="js-menu bg-black-primary fixed z-[80] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-6 text-nowrap text-white transition-all duration-500 lg:z-[60] lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
+>
+  <div class="side-menu mt-8 ml-1.5">
+    <a href="./" class="group link hover:text-white-primary block text-[36px]">
+      M<span
+        class="inline-block w-0 overflow-clip transition-all duration-150 group-hover:w-80"
+        >aria Petukhovskaya</span
+      >
+    </a>
+  </div>
+  <div
+    class="flex h-full max-h-[640px] flex-col items-center justify-evenly py-10 lg:block"
+  >
+    <div
+      class="side-menu top-[46%] flex w-[200px] flex-auto flex-col justify-evenly lg:absolute lg:w-auto lg:-translate-y-1/2 lg:space-y-1"
+    >
+      <a
+        href="#work"
+        class="js-works-button link"
+        onclick="window.handleWorksClick(event)"
+      >
+        works
+      </a>
+      <a
+        href="#about"
+        class="js-about-button link"
+        onclick="window.handleAboutClick(event)"
+        >about me</a
+      >
+    </div>
+    <div class="h-px w-[202px] bg-current lg:hidden"></div>
+    <div
+      class="side-menu bottom-7 flex w-[200px] flex-auto flex-col justify-evenly space-y-1 lg:absolute lg:w-auto"
+    >
+      <a href="./cv_maria_petukhovskaya.pdf" class="link">Get CV</a>
+      <a
+        class="link"
+        href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
+        target="_blank"
+        >LinkedIn</a
+      >
+      <button class="js-copy-mail link group relative">Copy mail</button>
+    </div>
+  </div>
+</menu>
+<div
+  class="js-mobile-menu js-cross cross fixed top-0 right-0 z-[60] flex h-[62px] w-[62px] items-center justify-center text-white transition-transform duration-500 lg:hidden"
+  onclick="window.handleMobileMenuClick()"
+>
+  <div>
+    <div
+      class="cross__top h-[3px] w-7 origin-left bg-current transition-transform duration-300"
+    ></div>
+    <div
+      class="cross__bottom mt-[9px] h-[3px] w-7 origin-left bg-current transition-transform duration-300"
+    ></div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("load", () => {
+    let isMobileMenuOpen = false;
+    const menuElem = document.querySelector(".js-menu");
+    const menuMobileElems = document.querySelectorAll(".js-mobile-menu");
+    const cross = document.querySelector(".js-cross");
+    const skillsElem = document.querySelector(".js-skills");
+    const workElem = document.querySelector(".js-work-card");
+    const aboutElem = document.querySelector(".js-about");
+    const copyMail = document.querySelector(".js-copy-mail");
+    const copyMailConfirm = document.querySelector(".js-copy-mail-confirm");
+    const copyMailTooltipPortal = document.querySelector(
+      ".js-copy-mail-tooltip-portal",
+    );
+    const copyMailTooltip = document.querySelector(".js-copy-mail-tooltip");
+
+    const handleSkillsScroll = (e) => {
+      if (!skillsElem) {
+        return;
+      }
+      const rect = skillsElem.getBoundingClientRect();
+      const isMenuVisible = rect.top >= 200 || rect.bottom < 200;
+      if (isMenuVisible) {
+        menuElem.classList.remove("lg:opacity-0", "lg:pointer-events-none");
+      } else {
+        menuElem.classList.add("lg:opacity-0", "lg:pointer-events-none");
+      }
+    };
+    const handleTooltipScroll = (e) => {
+      const tooltipTop = copyMailTooltip.getBoundingClientRect().top;
+      const aboutTop = aboutElem.getBoundingClientRect().top;
+      if (tooltipTop < aboutTop) {
+        copyMailTooltip.style.backgroundColor = "#222F3C";
+        copyMailTooltip.style.color = "#CBD5D3";
+      } else {
+        copyMailTooltip.style.backgroundColor = "#222F3C";
+        copyMailTooltip.style.color = "#CBD5D3";
+      }
+    };
+    handleTooltipScroll();
+    let lastScrollTop = 0;
+    let lastSwitch = 0;
+    const handleMobileMenuHideScroll = (e) => {
+      if (isMobileMenuOpen) {
+        return;
+      }
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop && st > 50 && st > lastSwitch + 50) {
+        menuMobileElems.forEach((menuMobileElem) => {
+          menuMobileElem.classList.add("-translate-y-full");
+        });
+        lastSwitch = st;
+      } else if (st < lastScrollTop && st < lastSwitch - 50) {
+        menuMobileElems.forEach((menuMobileElem) => {
+          menuMobileElem.classList.add("bg-black-primary");
+          menuMobileElem.classList.remove("-translate-y-full");
+        });
+        lastSwitch = st;
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+    };
+    const handleScroll = (() => {
+      let ticking = false;
+
+      return (e) => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            handleSkillsScroll(e);
+            handleTooltipScroll(e);
+            handleMobileMenuHideScroll(e);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+    })();
+
+    document.addEventListener("scroll", handleScroll, { passive: true });
+
+    copyMail.addEventListener("mouseenter", () => {
+      Object.assign(copyMailTooltipPortal.style, {
+        top: `${copyMail.getBoundingClientRect().top}px`,
+        left: `${copyMail.getBoundingClientRect().left}px`,
+        width: `${copyMail.getBoundingClientRect().width}px`,
+        height: `${copyMail.getBoundingClientRect().height}px`,
+      });
+      copyMailTooltipPortal.classList.add("opacity-100");
+    });
+    copyMail.addEventListener("mouseleave", () => {
+      copyMailTooltipPortal.classList.remove("opacity-100");
+    });
+    copyMail.addEventListener("click", () => {
+      const mail = "petukhouskaya.design@gmail.com";
+      navigator.clipboard.writeText(mail);
+      copyMailConfirm.classList.remove("hidden");
+      copyMailTooltip.classList.add("opacity-100");
+      setTimeout(() => {
+        copyMailTooltip.classList.remove("opacity-100");
+        copyMailConfirm.classList.add("hidden");
+      }, 2000);
+    });
+    const openMobileMenu = () => {
+      cross.classList.add("cross--active");
+      menuElem.classList.remove("-translate-y-full");
+      isMobileMenuOpen = true;
+    };
+    const closeMobileMenu = () => {
+      cross.classList.remove("cross--active");
+      menuElem.classList.add("-translate-y-full");
+      isMobileMenuOpen = false;
+    };
+    window.handleMobileMenuClick = () => {
+      if (isMobileMenuOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    };
+    const disableScrollSnap = () => {
+      document.documentElement.classList.remove("snap-y", "snap-proximity");
+    };
+    const enableScrollSnap = () => {
+      document.documentElement.classList.add("snap-y", "snap-proximity");
+    };
+    const withoutScrollSnap = (fn) => {
+      return (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        disableScrollSnap();
+        fn(e);
+        document.addEventListener("scrollend", () => {
+          enableScrollSnap();
+        });
+      };
+    };
+    window.handleWorksClick = withoutScrollSnap(() => {
+      workElem.scrollIntoView({ behavior: "smooth" });
+      closeMobileMenu();
+    });
+    window.handleAboutClick = withoutScrollSnap(() => {
+      aboutElem.scrollIntoView({ behavior: "smooth" });
+      closeMobileMenu();
+    });
+  });
+</script>

@@ -2,7 +2,7 @@
 ---
 
 <!doctype html>
-<html lang="en" class="snap-y snap-proximity font-sans">
+<html lang="en" class="smooth-scroll snap-y snap-proximity font-sans">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,86 +46,7 @@
     <div
       class="js-header-bg bg-black-primary pointer-events-none fixed z-10 h-screen w-full"
     ></div>
-    <menu
-      class="js-mobile-menu fixed z-[60] h-20 w-full text-white transition-transform duration-500 lg:hidden"
-    >
-      <div class="absolute top-0 flex w-full justify-center">
-        <div class="side-menu flex space-x-10 pt-5">
-          <a
-            class="js-works-button link"
-            href="#work"
-            onclick="handleWorksClick()"
-          >
-            works
-          </a>
-          <a
-            class="js-about-button link"
-            href="#about"
-            onclick="handleAboutClick()"
-            >about</a
-          >
-        </div>
-      </div>
-    </menu>
-    <menu
-      class="js-menu bg-black-primary fixed z-[80] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-6 text-nowrap text-white transition-all duration-500 lg:z-[60] lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
-    >
-      <div class="side-menu mt-8 ml-1.5">
-        <div class="group link hover:text-white-primary text-[36px]">
-          M<span
-            class="inline-block w-0 overflow-clip transition-all duration-150 group-hover:w-80"
-            >aria Petukhovskaya</span
-          >
-        </div>
-      </div>
-      <div
-        class="flex h-full max-h-[640px] flex-col items-center justify-evenly py-10 lg:block"
-      >
-        <div
-          class="side-menu top-[46%] flex w-[200px] flex-auto flex-col justify-evenly lg:absolute lg:w-auto lg:-translate-y-1/2 lg:space-y-1"
-        >
-          <a
-            href="#work"
-            class="js-works-button link"
-            onclick="handleWorksClick()"
-          >
-            works
-          </a>
-          <a
-            href="#about"
-            class="js-about-button link"
-            onclick="handleAboutClick()"
-            >about me</a
-          >
-        </div>
-        <div class="h-px w-[202px] bg-current lg:hidden"></div>
-        <div
-          class="side-menu bottom-7 flex w-[200px] flex-auto flex-col justify-evenly space-y-1 lg:absolute lg:w-auto"
-        >
-          <a href="./cv_maria_petukhovskaya.pdf" class="link">Get CV</a>
-          <a
-            class="link"
-            href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <button class="js-copy-mail link group relative">Copy mail</button>
-        </div>
-      </div>
-    </menu>
-    <div
-      class="js-mobile-menu js-cross cross fixed top-0 right-0 z-[60] flex h-[62px] w-[62px] items-center justify-center text-white transition-transform duration-500 lg:hidden"
-      onclick="handleMobileMenuClick()"
-    >
-      <div>
-        <div
-          class="cross__top h-[3px] w-7 origin-left bg-current transition-transform duration-300"
-        ></div>
-        <div
-          class="cross__bottom mt-[9px] h-[3px] w-7 origin-left bg-current transition-transform duration-300"
-        ></div>
-      </div>
-    </div>
+    {% include menu.html %}
     <div class="pointer-events-none relative z-[70] h-screen snap-start">
       <header
         class="js-header fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
@@ -163,12 +84,14 @@
             class="absolute top-1/2 left-1/2 h-[142px] w-[142px] -translate-x-1/2 translate-y-[-51%] rounded-full"
             src="./portrait2x.webp"
             srcset="./portrait.webp 1x, ./portrait2x.webp 2x"
+            width="142"
+            height="142"
           />
         </div>
       </header>
     </div>
     <section
-      class="js-skills bg-green-secondary text-black-primary relative flex snap-center snap-always flex-col items-center justify-center space-y-20 overflow-hidden px-5 py-60 md:h-[120vh] md:space-y-16 md:pr-16 md:pl-42 lg:pt-80"
+      class="js-skills bg-green-secondary text-black-primary relative flex snap-center flex-col items-center justify-center space-y-20 overflow-hidden px-5 py-60 md:h-[120vh] md:space-y-16 md:pr-16 md:pl-42 lg:pt-80"
     >
       <div
         class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16"
@@ -227,6 +150,7 @@
         class="js-work-card bg-black-primary rounded-3xl px-[21px] pt-[30vh] pb-[200px] sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-[25px] xl:pl-[232px]"
       >
         <h2
+          id="work"
           class="bg-cabbage sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] leading-relaxed font-extrabold tracking-wide text-transparent sm:text-[140px] lg:pr-8 lg:text-[280px] xl:text-[340px]"
         >
           work
@@ -258,6 +182,8 @@
                       ./main/Paperpile_phones_14402x.webp 2x
                     "
                     media="(min-width: 1280px)"
+                    width="576"
+                    height="449"
                   />
                   <source
                     srcset="
@@ -265,12 +191,16 @@
                       ./main/Paperpile_phones_10242x.webp 2x
                     "
                     media="(min-width: 1024px)"
+                    width="396"
+                    height="336"
                   />
                   <source
                     srcset="
                       ./main/Paperpile_mobile.webp   1x,
                       ./main/Paperpile_mobile2x.webp 2x
                     "
+                    width="320"
+                    height="270"
                   />
                   <img
                     loading="lazy"
@@ -281,6 +211,8 @@
                     "
                     class="image-hover"
                     alt="Paperpile app interface"
+                    width="576"
+                    height="449"
                   />
                 </picture>
               </div>
@@ -294,6 +226,8 @@
                       ./main/Paperpile_green_14402x.webp 2x
                     "
                     media="(min-width: 1280px)"
+                    width="576"
+                    height="223"
                   />
                   <source
                     srcset="
@@ -301,6 +235,8 @@
                       ./main/Paperpile_green_10242x.webp 2x
                     "
                     media="(min-width: 1024px)"
+                    width="396"
+                    height="154"
                   />
                   <img
                     loading="lazy"
@@ -311,6 +247,8 @@
                     "
                     class="image-hover"
                     alt="Paperpile mobile app interface"
+                    width="576"
+                    height="223"
                   />
                 </picture>
               </div></article
@@ -339,6 +277,8 @@
                       ./main/Fugo_laptop_14402x.webp 2x
                     "
                     media="(min-width: 1280px)"
+                    width="578"
+                    height="490"
                   />
                   <source
                     srcset="
@@ -346,12 +286,16 @@
                       ./main/Fugo_laptop_10242x.webp 2x
                     "
                     media="(min-width: 1024px)"
+                    width="396"
+                    height="383"
                   />
                   <source
                     srcset="
                       ./main/Fugo_laptop_mobile.webp   1x,
                       ./main/Fugo_laptop_mobile2x.webp 2x
                     "
+                    width="320"
+                    height="271"
                   />
                   <img
                     class="image-hover"
@@ -361,6 +305,8 @@
                       ./main/Fugo_laptop_1440.webp   1x,
                       ./main/Fugo_laptop_14402x.webp 2x
                     "
+                    width="578"
+                    height="490"
                   />
                 </picture>
               </div>
@@ -374,6 +320,8 @@
                       ./main/Fugo_tablet_14402x.webp 2x
                     "
                     media="(min-width: 1280px)"
+                    width="277"
+                    height="489"
                   />
                   <source
                     srcset="
@@ -381,6 +329,8 @@
                       ./main/Fugo_tablet_10242x.webp 2x
                     "
                     media="(min-width: 1024px)"
+                    width="182"
+                    height="383"
                   />
                   <img
                     loading="lazy"
@@ -391,6 +341,8 @@
                     "
                     class="image-hover"
                     alt="Fugo tablet interface"
+                    width="277"
+                    height="489"
                   />
                 </picture>
               </div>
@@ -404,6 +356,8 @@
                       ./main/Fugo_logo_14402x.webp 2x
                     "
                     media="(min-width: 1280px)"
+                    width="273"
+                    height="274"
                   />
                   <source
                     srcset="
@@ -411,6 +365,8 @@
                       ./main/Fugo_logo_10242x.webp 2x
                     "
                     media="(min-width: 1024px)"
+                    width="182"
+                    height="182"
                   />
                   <img
                     loading="lazy"
@@ -421,6 +377,8 @@
                     "
                     class="image-hover"
                     alt="Fugo redesign interface"
+                    width="273"
+                    height="274"
                   />
                 </picture>
               </div>
@@ -473,6 +431,8 @@
                     "
                     class="image-hover"
                     alt="Fugo Studio laptop interface"
+                    width="717"
+                    height="466"
                   />
                 </picture>
               </div>
@@ -503,6 +463,8 @@
                     "
                     class="image-hover"
                     alt="Fugo Studio poster interface"
+                    width="439"
+                    height="272"
                   />
                 </picture>
               </div>
@@ -555,6 +517,8 @@
                     "
                     class="image-hover"
                     alt="Sofia laptop interface"
+                    width="576"
+                    height="505"
                   />
                 </picture>
               </div>
@@ -585,6 +549,8 @@
                     "
                     class="image-hover"
                     alt="Sofia logo"
+                    width="274"
+                    height="279"
                   />
                 </picture>
               </div>
@@ -615,6 +581,8 @@
                     "
                     class="image-hover"
                     alt="Sofia phones interface"
+                    width="274"
+                    height="279"
                   />
                 </picture>
               </div>
@@ -628,6 +596,7 @@
     >
       <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
+          id="about"
           class="bg-cabbage-about sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] leading-snug font-extrabold tracking-wide text-transparent sm:text-[140px] lg:text-[280px] xl:text-[340px]"
         >
           about
@@ -678,6 +647,7 @@
                     media="(min-width: 1024px)"
                   />
                   <img
+                    loading="lazy"
                     class="about-card__bg"
                     src="./about/Art_14402x.webp"
                     srcset="
@@ -685,6 +655,8 @@
                       ./about/Art_14402x.webp 2x
                     "
                     alt="Art"
+                    width="334"
+                    height="392"
                   />
                 </picture>
                 <div class="relative z-10 flex h-full flex-col justify-between">
@@ -715,6 +687,7 @@
                       media="(min-width: 1024px)"
                     />
                     <img
+                      loading="lazy"
                       class="about-card__bg"
                       src="./about/Sketches_14402x.webp"
                       srcset="
@@ -722,6 +695,8 @@
                         ./about/Sketches_14402x.webp 2x
                       "
                       alt="Big community bulding"
+                      width="378"
+                      height="213"
                     />
                   </picture>
                   <div
@@ -753,6 +728,7 @@
                       media="(min-width: 1024px)"
                     />
                     <img
+                      loading="lazy"
                       class="about-card__bg"
                       src="./about/Postcards_14402x.webp"
                       srcset="
@@ -760,6 +736,8 @@
                         ./about/Postcards_14402x.webp 2x
                       "
                       alt="Solidarity"
+                      width="378"
+                      height="163"
                     />
                   </picture>
                   <div
@@ -796,6 +774,7 @@
                     media="(min-width: 1024px)"
                   />
                   <img
+                    loading="lazy"
                     class="about-card__bg"
                     src="./about/375_14402x.webp"
                     srcset="
@@ -803,6 +782,8 @@
                       ./about/375_14402x.webp 2x
                     "
                     alt="Small community bulding"
+                    width="498"
+                    height="248"
                   />
                 </picture>
                 <div class="relative z-10 flex h-full flex-col justify-between">
@@ -832,6 +813,7 @@
                     media="(min-width: 1024px)"
                   />
                   <img
+                    loading="lazy"
                     class="about-card__bg !opacity-100"
                     src="./about/Portrait_mobile2x.webp"
                     srcset="
@@ -839,6 +821,8 @@
                       ./about/Portrait_mobile2x.webp 2x
                     "
                     alt="Portrait photo"
+                    width="320"
+                    height="229"
                   />
                 </picture>
               </div>
@@ -873,25 +857,11 @@
       </div>
     </div>
     <script>
-      (() => {
-        let isMobileMenuOpen = false;
-        const menuElem = document.querySelector(".js-menu");
-        const menuMobileElems = document.querySelectorAll(".js-mobile-menu");
-        const cross = document.querySelector(".js-cross");
+      window.addEventListener("load", () => {
         const headerBgElem = document.querySelector(".js-header-bg");
         const headerElem = document.querySelector(".js-header");
         const titleElem = document.querySelector(".js-title");
-        const skillsElem = document.querySelector(".js-skills");
         const workElem = document.querySelector(".js-work-card");
-        const worksButton = document.querySelector(".js-works-button");
-        const aboutElem = document.querySelector(".js-about");
-        const aboutButton = document.querySelector(".js-about-button");
-        const copyMail = document.querySelector(".js-copy-mail");
-        const copyMailConfirm = document.querySelector(".js-copy-mail-confirm");
-        const copyMailTooltipPortal = document.querySelector(
-          ".js-copy-mail-tooltip-portal",
-        );
-        const copyMailTooltip = document.querySelector(".js-copy-mail-tooltip");
 
         const handleHeaderScroll = (e) => {
           const container = headerElem.parentElement;
@@ -908,28 +878,11 @@
           const topPercent = (-headerRect.top / window.innerHeight) ** 2.5;
           titleElem.style.transform = `scale(${1 + 320 * topPercent})`;
         };
-        const handleSkillsScroll = (e) => {
-          const rect = skillsElem.getBoundingClientRect();
-          const isMenuVisible = rect.top >= 200 || rect.bottom < 200;
-          if (isMenuVisible) {
-            menuElem.classList.remove("lg:opacity-0", "lg:pointer-events-none");
-          } else {
-            menuElem.classList.add("lg:opacity-0", "lg:pointer-events-none");
-          }
-        };
         const handleWorkScroll = (e) => {
           const container = workElem.parentElement;
           const mainRect = workElem.getBoundingClientRect();
           const isOnScreen =
             mainRect.top < window.innerHeight && mainRect.bottom >= 0;
-          const isHalfOnScreen =
-            mainRect.top < window.innerHeight / 2 &&
-            mainRect.bottom >= window.innerHeight / 2;
-          // if (isHalfOnScreen) {
-          //   worksButton.classList.add("active");
-          // } else {
-          //   worksButton.classList.remove("active");
-          // }
           if (!isOnScreen) {
             return;
           }
@@ -947,52 +900,6 @@
           const scale = 1 - visiblePercentage * 0.1;
           workElem.style.transform = `scale(${scale})`;
         };
-        const handleAboutScrool = (e) => {
-          const aboutRect = aboutElem.getBoundingClientRect();
-          const isOnScreen =
-            aboutRect.top < window.innerHeight && aboutRect.bottom >= 0;
-          const isHalfOnScreen =
-            aboutRect.top < window.innerHeight / 2 &&
-            aboutRect.bottom >= window.innerHeight / 2;
-          // if (isHalfOnScreen) {
-          //   aboutButton.classList.add("active");
-          // } else {
-          //   aboutButton.classList.remove("active");
-          // }
-        };
-        const handleTooltipScroll = (e) => {
-          const tooltipTop = copyMailTooltip.getBoundingClientRect().top;
-          const aboutTop = aboutElem.getBoundingClientRect().top;
-          if (tooltipTop < aboutTop) {
-            copyMailTooltip.style.backgroundColor = "#222F3C";
-            copyMailTooltip.style.color = "#CBD5D3";
-          } else {
-            copyMailTooltip.style.backgroundColor = "#222F3C";
-            copyMailTooltip.style.color = "#CBD5D3";
-          }
-        };
-        handleTooltipScroll();
-        let lastScrollTop = 0;
-        let lastSwitch = 0;
-        const handleMobileMenuHideScroll = (e) => {
-          if (isMobileMenuOpen) {
-            return;
-          }
-          const st = window.pageYOffset || document.documentElement.scrollTop;
-          if (st > lastScrollTop && st > 50 && st > lastSwitch + 50) {
-            menuMobileElems.forEach((menuMobileElem) => {
-              menuMobileElem.classList.add("-translate-y-full");
-            });
-            lastSwitch = st;
-          } else if (st < lastScrollTop && st < lastSwitch - 50) {
-            menuMobileElems.forEach((menuMobileElem) => {
-              menuMobileElem.classList.add("bg-black-primary");
-              menuMobileElem.classList.remove("-translate-y-full");
-            });
-            lastSwitch = st;
-          }
-          lastScrollTop = st <= 0 ? 0 : st;
-        };
         const handleScroll = (() => {
           let ticking = false;
 
@@ -1000,11 +907,7 @@
             if (!ticking) {
               window.requestAnimationFrame(() => {
                 handleHeaderScroll(e);
-                handleSkillsScroll(e);
                 handleWorkScroll(e);
-                handleAboutScrool(e);
-                handleTooltipScroll(e);
-                handleMobileMenuHideScroll(e);
                 ticking = false;
               });
               ticking = true;
@@ -1013,55 +916,7 @@
         })();
 
         document.addEventListener("scroll", handleScroll, { passive: true });
-
-        copyMail.addEventListener("mouseenter", () => {
-          Object.assign(copyMailTooltipPortal.style, {
-            top: `${copyMail.getBoundingClientRect().top}px`,
-            left: `${copyMail.getBoundingClientRect().left}px`,
-            width: `${copyMail.getBoundingClientRect().width}px`,
-            height: `${copyMail.getBoundingClientRect().height}px`,
-          });
-          copyMailTooltipPortal.classList.add("opacity-100");
-        });
-        copyMail.addEventListener("mouseleave", () => {
-          copyMailTooltipPortal.classList.remove("opacity-100");
-        });
-        copyMail.addEventListener("click", () => {
-          const mail = "petukhouskaya.design@gmail.com";
-          navigator.clipboard.writeText(mail);
-          copyMailConfirm.classList.remove("hidden");
-          copyMailTooltip.classList.add("opacity-100");
-          setTimeout(() => {
-            copyMailTooltip.classList.remove("opacity-100");
-            copyMailConfirm.classList.add("hidden");
-          }, 2000);
-        });
-        const openMobileMenu = () => {
-          cross.classList.add("cross--active");
-          menuElem.classList.remove("-translate-y-full");
-          isMobileMenuOpen = true;
-        };
-        const closeMobileMenu = () => {
-          cross.classList.remove("cross--active");
-          menuElem.classList.add("-translate-y-full");
-          isMobileMenuOpen = false;
-        };
-        window.handleMobileMenuClick = () => {
-          if (isMobileMenuOpen) {
-            closeMobileMenu();
-          } else {
-            openMobileMenu();
-          }
-        };
-        window.handleWorksClick = () => {
-          workElem.scrollIntoView({ behavior: "smooth" });
-          closeMobileMenu();
-        };
-        window.handleAboutClick = () => {
-          aboutElem.scrollIntoView({ behavior: "smooth" });
-          closeMobileMenu();
-        };
-      })();
+      });
     </script>
   </body>
 </html>
