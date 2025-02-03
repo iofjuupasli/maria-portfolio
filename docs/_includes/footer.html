@@ -1,12 +1,14 @@
 <footer style="height: 100vh" class="js-footer">
   <div
     style="z-index: -1; opacity: 0; pointer-events: none"
-    class="js-footer-content bg-dark-primary fixed right-0 bottom-0 left-0 flex h-[100vh] flex-col justify-center px-5 text-white sm:px-8 md:h-auto md:pt-40 md:pb-60 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+    class="js-footer-content bg-dark-primary fixed right-0 bottom-0 left-0 flex h-[100vh] flex-col justify-center px-5 text-white sm:px-8 md:h-auto md:pt-40 md:pb-60 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px] 2xl:pl-36"
   >
     <div
-      class="mx-auto flex max-w-[400px] flex-col md:mx-0 md:max-w-[1184px] md:flex-row md:justify-between md:gap-8"
+      class="mx-auto flex max-w-[400px] flex-col md:mx-0 md:max-w-[1184px] md:flex-row md:justify-between md:gap-8 xl:mx-auto xl:w-full"
     >
-      <div class="flex items-center justify-between md:flex-col md:items-start">
+      <div
+        class="flex items-center justify-between md:flex-col md:items-start lg:flex-[1.10] xl:flex-[1.35] 2xl:flex-[1.1]"
+      >
         <div class="text-[44px] font-medium md:order-2">Let's talk</div>
         <svg
           width="44"
@@ -31,7 +33,7 @@
           />
         </svg>
       </div>
-      <div class="mt-15 flex flex-col gap-6 text-[20px] md:mt-0">
+      <div class="mt-15 flex flex-1 flex-col gap-6 text-[20px] md:mt-0">
         <a
           href="/assets/cv_maria_petukhovskaya.pdf"
           target="_blank"
@@ -44,14 +46,16 @@
           class="link"
           >LinkedIn</a
         >
-        <a href="mailto:petukhouskaya.design@gmail.com" class="link"
+        <a href="mailto:petukhouskaya.design@gmail.com" class="link text-lg"
           >petukhouskaya.design@gmail.com</a
         >
         <a href="https://t.me/mariapeven" target="_blank" class="link"
           >Telegram @mariapeven</a
         >
       </div>
-      <div class="mt-21 text-right text-[28px] font-medium md:mt-0">
+      <div
+        class="mt-21 -ml-20 flex-1 text-right text-[28px] font-medium md:-mt-1"
+      >
         <a href="./paperpile.html" class="js-random-case link"
           >See random case</a
         >
@@ -134,7 +138,7 @@
       const visibleHeight = Math.max(0, bottom);
       const visiblePercentage = 1 - visibleHeight / window.innerHeight;
       const positionPercentage =
-        layer.offsetHeight < window.innerHeight ? 0.3 : 1;
+        layer.offsetHeight < window.innerHeight ? 0.5 : 1;
 
       const effectPercentage =
         positionPercentage === 1
@@ -144,7 +148,7 @@
             : (visiblePercentage - positionPercentage) *
               (1 / (1 - positionPercentage));
       layer.style.borderRadius = `0 0 ${effectPercentage * 64}px ${effectPercentage * 64}px`;
-      const scale = 1 - effectPercentage * 0.1;
+      const scale = 1 - effectPercentage * 0.2;
       layer.style.transform = `scale(${scale})`;
     };
 

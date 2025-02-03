@@ -1,55 +1,38 @@
 <section class="bg-gray-thirdly text-dark-primary js-layer relative z-10">
-  <div class="section-content flex flex-col items-center">
+  <div
+    class="section-content flex items-center gap-28 !pt-32 pl-36 xl:gap-34 xl:pl-72 2xl:pl-40"
+  >
+    <div>
+      <h3 class="text-[44px]">Want to hire me?</h3>
+      <div class="t3 mt-4">Send me a job inquiry</div>
+      <a
+        href="mailto:petukhouskaya.design@gmail.com"
+        class="t2 hover:text-gray-secondary active:text-black-secondary mt-5 block"
+      >
+        petukhouskaya.design@gmail.com
+      </a>
+    </div>
     <img
-      width="96"
-      height="96"
-      src="./paperpile/avatar2x.webp"
-      srcset="./paperpile/avatar2x.webp 2x, ./paperpile/avatar.webp 1x"
+      width="132"
+      height="132"
+      src="./avatar2x.webp"
+      srcset="./avatar2x.webp 2x, ./avatar.webp 1x"
       class="rounded-full"
     />
-    <h3 class="mt-9">Want to hire me?</h3>
-    <div class="t2 mt-9">Send me a job inquiry</div>
-    <a
-      href="mailto:petukhouskaya.design@gmail.com"
-      class="t2 mt-10 hover:opacity-70"
-    >
-      petukhouskaya.design@gmail.com
-    </a>
-    <button
-      class="bg-dark-primary text-white-primary hover:bg-black-secondary mt-5 cursor-pointer rounded-full px-4 py-1.5"
-      onclick="window.copyMail()"
-    >
-      Copy mail
-      <svg
-        class="js-copy-mail-confirm-button relative bottom-[1.5px] hidden"
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M7.99967 1.33325C4.31967 1.33325 1.33301 4.31992 1.33301 7.99992C1.33301 11.6799 4.31967 14.6666 7.99967 14.6666C11.6797 14.6666 14.6663 11.6799 14.6663 7.99992C14.6663 4.31992 11.6797 1.33325 7.99967 1.33325ZM6.19301 10.8599L3.79967 8.46659C3.53967 8.20659 3.53967 7.78659 3.79967 7.52659C4.05967 7.26659 4.47967 7.26659 4.73967 7.52659L6.66634 9.44659L11.253 4.85992C11.513 4.59992 11.933 4.59992 12.193 4.85992C12.453 5.11992 12.453 5.53992 12.193 5.79992L7.13301 10.8599C6.87967 11.1199 6.45301 11.1199 6.19301 10.8599Z"
-          fill="currentColor"
-        />
-      </svg>
-    </button>
-    <script>
-      window.addEventListener("load", () => {
-        window.copyMail = function copyMail() {
-          const mail = "petukhouskaya.design@gmail.com";
-          navigator.clipboard.writeText(mail);
-          const confirm = document.querySelector(
-            ".js-copy-mail-confirm-button",
-          );
-          confirm.classList.remove("hidden");
-          confirm.classList.add("inline-block");
-          setTimeout(() => {
-            confirm.classList.add("hidden");
-            confirm.classList.remove("inline-block");
-          }, 2000);
-        };
-      });
-    </script>
   </div>
+  <script>
+    window.addEventListener("load", () => {
+      window.copyMail = function copyMail() {
+        const mail = "petukhouskaya.design@gmail.com";
+        navigator.clipboard.writeText(mail);
+        const confirm = document.querySelector(".js-copy-mail-confirm-button");
+        confirm.classList.remove("hidden");
+        confirm.classList.add("inline-block");
+        setTimeout(() => {
+          confirm.classList.add("hidden");
+          confirm.classList.remove("inline-block");
+        }, 2000);
+      };
+    });
+  </script>
 </section>
