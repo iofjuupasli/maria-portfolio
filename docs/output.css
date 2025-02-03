@@ -774,6 +774,9 @@
   .mt-21 {
     margin-top: calc(var(--spacing) * 21);
   }
+  .mt-25 {
+    margin-top: calc(var(--spacing) * 25);
+  }
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
   }
@@ -1007,6 +1010,9 @@
   }
   .flex-5 {
     flex: 5;
+  }
+  .flex-\[1\.1\] {
+    flex: 1.1;
   }
   .flex-auto {
     flex: auto;
@@ -1392,6 +1398,9 @@
   .bg-gray-primary {
     background-color: #CBD5D3;
   }
+  .bg-gray-secondary {
+    background-color: #3A4A5B;
+  }
   .bg-gray-thirdly {
     background-color: #B9C3C0;
   }
@@ -1510,6 +1519,9 @@
   }
   .py-\[200px\] {
     padding-block: 200px;
+  }
+  .\!pt-40 {
+    padding-top: calc(var(--spacing) * 40) !important;
   }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);

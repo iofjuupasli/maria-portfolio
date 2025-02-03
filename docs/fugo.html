@@ -35,8 +35,8 @@
   </head>
   <body class="bg-black-primary text-white-primary">
     {% include menu.html %}
-    <header>
-      <div class="section-content">
+    <header class="js-layer bg-black-secondary">
+      <div class="section-content !pt-40">
         <div class="flex items-center justify-between">
           <div>
             <div class="t2 text-gray-primary">2023</div>
@@ -92,21 +92,27 @@
           loop
           class="mt-20 h-auto w-full overflow-clip rounded-2xl"
         ></video>
-        <div class="t2 mt-20 flex gap-19">
-          <div class="flex-3 space-y-3">
+        <div class="t2 mt-25 flex gap-11">
+          <div class="flex-1 space-y-3">
             <div class="text-gray-primary">About the project</div>
             <div>
               Sofia CRM is a dedicated platform designed to simplify customer
               data management.
             </div>
           </div>
-          <div class="flex-2 space-y-3">
+          <div class="flex-1 space-y-3">
             <div class="text-gray-primary">My role</div>
             <div>Product designer, individual contributor</div>
           </div>
-          <div class="flex-3 space-y-3">
+          <div class="flex-1 space-y-3">
             <div class="text-gray-primary">Project goal</div>
             <div>Increase Studio apps' discoverability and revenue</div>
+          </div>
+          <div class="flex-[1.1] space-y-3">
+            <div class="text-gray-primary">Result</div>
+            <p>Conversion to Paid Plans increased from 7% to 10%</p>
+            <p>Key Features Adoption Rate rose from 37% to 63%</p>
+            <p>50% decrease in TtV</p>
           </div>
         </div>
       </div>
@@ -213,7 +219,7 @@
           Based on research and discussion with the team, we settled on the
           deadlines and agreed on implementing the following solutions:
         </div>
-        <ul class="mt-6 ml-4 list-disc space-y-3">
+        <ul class="mt-6 ml-4 list-disc space-y-5">
           <li>
             Highlighting Popular Apps on the Start Page: Positioned the most
             frequently used apps on the template page. So, the start page
@@ -263,7 +269,7 @@
         <div class="mt-12 space-y-18">
           <div class="flex items-start gap-7">
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-12x.webp"
               alt=""
               srcset="./fugo/solution-1.webp 1x, ./fugo/solution-12x.webp 2x"
@@ -271,7 +277,7 @@
               height="612"
             />
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-22x.webp"
               srcset="./fugo/solution-2.webp 1x, ./fugo/solution-22x.webp 2x"
               alt=""
@@ -281,7 +287,7 @@
           </div>
           <div class="flex items-start gap-7">
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-32x.webp"
               alt=""
               srcset="./fugo/solution-3.webp 1x, ./fugo/solution-32x.webp 2x"
@@ -289,7 +295,7 @@
               height="300"
             />
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-42x.webp"
               srcset="./fugo/solution-4.webp 1x, ./fugo/solution-42x.webp 2x"
               alt=""
@@ -299,7 +305,7 @@
           </div>
           <div class="flex items-start gap-7">
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-52x.webp"
               alt=""
               srcset="./fugo/solution-5.webp 1x, ./fugo/solution-52x.webp 2x"
@@ -307,7 +313,7 @@
               height="300"
             />
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-62x.webp"
               srcset="./fugo/solution-6.webp 1x, ./fugo/solution-62x.webp 2x"
               alt=""
@@ -317,7 +323,7 @@
           </div>
           <div class="flex items-start gap-7">
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-72x.webp"
               alt=""
               srcset="./fugo/solution-7.webp 1x, ./fugo/solution-72x.webp 2x"
@@ -338,7 +344,7 @@
           understanding their perception of the new screens and insights, as
           well as how they approached designing specific content.
         </div>
-        <h4 class="mt-9">Usability test insights</h4>
+        <h4 class="mt-15">Usability test insights</h4>
         <ul class="t2 mt-6 ml-4 list-disc space-y-3">
           <li>The feedback we received was generally positive.</li>
           <li>
@@ -355,7 +361,7 @@
             src="./fugo/usability-12x.webp"
             srcset="./fugo/usability-1.webp 1x, ./fugo/usability-12x.webp 2x"
             alt=""
-            class="shadow-fugo h-auto w-full min-w-0 flex-1"
+            class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
             width="505"
             height="300"
           />
@@ -363,7 +369,7 @@
             src="./fugo/usability-22x.webp"
             srcset="./fugo/usability-2.webp 1x, ./fugo/usability-22x.webp 2x"
             alt=""
-            class="shadow-fugo h-auto w-full min-w-0 flex-1"
+            class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
             width="505"
             height="300"
           />
@@ -418,7 +424,7 @@
         <div class="mt-12 space-y-18">
           <div class="flex items-start gap-7">
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-12x.webp"
               alt=""
               srcset="./fugo/final-1.webp 1x, ./fugo/final-12x.webp 2x"
@@ -426,7 +432,7 @@
               height="606"
             />
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-22x.webp"
               srcset="./fugo/final-2.webp 1x, ./fugo/final-22x.webp 2x"
               alt=""
@@ -436,7 +442,7 @@
           </div>
           <div class="flex items-start gap-7">
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-32x.webp"
               alt=""
               srcset="./fugo/final-3.webp 1x, ./fugo/final-32x.webp 2x"
@@ -444,7 +450,7 @@
               height="301"
             />
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-42x.webp"
               srcset="./fugo/final-4.webp 1x, ./fugo/final-42x.webp 2x"
               alt=""
@@ -454,7 +460,7 @@
           </div>
           <div class="flex items-start gap-7">
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-52x.webp"
               alt=""
               srcset="./fugo/final-5.webp 1x, ./fugo/final-52x.webp 2x"
@@ -462,7 +468,7 @@
               height="298"
             />
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-62x.webp"
               srcset="./fugo/final-6.webp 1x, ./fugo/final-62x.webp 2x"
               alt=""
@@ -472,7 +478,7 @@
           </div>
           <div class="flex items-start gap-7">
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-72x.webp"
               alt=""
               srcset="./fugo/final-7.webp 1x, ./fugo/final-72x.webp 2x"
@@ -480,7 +486,7 @@
               height="298"
             />
             <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1"
+              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-82x.webp"
               srcset="./fugo/final-8.webp 1x, ./fugo/final-82x.webp 2x"
               alt=""
@@ -540,12 +546,12 @@
             </defs>
           </svg>
         </div>
-        <div class="t2 mt-11">
+        <div class="t2 mt-15">
           Here, I highlighted just one iteration of improving the Studio's UX.
           Overall, as a result of my work on the Studio, the metrics measured
           after six months showed:
         </div>
-        <ul class="t2 mt-6 ml-4 list-disc space-y-3">
+        <ul class="t2 mt-6 ml-4 list-disc space-y-5">
           <li>
             We measured Time to Value (TtV) with a specific focus on new users,
             particularly new content-creating sessions. For this group, we
@@ -568,62 +574,73 @@
         </ul>
       </div>
     </section>
-    <section>
-      <div class="section-content">
-        <h5>See more of my projects</h5>
-        <div class="mt-9 grid grid-cols-[227fr_227fr_495fr] gap-9">
-          <div class="">
-            <img
-              width="227"
-              height="232"
-              src="./fugo/next-sofia2x.webp"
-              srcset="./fugo/next-sofia2x.webp 2x, ./fugo/next-sofia.webp 1x"
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2022</div>
-            <div class="t1 mt-3">Sofia</div>
-            <div class="t3 mt-2">
-              Template and library for CRM, a specialized data management
-              platform
-            </div>
-          </div>
-          <div class="">
-            <img
-              width="227"
-              height="232"
-              src="./fugo/next-fugo-redesign2x.webp"
-              srcset="
-                ./fugo/next-fugo-redesign2x.webp 2x,
-                ./fugo/next-fugo-redesign.webp   1x
-              "
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2021-2022</div>
-            <div class="t1 mt-3">Fugo: app redesign</div>
-            <div class="t3 mt-2">
-              Screens management system with design tool
-            </div>
-          </div>
-          <div class="">
-            <img
-              width="495"
-              height="232"
-              src="./fugo/next-paperpile2x.webp"
-              srcset="
-                ./fugo/next-paperpile2x.webp 2x,
-                ./fugo/next-paperpile.webp   1x
-              "
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2024</div>
-            <div class="t1 mt-3">Paperpile</div>
-            <div class="t3 mt-2 w-1/2">
-              AI-based documents management mobile app
-            </div>
+    <div class="bg-gray-thirdly">
+      <section class="js-layer bg-dark-primary">
+        <div class="section-content">
+          <h5>See more of my projects</h5>
+          <div class="mt-9 grid grid-cols-[227fr_227fr_495fr] gap-9">
+            <a href="./sofia.html" class="block">
+              <div class="image-hover-container">
+                <img
+                  width="227"
+                  height="232"
+                  src="./fugo/next-sofia2x.webp"
+                  srcset="
+                    ./fugo/next-sofia2x.webp 2x,
+                    ./fugo/next-sofia.webp   1x
+                  "
+                  class="image-hover"
+                />
+              </div>
+              <div class="t3 text-gray-primary mt-3">2022</div>
+              <div class="t1 mt-3">Sofia</div>
+              <div class="t3 mt-2">
+                Template and library for CRM, a specialized data management
+                platform
+              </div>
+            </a>
+            <a href="./fugo-redesign.html" class="block">
+              <div class="image-hover-container">
+                <img
+                  width="227"
+                  height="232"
+                  src="./fugo/next-fugo-redesign2x.webp"
+                  srcset="
+                    ./fugo/next-fugo-redesign2x.webp 2x,
+                    ./fugo/next-fugo-redesign.webp   1x
+                  "
+                  class="image-hover"
+                />
+              </div>
+              <div class="t3 text-gray-primary mt-3">2021-2022</div>
+              <div class="t1 mt-3">Fugo: app redesign</div>
+              <div class="t3 mt-2">
+                Screens management system with design tool
+              </div>
+            </a>
+            <a href="./paperpile.html" class="block">
+              <div class="image-hover-container">
+                <img
+                  width="495"
+                  height="232"
+                  src="./fugo/next-paperpile2x.webp"
+                  srcset="
+                    ./fugo/next-paperpile2x.webp 2x,
+                    ./fugo/next-paperpile.webp   1x
+                  "
+                  class="image-hover"
+                />
+              </div>
+              <div class="t3 text-gray-primary mt-3">2024</div>
+              <div class="t1 mt-3">Paperpile</div>
+              <div class="t3 mt-2 w-1/2">
+                AI-based documents management mobile app
+              </div>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
     {% include hire.html %} {% include footer.html %}
   </body>
 </html>
