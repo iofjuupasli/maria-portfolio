@@ -895,7 +895,7 @@
           const visiblePercentage = 1 - visibleHeight / window.innerHeight;
           workElem.style.borderRadius = visiblePercentage * 64 + "px";
           const scale = 1 - visiblePercentage * 0.1;
-          workElem.style.transform = `scale(${scale})`;
+          workElem.style.transform = scale === 1 ? null : `scale(${scale})`;
         };
         const handleScroll = (() => {
           let ticking = false;

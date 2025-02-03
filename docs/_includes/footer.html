@@ -149,7 +149,7 @@
               (1 / (1 - positionPercentage));
       layer.style.borderRadius = `0 0 ${effectPercentage * 64}px ${effectPercentage * 64}px`;
       const scale = 1 - effectPercentage * 0.2;
-      layer.style.transform = `scale(${scale})`;
+      layer.style.transform = scale === 1 ? null : `scale(${scale})`;
     };
 
     const handleScroll = (() => {
