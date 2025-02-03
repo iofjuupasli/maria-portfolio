@@ -2,7 +2,10 @@
 ---
 
 <!doctype html>
-<html lang="en" class="smooth-scroll snap-y snap-proximity font-sans">
+<html
+  lang="en"
+  class="smooth-scroll snap-y snap-proximity overscroll-none font-sans"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,7 +42,7 @@
     <link rel="stylesheet" href="./output.css" />
     <script src="./components/arrow-icon.js" type="module"></script>
   </head>
-  <body>
+  <body class="bg-dark-primary">
     <div
       class="noise pointer-events-none fixed -top-1/2 -right-1/2 -bottom-1/2 -left-1/2 z-40 h-[200%] w-[200%] opacity-65"
     ></div>
@@ -592,7 +595,7 @@
       </div>
     </main>
     <section
-      class="js-about bg-gray-primary text-dark-primary z-0 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+      class="js-about js-layer bg-gray-primary text-dark-primary relative z-10 px-5 pt-[30vh] pb-24 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
     >
       <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
         <h2
@@ -839,7 +842,7 @@
         const titleElem = document.querySelector(".js-title");
         const workElem = document.querySelector(".js-work-card");
 
-        const handleHeaderScroll = (e) => {
+        const handleHeaderScroll = () => {
           const container = headerElem.parentElement;
           const headerRect = container.getBoundingClientRect();
           const isOnScreen =
@@ -854,7 +857,7 @@
           const topPercent = (-headerRect.top / window.innerHeight) ** 2.5;
           titleElem.style.transform = `scale(${1 + 320 * topPercent})`;
         };
-        const handleWorkScroll = (e) => {
+        const handleWorkScroll = () => {
           const container = workElem.parentElement;
           const mainRect = workElem.getBoundingClientRect();
           const isOnScreen =
@@ -879,17 +882,18 @@
         const handleScroll = (() => {
           let ticking = false;
 
-          return (e) => {
+          return () => {
             if (!ticking) {
               window.requestAnimationFrame(() => {
-                handleHeaderScroll(e);
-                handleWorkScroll(e);
+                handleHeaderScroll();
+                handleWorkScroll();
                 ticking = false;
               });
               ticking = true;
             }
           };
         })();
+        handleScroll();
 
         document.addEventListener("scroll", handleScroll, { passive: true });
       });

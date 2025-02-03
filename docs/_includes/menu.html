@@ -121,7 +121,7 @@
     );
     const copyMailTooltip = document.querySelector(".js-copy-mail-tooltip");
 
-    const handleSkillsScroll = (e) => {
+    const handleSkillsScroll = () => {
       if (!skillsElem) {
         return;
       }
@@ -133,7 +133,7 @@
         menuElem.classList.add("lg:opacity-0", "lg:pointer-events-none");
       }
     };
-    const handleTooltipScroll = (e) => {
+    const handleTooltipScroll = () => {
       if (!aboutElem) {
         copyMailTooltip.style.backgroundColor = "#222F3C";
         copyMailTooltip.style.color = "#CBD5D3";
@@ -152,7 +152,7 @@
     handleTooltipScroll();
     let lastScrollTop = 0;
     let lastSwitch = 0;
-    const handleMobileMenuHideScroll = (e) => {
+    const handleMobileMenuHideScroll = () => {
       if (isMobileMenuOpen) {
         return;
       }
@@ -174,18 +174,20 @@
     const handleScroll = (() => {
       let ticking = false;
 
-      return (e) => {
+      return () => {
         if (!ticking) {
           window.requestAnimationFrame(() => {
-            handleSkillsScroll(e);
-            handleTooltipScroll(e);
-            handleMobileMenuHideScroll(e);
+            handleSkillsScroll();
+            handleTooltipScroll();
+            handleMobileMenuHideScroll();
             ticking = false;
           });
           ticking = true;
         }
       };
     })();
+
+    handleScroll();
 
     document.addEventListener("scroll", handleScroll, { passive: true });
 

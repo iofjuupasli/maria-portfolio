@@ -73,14 +73,10 @@
       footer.style.height = `${footerContent.clientHeight}px`;
     });
 
-    const previousSibling = footer.previousElementSibling;
-    previousSibling.style.zIndex = Math.max(previousSibling.style.zIndex, 1);
-
-    const handleScrollZIndex = (e) => {
+    const handleScrollZIndex = () => {
       const footerRect = footer.getBoundingClientRect();
       const isFooterOnScreen =
         footerRect.top < window.innerHeight && footerRect.bottom >= 0;
-      console.log(isFooterOnScreen);
 
       if (isFooterOnScreen) {
         footerContent.style.opacity = 1;
@@ -93,36 +89,6 @@
       }
     };
 
-    const handleScrollRadius = (e) => {
-      const isMobile = window.innerWidth < 1024;
-      if (isMobile) {
-        return;
-      }
-      const mainRect = previousSibling.getBoundingClientRect();
-      const isOnScreen =
-        mainRect.top < window.innerHeight && mainRect.bottom >= 0;
-      const isHalfOnScreen =
-        mainRect.top < window.innerHeight / 2 &&
-        mainRect.bottom >= window.innerHeight / 2;
-
-      if (!isOnScreen) {
-        return;
-      }
-
-      if (mainRect.bottom < window.innerHeight + 100) {
-        document.body.classList.add("bg-dark-primary");
-      } else {
-        document.body.classList.remove("bg-dark-primary");
-      }
-
-      const bottom = Math.min(mainRect.bottom, window.innerHeight);
-      const visibleHeight = Math.max(0, bottom);
-      const visiblePercentage = 1 - visibleHeight / window.innerHeight;
-      previousSibling.style.borderRadius = visiblePercentage * 64 + "px";
-      const scale = 1 - visiblePercentage * 0.1;
-      previousSibling.style.transform = `scale(${scale})`;
-    };
-
     const handleScroll = (() => {
       let ticking = false;
 
@@ -130,7 +96,6 @@
         if (!ticking) {
           window.requestAnimationFrame(() => {
             handleScrollZIndex(e);
-            handleScrollRadius(e);
             ticking = false;
           });
           ticking = true;
@@ -138,6 +103,62 @@
       };
     })();
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll, { passive: true });
   })();
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    const layers = document.querySelectorAll(".js-layer");
+
+    const handleScrollRadius = (layer) => {
+      const isMobile = window.innerWidth < 1024;
+      if (isMobile) {
+        return;
+      }
+      const mainRect = layer.getBoundingClientRect();
+      const isOnScreen =
+        mainRect.top < window.innerHeight && mainRect.bottom >= 0;
+
+      if (!isOnScreen) {
+        return;
+      }
+      const bottom = Math.min(mainRect.bottom, window.innerHeight);
+      const visibleHeight = Math.max(0, bottom);
+      const visiblePercentage = 1 - visibleHeight / window.innerHeight;
+      const positionPercentage =
+        layer.offsetHeight < window.innerHeight ? 0.3 : 1;
+
+      const effectPercentage =
+        positionPercentage === 1
+          ? visiblePercentage
+          : visiblePercentage < positionPercentage
+            ? 0
+            : (visiblePercentage - positionPercentage) *
+              (1 / (1 - positionPercentage));
+      layer.style.borderRadius = `0 0 ${effectPercentage * 64}px ${effectPercentage * 64}px`;
+      const scale = 1 - effectPercentage * 0.1;
+      layer.style.transform = `scale(${scale})`;
+    };
+
+    const handleScroll = (() => {
+      let ticking = false;
+
+      return () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            layers.forEach(handleScrollRadius);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+    })();
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+  });
 </script>

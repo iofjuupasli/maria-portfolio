@@ -25,7 +25,9 @@
   </head>
   <body class="bg-black-primary text-white-primary font-sans">
     {% include menu.html %}
-    <header class="flex h-screen items-center justify-center">
+    <header
+      class="js-layer bg-black-secondary flex h-screen items-center justify-center"
+    >
       <video
         width="2880"
         height="1440"
@@ -2387,66 +2389,68 @@
         loading="lazy"
       />
     </section>
-    <section>
-      <div class="section-content">
-        <h5>See more of my projects</h5>
-        <div class="mt-9 grid grid-cols-[227fr_229fr_495fr] gap-9">
-          <div class="">
-            <img
-              width="227"
-              height="232"
-              src="./paperpile/next-sofia2x.webp"
-              srcset="
-                ./paperpile/next-sofia2x.webp 2x,
-                ./paperpile/next-sofia.webp   1x
-              "
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2022</div>
-            <div class="t1 mt-3">Sofia</div>
-            <div class="t3 mt-2">
-              Template and library for CRM, a specialized data management
-              platform
+    <div class="bg-gray-thirdly">
+      <section class="js-layer bg-dark-primary origin-top">
+        <div class="section-content">
+          <h5>See more of my projects</h5>
+          <div class="mt-9 grid grid-cols-[227fr_229fr_495fr] gap-9">
+            <div class="">
+              <img
+                width="227"
+                height="232"
+                src="./paperpile/next-sofia2x.webp"
+                srcset="
+                  ./paperpile/next-sofia2x.webp 2x,
+                  ./paperpile/next-sofia.webp   1x
+                "
+                class="rounded-[20px]"
+              />
+              <div class="t3 text-gray-primary mt-3">2022</div>
+              <div class="t1 mt-3">Sofia</div>
+              <div class="t3 mt-2">
+                Template and library for CRM, a specialized data management
+                platform
+              </div>
             </div>
-          </div>
-          <div class="">
-            <img
-              width="229"
-              height="232"
-              src="./paperpile/next-fugo2x.webp"
-              srcset="
-                ./paperpile/next-fugo2x.webp 2x,
-                ./paperpile/next-fugo.webp   1x
-              "
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2023</div>
-            <div class="t1 mt-3">Fugo</div>
-            <div class="t3 mt-2">
-              Fugo Studio UX: Increasing features discoverability
+            <div class="">
+              <img
+                width="229"
+                height="232"
+                src="./paperpile/next-fugo2x.webp"
+                srcset="
+                  ./paperpile/next-fugo2x.webp 2x,
+                  ./paperpile/next-fugo.webp   1x
+                "
+                class="rounded-[20px]"
+              />
+              <div class="t3 text-gray-primary mt-3">2023</div>
+              <div class="t1 mt-3">Fugo</div>
+              <div class="t3 mt-2">
+                Fugo Studio UX: Increasing features discoverability
+              </div>
             </div>
-          </div>
-          <div class="">
-            <img
-              width="495"
-              height="232"
-              src="./paperpile/next-fugo-redesign-big2x.webp"
-              srcset="
-                ./paperpile/next-fugo-redesign-big2x.webp 2x,
-                ./paperpile/next-fugo-redesign-big.webp   1x
-              "
-              class="rounded-[20px]"
-            />
-            <div class="t3 text-gray-primary mt-3">2021-2022</div>
-            <div class="t1 mt-3">Fugo: app redesign</div>
-            <div class="t3 mt-2">
-              Digital signage and screens management system<br />with design
-              tool
+            <div class="">
+              <img
+                width="495"
+                height="232"
+                src="./paperpile/next-fugo-redesign-big2x.webp"
+                srcset="
+                  ./paperpile/next-fugo-redesign-big2x.webp 2x,
+                  ./paperpile/next-fugo-redesign-big.webp   1x
+                "
+                class="rounded-[20px]"
+              />
+              <div class="t3 text-gray-primary mt-3">2021-2022</div>
+              <div class="t1 mt-3">Fugo: app redesign</div>
+              <div class="t3 mt-2">
+                Digital signage and screens management system<br />with design
+                tool
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
     {% include hire.html %} {% include footer.html %}
   </body>
 </html>
