@@ -672,6 +672,9 @@
   .z-\[80\] {
     z-index: 80;
   }
+  .z-\[100\] {
+    z-index: 100;
+  }
   .order-first {
     order: calc(-infinity);
   }
@@ -1930,6 +1933,13 @@
       }
     }
   }
+  .hover\:bg-black-secondary {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #222F3C;
+      }
+    }
+  }
   .hover\:bg-gray-primary {
     &:hover {
       @media (hover: hover) {
@@ -1962,6 +1972,13 @@
     &:hover {
       @media (hover: hover) {
         opacity: 0%;
+      }
+    }
+  }
+  .hover\:opacity-70 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 70%;
       }
     }
   }

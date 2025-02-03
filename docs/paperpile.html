@@ -1,3 +1,6 @@
+---
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,58 +24,7 @@
     <link rel="stylesheet" href="./output.css" />
   </head>
   <body class="bg-black-primary text-white-primary font-sans">
-    <menu
-      class="fixed bottom-0 left-0 top-0 z-50 flex w-[72px] flex-col items-center justify-between py-7 pl-5"
-    >
-      <a href="./">
-        <svg
-          width="44"
-          height="44"
-          viewBox="0 0 44 44"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="22"
-            cy="22"
-            r="20"
-            stroke="white"
-            stroke-width="2.17391"
-          />
-          <path
-            d="M21.0864 12.4346H10.6959M10.6959 12.4346V22.8251M10.6959 12.4346L31.5654 33.3042"
-            stroke="white"
-            stroke-width="2.17391"
-          />
-        </svg>
-      </a>
-      <div class="flex flex-col items-center gap-5 text-[15px] font-medium">
-        <a
-          href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
-          class=""
-          >in</a
-        >
-        <a href="">CV</a>
-        <button
-          onclick="copyMail()"
-          class="bg-white-primary flex h-7 w-7 items-center justify-center rounded-full"
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.42871 1.42871V14.5716H8.28585H15.143V1.42871M1.42871 1.42871H8.28585H15.143M1.42871 1.42871L8.28585 8.00014L15.143 1.42871"
-              stroke="#171E25"
-              stroke-width="1.42857"
-            />
-          </svg>
-        </button>
-      </div>
-    </menu>
+    {% include menu.html %}
     <header class="flex h-screen items-center justify-center">
       <video
         width="2880"
@@ -145,7 +97,7 @@
           problem more globally when I joined them.
         </p>
       </div>
-      <div class="absolute right-0 top-32">
+      <div class="absolute top-32 right-0">
         <img
           width="316"
           height="474"
@@ -178,7 +130,7 @@
             <img
               width="91"
               height="71"
-              class="mb-[25px] ml-[-6px] mt-[116px]"
+              class="mt-[116px] mb-[25px] ml-[-6px]"
               src="./paperpile/arrow-down-right2x.webp"
               srcset="
                 ./paperpile/arrow-down-right.webp   1x,
@@ -211,7 +163,7 @@
             <img
               width="104"
               height="66"
-              class="ml-[-44px] mt-[15px]"
+              class="mt-[15px] ml-[-44px]"
               src="./paperpile/arrow-up-right-curl2x.webp"
               srcset="
                 ./paperpile/arrow-up-right-curl.webp   1x,
@@ -225,7 +177,7 @@
             <img
               width="81"
               height="93"
-              class="mb-[13px] ml-[-15px] mt-8"
+              class="mt-8 mb-[13px] ml-[-15px]"
               src="./paperpile/arrow-down-right-curl2x.webp"
               srcset="
                 ./paperpile/arrow-down-right-curl.webp   1x,
@@ -243,17 +195,17 @@
           </div>
         </div>
         <div
-          class="bg-black-secondary relative rounded-xl px-[28px] pb-10 pt-8"
+          class="bg-black-secondary relative rounded-xl px-[28px] pt-8 pb-10"
         >
           <div
             class="pointer-events-none absolute inset-0 overflow-hidden rounded-xl"
           >
             <div
-              class="noise absolute -bottom-1/2 -left-1/2 -right-1/2 -top-1/2 z-40 h-[200%] w-[200%] opacity-65"
+              class="noise absolute -top-1/2 -right-1/2 -bottom-1/2 -left-1/2 z-40 h-[200%] w-[200%] opacity-65"
             ></div>
           </div>
           <h3 class="text-[15px] font-bold italic">Personal note:</h3>
-          <p class="mt-4 text-sm italic leading-normal">
+          <p class="mt-4 text-sm leading-normal italic">
             My teammates who had children faced challenges with managing their
             children's documents, a context that wasn’t immediately obvious to
             me.<br />I first became aware of this issue through my designer
@@ -267,12 +219,12 @@
             focus&nbsp;in&nbsp;our design process as well.
           </p>
           <div
-            class="font-slackside text-green-primary absolute right-[-50px] top-7 rotate-3"
+            class="font-slackside text-green-primary absolute top-7 right-[-50px] rotate-3"
           >
             challenge your subjective design view as fast as it appears
           </div>
           <div
-            class="font-slackside text-green-primary absolute bottom-2 right-[-50px] -rotate-6"
+            class="font-slackside text-green-primary absolute right-[-50px] bottom-2 -rotate-6"
           >
             collaboration with the team broadening problem understanding, free
             and fast
@@ -305,7 +257,7 @@
           <img
             width="133"
             height="162"
-            class="absolute left-[31%] top-[3%] w-[15%] opacity-100 hover:opacity-0"
+            class="absolute top-[3%] left-[31%] w-[15%] opacity-100 hover:opacity-0"
             src="./paperpile/aha2x.webp"
             srcset="./paperpile/aha.webp 1x, ./paperpile/aha2x.webp 2x"
             loading="lazy"
@@ -314,7 +266,7 @@
             <img
               width="133"
               height="162"
-              class="absolute left-[31%] top-[3%] w-[15%] opacity-0 hover:opacity-100"
+              class="absolute top-[3%] left-[31%] w-[15%] opacity-0 hover:opacity-100"
               src="./paperpile/aha-hover2x.webp"
               srcset="
                 ./paperpile/aha-hover.webp   1x,
@@ -417,7 +369,7 @@
           class="bg-black-secondary text-gray-primary mt-12 px-[83px] py-[77px]"
         >
           <div class="grid grid-cols-[5fr_3fr]">
-            <div class="border-white-primary border-b border-r pb-9 pr-6">
+            <div class="border-white-primary border-r border-b pr-6 pb-9">
               <h6>How many</h6>
               <div class="mt-12 flex gap-6">
                 <div class="flex-1">
@@ -441,7 +393,7 @@
                 refer to documents at least<br /><b>once a week</b>
               </div>
             </div>
-            <div class="border-white-primary border-r pr-6 pt-9">
+            <div class="border-white-primary border-r pt-9 pr-6">
               <h6>How much</h6>
               <div class="mt-1 text-sm">
                 time respondents need to find a document
@@ -460,7 +412,7 @@
                 </div>
               </div>
             </div>
-            <div class="pl-[54px] pt-9">
+            <div class="pt-9 pl-[54px]">
               <h6>How bad</h6>
               <div class="mt-1 text-sm">
                 time respondents need to find a document
@@ -815,7 +767,7 @@
       <img
         width="579"
         height="391"
-        class="absolute right-0 top-[230px]"
+        class="absolute top-[230px] right-0"
         src="./paperpile/hand2x.webp"
         srcset="./paperpile/hand.webp 1x, ./paperpile/hand2x.webp 2x"
         loading="lazy"
@@ -857,31 +809,31 @@
         <h2>Problems to <i>solve</i>, with less frictions</h2>
         <table class="mt-[92px]">
           <tr class="t3">
-            <td class="pb-4 pr-[72px] align-top">User:</td>
-            <td class="pb-4 pr-[52px] align-top">
+            <td class="pr-[72px] pb-4 align-top">User:</td>
+            <td class="pr-[52px] pb-4 align-top">
               Apply for visa, studying...
             </td>
-            <td class="pb-4 pr-[52px] align-top">
+            <td class="pr-[52px] pb-4 align-top">
               Keep in mind the important dates
             </td>
             <td class="pb-4 align-top">Takes care about family</td>
           </tr>
           <tr class="h5">
-            <td class="t3 pb-12 pr-[52px] align-top">Paperpile:</td>
-            <td class="pb-12 pr-[52px] align-top">
+            <td class="t3 pr-[52px] pb-12 align-top">Paperpile:</td>
+            <td class="pr-[52px] pb-12 align-top">
               Orders the process (check lists), finds the document
             </td>
-            <td class="pb-12 pr-[52px] align-top">
+            <td class="pr-[52px] pb-12 align-top">
               Monitors and reminds about expiration
             </td>
             <td class="pb-12 align-top">Provides family document sharing</td>
           </tr>
           <tr class="t3">
-            <td class="pb-4 pr-[72px] align-top">User:</td>
-            <td class="pb-4 pr-[52px] align-top">
+            <td class="pr-[72px] pb-4 align-top">User:</td>
+            <td class="pr-[52px] pb-4 align-top">
               Tracks important health indicators
             </td>
-            <td class="pb-4 pr-[52px] align-top">Compiles the endless forms</td>
+            <td class="pr-[52px] pb-4 align-top">Compiles the endless forms</td>
             <td class="pb-4 align-top">Needs to choose right document</td>
           </tr>
           <tr class="h5">
@@ -1014,7 +966,7 @@
           ./paperpile/newspaper-pile.webp   1x,
           ./paperpile/newspaper-pile2x.webp 2x
         "
-        class="absolute right-0 top-[400px] max-w-[30vw]"
+        class="absolute top-[400px] right-0 max-w-[30vw]"
         loading="lazy"
       />
     </section>
@@ -1158,7 +1110,7 @@
               <h3 class="relative">
                 Account and Family flows
                 <div
-                  class="text-green-primary at absolute right-8 top-8 rotate-[-8deg]"
+                  class="text-green-primary at absolute top-8 right-8 rotate-[-8deg]"
                 >
                   Was added later on
                 </div>
@@ -2431,7 +2383,7 @@
           ./paperpile/paper-pile2x.webp 2x,
           ./paperpile/paper-pile.webp   1x
         "
-        class="absolute right-0 top-[200px]"
+        class="absolute top-[200px] right-0"
         loading="lazy"
       />
     </section>
@@ -2495,76 +2447,6 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="section-content flex flex-col items-center">
-        <img
-          width="96"
-          height="96"
-          src="./paperpile/avatar2x.webp"
-          srcset="./paperpile/avatar2x.webp 2x, ./paperpile/avatar.webp 1x"
-          class="rounded-full"
-        />
-        <h3 class="mt-9">Want to hire me?</h3>
-        <div class="t2 mt-9">Send me a job inquiry</div>
-        <a
-          href="mailto:petukhouskaya.design@gmail.com"
-          class="t2 text-green-primary mt-10"
-        >
-          petukhouskaya.design@gmail.com
-        </a>
-        <button
-          class="bg-white-primary text-dark-primary mt-6 rounded-full px-4 py-1.5"
-          onclick="copyMail()"
-        >
-          Copy mail
-        </button>
-      </div>
-    </section>
-    <hr />
-    <footer class="">
-      <div class="section-content flex justify-between pt-16">
-        <svg
-          width="44"
-          height="45"
-          viewBox="0 0 44 45"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          onclick="window.scroll({ top: 0, behavior: 'smooth' })"
-        >
-          <circle
-            cx="22"
-            cy="22.0859"
-            r="20"
-            stroke="white"
-            stroke-width="2.17391"
-          />
-          <path
-            d="M29.3472 14.5441L22 7.19691M22 7.19691L14.6528 14.5441M22 7.19691V36.7109"
-            stroke="white"
-            stroke-width="2.17391"
-          />
-        </svg>
-        <div class="flex items-center gap-20">
-          <a href="/">Get CV</a>
-          <a
-            href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <button
-            class="bg-white-primary text-dark-primary rounded-full px-4 py-1.5"
-            onclick="copyMail()"
-          >
-            Copy mail
-          </button>
-        </div>
-      </div>
-    </footer>
-    <script>
-      function copyMail() {
-        const mail = "petukhouskaya.design@gmail.com";
-        navigator.clipboard.writeText(mail);
-      }
-    </script>
+    {% include hire.html %} {% include footer.html %}
   </body>
 </html>

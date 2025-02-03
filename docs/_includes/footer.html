@@ -1,6 +1,6 @@
 <footer style="height: 100vh" class="js-footer">
   <div
-    style="z-index: -1"
+    style="z-index: -1; opacity: 0; pointer-events: none"
     class="js-footer-content bg-dark-primary fixed right-0 bottom-0 left-0 flex h-[100vh] flex-col justify-center px-5 text-white sm:px-8 md:h-auto md:pt-40 md:pb-60 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
   >
     <div
@@ -80,9 +80,15 @@
       const footerRect = footer.getBoundingClientRect();
       const isFooterOnScreen =
         footerRect.top < window.innerHeight && footerRect.bottom >= 0;
+      console.log(isFooterOnScreen);
+
       if (isFooterOnScreen) {
+        footerContent.style.opacity = 1;
+        footerContent.style.pointerEvents = "auto";
         footerContent.style.zIndex = 0;
       } else {
+        footerContent.style.opacity = 0;
+        footerContent.style.pointerEvents = "none";
         footerContent.style.zIndex = -1;
       }
     };

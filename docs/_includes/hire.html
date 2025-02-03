@@ -1,0 +1,33 @@
+<section class="bg-gray-thirdly text-dark-primary">
+  <div class="section-content flex flex-col items-center">
+    <img
+      width="96"
+      height="96"
+      src="./paperpile/avatar2x.webp"
+      srcset="./paperpile/avatar2x.webp 2x, ./paperpile/avatar.webp 1x"
+      class="rounded-full"
+    />
+    <h3 class="mt-9">Want to hire me?</h3>
+    <div class="t2 mt-9">Send me a job inquiry</div>
+    <a
+      href="mailto:petukhouskaya.design@gmail.com"
+      class="t2 mt-10 hover:opacity-70"
+    >
+      petukhouskaya.design@gmail.com
+    </a>
+    <button
+      class="bg-dark-primary text-white-primary mt-5 rounded-full px-4 py-1.5 hover:bg-black-secondary cursor-pointer"
+      onclick="window.copyMail()"
+    >
+      Copy mail
+    </button>
+    <script>
+      window.addEventListener("load", () => {
+        window.copyMail = function copyMail() {
+          const mail = "petukhouskaya.design@gmail.com";
+          navigator.clipboard.writeText(mail);
+        };
+      });
+    </script>
+  </div>
+</section>

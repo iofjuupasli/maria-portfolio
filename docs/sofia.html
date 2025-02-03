@@ -1,3 +1,6 @@
+---
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,6 +16,7 @@
     <link rel="stylesheet" href="./output.css" />
   </head>
   <body class="bg-black-primary text-white-primary">
+    {% include menu.html %}
     <header>
       <div class="section-content">
         <div class="flex justify-between">
@@ -702,76 +706,6 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="section-content flex flex-col items-center">
-        <img
-          width="96"
-          height="96"
-          src="./paperpile/avatar2x.webp"
-          srcset="./paperpile/avatar2x.webp 2x, ./paperpile/avatar.webp 1x"
-          class="rounded-full"
-        />
-        <h3 class="mt-9">Want to hire me?</h3>
-        <div class="t2 mt-9">Send me a job inquiry</div>
-        <a
-          href="mailto:petukhouskaya.design@gmail.com"
-          class="t2 text-green-primary mt-10"
-        >
-          petukhouskaya.design@gmail.com
-        </a>
-        <button
-          class="bg-white-primary text-dark-primary mt-6 rounded-full px-4 py-1.5"
-          onclick="copyMail()"
-        >
-          Copy mail
-        </button>
-      </div>
-    </section>
-    <hr />
-    <footer class="">
-      <div class="section-content flex justify-between pt-16">
-        <svg
-          width="44"
-          height="45"
-          viewBox="0 0 44 45"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          onclick="window.scroll({ top: 0, behavior: 'smooth' })"
-        >
-          <circle
-            cx="22"
-            cy="22.0859"
-            r="20"
-            stroke="white"
-            stroke-width="2.17391"
-          />
-          <path
-            d="M29.3472 14.5441L22 7.19691M22 7.19691L14.6528 14.5441M22 7.19691V36.7109"
-            stroke="white"
-            stroke-width="2.17391"
-          />
-        </svg>
-        <div class="flex items-center gap-20">
-          <a href="/">Get CV</a>
-          <a
-            href="https://www.linkedin.com/in/maria-petukhovskaya-6638051a9/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <button
-            class="bg-white-primary text-dark-primary rounded-full px-4 py-1.5"
-            onclick="copyMail()"
-          >
-            Copy mail
-          </button>
-        </div>
-      </div>
-    </footer>
-    <script>
-      function copyMail() {
-        const mail = "petukhouskaya.design@gmail.com";
-        navigator.clipboard.writeText(mail);
-      }
-    </script>
+    {% include hire.html %} {% include footer.html %}
   </body>
 </html>
