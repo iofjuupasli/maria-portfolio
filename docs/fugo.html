@@ -28,11 +28,13 @@
   <body class="bg-black-primary text-white-primary">
     {% include menu.html %}
     <header class="js-layer bg-black-secondary">
-      <div class="section-content !pt-40">
-        <div class="flex items-center justify-between">
+      <div class="section-content pt-20 md:!pt-40">
+        <div
+          class="flex flex-col-reverse justify-between gap-20 md:flex-row md:items-center"
+        >
           <div>
             <div class="t2 text-gray-primary">2023</div>
-            <h1 class="mt-18">Fugo Studio</h1>
+            <h1 class="mt-6 md:mt-18">Fugo Studio</h1>
             <div class="t1 mt-6">Increasing features discoverability</div>
           </div>
           <svg width="214" height="75" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +86,7 @@
           loop
           class="mt-20 h-auto w-full overflow-clip rounded-2xl"
         ></video>
-        <div class="t2 mt-25 flex gap-11">
+        <div class="t2 mt-25 flex flex-col gap-16 md:flex-row md:gap-11">
           <div class="flex-1 space-y-3">
             <div class="text-gray-primary">About the project</div>
             <div>
@@ -150,7 +152,7 @@
     </section>
     <section>
       <div class="section-content">
-        <div class="flex items-end justify-between gap-10">
+        <div class="flex flex-col items-end justify-between gap-10 md:flex-row">
           <div>
             <h2>Problem definition</h2>
             <h4 class="mt-10">User interviews</h4>
@@ -174,7 +176,7 @@
             height="210"
           />
         </div>
-        <h4 class="mt-12">Research insights</h4>
+        <h4 class="mt-24 md:mt-12">Research insights</h4>
         <ul class="t2 mt-6 ml-4 list-disc space-y-3">
           <li>
             Users mostly used Canva to create visual materials. They praised it
@@ -258,8 +260,8 @@
         <div class="t2 mt-10">
           During the week, we created a prototype for usability tests.
         </div>
-        <div class="mt-12 space-y-18">
-          <div class="flex items-start gap-7">
+        <div class="mt-12 space-y-7 md:space-y-18">
+          <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
               class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-12x.webp"
@@ -277,7 +279,7 @@
               height="300"
             />
           </div>
-          <div class="flex items-start gap-7">
+          <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
               class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-32x.webp"
@@ -295,7 +297,7 @@
               height="300"
             />
           </div>
-          <div class="flex items-start gap-7">
+          <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
               class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-52x.webp"
@@ -313,7 +315,7 @@
               height="300"
             />
           </div>
-          <div class="flex items-start gap-7">
+          <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
               class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/solution-72x.webp"
@@ -348,7 +350,7 @@
             templates.
           </li>
         </ul>
-        <div class="mt-9 flex items-start gap-10">
+        <div class="mt-9 flex flex-col items-start gap-10 md:flex-row">
           <img
             src="./fugo/usability-12x.webp"
             srcset="./fugo/usability-1.webp 1x, ./fugo/usability-12x.webp 2x"
@@ -413,8 +415,8 @@
     <section>
       <div class="section-content">
         <h2>Final designs</h2>
-        <div class="mt-12 space-y-18">
-          <div class="flex items-start gap-7">
+        <div class="mt-12 space-y-7 md:space-y-18">
+          <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
               class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-12x.webp"
@@ -432,7 +434,7 @@
               height="300"
             />
           </div>
-          <div class="flex items-start gap-7">
+          <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
               class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-32x.webp"
@@ -450,7 +452,7 @@
               height="300"
             />
           </div>
-          <div class="flex items-start gap-7">
+          <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
               class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-52x.webp"
@@ -468,7 +470,7 @@
               height="298"
             />
           </div>
-          <div class="flex items-start gap-7">
+          <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
               class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
               src="./fugo/final-72x.webp"
@@ -570,7 +572,7 @@
       <section class="js-layer bg-dark-primary">
         <div class="section-content">
           <h5>See more of my projects</h5>
-          <div class="mt-9 grid grid-cols-[227fr_227fr_495fr] gap-9">
+          <div class="mt-9 flex flex-col gap-24 md:grid grid-cols-[227fr_227fr_495fr] md:gap-9">
             <a href="./sofia.html" class="block">
               <div class="image-hover-container">
                 <img

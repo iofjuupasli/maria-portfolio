@@ -1,3 +1,4 @@
+{% if include.root %}
 <menu
   class="js-mobile-menu fixed z-[60] h-20 w-full text-white transition-transform duration-500 lg:hidden"
 >
@@ -19,6 +20,7 @@
     </div>
   </div>
 </menu>
+{% endif %}
 <menu
   class="js-menu bg-black-primary fixed z-[80] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-6 text-nowrap text-white transition-all duration-500 lg:z-[60] lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
 >
@@ -171,7 +173,9 @@
         lastSwitch = st;
       } else if (st < lastScrollTop && st < lastSwitch - 50) {
         menuMobileElems.forEach((menuMobileElem) => {
+          // {% if include.root %}
           menuMobileElem.classList.add("bg-black-primary");
+          // {% endif %}
           menuMobileElem.classList.remove("-translate-y-full");
         });
         lastSwitch = st;

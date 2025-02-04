@@ -14,7 +14,7 @@
   }
   h2,
   .h2 {
-    @apply relative -top-1 text-[40px] md:text-[44px] leading-[1.30] font-semibold tracking-wider;
+    @apply relative -top-1 text-[40px] leading-[1.30] font-semibold tracking-wider md:text-[44px];
   }
   h3,
   .h3 {
@@ -41,7 +41,7 @@
 }
 @layer components {
   .section-content {
-    @apply mx-5 max-w-[1080px] py-[200px] pl-0 lg:mx-32 lg:pl-14 xl:mx-auto;
+    @apply mx-5 max-w-[1080px] py-40 pl-0 md:py-[200px] lg:mx-32 lg:pl-14 xl:mx-auto;
   }
   .t1 {
     @apply text-2xl leading-normal font-normal;
