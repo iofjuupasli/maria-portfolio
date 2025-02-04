@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:tailwind": "npx @tailwindcss/cli -i ./docs/input.css -o ./docs/output.css --watch",
+    "start:tailwind": "npx @tailwindcss/cli -m -i ./docs/input.css -o ./docs/output.css --watch",
     "start:live-server": "live-server",
     "start": "npm-run-all --parallel start:*"
   },

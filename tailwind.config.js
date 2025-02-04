@@ -14,7 +14,7 @@ module.exports = {
         },
         green: {
           primary: "#2DD9AE",
-          secondary: "#00b187"
+          secondary: "#00b187",
         },
         gray: {
           primary: "#CBD5D3",
