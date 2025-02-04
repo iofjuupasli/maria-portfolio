@@ -40,10 +40,10 @@
     {% include menu.html root=true %}
     <div class="pointer-events-none relative z-[70] h-screen snap-start">
       <header
-        class="js-header safari:static pointer-events-auto fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
+        class="js-header safari:static fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
       >
         <h1
-          class="js-title relative z-[70] mx-auto max-w-[360px] origin-[70.3%_65.1%] px-[26px] text-[30px] leading-[39px] font-semibold tracking-wide text-white sm:max-w-[640px] sm:origin-[50.8%_74.9%] lg:max-w-[807px] lg:origin-[50.89%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
+          class="js-title pointer-events-auto relative z-[70] mx-auto max-w-[360px] origin-[70.3%_65.1%] px-[26px] text-[30px] leading-[39px] font-semibold tracking-wide text-white sm:max-w-[640px] sm:origin-[50.8%_74.9%] lg:max-w-[807px] lg:origin-[50.89%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
         >
           <span class="inline-block" data-aos="fade-up">I’m Maria.</span><br />
           <span class="inline-block delay-200" data-aos="fade-up"
@@ -392,7 +392,7 @@
                 <p class="text-gray-primary mt-5">Role: UX designer</p>
               </div>
               <div
-                class="image-hover-container z-50 col-span-5 row-span-2 mt-5 max-w-[600px] lg:mt-0"
+                class="image-hover-container z-50 col-span-5 row-span-2 mt-5 max-w-[600px] md:max-w-full lg:mt-0"
               >
                 <picture>
                   <source
@@ -854,11 +854,11 @@
           const isOnScreen =
             headerRect.top <= window.innerHeight && headerRect.bottom > 0;
           if (!isOnScreen) {
-            headerElem.classList.add("pointer-events-none");
+            titleElem.classList.add("pointer-events-none");
             headerBgElem.classList.add("opacity-0");
             headerElem.classList.add("opacity-0");
           } else {
-            headerElem.classList.remove("pointer-events-none");
+            titleElem.classList.remove("pointer-events-none");
             headerBgElem.classList.remove("opacity-0");
             headerElem.classList.remove("opacity-0");
           }
