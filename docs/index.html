@@ -47,12 +47,12 @@
       class="noise pointer-events-none fixed -top-1/2 -right-1/2 -bottom-1/2 -left-1/2 z-40 h-[200%] w-[200%] opacity-65"
     ></div>
     <div
-      class="js-header-bg bg-black-primary pointer-events-none fixed z-10 h-screen w-full"
+      class="js-header-bg bg-black-primary safari:hidden pointer-events-none fixed z-10 h-screen w-full"
     ></div>
     {% include menu.html root=true %}
     <div class="pointer-events-none relative z-[70] h-screen snap-start">
       <header
-        class="js-header fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
+        class="js-header safari:static fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
       >
         <h1
           class="js-title relative z-[70] mx-auto max-w-[360px] origin-[70.3%_65.1%] px-[26px] text-[30px] leading-[39px] font-semibold tracking-wide text-white sm:max-w-[640px] sm:origin-[50.8%_74.9%] lg:max-w-[807px] lg:origin-[50.89%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
@@ -67,7 +67,7 @@
         </h1>
         <div class="animate-fade-in relative mt-[11vh]">
           <svg
-            class="animate-rotate w-full text-[10.3px]"
+            class="animate-rotate safari:text-[11.6px] w-full text-[10.3px]"
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
             width="213"
@@ -164,7 +164,7 @@
           class="from-black-primary via-black-primary relative mx-auto -mt-[10vh] flex max-w-[1184px] flex-col gap-30 bg-gradient-to-t via-86% to-transparent pt-[50vh] lg:gap-66 xl:gap-122"
         >
           <a href="./paperpile.html">
-            <article class="snap-center grid-cols-8 gap-8 lg:grid">
+            <article class="grid-cols-8 gap-8 lg:grid">
               <div class="col-span-4 row-span-1 self-start">
                 <time datetime="2024" class="text-xl">2024</time>
                 <h3
@@ -259,7 +259,7 @@
               </div></article
           ></a>
           <a href="./fugo-redesign.html">
-            <article class="snap-center grid-cols-8 gap-8 lg:grid">
+            <article class="grid-cols-8 gap-8 lg:grid">
               <div class="col-span-2 lg:order-2">
                 <time datetime="2021" class="text-xl">2021</time>
                 <h3
@@ -390,7 +390,7 @@
             </article>
           </a>
           <a href="./fugo.html">
-            <article class="snap-center grid-cols-8 gap-8 lg:grid">
+            <article class="grid-cols-8 gap-8 lg:grid">
               <div class="col-span-3">
                 <time datetime="2023" class="text-xl">2023</time>
                 <h3
@@ -476,7 +476,7 @@
             </article>
           </a>
           <a href="./sofia.html">
-            <article class="snap-center grid-cols-8 gap-8 lg:grid">
+            <article class="grid-cols-8 gap-8 lg:grid">
               <div class="col-span-2">
                 <time datetime="2022" class="text-xl">2022</time>
                 <h3
@@ -897,13 +897,16 @@
           const scale = 1 - visiblePercentage * 0.1;
           workElem.style.transform = scale === 1 ? null : `scale(${scale})`;
         };
+        const isSafari = window.safari !== undefined;
         const handleScroll = (() => {
           let ticking = false;
 
           return () => {
             if (!ticking) {
               window.requestAnimationFrame(() => {
-                handleHeaderScroll();
+                if (!isSafari) {
+                  handleHeaderScroll();
+                }
                 handleWorkScroll();
                 ticking = false;
               });

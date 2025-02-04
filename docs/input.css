@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+@custom-variant safari {
+  @supports (-webkit-hyphens: none) {
+    @slot;
+  }
+}
+
 @layer base {
   h1,
   .h1 {
