@@ -70,7 +70,7 @@
       </div>
     </header>
     <section>
-      <div class="section-content pr-[347px]">
+      <div class="section-content lg:pr-[347px]">
         <h2 class="mb-9">Introduction</h2>
         <p class="mb-6 text-lg leading-normal">
           Managing an overwhelming variety of documents has become a persistent
@@ -91,7 +91,7 @@
           problem more globally when I joined them.
         </p>
       </div>
-      <div class="absolute top-32 right-0">
+      <div class="absolute top-32 right-0 hidden lg:block">
         <img
           width="316"
           height="474"
@@ -106,9 +106,9 @@
       </div>
     </section>
     <section>
-      <div class="section-content space-y-[92px]">
+      <div class="section-content space-y-12 lg:space-y-[92px]">
         <h2>How it started</h2>
-        <div class="flex gap-4">
+        <div class="flex flex-col gap-12 lg:flex-row lg:gap-4">
           <div class="flex-1">
             <h6><i>Immigration</i> and Documentation Challenges</h6>
             <p class="t4 mt-6 pr-4">
@@ -124,7 +124,7 @@
             <img
               width="91"
               height="71"
-              class="mt-[116px] mb-[25px] ml-[-6px]"
+              class="mt-[116px] mb-[25px] ml-[-6px] hidden lg:block"
               src="./paperpile/arrow-down-right2x.webp"
               srcset="
                 ./paperpile/arrow-down-right.webp   1x,
@@ -146,7 +146,7 @@
             </p>
           </div>
           <div class="flex-1">
-            <h6 class="mt-[26px]">
+            <h6 class="lg:mt-[26px]">
               Shared <i>Responsibilities</i> Increase the Strain
             </h6>
             <p class="t4 mt-6 pr-4">
@@ -157,7 +157,7 @@
             <img
               width="104"
               height="66"
-              class="mt-[15px] ml-[-44px]"
+              class="mt-[15px] ml-[-44px] hidden lg:block"
               src="./paperpile/arrow-up-right-curl2x.webp"
               srcset="
                 ./paperpile/arrow-up-right-curl.webp   1x,
@@ -171,7 +171,7 @@
             <img
               width="81"
               height="93"
-              class="mt-8 mb-[13px] ml-[-15px]"
+              class="mt-8 mb-[13px] ml-[-15px] hidden lg:block"
               src="./paperpile/arrow-down-right-curl2x.webp"
               srcset="
                 ./paperpile/arrow-down-right-curl.webp   1x,
@@ -213,12 +213,12 @@
             focus.
           </p>
           <div
-            class="font-slackside text-green-primary absolute top-7 right-[-50px] rotate-3"
+            class="font-slackside text-green-primary absolute right-[-50px] hidden rotate-3 lg:top-7 lg:block"
           >
             challenge your subjective design view as fast as it appears
           </div>
           <div
-            class="font-slackside text-green-primary absolute right-[-10px] bottom-2 -rotate-6"
+            class="font-slackside text-green-primary absolute right-[-10px] bottom-2 hidden -rotate-6 lg:block"
           >
             collaboration with the team broadening problem understanding, free
             and fast
@@ -273,16 +273,16 @@
       </div>
     </section>
     <section>
-      <div class="section-content space-y-[92px]">
+      <div class="section-content space-y-12 lg:space-y-[92px]">
         <h2>Market forecast</h2>
-        <div class="flex gap-10">
+        <div class="flex flex-col gap-12 lg:flex-row lg:gap-20">
           <div class="flex-1 space-y-9">
             <h5>
               Pandemia boosted the
               <span class="text-green-primary">remote</span> work.
             </h5>
             <h5>
-              The war and recent political events have<br />caused of a
+              The war and recent political events have caused&nbsp;of a
               <span class="text-green-primary"
                 >global displacement of people.</span
               >
@@ -309,9 +309,11 @@
       </div>
     </section>
     <section>
-      <div class="section-content space-y-[92px]">
-        <h2>CustDev <i>People & Papers</i></h2>
-        <div class="flex gap-32">
+      <div class="section-content space-y-12 lg:space-y-[92px]">
+        <h2>CustDev <i>People&nbsp;&&nbsp;Papers</i></h2>
+        <div
+          class="flex flex-col gap-12 text-center lg:flex-row lg:gap-32 lg:text-left"
+        >
           <div class="flex flex-1 flex-col items-center justify-between">
             <img
               width="162"
@@ -319,6 +321,7 @@
               src="./paperpile/people2x.webp"
               srcset="./paperpile/people.webp 1x, ./paperpile/people2x.webp 2x"
               loading="lazy"
+              class="relative left-[10px] lg:left-0"
             />
             <div class="mt-12 w-[145px] space-y-3">
               <h2>124</h2>
@@ -360,12 +363,12 @@
       <div class="section-content">
         <h4>How people <i>find</i>, store and feel</h4>
         <div
-          class="bg-black-secondary text-gray-primary mt-12 px-[83px] py-[77px]"
+          class="bg-black-secondary text-gray-primary mt-12 p-5 lg:px-[83px] lg:py-[77px]"
         >
-          <div class="grid grid-cols-[5fr_3fr]">
-            <div class="border-white-primary border-r border-b pr-6 pb-9">
+          <div class="grid-cols-[5fr_3fr] space-y-16 md:grid md:space-y-0">
+            <div class="border-white-primary pr-6 pb-9 md:border-r md:border-b">
               <h6>How many</h6>
-              <div class="mt-12 flex gap-6">
+              <div class="mt-6 flex gap-6 md:mt-12">
                 <div class="flex-1">
                   <h3>76%</h3>
                   <div class="t4">of respondents store family documents</div>
@@ -379,7 +382,7 @@
                 </div>
               </div>
             </div>
-            <div class="border-white-primary border-b pl-[54px]">
+            <div class="border-white-primary md:border-b md:pl-[54px]">
               <h6>How often</h6>
               <div class="mt-1 text-sm">people need to find a document</div>
               <h3 class="mt-6">71%</h3>
@@ -387,7 +390,7 @@
                 refer to documents at least<br /><b>once a week</b>
               </div>
             </div>
-            <div class="border-white-primary border-r pt-9 pr-6">
+            <div class="border-white-primary pt-9 pr-6 md:border-r">
               <h6>How much</h6>
               <div class="mt-1 text-sm">
                 time respondents need to find a document
@@ -406,13 +409,13 @@
                 </div>
               </div>
             </div>
-            <div class="pt-9 pl-[54px]">
+            <div class="pt-9 md:pl-[54px]">
               <h6>How bad</h6>
               <div class="mt-1 text-sm">
                 time respondents need to find a document
               </div>
-              <h3 class="mt-2">40%</h3>
-              <div class="t4 mt-2 pr-2">
+              <h3 class="mt-6 md:mt-2">40%</h3>
+              <div class="t4 pr-2 md:mt-2">
                 respondents couldn't find important documents within the
                 <b>first hour</b> of&nbsp;searching 2 and more times
               </div>
@@ -424,7 +427,7 @@
     <section>
       <div class="section-content">
         <h4>How people find, <i>store</i> and feel</h4>
-        <div class="mt-12 flex gap-10">
+        <div class="mt-12 flex flex-col gap-12 lg:flex-row lg:gap-10">
           <div class="flex-1">
             <h5 class="text-center">Store</h5>
             <svg
@@ -685,10 +688,10 @@
     <section>
       <div class="section-content">
         <h4>How people find, store and <i>feel</i></h4>
-        <div class="mt-[55px] flex">
-          <div class="border-white-primary flex-1 border-r pr-[56px]">
+        <div class="mt-[55px] flex flex-col gap-24 md:flex-row md:gap-0">
+          <div class="border-white-primary flex-1 md:border-r md:pr-[56px]">
             <h6>Big paperwork ahead</h6>
-            <div class="mt-[92px] space-y-[44px]">
+            <div class="mt-6 space-y-[44px] md:mt-[92px]">
               <div class="flex items-center gap-5">
                 <h2>32%</h2>
                 <div class="t3">experience sadness and anxiety</div>
@@ -703,9 +706,9 @@
               </div>
             </div>
           </div>
-          <div class="border-white-primary flex-1 border-r px-[56px]">
+          <div class="border-white-primary flex-1 md:border-r md:px-[56px]">
             <h6>Satisfaction</h6>
-            <div class="mt-[92px] space-y-[52px]">
+            <div class="mt-6 space-y-[52px] md:mt-[92px]">
               <div>
                 <h2>only 2%</h2>
                 <div class="t3">are completely satisfied</div>
@@ -716,9 +719,9 @@
               </div>
             </div>
           </div>
-          <div class="flex-1 pl-[56px]">
+          <div class="flex-1 md:pl-[56px]">
             <h6>Satisfaction<br />with the mobile applications</h6>
-            <div class="mt-[55px] space-y-[52px]">
+            <div class="mt-6 space-y-[52px] md:mt-[55px]">
               <div>
                 <h2>only 40%</h2>
                 <div class="t3">
@@ -736,7 +739,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content pr-[460px]">
+      <div class="section-content lg:pr-[460px]">
         <div>
           <h2>MVP <i>features</i></h2>
           <h6 class="mt-9">Jobs to be done:</h6>
@@ -748,7 +751,7 @@
             Versatile application, designed for document fast search, secure
             storage and effortless operating.
           </div>
-          <ul class="list-plus t2 mt-6">
+          <ul class="list-plus t2 mt-6 list-inside">
             <li>fast access & AI categorization*;</li>
             <li>family sharing;</li>
             <li>checklists & expirations;</li>
@@ -761,7 +764,7 @@
       <img
         width="579"
         height="391"
-        class="absolute top-[230px] right-0"
+        class="absolute top-[230px] right-0 hidden lg:block"
         src="./paperpile/hand2x.webp"
         srcset="./paperpile/hand.webp 1x, ./paperpile/hand2x.webp 2x"
         loading="lazy"
@@ -770,11 +773,11 @@
     <section>
       <div class="section-content">
         <h2>What <i>assistant</i> do</h2>
-        <div class="mt-[92px] flex gap-20">
+        <div class="mt-[92px] flex flex-col gap-20 lg:flex-row">
           <img
             width="466"
             height="505"
-            class="h-auto w-0 flex-1"
+            class="h-auto flex-1 lg:w-0"
             src="./paperpile/assistant-a2x.webp"
             srcset="
               ./paperpile/assistant-a.webp   1x,
@@ -786,7 +789,7 @@
           <img
             width="490"
             height="505"
-            class="h-auto w-0 flex-1"
+            class="h-auto flex-1 lg:w-0"
             src="./paperpile/assistant-b2x.webp"
             srcset="
               ./paperpile/assistant-b.webp   1x,
@@ -801,7 +804,70 @@
     <section>
       <div class="section-content">
         <h2>Problems to <i>solve</i>, with less frictions</h2>
-        <table class="mt-[92px]">
+        <div class="mt-12 space-y-10 md:hidden">
+          <div class="flex flex-col gap-4">
+            <div class="flex-1">
+              <div class="font-bold">User:</div>
+              <p>Apply for visa, studying...</p>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold">Paperpile:</div>
+              <p>Orders the process (check lists), finds the document</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex-1">
+              <div class="font-bold">User:</div>
+              <p>Keep in mind the important dates</p>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold">Paperpile:</div>
+              <p>Monitors and reminds about expiration</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex-1">
+              <div class="font-bold">User:</div>
+              <p>Takes care about family</p>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold">Paperpile:</div>
+              <p>Provides family document sharing</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex-1">
+              <div class="font-bold">User:</div>
+              <p>Tracks important health indicators</p>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold">Paperpile:</div>
+              <p>Provides lifetime documents tracking and search</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex-1">
+              <div class="font-bold">User:</div>
+              <p>Compiles the endless forms</p>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold">Paperpile:</div>
+              <p>Recognizes the text and fill it for you</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex-1">
+              <div class="font-bold">User:</div>
+              <p>Needs to choose right document</p>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold">Paperpile:</div>
+              <p>Works with versions, highlights changed spots</p>
+            </div>
+          </div>
+        </div>
+
+        <table class="mt-[92px] hidden md:table">
           <tr class="t3">
             <td class="pr-[72px] pb-4 align-top">User:</td>
             <td class="pr-[52px] pb-4 align-top">
@@ -848,7 +914,9 @@
     <section>
       <div class="section-content">
         <h2>Impact</h2>
-        <div class="mt-[92px] flex gap-8">
+        <div
+          class="mt-12 flex flex-col gap-20 md:mt-[92px] md:flex-row md:gap-8"
+        >
           <div class="flex-1">
             <img
               width="235"
@@ -857,8 +925,8 @@
               srcset="./paperpile/cases.webp 1x, ./paperpile/cases2x.webp 2x"
               loading="lazy"
             />
-            <h3 class="mt-9 min-h-[100px]">Immigrants assistance.</h3>
-            <div class="t3 mt-8">
+            <h3 class="md:mt-9 md:min-h-[100px]">Immigrants assistance.</h3>
+            <div class="t3 mt-4 md:mt-8">
               Life documentation continuity and integrity.
             </div>
           </div>
@@ -870,8 +938,8 @@
               srcset="./paperpile/hands.webp 1x, ./paperpile/hands2x.webp 2x"
               loading="lazy"
             />
-            <h3 class="mt-9 min-h-[100px]">Family care.</h3>
-            <div class="t3 mt-8">
+            <h3 class="md:mt-9 md:min-h-[100px]">Family care.</h3>
+            <div class="t3 mt-4 md:mt-8">
               Support parents with increased bureaucracy.
             </div>
           </div>
@@ -883,8 +951,8 @@
               srcset="./paperpile/flower.webp 1x, ./paperpile/flower2x.webp 2x"
               loading="lazy"
             />
-            <h3 class="mt-9 min-h-[100px]">Support paperless.</h3>
-            <div class="t3 mt-8">
+            <h3 class="md:mt-9 md:min-h-[100px]">Support paperless.</h3>
+            <div class="t3 mt-4 md:mt-8">
               document management to benefit the environment and individuals.
             </div>
           </div>
@@ -899,8 +967,8 @@
               "
               loading="lazy"
             />
-            <h3 class="mt-9 min-h-[100px]">Emotional well-being.</h3>
-            <div class="t3 mt-8">Less stress, greater stability.</div>
+            <h3 class="md:mt-9 md:min-h-[100px]">Emotional well-being.</h3>
+            <div class="t3 mt-4 md:mt-8">Less stress, greater stability.</div>
           </div>
         </div>
       </div>
@@ -913,7 +981,7 @@
           be done;<br />we finally articulated the goals users are to reach with
           the app.
         </div>
-        <div class="mt-[120px] space-y-12 pr-[280px]">
+        <div class="mt-[120px] space-y-12 lg:pr-[280px]">
           <div class="flex items-center justify-between">
             <div>
               <h3>Reduce searching time</h3>
@@ -960,7 +1028,7 @@
           ./paperpile/newspaper-pile.webp   1x,
           ./paperpile/newspaper-pile2x.webp 2x
         "
-        class="absolute top-[400px] right-0 max-w-[30vw]"
+        class="absolute top-[400px] right-0 hidden max-w-[30vw] lg:block"
         loading="lazy"
       />
     </section>
@@ -994,7 +1062,7 @@
           ./paperpile/paperpile_userflows_block_image.webp   1x,
           ./paperpile/paperpile_userflows_block_image2x.webp 2x
         "
-        class="absolute top-1/3 right-0"
+        class="absolute top-1/3 right-0 hidden lg:block"
         loading="lazy"
       />
       <div class="section-content">
@@ -1931,7 +1999,9 @@
       loading="lazy"
     />
     <section>
-      <div class="section-content flex items-center gap-24">
+      <div
+        class="section-content flex flex-col items-center gap-24 lg:flex-row"
+      >
         <div class="">
           <h2>Wireframes</h2>
           <div class="t2 mt-9">
@@ -1967,7 +2037,7 @@
       loading="lazy"
     />
     <section class="bg-green-primary text-black-primary">
-      <div class="section-content flex gap-[60px]">
+      <div class="section-content flex flex-col gap-[60px] lg:flex-row">
         <video
           width="720"
           height="1558"
@@ -1976,7 +2046,7 @@
           loop
           muted
           playsinline
-          class="h-auto w-[343px]"
+          class="order-2 h-auto w-[343px] lg:order-0"
           loading="lazy"
         ></video>
         <div>
@@ -2117,7 +2187,7 @@
           class=""
           loading="lazy"
         />
-        <div class="flex items-center gap-[54px]">
+        <div class="flex flex-col items-center gap-[54px] lg:flex-row">
           <div>
             <h2>What about children?</h2>
             <div class="t2 mt-9">
@@ -2266,9 +2336,9 @@
           class="relative right-[15%] mx-auto mt-2"
           loading="lazy"
         />
-        <div class="mt-14 flex items-start">
+        <div class="mt-14 flex flex-col items-start lg:flex-row">
           <div class="h1 leading-none">80%</div>
-          <div class="t2 ml-6">
+          <div class="t2 mt-6 ml-0 lg:mt-0 lg:ml-6">
             12 of 15 respondents with children whom were shown prototype users
             during moderated usability tests reported the feature met their
             needs.
@@ -2293,7 +2363,9 @@
       </div>
     </section>
     <section>
-      <div class="section-content flex items-center gap-12">
+      <div
+        class="section-content flex flex-col items-center gap-12 lg:flex-row"
+      >
         <div>
           <h2>Key Contributions</h2>
           <h5 class="mt-9">Improving and testing key user flows</h5>
@@ -2339,7 +2411,7 @@
       </div>
     </section>
     <section>
-      <div class="section-content pr-48">
+      <div class="section-content lg:pr-48">
         <h2>Outcomes</h2>
         <div class="t2 mt-9 space-y-9">
           <p>
@@ -2368,7 +2440,7 @@
           ./paperpile/paper-pile2x.webp 2x,
           ./paperpile/paper-pile.webp   1x
         "
-        class="absolute top-[200px] right-0"
+        class="absolute top-[200px] right-0 hidden lg:block"
         loading="lazy"
       />
     </section>
@@ -2376,7 +2448,9 @@
       <section class="js-layer bg-dark-primary origin-top">
         <div class="section-content">
           <h5>See more of my projects</h5>
-          <div class="mt-9 grid grid-cols-[227fr_229fr_495fr] gap-9">
+          <div
+            class="mt-9 flex grid-cols-[227fr_229fr_495fr] flex-col gap-24 lg:grid lg:gap-9"
+          >
             <a href="./sofia.html" class="block">
               <div class="image-hover-container">
                 <img
