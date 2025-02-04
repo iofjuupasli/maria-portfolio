@@ -804,26 +804,26 @@
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
   }
-  .mt-\[25px\] {
-    margin-top: 25px;
-  }
-  .mt-\[55px\] {
-    margin-top: 55px;
-  }
   .mt-\[92px\] {
     margin-top: 92px;
   }
   .mt-\[9px\] {
     margin-top: 9px;
   }
-  .mt-\[15px\] {
-    margin-top: 15px;
-  }
   .mt-\[116px\] {
     margin-top: 116px;
   }
   .mt-\[11vh\] {
     margin-top: 11vh;
+  }
+  .mt-\[15px\] {
+    margin-top: 15px;
+  }
+  .mt-\[25px\] {
+    margin-top: 25px;
+  }
+  .mt-\[55px\] {
+    margin-top: 55px;
   }
   .mt-\[120px\] {
     margin-top: 120px;
@@ -1229,9 +1229,6 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
-  .gap-9 {
-    gap: calc(var(--spacing) * 9);
-  }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
   }
@@ -1329,13 +1326,6 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 16) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 16) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-18 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 18) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 18) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-20 {
@@ -1537,9 +1527,6 @@
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
   }
-  .px-50 {
-    padding-inline: calc(var(--spacing) * 50);
-  }
   .px-\[21px\] {
     padding-inline: 21px;
   }
@@ -1591,12 +1578,6 @@
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
   }
-  .pt-21 {
-    padding-top: calc(var(--spacing) * 21);
-  }
-  .pt-30 {
-    padding-top: calc(var(--spacing) * 30);
-  }
   .pt-50 {
     padding-top: calc(var(--spacing) * 50);
   }
@@ -1621,9 +1602,6 @@
   .pr-6 {
     padding-right: calc(var(--spacing) * 6);
   }
-  .pr-10 {
-    padding-right: calc(var(--spacing) * 10);
-  }
   .pr-16 {
     padding-right: calc(var(--spacing) * 16);
   }
@@ -1645,23 +1623,14 @@
   .pb-10 {
     padding-bottom: calc(var(--spacing) * 10);
   }
-  .pb-11 {
-    padding-bottom: calc(var(--spacing) * 11);
-  }
   .pb-12 {
     padding-bottom: calc(var(--spacing) * 12);
-  }
-  .pb-40 {
-    padding-bottom: calc(var(--spacing) * 40);
   }
   .pb-60 {
     padding-bottom: calc(var(--spacing) * 60);
   }
   .pb-70 {
     padding-bottom: calc(var(--spacing) * 70);
-  }
-  .pb-120 {
-    padding-bottom: calc(var(--spacing) * 120);
   }
   .pb-\[200px\] {
     padding-bottom: 200px;
@@ -1677,9 +1646,6 @@
   }
   .pl-13 {
     padding-left: calc(var(--spacing) * 13);
-  }
-  .pl-140 {
-    padding-left: calc(var(--spacing) * 140);
   }
   .text-center {
     text-align: center;
@@ -1705,10 +1671,6 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -2263,11 +2225,6 @@
       gap: calc(var(--spacing) * 16);
     }
   }
-  .md\:gap-20 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 20);
-    }
-  }
   .md\:gap-24 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 24);
@@ -2310,11 +2267,6 @@
     @media (width >= 48rem) {
       border-bottom-style: var(--tw-border-style);
       border-bottom-width: 1px;
-    }
-  }
-  .md\:px-24 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 24);
     }
   }
   .md\:px-50 {
@@ -2829,11 +2781,6 @@
       flex-direction: column;
     }
   }
-  .xl\:flex-row {
-    @media (width >= 80rem) {
-      flex-direction: row;
-    }
-  }
   .xl\:gap-12 {
     @media (width >= 80rem) {
       gap: calc(var(--spacing) * 12);
@@ -3219,7 +3166,7 @@
     background-image: image-set( url("./about_cabbage.webp") 1x, url("./about_cabbage2x.webp") 2x );
   }
   .noise {
-    background: transparent url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+    background: transparent url("./noise.png") repeat 0 0;
     animation: steps(2) bg-animation 5s infinite;
   }
   .animate-rotate {

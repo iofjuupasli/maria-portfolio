@@ -109,7 +109,7 @@
   }
   .noise {
     background: transparent
-      url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+      url("./noise.png") repeat 0 0;
     animation: steps(2) bg-animation 5s infinite;
   }
   .animate-rotate {
