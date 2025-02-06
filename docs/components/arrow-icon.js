@@ -37,12 +37,12 @@ class ArrowIcon extends HTMLElement {
           r="18.8125"
           stroke="${color}"
           stroke-width="${strokeWidth}"
-        />
+        ></circle>
         <path
           d="M20.7241 12.5024H30.4976M30.4976 12.5024V22.2759M30.4976 12.5024L10.8672 32.1328"
           stroke="${color}"
           stroke-width="${strokeWidth}"
-        />
+        ></path>
       </svg>
     `;
   }

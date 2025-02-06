@@ -1,9 +1,9 @@
 {% if include.root %}
-<menu
+<nav
   class="js-mobile-menu fixed z-[60] h-20 w-full text-white transition-transform duration-500 lg:hidden"
 >
-  <div class="absolute top-0 flex w-full justify-center">
-    <div class="side-menu flex space-x-10 pt-5">
+  <ul class="absolute top-0 flex w-full justify-center">
+    <li class="side-menu flex space-x-10 pt-5">
       <a
         class="js-works-button link"
         href="#work"
@@ -17,30 +17,32 @@
         onclick="window.handleAboutClick(event)"
         >about</a
       >
-    </div>
-  </div>
-</menu>
+    </li>
+  </ul>
+</nav>
 {% endif %}
-<menu
+<nav
   class="js-menu bg-black-primary fixed z-[80] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-6 text-nowrap text-white transition-all duration-500 lg:z-[60] lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
 >
-  <div class="side-menu mt-8 ml-1.5">
-    <a
-      href="./"
-      class="group link hover:text-white-primary block text-center text-[24px] lg:text-left"
-    >
-      <span class="overflow-clip lg:inline-block">M</span
-      ><span
-        class="w-0 overflow-clip transition-all duration-300 group-hover:w-80 lg:inline-block"
-        >aria Petukhovskaya</span
+  <ul>
+    <li class="side-menu mt-8 ml-1.5">
+      <a
+        href="./"
+        class="group link hover:text-white-primary block text-center text-[24px] lg:text-left"
       >
-    </a>
-  </div>
-  <div
+        <span class="overflow-clip lg:inline-block">M</span
+        ><span
+          class="w-0 overflow-clip transition-all duration-300 group-hover:w-80 lg:inline-block"
+          >aria Petukhovskaya</span
+        >
+      </a>
+    </li>
+  </ul>
+  <ul
     class="flex h-full max-h-[640px] flex-col items-center justify-evenly py-10 lg:block"
   >
     {% if include.root %}
-    <div
+    <li
       class="side-menu top-[46%] flex w-[200px] flex-auto flex-col justify-evenly lg:absolute lg:w-auto lg:-translate-y-1/2 lg:space-y-1"
     >
       <a
@@ -56,10 +58,10 @@
         onclick="window.handleAboutClick(event)"
         >about me</a
       >
-    </div>
+    </li>
     {% endif %}
-    <div class="h-px w-[202px] bg-current lg:hidden"></div>
-    <div
+    <li class="h-px w-[202px] bg-current lg:hidden"></li>
+    <li
       class="side-menu bottom-7 flex w-[200px] flex-auto flex-col justify-evenly space-y-1 lg:absolute lg:w-auto"
     >
       <a
@@ -74,9 +76,9 @@
         >LinkedIn</a
       >
       <button class="js-copy-mail link group relative">Copy mail</button>
-    </div>
-  </div>
-</menu>
+    </li>
+  </ul>
+</nav>
 <div
   class="js-mobile-menu js-cross cross fixed top-0 right-0 z-[120] flex h-[62px] w-[62px] items-center justify-center text-white transition-transform duration-500 lg:hidden"
   onclick="window.handleMobileMenuClick()"
