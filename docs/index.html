@@ -261,7 +261,7 @@
               <div
                 class="image-hover-container z-50 col-span-4 row-span-2 mt-5 max-w-[600px] lg:order-1 lg:mt-0"
               >
-                <picture alt="Fugo laptop interface">
+                <picture>
                   <source
                     srcset="
                       ./main/Fugo_laptop_1440.webp   1x,
@@ -285,6 +285,7 @@
                       ./main/Fugo_laptop_mobile.webp   1x,
                       ./main/Fugo_laptop_mobile2x.webp 2x
                     "
+                    media="(max-width: 1023px)"
                     width="320"
                     height="271"
                   />
@@ -298,6 +299,7 @@
                     "
                     width="578"
                     height="490"
+                    alt="Fugo laptop interface"
                   />
                 </picture>
               </div>
@@ -754,7 +756,9 @@
                         Writing to&nbsp;political prisoners
                       </div>
                     </div>
-                    <arrow-icon class="flex-shrink-0 lg:self-end xl:mt-3 xl:self-start"></arrow-icon>
+                    <arrow-icon
+                      class="flex-shrink-0 lg:self-end xl:mt-3 xl:self-start"
+                    ></arrow-icon>
                   </div>
                 </a>
               </div>
