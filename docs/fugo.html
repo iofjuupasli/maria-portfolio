@@ -425,14 +425,46 @@
               width="505"
               height="606"
             />
-            <img
-              class="shadow-fugo h-auto w-full min-w-0 flex-1 rounded-md"
-              src="./fugo/final-22x.webp"
-              srcset="./fugo/final-2.webp 1x, ./fugo/final-22x.webp 2x"
-              alt=""
-              width="505"
-              height="300"
-            />
+            <div class="relative w-full min-w-0 flex-1">
+              <div class="relative w-full pb-[60%]">
+                <img
+                  class="shadow-fugo h-auto w-full min-w-0 rounded-md"
+                  src="./fugo/final-22x.webp"
+                  srcset="./fugo/final-2.webp 1x, ./fugo/final-22x.webp 2x"
+                  alt=""
+                  width="505"
+                  height="300"
+                />
+                <div
+                  class="absolute top-[14%] right-[12%] left-[28%] space-y-2"
+                >
+                  <img
+                    src="./fugo/slide-12x.webp"
+                    srcset="./fugo/slide-1.webp 1x, ./fugo/slide-12x.webp 2x"
+                    alt=""
+                    width="301"
+                    height="168"
+                    class="w-full"
+                  />
+                  <img
+                    src="./fugo/slide-22x.webp"
+                    srcset="./fugo/slide-2.webp 1x, ./fugo/slide-22x.webp 2x"
+                    alt=""
+                    width="301"
+                    height="168"
+                    class="w-full"
+                  />
+                  <img
+                    src="./fugo/slide-32x.webp"
+                    srcset="./fugo/slide-3.webp 1x, ./fugo/slide-32x.webp 2x"
+                    alt=""
+                    width="301"
+                    height="168"
+                    class="w-full"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div class="flex flex-col items-start gap-7 md:flex-row">
             <img
@@ -572,7 +604,9 @@
       <section class="js-layer bg-dark-primary">
         <div class="section-content">
           <h5>See more of my projects</h5>
-          <div class="mt-9 flex flex-col gap-24 md:grid grid-cols-[227fr_227fr_495fr] md:gap-9">
+          <div
+            class="mt-9 flex grid-cols-[227fr_227fr_495fr] flex-col gap-24 md:grid md:gap-9"
+          >
             <a href="./sofia.html" class="block">
               <div class="image-hover-container">
                 <img
