@@ -5,17 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:tailwind": "npx @tailwindcss/cli -m -i ./docs/input.css -o ./docs/output.css --watch",
-    "start:live-server": "live-server",
-    "start": "npm-run-all --parallel start:*"
+    "build:css": "npx @tailwindcss/cli -i ./docs/input.css -o ./docs/output.css",
+    "watch:css": "npx @tailwindcss/cli -i ./docs/input.css -o ./docs/output.css --watch",
+    "serve:jekyll": "bundle exec jekyll serve --livereload --source docs --destination _site",
+    "build:jekyll": "npm run build:css && bundle exec jekyll build --source docs --destination _site",
+    "start": "npm-run-all --parallel watch:css serve:jekyll",
+    "build": "npm run build:jekyll"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.0",
+    "@tailwindcss/cli": "^4.1.4",
     "live-server": "^1.2.2",
     "npm-run-all": "^4.1.5",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.0.0"
+    "tailwindcss": "^4.1.4"
   }
 }

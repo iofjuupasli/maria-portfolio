@@ -121,6 +121,8 @@
 <script>
   window.addEventListener("load", () => {
     const layers = document.querySelectorAll(".js-layer");
+    const topLayer = document.querySelectorAll(".js-top-layer");
+    const splitBg = document.querySelectorAll(".js-split-bg");
 
     const handleScrollRadius = (layer) => {
       const isMobile = window.innerWidth < 1024;
@@ -152,6 +154,39 @@
       layer.style.transform = scale === 1 ? null : `scale(${scale})`;
     };
 
+    const handleTopLayerScroll = (layer) => {
+      const mainRect = layer.getBoundingClientRect();
+      const isOnScreen =
+        mainRect.top < window.innerHeight && mainRect.bottom >= 0;
+      if (!isOnScreen) {
+        return;
+      }
+      const bottom = Math.min(mainRect.bottom, window.innerHeight);
+      const visibleHeight = Math.max(0, bottom - Math.max(mainRect.top, 0));
+      const visiblePercentage = 1 - visibleHeight / window.innerHeight;
+      layer.style.borderRadius = visiblePercentage * 64 + "px";
+      const scale = 1 - visiblePercentage * 0.1;
+      layer.style.transform = scale === 1 ? null : `scale(${scale})`;
+    };
+
+    const handleSplitBgScroll = (layer) => {
+      const topClassName = layer.getAttribute("data-split-bg-top");
+      const bottomClassName = layer.getAttribute("data-split-bg-bottom");
+      const mainRect = layer.getBoundingClientRect();
+      const isOnScreen =
+        mainRect.top < window.innerHeight && mainRect.bottom >= 0;
+      if (!isOnScreen) {
+        return;
+      }
+      if (mainRect.top > 0) {
+        layer.classList.add(topClassName);
+        layer.classList.remove(bottomClassName);
+      } else {
+        layer.classList.add(bottomClassName);
+        layer.classList.remove(topClassName);
+      }
+    };
+
     const handleScroll = (() => {
       let ticking = false;
 
@@ -159,6 +194,8 @@
         if (!ticking) {
           window.requestAnimationFrame(() => {
             layers.forEach(handleScrollRadius);
+            topLayer.forEach(handleTopLayerScroll);
+            splitBg.forEach(handleSplitBgScroll);
             ticking = false;
           });
           ticking = true;

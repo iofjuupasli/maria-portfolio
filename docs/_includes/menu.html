@@ -24,7 +24,7 @@
 <nav
   class="js-menu bg-black-primary fixed z-[80] flex h-screen w-full -translate-y-full flex-col items-center justify-evenly pl-6 text-nowrap text-white transition-all duration-500 lg:z-[60] lg:block lg:w-auto lg:translate-y-0 lg:bg-transparent lg:mix-blend-difference"
 >
-  <ul>
+  <ul class="hidden lg:block">
     <li class="side-menu mt-8 ml-1.5">
       <a
         href="./"
@@ -46,11 +46,25 @@
       class="side-menu top-[46%] flex w-[200px] flex-auto flex-col justify-evenly lg:absolute lg:w-auto lg:-translate-y-1/2 lg:space-y-1"
     >
       <a
+        href="#domains"
+        class="js-domains-button link"
+        onclick="window.handleDomainsClick(event)"
+      >
+        domains
+      </a>
+      <a
         href="#work"
         class="js-works-button link"
         onclick="window.handleWorksClick(event)"
       >
-        work
+        works
+      </a>
+      <a
+        href="#recs"
+        class="js-recs-button link"
+        onclick="window.handleRecsClick(event)"
+      >
+        recs
       </a>
       <a
         href="#about"
@@ -80,7 +94,7 @@
   </ul>
 </nav>
 <div
-  class="js-mobile-menu js-cross cross fixed top-0 right-0 z-[120] flex h-[62px] w-[62px] items-center justify-center text-white transition-transform duration-500 lg:hidden"
+  class="js-mobile-menu js-cross cross fixed top-0 right-0 z-[120] flex h-[62px] w-[62px] items-center justify-center pt-4 text-white transition-transform duration-500 lg:hidden"
   onclick="window.handleMobileMenuClick()"
 >
   <div>
@@ -126,8 +140,9 @@
     const menuElem = document.querySelector(".js-menu");
     const menuMobileElems = document.querySelectorAll(".js-mobile-menu");
     const cross = document.querySelector(".js-cross");
-    const skillsElem = document.querySelector(".js-skills");
+    const domainsElem = document.querySelector(".js-domains");
     const workElem = document.querySelector(".js-work-card");
+    const recsElem = document.querySelector(".js-recs");
     const aboutElem = document.querySelector(".js-about");
     const copyMail = document.querySelector(".js-copy-mail");
     const copyMailConfirm = document.querySelector(".js-copy-mail-confirm");
@@ -136,16 +151,48 @@
     );
     const copyMailTooltip = document.querySelector(".js-copy-mail-tooltip");
 
-    const handleSkillsScroll = () => {
-      if (!skillsElem) {
+    const handleDomainsScroll = () => {
+      if (!domainsElem) {
         return;
       }
-      const rect = skillsElem.getBoundingClientRect();
-      const isMenuVisible = rect.top >= 200 || rect.bottom < 200;
-      if (isMenuVisible) {
-        menuElem.classList.remove("lg:opacity-0", "lg:pointer-events-none");
-      } else {
-        menuElem.classList.add("lg:opacity-0", "lg:pointer-events-none");
+      const rect = domainsElem.getBoundingClientRect();
+      const isMenuVisible = rect.top >= 100 || rect.bottom <= 0;
+
+      if (isMenuVisible && menuElem.classList.contains("js-domain-hide")) {
+        menuElem.classList.remove(
+          "js-domain-hide",
+          "lg:opacity-0",
+          "lg:pointer-events-none",
+        );
+      }
+      if (!isMenuVisible) {
+        menuElem.classList.add(
+          "js-domain-hide",
+          "lg:opacity-0",
+          "lg:pointer-events-none",
+        );
+      }
+    };
+
+    const handleRecsScroll = () => {
+      if (!recsElem) {
+        return;
+      }
+      const rect = recsElem.getBoundingClientRect();
+      const isMenuVisible = rect.top >= 700 || rect.bottom < 200;
+      if (isMenuVisible && menuElem.classList.contains("js-recs-hide")) {
+        menuElem.classList.remove(
+          "js-recs-hide",
+          "lg:opacity-0",
+          "lg:pointer-events-none",
+        );
+      }
+      if (!isMenuVisible) {
+        menuElem.classList.add(
+          "js-recs-hide",
+          "lg:opacity-0",
+          "lg:pointer-events-none",
+        );
       }
     };
     const handleTooltipScroll = () => {
@@ -194,7 +241,8 @@
       return () => {
         if (!ticking) {
           window.requestAnimationFrame(() => {
-            handleSkillsScroll();
+            handleDomainsScroll();
+            handleRecsScroll();
             handleTooltipScroll();
             handleMobileMenuHideScroll();
             ticking = false;
@@ -268,8 +316,16 @@
         });
       };
     };
+    window.handleDomainsClick = withoutScrollSnap(() => {
+      domainsElem.scrollIntoView({ behavior: "smooth" });
+      closeMobileMenu();
+    });
     window.handleWorksClick = withoutScrollSnap(() => {
       workElem.scrollIntoView({ behavior: "smooth" });
+      closeMobileMenu();
+    });
+    window.handleRecsClick = withoutScrollSnap(() => {
+      recsElem.scrollIntoView({ behavior: "smooth" });
       closeMobileMenu();
     });
     window.handleAboutClick = withoutScrollSnap(() => {

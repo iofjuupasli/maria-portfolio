@@ -1,0 +1,22 @@
+source: docs
+destination: _site
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - README.md
+  - LICENSE
+  - netlify.toml
+  - .github
+  - .git
+  - .vscode
+  - .prettierrc
+  - convert-image.sh

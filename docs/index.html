@@ -37,100 +37,155 @@
     {% include menu.html root=true %}
     <div class="pointer-events-none relative z-[70] h-screen snap-start">
       <header
-        class="js-header safari:static fixed z-10 h-screen w-full overflow-hidden pt-[20vh] text-center transition-opacity duration-500 lg:pt-[15vh] lg:pl-14 xl:pt-[18vh]"
+        class="js-header safari:static fixed z-10 flex h-screen w-full flex-col overflow-hidden px-[21px] pt-[23vh] transition-opacity duration-500 lg:pt-[15vh] lg:pl-[230px] xl:pt-[18vh]"
       >
         <h1
-          class="js-title pointer-events-auto relative z-[70] mx-auto max-w-[360px] origin-[47.7%_69.1%] px-[26px] text-[30px] leading-[39px] font-semibold tracking-wide text-white sm:max-w-[710px] sm:origin-[50.8%_74.9%] lg:max-w-[950px] lg:origin-[50.75%_83%] lg:px-0 lg:text-[44px] lg:leading-[57px] lg:tracking-wider"
+          class="js-title xs:origin-[161.6px_75px] xs:text-[22px] pointer-events-auto relative z-[70] origin-[117.6px_54.3px] text-[16px] leading-[150%] tracking-wide text-white sm:origin-[264px_136.8px] sm:text-[40px] lg:origin-[346.9px_142px] lg:px-0 lg:text-[50px] lg:leading-[127%] lg:tracking-wider xl:origin-[415.6px_171.2px] xl:text-[60px]"
         >
-          <span class="inline-block" data-aos="fade-up">I’m Maria.</span><br />
+          <span class="inline-block" data-aos="fade-up"
+            >I have been designing products</span
+          ><br />
           <span class="inline-block delay-200" data-aos="fade-up"
-            >I create UI, UX & product design for
-            <span class="text-green-secondary" data-aos="fade-up"
-              >people's needs and business success.</span
+            >for
+            <span
+              class="bg-gradient-to-r from-[#00B187] to-[#4AFFD3] bg-clip-text text-transparent"
+              >startups and small</span
             ></span
+          ><br />
+          <span class="inline-block delay-400" data-aos="fade-up"
+            ><span
+              class="bg-gradient-to-r from-[#00B187] to-[#4AFFD3] bg-clip-text text-transparent"
+              >to medium businesses</span
+            >
+            since 2019</span
           >
         </h1>
-        <div class="animate-fade-in relative mt-[11vh]">
-          <svg
-            class="animate-rotate safari:text-[11.6px] w-full text-[10.3px]"
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-            width="213"
-            height="213"
+        <div class="text-gray-thirdly xs:text-sm mt-10 text-xs lg:text-base">
+          <div
+            class="flex flex-wrap gap-x-2 gap-y-2 delay-600"
+            data-aos="fade-up"
           >
-            <path
-              id="circlePath"
-              d="M 10, 50 a 40,40 0 1,1 80,0 40,40 0 1,1 -80,0"
-              fill="none"
-            />
-            <text class="fill-white">
-              <textPath href="#circlePath">
-                doing design for 4 years • doing design for 4 years •
-              </textPath>
-            </text>
-          </svg>
+            <div>B2B, complex web SaaS</div>
+            <div>•</div>
+            <div>B2C, AI-based</div>
+            <div>•</div>
+            <div>Start-ups</div>
+            <div>•</div>
+            <div>Design Systems</div>
+            <div class="xl:h-0 xl:flex-1 xl:basis-full xl:opacity-0">•</div>
+            <div>AI-driven</div>
+            <div>•</div>
+            <div>AdTech</div>
+            <div>•</div>
+            <div>ContentTech</div>
+            <div>•</div>
+            <div>CodeTech</div>
+            <div>•</div>
+            <div>EdTeach</div>
+            <div>•</div>
+            <div>DevTech</div>
+            <div>•</div>
+            <div>DocTech</div>
+            <div>•</div>
+            <div>InfoTech</div>
+            <div>•</div>
+            <div>FinTech</div>
+            <div>•</div>
+            <div>HealthTech</div>
+            <div>•</div>
+            <div>E-commerce</div>
+          </div>
+        </div>
+        <div class="animate-fade-in mt-auto mb-5 lg:mb-11">
           <img
             alt="Maria Petukhovskaya - UX/UI designer"
-            class="absolute top-1/2 left-1/2 h-[142px] w-[142px] -translate-x-1/2 translate-y-[-51%] rounded-full"
+            class="h-[85px] w-[85px] rounded-full"
             src="./portrait2x.webp"
             srcset="./portrait.webp 1x, ./portrait2x.webp 2x"
-            width="142"
-            height="142"
+            width="85"
+            height="85"
           />
         </div>
       </header>
     </div>
     <section
-      class="js-skills bg-green-secondary text-black-primary relative flex snap-center flex-col items-center justify-center space-y-20 overflow-hidden px-5 py-60 md:h-[120vh] md:space-y-16 md:pr-16 md:pl-42 lg:pt-80"
+      class="js-domains bg-green-secondary text-black-primary pt-40 pb-20 md:min-h-[120vh] lg:pt-80 lg:pb-40"
     >
-      <div
-        class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16 xl:max-w-[1166px]"
-      >
-        <div class="flex-1" data-aos="fade-up">
-          <h5>
-            “Maria proved herself as an excellent designer with strong UX
-            skills.”
-          </h5>
-          <div class="t3 mt-2">
-            <span class="text-white-primary">Sarah Donahoo</span>
-            <span>Head Of Marketing</span>
-          </div>
+      <div class="section-content">
+        <div
+          class="text-[24px] leading-[127%] tracking-[1%] lg:mt-40 lg:max-w-[576px] lg:text-[32px]"
+        >
+          I helped shape products, engage audiences, and develop businesses
+          across
+          <b>various sectors:</b>
         </div>
-        <div class="flex-1 delay-300" data-aos="fade-up">
-          <h5>
-            “Her ability to blend aesthetics with usability has increased our
-            conversion rate.”
-          </h5>
-          <div class="t3 mt-2">
-            <span class="text-white-primary">Marsel Atniashev</span>
-            <span>CTO</span>
+        <div class="mt-12 flex flex-col gap-y-12 md:mt-24">
+          <div class="flex flex-col gap-12 md:flex-row md:gap-22">
+            <div class="flex-1 space-y-1.5">
+              <div class="text-xl font-semibold">B2B SaaS apps</div>
+              <div class="text-sm">
+                content creation and digital sign age management, phishing
+                simulation and cybersecurity training, web apps builder coding
+                assistant.
+              </div>
+            </div>
+            <div class="flex-1 space-y-1.5">
+              <div class="text-xl font-semibold">B2C mobile apps</div>
+              <div class="text-sm">
+                Mobile documents management AI-based assistant, EdTech
+                mobile-first AI-driven.
+              </div>
+            </div>
+            <div class="flex-1 space-y-1.5">
+              <div class="text-xl font-semibold">B2C SaaS web apps</div>
+              <div class="text-sm">
+                e-commerce, tax pool management, code acceleration.
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div
-        class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16 xl:max-w-[1166px]"
-      >
-        <div class="flex-1 delay-600" data-aos="fade-up">
-          <h5>
-            “On a personal note, I admire how she communicated with empathy,
-            even when facing tight deadlines, managing critiques from multiple
-            stakeholders, and navigating the often overwhelming startup
-            environment.”
-          </h5>
-          <div class="t3 mt-2">
-            <span class="text-white-primary">Tatyana Gorelova</span>
-            <span>Product Designer</span>
-          </div>
-        </div>
-        <div class="flex-1 delay-900" data-aos="fade-up">
-          <h5>
-            “Maria constantly delivered remarkable work as a designer.<br />She
-            has an excellent sense of creative design that matches her
-            communication and organizational skills.”
-          </h5>
-          <div class="t3 mt-2">
-            <span class="text-white-primary">Volha Ryabtseva</span>
-            <span>Product Manager</span>
+          <div class="flex flex-col gap-12 md:flex-row md:gap-22">
+            <div class="flex-1 space-y-1.5">
+              <div class="text-xl font-semibold">Design systems</div>
+              <div class="text-sm">
+                open-source design system, commercial design systems and CRM
+                templates.
+              </div>
+            </div>
+            <div class="flex-1 space-y-1.5">
+              <div class="text-xl font-semibold">Digital marketing</div>
+              <div class="text-sm">
+                branding, SMM, marketing design for variety of products in
+                business and non-profit domains.
+              </div>
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1XO879hNv8-OdLxThwrSnsiheFOT1Dt36/view?usp=drive_link"
+              target="_blank"
+              class="text-white-primary flex flex-1 items-center gap-4 text-[37px] font-medium xl:text-[44px]"
+            >
+              <div>Get CV</div>
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 44 44"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="22"
+                  cy="22.5312"
+                  r="20"
+                  transform="rotate(180 22 22.5312)"
+                  stroke="white"
+                  stroke-width="2.17391"
+                />
+                <path
+                  d="M32.434 22.6186V12.2281M32.434 12.2281H22.0435M32.434 12.2281L11.5645 33.0977"
+                  stroke="white"
+                  stroke-width="2.17391"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -151,16 +206,19 @@
           <a href="./paperpile.html">
             <article class="grid-cols-8 gap-8 lg:grid">
               <div class="col-span-4 row-span-1 self-start">
-                <time datetime="2024" class="text-xl">2024</time>
+                <time datetime="2024" class="text-sm">2024</time>
                 <h3
-                  class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
+                  class="mt-5 text-[28px] font-semibold tracking-wide xl:text-[32px]"
                 >
-                  Paperpile
+                  Paper<span class="italic">pile</span>
                 </h3>
-                <p class="mt-2 leading-5">Document management assitant</p>
-                <p class="text-gray-primary mt-5">
-                  Role: Product designer, individual contributor
+                <p class="mt-4 text-sm leading-5">
+                  B2C mobile, AI-based document management assistant
                 </p>
+                <p class="text-gray-primary mt-4 text-sm">
+                  Role: Product designer
+                </p>
+                <div class="badge mt-4">Case study: long read 🥸</div>
               </div>
               <div
                 class="image-hover-container z-50 order-first col-span-4 row-span-2 mt-5 w-full max-w-[600px] lg:mt-0"
@@ -247,16 +305,19 @@
           <a href="./fugo-redesign.html">
             <article class="grid-cols-8 gap-8 lg:grid">
               <div class="col-span-2 lg:order-2">
-                <time datetime="2021" class="text-xl">2021</time>
+                <time datetime="2024" class="text-sm">2024</time>
                 <h3
-                  class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
+                  class="mt-5 text-[28px] font-semibold tracking-wide xl:text-[32px]"
                 >
                   Fugo Redesign
                 </h3>
-                <p class="mt-2 leading-5">
-                  Screens management & content creation web app
+                <p class="mt-4 text-sm leading-5">
+                  B2B SaaS Screens management & content creation web app
                 </p>
-                <p class="text-gray-primary mt-5">Role: Product designer</p>
+                <p class="text-gray-primary mt-4 text-sm">
+                  Role: Product designer
+                </p>
+                <div class="badge mt-4">Show case: images! 🎉</div>
               </div>
               <div
                 class="image-hover-container z-50 col-span-4 row-span-2 mt-5 max-w-[600px] lg:order-1 lg:mt-0"
@@ -380,19 +441,21 @@
           <a href="./fugo.html">
             <article class="grid-cols-8 gap-8 lg:grid">
               <div class="col-span-3">
-                <time datetime="2023" class="text-xl">2023</time>
+                <time datetime="2023" class="text-sm">2023</time>
                 <h3
-                  class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
+                  class="mt-5 text-[28px] font-semibold tracking-wide xl:text-[32px]"
                 >
                   Fugo: Studio UX
                 </h3>
-                <p class="mt-2 leading-5">
-                  Fugo Studio UX: Increasing features discoverability
+                <p class="mt-4 text-sm leading-5">
+                  B2B SaaS, content creation.
+                  <br />Fugo Studio UX: Increasing features discoverability
                 </p>
-                <p class="text-gray-primary mt-5">Role: UX designer</p>
+                <p class="text-gray-primary mt-4 text-sm">Role: UX designer</p>
+                <div class="badge mt-4">Case study: long read 🥸</div>
               </div>
               <div
-                class="image-hover-container z-50 col-span-5 row-span-2 mt-5 max-w-[600px] md:max-w-full lg:mt-0"
+                class="image-hover-container z-50 col-span-5 row-span-2 mt-5 max-w-[600px] lg:mt-0 lg:max-w-full"
               >
                 <picture>
                   <source
@@ -467,16 +530,19 @@
           <a href="./sofia.html">
             <article class="grid-cols-8 gap-8 lg:grid">
               <div class="col-span-2">
-                <time datetime="2022" class="text-xl">2022</time>
+                <time datetime="2022" class="text-sm">2022</time>
                 <h3
-                  class="mt-[25px] text-[28px] font-semibold tracking-wide xl:text-[32px]"
+                  class="mt-5 text-[28px] font-semibold tracking-wide xl:text-[32px]"
                 >
                   Sofia
                 </h3>
-                <p class="mt-2 leading-5">
-                  CRM, a specialized data management platform.
+                <p class="mt-4 text-sm leading-5">
+                  Design system, CRM template
                 </p>
-                <p class="text-gray-primary mt-5">Role: UI/UX designer</p>
+                <p class="text-gray-primary mt-4 text-sm">
+                  Role: UI/UX designer
+                </p>
+                <div class="badge mt-4">Show case: images! 🎉</div>
               </div>
               <div
                 class="image-hover-container z-50 col-span-4 row-span-2 mt-5 max-w-[600px] lg:mt-0"
@@ -587,261 +653,326 @@
       </div>
     </main>
     <section
-      class="js-about js-layer bg-gray-primary text-dark-primary relative z-10 px-5 pt-[30vh] pb-60 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+      class="js-recs bg-green-secondary text-black-primary relative flex snap-center flex-col items-center justify-center space-y-20 overflow-hidden px-5 py-60 md:h-[120vh] md:space-y-16 md:pr-16 md:pl-42 lg:pt-80"
     >
-      <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
-        <h2
-          id="about"
-          class="bg-cabbage-about sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[114px] leading-snug font-extrabold tracking-wide text-transparent sm:text-[140px] lg:text-[280px] xl:text-[340px]"
-        >
-          about
-        </h2>
-        <div
-          class="from-gray-primary via-gray-primary relative flex flex-col gap-12 bg-gradient-to-t via-80% to-transparent pt-[35vh] lg:flex-row lg:gap-8 lg:via-60%"
-        >
-          <div class="flex flex-3 flex-col justify-between gap-8 xl:gap-12">
-            <p>
-              In design I like research, communication with users, exploring
-              their motivations and expectations. I care about addressing
-              business goals, solution testing, and creating design systems and
-              libraries.
-            </p>
-            <p>
-              I believe my strengths are strong communication skills that make
-              me able to explain my vision through the process, detail
-              orientation, empathy, and cooperation.
-            </p>
-            <p>
-              I am passionate about community-building processes within the
-              fields I engage in. I explore artistic practices and the creative
-              process, fostering communities around different aspects of
-              creation. Believing deeply in solidarity, I have taken leadership
-              in several solidarity-focused initiatives, facilitating them from
-              both a design and community perspective for years. My experience
-              in science and statistics enables me to think with a data-driven
-              approach, conduct thorough research, and effectively interpret
-              design studies.
-            </p>
+      <div
+        class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16 xl:max-w-[1166px]"
+      >
+        <div class="flex-1" data-aos="fade-up">
+          <h5>
+            “Maria proved herself as an excellent designer with strong UX
+            skills.”
+          </h5>
+          <div class="t3 mt-2">
+            <span class="text-white-primary">Sarah Donahoo</span>
+            <span>Head Of Marketing</span>
           </div>
-          <div class="flex flex-5 flex-col gap-4 2xl:gap-8">
-            <div class="flex flex-col gap-4 lg:flex-row 2xl:gap-8">
-              <a
-                href="https://www.instagram.com/petuhovskaya.m/"
-                target="_blank"
-                class="about-card group block lg:w-7/12 xl:w-8/17"
-              >
-                <picture>
-                  <source
-                    srcset="
-                      ./about/Art_1440.webp   1x,
-                      ./about/Art_14402x.webp 2x
-                    "
-                    media="(min-width: 1280px)"
-                  />
-                  <source
-                    srcset="
-                      ./about/Art_1024.webp   1x,
-                      ./about/Art_10242x.webp 2x
-                    "
-                    media="(min-width: 1024px)"
-                  />
-                  <img
-                    loading="lazy"
-                    class="about-card__bg"
-                    src="./about/Art_14402x.webp"
-                    srcset="
-                      ./about/Art_1440.webp   1x,
-                      ./about/Art_14402x.webp 2x
-                    "
-                    alt="Art exploration and creative practice"
-                    width="334"
-                    height="392"
-                  />
-                </picture>
-                <div class="relative z-10 flex h-full flex-col justify-between">
-                  <div>
-                    <div class="font-semibold">Art</div>
-                    <div class="t3 mt-2">Exploring creating practice</div>
-                  </div>
-                  <arrow-icon class="mt-5"></arrow-icon>
-                </div>
-              </a>
-              <div
-                class="flex flex-row gap-4 lg:w-5/12 lg:!flex-col xl:w-9/17 2xl:gap-8"
-              >
+        </div>
+        <div class="flex-1 delay-300" data-aos="fade-up">
+          <h5>
+            “Her ability to blend aesthetics with usability has increased our
+            conversion rate.”
+          </h5>
+          <div class="t3 mt-2">
+            <span class="text-white-primary">Marsel Atniashev</span>
+            <span>CTO</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mx-auto flex max-w-[794px] flex-col gap-20 md:flex-row md:gap-16 xl:max-w-[1166px]"
+      >
+        <div class="flex-1 delay-600" data-aos="fade-up">
+          <h5>
+            “On a personal note, I admire how she communicated with empathy,
+            even when facing tight deadlines, managing critiques from multiple
+            stakeholders, and navigating the often overwhelming startup
+            environment.”
+          </h5>
+          <div class="t3 mt-2">
+            <span class="text-white-primary">Tatyana Gorelova</span>
+            <span>Product Designer</span>
+          </div>
+        </div>
+        <div class="flex-1 delay-900" data-aos="fade-up">
+          <h5>
+            “Maria constantly delivered remarkable work as a designer.<br />She
+            has an excellent sense of creative design that matches her
+            communication and organizational skills.”
+          </h5>
+          <div class="t3 mt-2">
+            <span class="text-white-primary">Volha Ryabtseva</span>
+            <span>Product Manager</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      class="js-split-bg"
+      data-split-bg-top="bg-green-secondary"
+      data-split-bg-bottom="bg-dark-primary"
+    >
+      <section
+        class="js-about js-layer js-top-layer bg-gray-primary text-dark-primary relative z-10 px-5 pt-[30vh] pb-60 sm:px-8 lg:pr-8 lg:pl-[168px] xl:pr-6 xl:pl-[230px]"
+      >
+        <div class="mx-auto max-w-[400px] lg:max-w-[1184px]">
+          <h2
+            id="about"
+            class="bg-cabbage-about xs:text-[114px] sticky top-[15vh] mx-auto w-fit bg-contain bg-clip-text text-[100px] leading-snug font-extrabold tracking-wide text-transparent sm:text-[140px] lg:text-[280px] xl:text-[340px]"
+          >
+            about
+          </h2>
+          <div
+            class="from-gray-primary via-gray-primary relative flex flex-col gap-12 bg-gradient-to-t via-80% to-transparent pt-[35vh] lg:flex-row lg:gap-8 lg:via-60%"
+          >
+            <div class="flex flex-3 flex-col justify-between gap-8 xl:gap-12">
+              <p>
+                In design I like research, communication with users, exploring
+                their motivations and expectations. I care about addressing
+                business goals, solution testing, and creating design systems
+                and libraries.
+              </p>
+              <p>
+                I believe my strengths are strong communication skills that make
+                me able to explain my vision through the process, detail
+                orientation, empathy, and cooperation.
+              </p>
+              <p>
+                I am passionate about community-building processes within the
+                fields I engage in. I explore artistic practices and the
+                creative process, fostering communities around different aspects
+                of creation. Believing deeply in solidarity, I have taken
+                leadership in several solidarity-focused initiatives,
+                facilitating them from both a design and community perspective
+                for years. My experience in science and statistics enables me to
+                think with a data-driven approach, conduct thorough research,
+                and effectively interpret design studies.
+              </p>
+            </div>
+            <div class="flex flex-5 flex-col gap-4 2xl:gap-8">
+              <div class="flex flex-col gap-4 lg:flex-row 2xl:gap-8">
                 <a
-                  href="https://www.instagram.com/body_sketches_warsaw/"
+                  href="https://www.instagram.com/petuhovskaya.m/"
                   target="_blank"
-                  class="about-card group block w-1/2 lg:w-full"
+                  class="about-card group block lg:w-7/12 xl:w-8/17"
                 >
                   <picture>
                     <source
                       srcset="
-                        ./about/Sketches_1440.webp   1x,
-                        ./about/Sketches_14402x.webp 2x
+                        ./about/Art_1440.webp   1x,
+                        ./about/Art_14402x.webp 2x
                       "
                       media="(min-width: 1280px)"
                     />
                     <source
                       srcset="
-                        ./about/Sketches_1024.webp   1x,
-                        ./about/Sketches_10242x.webp 2x
+                        ./about/Art_1024.webp   1x,
+                        ./about/Art_10242x.webp 2x
                       "
                       media="(min-width: 1024px)"
                     />
                     <img
                       loading="lazy"
                       class="about-card__bg"
-                      src="./about/Sketches_14402x.webp"
+                      src="./about/Art_14402x.webp"
                       srcset="
-                        ./about/Sketches_1440.webp   1x,
-                        ./about/Sketches_14402x.webp 2x
+                        ./about/Art_1440.webp   1x,
+                        ./about/Art_14402x.webp 2x
                       "
-                      alt="City scale artist sketching meeting"
-                      width="378"
-                      height="213"
+                      alt="Art exploration and creative practice"
+                      width="334"
+                      height="392"
                     />
                   </picture>
                   <div
                     class="relative z-10 flex h-full flex-col justify-between"
                   >
                     <div>
-                      <div class="font-semibold">Big community bulding</div>
-                      <div class="t3 mt-2">
-                        City scale artist sketching meeting
-                      </div>
+                      <div class="font-semibold">Art</div>
+                      <div class="t3 mt-2">Exploring creating practice</div>
                     </div>
-                    <arrow-icon class="mt-5 xl:mt-22"></arrow-icon>
+                    <arrow-icon class="mt-5"></arrow-icon>
                   </div>
                 </a>
+                <div
+                  class="flex flex-row gap-4 lg:w-5/12 lg:!flex-col xl:w-9/17 2xl:gap-8"
+                >
+                  <a
+                    href="https://www.instagram.com/body_sketches_warsaw/"
+                    target="_blank"
+                    class="about-card group block w-1/2 lg:w-full"
+                  >
+                    <picture>
+                      <source
+                        srcset="
+                          ./about/Sketches_1440.webp   1x,
+                          ./about/Sketches_14402x.webp 2x
+                        "
+                        media="(min-width: 1280px)"
+                      />
+                      <source
+                        srcset="
+                          ./about/Sketches_1024.webp   1x,
+                          ./about/Sketches_10242x.webp 2x
+                        "
+                        media="(min-width: 1024px)"
+                      />
+                      <img
+                        loading="lazy"
+                        class="about-card__bg"
+                        src="./about/Sketches_14402x.webp"
+                        srcset="
+                          ./about/Sketches_1440.webp   1x,
+                          ./about/Sketches_14402x.webp 2x
+                        "
+                        alt="City scale artist sketching meeting"
+                        width="378"
+                        height="213"
+                      />
+                    </picture>
+                    <div
+                      class="relative z-10 flex h-full flex-col justify-between"
+                    >
+                      <div>
+                        <div class="font-semibold">Big community bulding</div>
+                        <div class="t3 mt-2">
+                          City scale artist sketching meeting
+                        </div>
+                      </div>
+                      <arrow-icon class="mt-5 xl:mt-22"></arrow-icon>
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/majsternia_ps/"
+                    target="_blank"
+                    class="about-card group block w-1/2 lg:w-full"
+                  >
+                    <picture>
+                      <source
+                        srcset="
+                          ./about/Postcards_1440.webp   1x,
+                          ./about/Postcards_14402x.webp 2x
+                        "
+                        media="(min-width: 1280px)"
+                      />
+                      <source
+                        srcset="
+                          ./about/Postcards_1024.webp   1x,
+                          ./about/Postcards_10242x.webp 2x
+                        "
+                        media="(min-width: 1024px)"
+                      />
+                      <img
+                        loading="lazy"
+                        class="about-card__bg"
+                        src="./about/Postcards_14402x.webp"
+                        srcset="
+                          ./about/Postcards_1440.webp   1x,
+                          ./about/Postcards_14402x.webp 2x
+                        "
+                        alt="Writing postcards to political prisoners"
+                        width="378"
+                        height="163"
+                      />
+                    </picture>
+                    <div
+                      class="relative z-10 flex h-full flex-col justify-between lg:flex-row xl:flex-col"
+                    >
+                      <div>
+                        <div class="font-semibold">Solidarity</div>
+                        <div class="t3 mt-2">
+                          Writing to&nbsp;political prisoners
+                        </div>
+                      </div>
+                      <arrow-icon
+                        class="flex-shrink-0 lg:self-end xl:mt-3 xl:self-start"
+                      ></arrow-icon>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4 lg:flex-row 2xl:gap-8">
                 <a
-                  href="https://www.instagram.com/majsternia_ps/"
+                  href="https://www.instagram.com/375_collective/"
                   target="_blank"
-                  class="about-card group block w-1/2 lg:w-full"
+                  class="about-card group block lg:w-7/12 xl:w-7/10"
                 >
                   <picture>
                     <source
                       srcset="
-                        ./about/Postcards_1440.webp   1x,
-                        ./about/Postcards_14402x.webp 2x
+                        ./about/375_1440.webp   1x,
+                        ./about/375_14402x.webp 2x
                       "
                       media="(min-width: 1280px)"
                     />
                     <source
                       srcset="
-                        ./about/Postcards_1024.webp   1x,
-                        ./about/Postcards_10242x.webp 2x
+                        ./about/375_1024.webp   1x,
+                        ./about/375_10242x.webp 2x
                       "
                       media="(min-width: 1024px)"
                     />
                     <img
                       loading="lazy"
                       class="about-card__bg"
-                      src="./about/Postcards_14402x.webp"
+                      src="./about/375_14402x.webp"
                       srcset="
-                        ./about/Postcards_1440.webp   1x,
-                        ./about/Postcards_14402x.webp 2x
+                        ./about/375_1440.webp   1x,
+                        ./about/375_14402x.webp 2x
                       "
-                      alt="Writing postcards to political prisoners"
-                      width="378"
-                      height="163"
+                      alt="Multi-discipline art collective"
+                      width="498"
+                      height="248"
                     />
                   </picture>
                   <div
-                    class="relative z-10 flex h-full flex-col justify-between lg:flex-row xl:flex-col"
+                    class="relative z-10 flex h-full flex-col justify-between"
                   >
                     <div>
-                      <div class="font-semibold">Solidarity</div>
-                      <div class="t3 mt-2">
-                        Writing to&nbsp;political prisoners
-                      </div>
+                      <div class="font-semibold">Small community bulding</div>
+                      <div class="t3 mt-2">Multi-discipline art collective</div>
                     </div>
-                    <arrow-icon
-                      class="flex-shrink-0 lg:self-end xl:mt-3 xl:self-start"
-                    ></arrow-icon>
+                    <arrow-icon class="mt-3"></arrow-icon>
                   </div>
                 </a>
-              </div>
-            </div>
-            <div class="flex flex-col gap-4 lg:flex-row 2xl:gap-8">
-              <a
-                href="https://www.instagram.com/375_collective/"
-                target="_blank"
-                class="about-card group block lg:w-7/12 xl:w-7/10"
-              >
-                <picture>
-                  <source
-                    srcset="
-                      ./about/375_1440.webp   1x,
-                      ./about/375_14402x.webp 2x
-                    "
-                    media="(min-width: 1280px)"
-                  />
-                  <source
-                    srcset="
-                      ./about/375_1024.webp   1x,
-                      ./about/375_10242x.webp 2x
-                    "
-                    media="(min-width: 1024px)"
-                  />
-                  <img
-                    loading="lazy"
-                    class="about-card__bg"
-                    src="./about/375_14402x.webp"
-                    srcset="
-                      ./about/375_1440.webp   1x,
-                      ./about/375_14402x.webp 2x
-                    "
-                    alt="Multi-discipline art collective"
-                    width="498"
-                    height="248"
-                  />
-                </picture>
-                <div class="relative z-10 flex h-full flex-col justify-between">
-                  <div>
-                    <div class="font-semibold">Small community bulding</div>
-                    <div class="t3 mt-2">Multi-discipline art collective</div>
-                  </div>
-                  <arrow-icon class="mt-3"></arrow-icon>
+                <div
+                  class="relative aspect-[320/229] h-auto overflow-clip rounded-[20px] lg:aspect-[204/250] lg:w-5/12 xl:aspect-[214/248] xl:w-3/10"
+                >
+                  <picture>
+                    <source
+                      srcset="
+                        ./about/Portrait_1440.webp   1x,
+                        ./about/Portrait_14402x.webp 2x
+                      "
+                      media="(min-width: 1280px)"
+                    />
+                    <source
+                      srcset="
+                        ./about/Portrait_1024.webp   1x,
+                        ./about/Portrait_10242x.webp 2x
+                      "
+                      media="(min-width: 1024px)"
+                    />
+                    <img
+                      loading="lazy"
+                      class="about-card__bg !opacity-100"
+                      src="./about/Portrait_mobile2x.webp"
+                      srcset="
+                        ./about/Portrait_mobile.webp   1x,
+                        ./about/Portrait_mobile2x.webp 2x
+                      "
+                      alt="Portrait photo of Maria"
+                      width="320"
+                      height="229"
+                    />
+                  </picture>
                 </div>
-              </a>
-              <div
-                class="relative aspect-[320/229] h-auto overflow-clip rounded-[20px] lg:aspect-[204/250] lg:w-5/12 xl:aspect-[214/248] xl:w-3/10"
-              >
-                <picture>
-                  <source
-                    srcset="
-                      ./about/Portrait_1440.webp   1x,
-                      ./about/Portrait_14402x.webp 2x
-                    "
-                    media="(min-width: 1280px)"
-                  />
-                  <source
-                    srcset="
-                      ./about/Portrait_1024.webp   1x,
-                      ./about/Portrait_10242x.webp 2x
-                    "
-                    media="(min-width: 1024px)"
-                  />
-                  <img
-                    loading="lazy"
-                    class="about-card__bg !opacity-100"
-                    src="./about/Portrait_mobile2x.webp"
-                    srcset="
-                      ./about/Portrait_mobile.webp   1x,
-                      ./about/Portrait_mobile2x.webp 2x
-                    "
-                    alt="Portrait photo of Maria"
-                    width="320"
-                    height="229"
-                  />
-                </picture>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
     {% include footer.html %}
     <script>
       window.addEventListener("load", () => {
@@ -868,20 +999,20 @@
           titleElem.style.transform = `scale(${1 + 320 * topPercent})`;
         };
         const handleWorkScroll = () => {
-          const container = workElem.parentElement;
+          // const container = workElem.parentElement;
           const mainRect = workElem.getBoundingClientRect();
           const isOnScreen =
             mainRect.top < window.innerHeight && mainRect.bottom >= 0;
           if (!isOnScreen) {
             return;
           }
-          if (mainRect.bottom < window.innerHeight + 100) {
-            container.classList.remove("bg-green-secondary");
-            container.classList.add("bg-gray-primary");
-          } else {
-            container.classList.remove("bg-gray-primary");
-            container.classList.add("bg-green-secondary");
-          }
+          // if (mainRect.bottom < window.innerHeight + 100) {
+          //   container.classList.remove("bg-green-secondary");
+          //   container.classList.add("bg-gray-primary");
+          // } else {
+          //   container.classList.remove("bg-gray-primary");
+          //   container.classList.add("bg-green-secondary");
+          // }
           const bottom = Math.min(mainRect.bottom, window.innerHeight);
           const visibleHeight = Math.max(0, bottom - Math.max(mainRect.top, 0));
           const visiblePercentage = 1 - visibleHeight / window.innerHeight;

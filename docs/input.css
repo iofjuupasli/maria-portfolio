@@ -1,5 +1,31 @@
 @import "tailwindcss";
-@config "../tailwind.config.js";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Inter", serif;
+  --font-family-slackside: "Slackside One", cursive;
+
+  --breakpoint-xs: 25rem;
+
+  --color-white-primary: #ffffff;
+  --color-green-primary: #2dd9ae;
+  --color-green-secondary: #00b187;
+  --color-gray-primary: #cbd5d3;
+  --color-gray-secondary: #3a4a5b;
+  --color-gray-thirdly: #b9c3c0;
+  --color-dark-primary: #171e25;
+  --color-black-primary: #171e25;
+  --color-black-secondary: #222f3c;
+  --color-black-thirdly: #2a3547;
+  --color-purple-primary: #df53ff;
+  --color-orange-primary: #ffa953;
+  --color-orange-secondary: rgba(255, 169, 83, 0.46);
+  --color-sofia-primary: #777dff;
+  --color-fugo-primary: #7048e8;
+
+  --list-style-type-dash: "- ";
+  --list-style-type-plus: "+  ";
+}
 
 @custom-variant safari {
   @supports (-webkit-hyphens: none) {
@@ -8,6 +34,9 @@
 }
 
 @layer base {
+  html {
+    @apply font-sans;
+  }
   h1,
   .h1 {
     @apply text-[72px] leading-normal font-light;
@@ -39,24 +68,28 @@
     @apply text-green-primary;
   }
 }
+@utility font-slackside {
+  font-family: var(--font-family-slackside);
+}
+@utility t1 {
+  @apply text-2xl leading-normal font-normal;
+}
+@utility t2 {
+  @apply text-lg leading-[1.35] font-normal;
+}
+@utility t3 {
+  @apply text-sm leading-normal font-normal;
+}
+@utility t4 {
+  @apply text-xs leading-normal font-normal;
+}
+@utility at {
+  @apply font-slackside text-xl leading-normal font-normal;
+}
+
 @layer components {
   .section-content {
     @apply mx-5 max-w-[1080px] py-40 pl-0 md:py-[200px] lg:mx-32 lg:pl-14 xl:mx-auto;
-  }
-  .t1 {
-    @apply text-2xl leading-normal font-normal;
-  }
-  .t2 {
-    @apply text-lg leading-[1.35] font-normal;
-  }
-  .t3 {
-    @apply text-sm leading-normal font-normal;
-  }
-  .t4 {
-    @apply text-xs leading-normal font-normal;
-  }
-  .at {
-    @apply font-slackside text-xl leading-normal font-normal;
   }
   .italic-bold b {
     @apply italic;
@@ -108,8 +141,7 @@
     );
   }
   .noise {
-    background: transparent
-      url("./noise.png") repeat 0 0;
+    background: transparent url("./noise.png") repeat 0 0;
     animation: steps(2) bg-animation 5s infinite;
   }
   .animate-rotate {
@@ -145,6 +177,9 @@
   }
   [data-aos="fade-up"].animate {
     @apply translate-y-0 opacity-100;
+  }
+  .badge {
+    @apply bg-black-secondary text-gray-primary inline-block rounded-sm px-2 py-1 text-sm;
   }
 }
 
